@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+          <monster name="Master Titan" level="200" maglevel="400" experience="100000" pushable="0" armor="80" defense="90" canpushitems="1" staticattack="40" changetarget="200" speed="740">
+          <health now="25000" max="25000"/>
+          <look type="75" head="20" body="30" legs="40" feet="50" corpse="3128"/>
+          <combat targetdistance="1" runonhealth="0"/>
+          
+          <attacks>
+                  <attack type="rune" name="Chameleon" exhaustion="100" cycleticks="2000" probability="100"/>
+                  <attack type="instant" name="yeti_hur" exhaustion="100" cycleticks="5000" probability="70"/>
+                  <attack type="instant" name="deathslicer_smile" exhaustion="100" cycleticks="5000" probability="70"/>
+                  <attack type="instant" name="dipthrah_death" exhaustion="100" cycleticks="5000" probability="70"/>
+                  <attack type="instant" name="yeti_awaits" exhaustion="100" cycleticks="5000" probability="70"/>
+                  <attack type="distance" name="largerock" mindamage="2000" maxdamage="2500" cycleticks="3000" probability="90"/>
+                  <attack type="rune" name="Paralyze" exhaustion="400" cycleticks="2000" probability="100"/>
+                  <attack type="rune" name="Heavy magic missile" exhaustion="100" cycleticks="2000" probability="100"/>
+                  <attack type="instant" name="hydra_water" exhaustion="100" cycleticks="5500" probability="65"/>
+                  <attack type="instant" name="hydra_poison" exhaustion="100" cycleticks="5500" probability="85"/>
+                  <attack type="rune" name="sudden death" exhaustion="200" cycleticks="8000" probability="70"/>
+                  <attack type="instant" name="domino vita" exhaustion="100" cycleticks="5000" probability="70"/>
+                  <attack type="instant" name="domino nova" exhaustion="100" cycleticks="5000" probability="70"/>
+                  <attack type="instant" name="domino hellio" exhaustion="100" cycleticks="5000" probability="70"/>
+                  <attack type="instant" name="exori nova" exhaustion="100" cycleticks="5000" probability="70"/>
+                  <attack type="instant" name="exori hellio" exhaustion="100" cycleticks="5000" probability="70"/>
+                  <attack type="instant" name="exori vita" exhaustion="100" cycleticks="5000" probability="70"/>
+                  <attack type="instant" name="exori" exhaustion="100" cycleticks="5000" probability="70"/>
+                  <attack type="instant" name="banshee_sonar" exhaustion="100" cycleticks="4000" probability="80"/>
+                  <attack type="distance" name="power-bolt" mindamage="2000" maxdamage="2500"/>
+                  <attack type="instant" name="exevo gran mas pox" exhaustion="100" cycleticks="4000" probability="85"/>
+                  <attack type="rune" name="misile poison" exhaustion="100" cycleticks="3000" probability="100"/>
+                  <attack type="rune" name="dragonlord_firebomb" exhaustion="100" cycleticks="7000" probability="60"/>
+                  <attack type="rune" name="great fireball" exhaustion="100" cycleticks="6000" probability="80"/>
+                  <attack type="instant" name="dragon_firewave" exhaustion="100" cycleticks="6000" probability="80"/>
+          	<attack type="melee" mindamage="500" maxdamage="1400" />
+          	<attack type="instant" name="exevo gran mas vis" cycleticks="9000" probability="70"/>
+          	<attack type="instant" name="orshabaal_deathstar" cycleticks="9000" probability="70"/>
+          	<attack type="instant" name="exura vita" cycleticks="5000" probability="60"/>
+          	<attack type="instant" name="orshabaal_exori" cycleticks="7000" probability="70"/>
+          	<attack type="instant" name="exevo gran vis lux" exhaustion="100" cycleticks="10000" probability="40"/>
+          </attacks>
+          
+          <defenses>
+          	<defense immunity="energy"/>
+          	<defense immunity="fire"/>
+          	<!-- <!-- <!-- <defense immunity="poison"/> --> --> -->
+          	<defense immunity="paralyze"/>
+          	<defense immunity="drunk"/>
+          </defenses>
+          
+          <voices>
+          	<voice sentence="Hail me then u can die!"/>
+          	<voice sentence="You attack me?Aff now u get IP ban!"/>
+          </voices>
+          
+          <loot>
+          	<item id="2152" countmax="6" chance1="100000" chancemax="0"/>
+          	<item id="2393" chance="10000"/>
+          	<item id="2514" chance="5000"/>
+          	<item id="2432" chance="15387"/>
+          	<item id="2472" chance="3333"/>
+          
+          	<item id="2000" chance="100000">
+          	<inside>
+          	<item id="2678" countmax="3" chance1="10000" chancemax="0"/>
+          	<item id="2151" countmax="4" chance1="40000" chancemax="0"/>
+          	<item id="2462" chance="5555"/>
+          	<item id="2149" countmax="3" chance1="14287" chancemax="0"/>
+          	<item id="2171" chance="13333"/>
+          	<item id="2387" chance="66666"/>
+          	<item id="2470" chance="4000"/>
+          	<item id="2520" chance="6666"/>
+          	<item id="2418" chance="8333"/>
+          	<item id="2377" chance="33333"/>
+          	<item id="2493" chance="2000"/>
+          	<item id="2494" chance="2000"/>
+          	<item id="2495" chance="2000"/>
+          	<item id="2795" countmax="1" chance1="10000" chancemax="0"/>
+          	</inside>
+          	</item>
+          </loot>
+          
+          <summons maxSummons="4">
+           	<summon name="Hero" chance="5000"/>
+          </summons>
+          
+          </monster>

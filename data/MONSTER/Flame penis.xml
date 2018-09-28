@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+            <monster name="Flame Penis" level="20" maglevel="30" experience="220" pushable="0" armor="25" defense="25" canpushitems="1" staticattack="50" changetarget="200" speed="190">
+               	<health now="480" max="480"/>
+               	<look type="49" head="20" body="30" legs="40" feet="50" corpse="1492"/>
+               	<combat targetdistance="1" runonhealth="0"/>
+          
+            <attacks>
+               	<attack type="melee" mindamage="25" maxdamage="150"/>
+            	<attack type="rune" name="soul fire" exhaustion="500" cycleticks="5000" probability="80"/>
+            	<attack type="rune" name="great fireball" exhaustion="500" cycleticks="5000" probability="70"/>
+            	<attack type="rune" name="explosion" exhaustion="500" cycleticks="5000" probability="80"/>
+            </attacks>
+               
+            <defenses>
+               	<defense immunity="fire"/>
+               	<!-- <!-- <!-- <defense immunity="poison"/> --> --> -->
+            </defenses>
+            <voices>
+               	<voice sentence="Penisforce go!"/>
+               	<voice sentence="we are like Penismon"/>
+               	<voice sentence="or we are like Teenage Mutant Penisturtles"/>
+               	<voice sentence="Your ass is mine"/>
+            </voices>
+            </monster>

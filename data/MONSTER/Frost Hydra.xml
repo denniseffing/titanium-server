@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+          <monster name="Frost Hydra" level="80" maglevel="80" experience="14500" pushable="0" speed="310" monster="1" armor="38" defense="35" canpushitems="0" staticattack="50" changetarget="200">
+          <health now="13750" max="13750"/>
+          <look type="121" corpse="4283"/>
+          <combat targetdistance="1" runonhealth="0"/>
+          
+          <attacks>
+            	<attack type="melee" maxdamage="300"/>
+            	<attack type="instant" name="hydra_poison" exhaustion="500" cycleticks="5500" probability="85"/>
+            	<attack type="instant" name="hydra_water" exhaustion="500" cycleticks="5500" probability="65"/>
+            	<attack type="instant" name="exura gran" exhaustion="500" cycleticks="3000" probability="65"/>
+            	<attack type="instant" name="hydra domino" exhaustion="500" cycleticks="3000" probability="65"/>
+          	<attack type="instant" name="hydra x" exhaustion="500" cycleticks="1000" probability="65"/>
+          </attacks>
+          
+          <defenses>
+             <!-- <!-- <defense immunity="poison"/> --> --> 
+            	<defense immunity="paralyze"/>
+            	<defense immunity="drunk"/>
+        	<defense immunity="invisible"/>
+          </defenses>
+          
+          <loot>
+             	<item id="2148" countmax="250" chance1="1000000" chancemax="0"/>
+             	<item id="2666" countmax="4" chance1="200000" chancemax="0"/>
+             	<item id="2671" countmax="4" chance1="200000" chancemax="0"/>
+          
+             	<item id="2331" chance="1000000">
+             	<inside>
+             	<item id="2498" chance="6000"/>
+          	<item id="2475" chance="8000"/>
+          	<item id="2536" chance="7000"/>
+          	<item id="2195" chance="9000"/>
+          	<item id="2214" chance="18180"/>
+          	<item id="2146" countmax="1" chance1="20000" chancemax="0"/>
+          	<item id="2476" chance="12000"/>
+             	</inside>
+             	</item>
+          </loot>
+          
+          <voices>
+            	<voice sentence="I WIll Freezeee you!" cycleticks="10000" probability="40"/>
+          	<voice sentence="HISSSS" cycleticks="10000" probability="40"/>
+          </voices>
+          <summons maxSummons="2">
+           	<summon name="Frost Troll" chance="4000"/>
+           </summons>
+          
+          
+          </monster>

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+        <monster name="Soul of Frixy" level="50" maglevel="50" experience="40000" pushable="0" armor="56" defense="60" canpushitems="1" staticattack="45" changetarget="200" speed="2400">
+        	<health now="90000" max="90000"/>
+        	<look type="130" head="0" body="0" legs="0" feet="0" corpse="3128"/>
+        	<combat targetdistance="1" runonhealth="0"/>
+              <blood color="199" effect="0" splash="255"/>
+        
+        <attacks>
+        	<attack type="melee" mindamage="410" maxdamage="1090" probability="100"/>
+        	<attack type="instant" name="exura" cycleticks="5000" probability="60"/>
+        	<attack type="instant" name="o firefield" cycleticks="7500" probability="75"/>
+        	<attack type="instant" name="o exevo gran vis lux" exhaustion="500" cycleticks="7000" probability="60"/>
+        	<attack type="rune" name="orsha fireball" exhaustion="500" cycleticks="3000" probability="50"/>
+        	<attack type="instant" name="o exori" exhaustion="500" cycleticks="8000" probability="55"/>
+        	<attack type="instant" name="exevo gran mas vis" exhaustion="10" cycleticks="8000" probability="55"/>
+        	<attack type="instant" name="demon_manadrain" exhaustion="100" cycleticks="4000" probability="30"/>
+        </attacks>
+        
+        <defenses>
+        	<defense immunity="paralyze"/>
+        	<defense immunity="invisible"/>
+        	<defense immunity="drunk"/>
+        </defenses>
+        
+        <voices>
+        	<voice sentence="Try to kill me!"/>
+        	<voice sentence="Bye Bye you are Dead."/>
+        </voices>
+        
+        <loot>
+        </loot>
+        
+        </monster>
+        

@@ -1,0 +1,702 @@
+
+
+Lvl:520	Frixy			xp:	11585819285	Magic Level:	107	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	11	Axe Fighting:	10	Distance:	14	Shielding:	25	Fishing:	21
+Lvl:473	Prezifix			xp:	8716546345	Magic Level:	104	Fist Fighting:	24	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	12	Distance:	18	Shielding:	23	Fishing:	24
+Lvl:462	Darkmaster			xp:	8142489890	Magic Level:	94	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	12	Axe Fighting:	10	Distance:	10	Shielding:	25	Fishing:	21
+Lvl:433	Elite Panzer			xp:	6671576045	Magic Level:	11	Fist Fighting:	39	Club Fighting	22	Sword Fighting:	105	Axe Fighting:	22	Distance:	13	Shielding:	115	Fishing:	39
+Lvl:424	Grim Reaper			xp:	6267118830	Magic Level:	10	Fist Fighting:	42	Club Fighting	109	Sword Fighting:	35	Axe Fighting:	35	Distance:	16	Shielding:	112	Fishing:	42
+Lvl:424	Quwz			xp:	6266958030	Magic Level:	10	Fist Fighting:	54	Club Fighting	14	Sword Fighting:	113	Axe Fighting:	14	Distance:	13	Shielding:	121	Fishing:	54
+Lvl:416	Damion			xp:	5940655690	Magic Level:	95	Fist Fighting:	20	Club Fighting	14	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	23	Fishing:	20
+Lvl:403	Obi			xp:	5396720925	Magic Level:	10	Fist Fighting:	62	Club Fighting	31	Sword Fighting:	119	Axe Fighting:	105	Distance:	12	Shielding:	121	Fishing:	62
+Lvl:401	Shaynar			xp:	5318836465	Magic Level:	78	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	21	Fishing:	20
+Lvl:401	Lubo			xp:	5294490070	Magic Level:	98	Fist Fighting:	27	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	24	Fishing:	27
+Lvl:397	Mewtu			xp:	5144386160	Magic Level:	105	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	24	Fishing:	20
+Lvl:383	Shinry			xp:	4631238685	Magic Level:	79	Fist Fighting:	24	Club Fighting	40	Sword Fighting:	11	Axe Fighting:	10	Distance:	35	Shielding:	33	Fishing:	24
+Lvl:378	Lord Odin			xp:	4463508205	Magic Level:	97	Fist Fighting:	25	Club Fighting	10	Sword Fighting:	12	Axe Fighting:	10	Distance:	13	Shielding:	22	Fishing:	25
+Lvl:376	Zekul			xp:	4362101590	Magic Level:	10	Fist Fighting:	68	Club Fighting	54	Sword Fighting:	110	Axe Fighting:	71	Distance:	14	Shielding:	116	Fishing:	68
+Lvl:361	Dakezo			xp:	3869243345	Magic Level:	28	Fist Fighting:	29	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	114	Shielding:	84	Fishing:	29
+Lvl:355	Dessite			xp:	3670898895	Magic Level:	10	Fist Fighting:	49	Club Fighting	42	Sword Fighting:	106	Axe Fighting:	78	Distance:	14	Shielding:	116	Fishing:	49
+Lvl:352	Spo			xp:	3582387740	Magic Level:	93	Fist Fighting:	25	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	24	Fishing:	25
+Lvl:348	Natasja			xp:	3453358300	Magic Level:	10	Fist Fighting:	45	Club Fighting	40	Sword Fighting:	105	Axe Fighting:	40	Distance:	16	Shielding:	110	Fishing:	45
+Lvl:341	Radok			xp:	3249785510	Magic Level:	9	Fist Fighting:	97	Club Fighting	59	Sword Fighting:	128	Axe Fighting:	43	Distance:	49	Shielding:	142	Fishing:	97
+Lvl:338	lamoza			xp:	3162536835	Magic Level:	10	Fist Fighting:	61	Club Fighting	59	Sword Fighting:	121	Axe Fighting:	89	Distance:	13	Shielding:	111	Fishing:	61
+Lvl:334	Lirujos			xp:	3051174190	Magic Level:	93	Fist Fighting:	23	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	23	Fishing:	23
+Lvl:330	Vajuka			xp:	2943332685	Magic Level:	10	Fist Fighting:	30	Club Fighting	94	Sword Fighting:	90	Axe Fighting:	79	Distance:	10	Shielding:	118	Fishing:	30
+Lvl:318	Denise			xp:	2631754175	Magic Level:	10	Fist Fighting:	41	Club Fighting	13	Sword Fighting:	90	Axe Fighting:	75	Distance:	10	Shielding:	103	Fishing:	41
+Lvl:317	Consellor Doom			xp:	2620631735	Magic Level:	9	Fist Fighting:	41	Club Fighting	32	Sword Fighting:	97	Axe Fighting:	73	Distance:	11	Shielding:	101	Fishing:	41
+Lvl:312	npocTo Haxyu			xp:	2486376145	Magic Level:	9	Fist Fighting:	51	Club Fighting	30	Sword Fighting:	105	Axe Fighting:	72	Distance:	11	Shielding:	90	Fishing:	51
+Lvl:310	Little Zasolix			xp:	2450238515	Magic Level:	9	Fist Fighting:	66	Club Fighting	31	Sword Fighting:	110	Axe Fighting:	50	Distance:	12	Shielding:	112	Fishing:	66
+Lvl:307	Busuzima			xp:	2380564265	Magic Level:	81	Fist Fighting:	26	Club Fighting	17	Sword Fighting:	12	Axe Fighting:	10	Distance:	12	Shielding:	20	Fishing:	26
+Lvl:307	Mey			xp:	2373923745	Magic Level:	89	Fist Fighting:	23	Club Fighting	10	Sword Fighting:	13	Axe Fighting:	10	Distance:	11	Shielding:	23	Fishing:	23
+Lvl:306	Gizmodop			xp:	2343167015	Magic Level:	86	Fist Fighting:	22	Club Fighting	10	Sword Fighting:	11	Axe Fighting:	10	Distance:	10	Shielding:	22	Fishing:	22
+Lvl:304	TonyFlaw			xp:	2311097505	Magic Level:	94	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	11	Axe Fighting:	10	Distance:	11	Shielding:	23	Fishing:	20
+Lvl:303	Dot			xp:	2275630090	Magic Level:	211	Fist Fighting:	24	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	22	Fishing:	24
+Lvl:303	Daliya			xp:	2289102695	Magic Level:	85	Fist Fighting:	22	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	22	Fishing:	22
+Lvl:302	The Night Blade			xp:	2268005800	Magic Level:	9	Fist Fighting:	31	Club Fighting	26	Sword Fighting:	104	Axe Fighting:	26	Distance:	10	Shielding:	111	Fishing:	31
+Lvl:300	Xet			xp:	2219320610	Magic Level:	85	Fist Fighting:	22	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	24	Fishing:	22
+Lvl:297	Dark Phyton			xp:	2144025165	Magic Level:	95	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	23	Fishing:	21
+Lvl:297	Hirschi			xp:	2145989895	Magic Level:	9	Fist Fighting:	50	Club Fighting	51	Sword Fighting:	114	Axe Fighting:	38	Distance:	12	Shielding:	125	Fishing:	50
+Lvl:293	Part			xp:	2058143800	Magic Level:	10	Fist Fighting:	48	Club Fighting	194	Sword Fighting:	194	Axe Fighting:	53	Distance:	14	Shielding:	54	Fishing:	48
+Lvl:290	Ranz II			xp:	2001149230	Magic Level:	91	Fist Fighting:	21	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	22	Fishing:	21
+Lvl:290	Method Men			xp:	1996406680	Magic Level:	88	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	11	Distance:	10	Shielding:	21	Fishing:	20
+Lvl:288	Wayne			xp:	1955839465	Magic Level:	10	Fist Fighting:	32	Club Fighting	97	Sword Fighting:	31	Axe Fighting:	61	Distance:	10	Shielding:	107	Fishing:	32
+Lvl:285	Keobassa			xp:	1888938445	Magic Level:	92	Fist Fighting:	30	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	23	Fishing:	30
+Lvl:282	Delidijo			xp:	1830109915	Magic Level:	88	Fist Fighting:	25	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	21	Fishing:	25
+Lvl:278	Kaninchen Sombrero			xp:	1763615590	Magic Level:	9	Fist Fighting:	74	Club Fighting	20	Sword Fighting:	98	Axe Fighting:	20	Distance:	16	Shielding:	102	Fishing:	74
+Lvl:277	Lord Laki Luk			xp:	1744554230	Magic Level:	85	Fist Fighting:	24	Club Fighting	11	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	21	Fishing:	24
+Lvl:274	Kim Impossible			xp:	1677490110	Magic Level:	91	Fist Fighting:	22	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	21	Fishing:	22
+Lvl:270	killmiuwilldie			xp:	1620230745	Magic Level:	82	Fist Fighting:	22	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	19	Fishing:	22
+Lvl:270	P Diddy			xp:	1617690370	Magic Level:	90	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	23	Fishing:	20
+Lvl:270	Diekralle			xp:	1607145265	Magic Level:	87	Fist Fighting:	22	Club Fighting	15	Sword Fighting:	11	Axe Fighting:	10	Distance:	14	Shielding:	22	Fishing:	22
+Lvl:269	Boxer			xp:	1593504400	Magic Level:	9	Fist Fighting:	81	Club Fighting	33	Sword Fighting:	114	Axe Fighting:	33	Distance:	11	Shielding:	107	Fishing:	81
+Lvl:268	Kopie von Lubo			xp:	1573480065	Magic Level:	90	Fist Fighting:	27	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	22	Fishing:	27
+Lvl:267	rozwalator			xp:	1560258440	Magic Level:	89	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	15	Distance:	17	Shielding:	22	Fishing:	20
+Lvl:266	Vodka Power			xp:	1533909325	Magic Level:	9	Fist Fighting:	62	Club Fighting	19	Sword Fighting:	95	Axe Fighting:	19	Distance:	11	Shielding:	106	Fishing:	62
+Lvl:265	Vivawilli			xp:	1516136355	Magic Level:	87	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	22	Fishing:	21
+Lvl:262	Blizard			xp:	1477653240	Magic Level:	9	Fist Fighting:	23	Club Fighting	21	Sword Fighting:	96	Axe Fighting:	21	Distance:	10	Shielding:	104	Fishing:	23
+Lvl:261	Katse			xp:	1452138100	Magic Level:	9	Fist Fighting:	65	Club Fighting	24	Sword Fighting:	113	Axe Fighting:	38	Distance:	17	Shielding:	107	Fishing:	65
+Lvl:260	NemeZ			xp:	1446721830	Magic Level:	85	Fist Fighting:	28	Club Fighting	40	Sword Fighting:	11	Axe Fighting:	10	Distance:	40	Shielding:	35	Fishing:	28
+Lvl:259	Pyza 			xp:	1420021110	Magic Level:	9	Fist Fighting:	48	Club Fighting	43	Sword Fighting:	103	Axe Fighting:	43	Distance:	12	Shielding:	107	Fishing:	48
+Lvl:257	Aquiles  			xp:	1383639445	Magic Level:	8	Fist Fighting:	40	Club Fighting	12	Sword Fighting:	100	Axe Fighting:	29	Distance:	10	Shielding:	94	Fishing:	40
+Lvl:256	Johny Cage			xp:	1373508315	Magic Level:	91	Fist Fighting:	24	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	22	Fishing:	24
+Lvl:255	Krasser Typ			xp:	1354183210	Magic Level:	89	Fist Fighting:	25	Club Fighting	16	Sword Fighting:	11	Axe Fighting:	10	Distance:	12	Shielding:	22	Fishing:	25
+Lvl:255	Tutor Sith			xp:	1351669350	Magic Level:	8	Fist Fighting:	45	Club Fighting	51	Sword Fighting:	32	Axe Fighting:	31	Distance:	11	Shielding:	70	Fishing:	45
+Lvl:252	Baljong			xp:	1307386990	Magic Level:	9	Fist Fighting:	43	Club Fighting	16	Sword Fighting:	98	Axe Fighting:	16	Distance:	10	Shielding:	99	Fishing:	43
+Lvl:251	batbootaa			xp:	1288111150	Magic Level:	89	Fist Fighting:	24	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	23	Fishing:	24
+Lvl:250	Devilhell			xp:	1285366900	Magic Level:	89	Fist Fighting:	27	Club Fighting	17	Sword Fighting:	12	Axe Fighting:	11	Distance:	12	Shielding:	22	Fishing:	27
+Lvl:250	TIESTO			xp:	1271823040	Magic Level:	92	Fist Fighting:	30	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	22	Fishing:	30
+Lvl:248	Tutor Sion			xp:	1252479660	Magic Level:	9	Fist Fighting:	42	Club Fighting	47	Sword Fighting:	30	Axe Fighting:	29	Distance:	11	Shielding:	72	Fishing:	42
+Lvl:247	Scrol			xp:	1236180950	Magic Level:	11	Fist Fighting:	29	Club Fighting	13	Sword Fighting:	96	Axe Fighting:	13	Distance:	17	Shielding:	98	Fishing:	29
+Lvl:246	Adrastious			xp:	1211869650	Magic Level:	8	Fist Fighting:	62	Club Fighting	55	Sword Fighting:	92	Axe Fighting:	88	Distance:	11	Shielding:	106	Fishing:	62
+Lvl:245	Nixon Don Valderath			xp:	1195833215	Magic Level:	19	Fist Fighting:	243	Club Fighting	110	Sword Fighting:	114	Axe Fighting:	108	Distance:	170	Shielding:	143	Fishing:	243
+Lvl:243	Electro			xp:	1172742680	Magic Level:	78	Fist Fighting:	28	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	21	Fishing:	28
+Lvl:243	Cheater			xp:	1177364645	Magic Level:	83	Fist Fighting:	22	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	18	Fishing:	22
+Lvl:238	Jon Zilver			xp:	1096764040	Magic Level:	93	Fist Fighting:	28	Club Fighting	14	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	21	Fishing:	28
+Lvl:237	Saphir the Love			xp:	1089040115	Magic Level:	81	Fist Fighting:	32	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	21	Fishing:	32
+Lvl:237	Mordoc			xp:	1087392950	Magic Level:	54	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	14	Axe Fighting:	10	Distance:	10	Shielding:	16	Fishing:	20
+Lvl:234	Allar Emortal			xp:	1048997530	Magic Level:	78	Fist Fighting:	22	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	22	Fishing:	22
+Lvl:234	zavri picu			xp:	1047419780	Magic Level:	9	Fist Fighting:	84	Club Fighting	43	Sword Fighting:	98	Axe Fighting:	44	Distance:	17	Shielding:	103	Fishing:	84
+Lvl:233	Dark-Druidin			xp:	1032178410	Magic Level:	82	Fist Fighting:	47	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	18	Fishing:	47
+Lvl:232	Eva vader			xp:	1021200235	Magic Level:	9	Fist Fighting:	40	Club Fighting	92	Sword Fighting:	22	Axe Fighting:	39	Distance:	10	Shielding:	109	Fishing:	40
+Lvl:231	Sir Benni Miles			xp:	1008771935	Magic Level:	9	Fist Fighting:	34	Club Fighting	55	Sword Fighting:	88	Axe Fighting:	85	Distance:	11	Shielding:	101	Fishing:	34
+Lvl:230	Biegan			xp:	988267255	Magic Level:	79	Fist Fighting:	26	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	11	Distance:	13	Shielding:	21	Fishing:	26
+Lvl:228	Lewz			xp:	962107380	Magic Level:	93	Fist Fighting:	28	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	21	Fishing:	28
+Lvl:228	Kurosaki			xp:	971585520	Magic Level:	95	Fist Fighting:	254	Club Fighting	114	Sword Fighting:	114	Axe Fighting:	106	Distance:	199	Shielding:	150	Fishing:	254
+Lvl:227	Lucek			xp:	958152100	Magic Level:	83	Fist Fighting:	21	Club Fighting	11	Sword Fighting:	11	Axe Fighting:	10	Distance:	10	Shielding:	20	Fishing:	21
+Lvl:227	Snikers			xp:	959882815	Magic Level:	9	Fist Fighting:	60	Club Fighting	29	Sword Fighting:	106	Axe Fighting:	29	Distance:	11	Shielding:	105	Fishing:	60
+Lvl:226	Machine			xp:	944085495	Magic Level:	9	Fist Fighting:	59	Club Fighting	19	Sword Fighting:	100	Axe Fighting:	38	Distance:	10	Shielding:	91	Fishing:	59
+Lvl:225	floW			xp:	929843935	Magic Level:	84	Fist Fighting:	21	Club Fighting	11	Sword Fighting:	10	Axe Fighting:	10	Distance:	16	Shielding:	22	Fishing:	21
+Lvl:224	Smoked			xp:	912581085	Magic Level:	9	Fist Fighting:	21	Club Fighting	25	Sword Fighting:	105	Axe Fighting:	25	Distance:	10	Shielding:	105	Fishing:	21
+Lvl:224	Li			xp:	920091220	Magic Level:	25	Fist Fighting:	33	Club Fighting	10	Sword Fighting:	12	Axe Fighting:	10	Distance:	96	Shielding:	75	Fishing:	33
+Lvl:224	Matix 			xp:	912595770	Magic Level:	9	Fist Fighting:	78	Club Fighting	50	Sword Fighting:	92	Axe Fighting:	50	Distance:	13	Shielding:	99	Fishing:	78
+Lvl:223	Drakin			xp:	904520315	Magic Level:	82	Fist Fighting:	23	Club Fighting	10	Sword Fighting:	12	Axe Fighting:	10	Distance:	11	Shielding:	22	Fishing:	23
+Lvl:222	hollow man			xp:	891714345	Magic Level:	82	Fist Fighting:	25	Club Fighting	18	Sword Fighting:	11	Axe Fighting:	10	Distance:	13	Shielding:	21	Fishing:	25
+Lvl:222	Tratten			xp:	894703390	Magic Level:	9	Fist Fighting:	58	Club Fighting	117	Sword Fighting:	71	Axe Fighting:	27	Distance:	11	Shielding:	111	Fishing:	58
+Lvl:222	Lolita Panara			xp:	888470675	Magic Level:	85	Fist Fighting:	28	Club Fighting	18	Sword Fighting:	11	Axe Fighting:	14	Distance:	17	Shielding:	19	Fishing:	28
+Lvl:221	Psychoczny Wariat			xp:	884795970	Magic Level:	9	Fist Fighting:	30	Club Fighting	37	Sword Fighting:	91	Axe Fighting:	33	Distance:	12	Shielding:	99	Fishing:	30
+Lvl:221	Big Lordi			xp:	883271130	Magic Level:	83	Fist Fighting:	22	Club Fighting	16	Sword Fighting:	12	Axe Fighting:	11	Distance:	13	Shielding:	21	Fishing:	22
+Lvl:221	Aryon			xp:	885280995	Magic Level:	81	Fist Fighting:	23	Club Fighting	17	Sword Fighting:	11	Axe Fighting:	10	Distance:	12	Shielding:	20	Fishing:	23
+Lvl:220	lord deveon			xp:	863284750	Magic Level:	89	Fist Fighting:	34	Club Fighting	12	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	21	Fishing:	34
+Lvl:220	Bomben Ulf			xp:	863922220	Magic Level:	24	Fist Fighting:	30	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	104	Shielding:	54	Fishing:	30
+Lvl:220	Rotiderum			xp:	866560605	Magic Level:	77	Fist Fighting:	29	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	16	Shielding:	22	Fishing:	29
+Lvl:219	Beregond			xp:	859046770	Magic Level:	9	Fist Fighting:	63	Club Fighting	53	Sword Fighting:	105	Axe Fighting:	54	Distance:	14	Shielding:	111	Fishing:	63
+Lvl:218	Dany			xp:	840118860	Magic Level:	77	Fist Fighting:	28	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	17	Shielding:	20	Fishing:	28
+Lvl:216	KoRnAge			xp:	818509110	Magic Level:	9	Fist Fighting:	66	Club Fighting	50	Sword Fighting:	114	Axe Fighting:	50	Distance:	14	Shielding:	105	Fishing:	66
+Lvl:215	Kopie von Wayne			xp:	814177740	Magic Level:	9	Fist Fighting:	50	Club Fighting	74	Sword Fighting:	20	Axe Fighting:	77	Distance:	10	Shielding:	88	Fishing:	50
+Lvl:213	Flomo			xp:	787479710	Magic Level:	86	Fist Fighting:	39	Club Fighting	10	Sword Fighting:	17	Axe Fighting:	10	Distance:	21	Shielding:	25	Fishing:	39
+Lvl:213	strike force			xp:	789024725	Magic Level:	9	Fist Fighting:	32	Club Fighting	26	Sword Fighting:	98	Axe Fighting:	26	Distance:	10	Shielding:	100	Fishing:	32
+Lvl:211	Goust Soul			xp:	761010625	Magic Level:	26	Fist Fighting:	28	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	105	Shielding:	95	Fishing:	28
+Lvl:211	Dark Beast			xp:	766731075	Magic Level:	82	Fist Fighting:	23	Club Fighting	13	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	19	Fishing:	23
+Lvl:210	Bahamuts Brother			xp:	753207190	Magic Level:	80	Fist Fighting:	20	Club Fighting	11	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	21	Fishing:	20
+Lvl:210	Artois			xp:	755840730	Magic Level:	9	Fist Fighting:	64	Club Fighting	99	Sword Fighting:	100	Axe Fighting:	36	Distance:	12	Shielding:	100	Fishing:	64
+Lvl:210	Fallen Angel of Dark			xp:	750455105	Magic Level:	26	Fist Fighting:	28	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	106	Shielding:	67	Fishing:	28
+Lvl:209	Karabiner			xp:	745375330	Magic Level:	9	Fist Fighting:	44	Club Fighting	97	Sword Fighting:	100	Axe Fighting:	38	Distance:	12	Shielding:	107	Fishing:	44
+Lvl:209	Tymekk			xp:	745799235	Magic Level:	86	Fist Fighting:	21	Club Fighting	15	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	20	Fishing:	21
+Lvl:209	Tappaja Hai			xp:	740969365	Magic Level:	55	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	15	Fishing:	20
+Lvl:209	Wicked Weasel			xp:	748664340	Magic Level:	84	Fist Fighting:	30	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	22	Fishing:	30
+Lvl:208	BlackFlame			xp:	737078785	Magic Level:	9	Fist Fighting:	31	Club Fighting	119	Sword Fighting:	30	Axe Fighting:	30	Distance:	15	Shielding:	117	Fishing:	31
+Lvl:208	Felyo			xp:	729811460	Magic Level:	84	Fist Fighting:	20	Club Fighting	14	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	21	Fishing:	20
+Lvl:208	Noebert van Kugel			xp:	737430855	Magic Level:	80	Fist Fighting:	23	Club Fighting	15	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	20	Fishing:	23
+Lvl:207	Pharao			xp:	720188520	Magic Level:	85	Fist Fighting:	21	Club Fighting	11	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	19	Fishing:	21
+Lvl:207	Greaper Rim			xp:	725722715	Magic Level:	9	Fist Fighting:	58	Club Fighting	32	Sword Fighting:	103	Axe Fighting:	32	Distance:	12	Shielding:	98	Fishing:	58
+Lvl:207	Rewler			xp:	720947645	Magic Level:	8	Fist Fighting:	33	Club Fighting	40	Sword Fighting:	95	Axe Fighting:	97	Distance:	12	Shielding:	110	Fishing:	33
+Lvl:206	Alpha Centauri			xp:	714701225	Magic Level:	8	Fist Fighting:	43	Club Fighting	50	Sword Fighting:	103	Axe Fighting:	50	Distance:	14	Shielding:	98	Fishing:	43
+Lvl:206	shetos			xp:	717344140	Magic Level:	93	Fist Fighting:	24	Club Fighting	13	Sword Fighting:	10	Axe Fighting:	13	Distance:	11	Shielding:	21	Fishing:	24
+Lvl:205	Heiller			xp:	704742955	Magic Level:	80	Fist Fighting:	28	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	20	Fishing:	28
+Lvl:205	Anny			xp:	701015675	Magic Level:	26	Fist Fighting:	29	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	107	Shielding:	95	Fishing:	29
+Lvl:205	Jepe Drax			xp:	700701380	Magic Level:	80	Fist Fighting:	23	Club Fighting	13	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	21	Fishing:	23
+Lvl:204	Barney			xp:	687828280	Magic Level:	25	Fist Fighting:	28	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	102	Shielding:	102	Fishing:	28
+Lvl:204	Yaner			xp:	691260825	Magic Level:	74	Fist Fighting:	24	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	20	Fishing:	24
+Lvl:204	Calmi the Master			xp:	687607330	Magic Level:	87	Fist Fighting:	22	Club Fighting	13	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	19	Fishing:	22
+Lvl:203	King Marcquistador			xp:	677334070	Magic Level:	23	Fist Fighting:	64	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	100	Shielding:	81	Fishing:	64
+Lvl:203	kondown			xp:	685370160	Magic Level:	9	Fist Fighting:	27	Club Fighting	18	Sword Fighting:	98	Axe Fighting:	19	Distance:	10	Shielding:	96	Fishing:	27
+Lvl:201	KaMoL			xp:	663324620	Magic Level:	75	Fist Fighting:	23	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	19	Fishing:	23
+Lvl:200	al fma			xp:	650015495	Magic Level:	55	Fist Fighting:	28	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	19	Fishing:	28
+Lvl:200	Azzem II			xp:	649768745	Magic Level:	9	Fist Fighting:	40	Club Fighting	29	Sword Fighting:	95	Axe Fighting:	29	Distance:	11	Shielding:	93	Fishing:	40
+Lvl:200	Gorn			xp:	648339025	Magic Level:	8	Fist Fighting:	36	Club Fighting	26	Sword Fighting:	100	Axe Fighting:	28	Distance:	11	Shielding:	99	Fishing:	36
+Lvl:200	Maus			xp:	647297065	Magic Level:	82	Fist Fighting:	30	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	21	Fishing:	30
+Lvl:199	Pomyl			xp:	643035560	Magic Level:	85	Fist Fighting:	25	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	20	Fishing:	25
+Lvl:199	bisasam			xp:	642191185	Magic Level:	86	Fist Fighting:	21	Club Fighting	12	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	22	Fishing:	21
+Lvl:199	Bonnen			xp:	637689610	Magic Level:	81	Fist Fighting:	28	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	13	Distance:	16	Shielding:	21	Fishing:	28
+Lvl:198	lukej minetmaster			xp:	629090015	Magic Level:	75	Fist Fighting:	22	Club Fighting	25	Sword Fighting:	29	Axe Fighting:	13	Distance:	10	Shielding:	20	Fishing:	22
+Lvl:198	Fuerteson			xp:	636258980	Magic Level:	8	Fist Fighting:	63	Club Fighting	38	Sword Fighting:	101	Axe Fighting:	38	Distance:	12	Shielding:	94	Fishing:	63
+Lvl:198	Bermin			xp:	628701855	Magic Level:	81	Fist Fighting:	33	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	21	Fishing:	33
+Lvl:196	Zeox			xp:	612405560	Magic Level:	82	Fist Fighting:	23	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	20	Fishing:	23
+Lvl:196	Natitto			xp:	611087865	Magic Level:	122	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	11	Axe Fighting:	10	Distance:	11	Shielding:	12	Fishing:	21
+Lvl:196	Deather			xp:	609808615	Magic Level:	27	Fist Fighting:	29	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	103	Shielding:	92	Fishing:	29
+Lvl:195	Killer Demon			xp:	599669405	Magic Level:	75	Fist Fighting:	26	Club Fighting	18	Sword Fighting:	12	Axe Fighting:	10	Distance:	13	Shielding:	21	Fishing:	26
+Lvl:195	Gabi Frankenstein			xp:	604517920	Magic Level:	61	Fist Fighting:	25	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	18	Fishing:	25
+Lvl:195	Axus Xon			xp:	605720425	Magic Level:	8	Fist Fighting:	61	Club Fighting	52	Sword Fighting:	91	Axe Fighting:	52	Distance:	14	Shielding:	93	Fishing:	61
+Lvl:193	Bartlej			xp:	581526190	Magic Level:	8	Fist Fighting:	34	Club Fighting	40	Sword Fighting:	91	Axe Fighting:	40	Distance:	12	Shielding:	94	Fishing:	34
+Lvl:193	knight of the hell			xp:	583466610	Magic Level:	9	Fist Fighting:	45	Club Fighting	77	Sword Fighting:	91	Axe Fighting:	66	Distance:	13	Shielding:	100	Fishing:	45
+Lvl:193	Masoca			xp:	587369325	Magic Level:	8	Fist Fighting:	38	Club Fighting	45	Sword Fighting:	104	Axe Fighting:	45	Distance:	13	Shielding:	94	Fishing:	38
+Lvl:192	Fritzi Frankenstein			xp:	575845150	Magic Level:	59	Fist Fighting:	29	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	19	Fishing:	29
+Lvl:190	Master X			xp:	553901025	Magic Level:	9	Fist Fighting:	50	Club Fighting	83	Sword Fighting:	93	Axe Fighting:	68	Distance:	10	Shielding:	94	Fishing:	50
+Lvl:189	Halo Segni			xp:	551836240	Magic Level:	81	Fist Fighting:	28	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	19	Fishing:	28
+Lvl:188	Amos			xp:	538009335	Magic Level:	83	Fist Fighting:	23	Club Fighting	10	Sword Fighting:	12	Axe Fighting:	10	Distance:	10	Shielding:	23	Fishing:	23
+Lvl:188	Reforced			xp:	539492980	Magic Level:	9	Fist Fighting:	50	Club Fighting	55	Sword Fighting:	104	Axe Fighting:	56	Distance:	15	Shielding:	109	Fishing:	50
+Lvl:188	Wilkas			xp:	544596710	Magic Level:	17	Fist Fighting:	20	Club Fighting	11	Sword Fighting:	10	Axe Fighting:	16	Distance:	67	Shielding:	54	Fishing:	20
+Lvl:188	Sizilia Frankenstein			xp:	536344520	Magic Level:	49	Fist Fighting:	25	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	17	Fishing:	25
+Lvl:188	Tibi-Tibi			xp:	537796500	Magic Level:	76	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	23	Fishing:	20
+Lvl:187	bladespirit			xp:	529257395	Magic Level:	79	Fist Fighting:	25	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	19	Fishing:	25
+Lvl:185	Aaron 			xp:	511573710	Magic Level:	9	Fist Fighting:	62	Club Fighting	55	Sword Fighting:	59	Axe Fighting:	95	Distance:	10	Shielding:	98	Fishing:	62
+Lvl:185	BoggelKnuffer			xp:	512226080	Magic Level:	69	Fist Fighting:	20	Club Fighting	11	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	19	Fishing:	20
+Lvl:185	Plame			xp:	516709485	Magic Level:	83	Fist Fighting:	31	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	21	Fishing:	31
+Lvl:184	face to face			xp:	505663950	Magic Level:	82	Fist Fighting:	22	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	20	Fishing:	22
+Lvl:183	Montury			xp:	496568770	Magic Level:	9	Fist Fighting:	26	Club Fighting	24	Sword Fighting:	97	Axe Fighting:	24	Distance:	10	Shielding:	93	Fishing:	26
+Lvl:183	Shers			xp:	499069690	Magic Level:	8	Fist Fighting:	56	Club Fighting	80	Sword Fighting:	11	Axe Fighting:	10	Distance:	12	Shielding:	89	Fishing:	56
+Lvl:183	Stompah			xp:	501098555	Magic Level:	9	Fist Fighting:	58	Club Fighting	55	Sword Fighting:	104	Axe Fighting:	16	Distance:	10	Shielding:	102	Fishing:	58
+Lvl:183	Darken Rahl			xp:	499114275	Magic Level:	74	Fist Fighting:	27	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	20	Fishing:	27
+Lvl:182	lalito			xp:	490780970	Magic Level:	85	Fist Fighting:	20	Club Fighting	13	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	20	Fishing:	20
+Lvl:181	Hexens			xp:	484353695	Magic Level:	80	Fist Fighting:	29	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	21	Fishing:	29
+Lvl:181	Zeth Draco			xp:	485375675	Magic Level:	26	Fist Fighting:	37	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	115	Shielding:	114	Fishing:	37
+Lvl:181	Angel and Devil			xp:	481534825	Magic Level:	75	Fist Fighting:	27	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	20	Fishing:	27
+Lvl:180	Burger			xp:	470108170	Magic Level:	9	Fist Fighting:	52	Club Fighting	54	Sword Fighting:	108	Axe Fighting:	51	Distance:	14	Shielding:	100	Fishing:	52
+Lvl:180	Giannizao			xp:	471458700	Magic Level:	8	Fist Fighting:	42	Club Fighting	41	Sword Fighting:	41	Axe Fighting:	107	Distance:	12	Shielding:	102	Fishing:	42
+Lvl:180	Krzysiek			xp:	476381965	Magic Level:	8	Fist Fighting:	72	Club Fighting	35	Sword Fighting:	104	Axe Fighting:	36	Distance:	11	Shielding:	94	Fishing:	72
+Lvl:180	Szybky Cmulo			xp:	472610010	Magic Level:	8	Fist Fighting:	59	Club Fighting	90	Sword Fighting:	17	Axe Fighting:	17	Distance:	10	Shielding:	91	Fishing:	59
+Lvl:180	Sheer Jojuq			xp:	470249095	Magic Level:	75	Fist Fighting:	30	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	16	Shielding:	20	Fishing:	30
+Lvl:179	Kiryh			xp:	467093140	Magic Level:	85	Fist Fighting:	31	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	21	Fishing:	31
+Lvl:178	Dony			xp:	454777660	Magic Level:	82	Fist Fighting:	22	Club Fighting	15	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	19	Fishing:	22
+Lvl:178	Gokedope			xp:	454718760	Magic Level:	85	Fist Fighting:	22	Club Fighting	10	Sword Fighting:	11	Axe Fighting:	10	Distance:	13	Shielding:	20	Fishing:	22
+Lvl:178	hdx			xp:	459157170	Magic Level:	22	Fist Fighting:	28	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	98	Shielding:	80	Fishing:	28
+Lvl:176	Illidan the Demonkiller			xp:	441436610	Magic Level:	68	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	11	Distance:	11	Shielding:	21	Fishing:	21
+Lvl:175	Dark Blood			xp:	437031640	Magic Level:	76	Fist Fighting:	22	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	19	Fishing:	22
+Lvl:174	Pasa			xp:	429669555	Magic Level:	68	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	20	Fishing:	21
+Lvl:173	Ammar			xp:	420288695	Magic Level:	81	Fist Fighting:	25	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	20	Fishing:	25
+Lvl:173	SmigneCiPrzedNosen			xp:	419715885	Magic Level:	8	Fist Fighting:	49	Club Fighting	33	Sword Fighting:	105	Axe Fighting:	33	Distance:	11	Shielding:	93	Fishing:	49
+Lvl:173	-pk----Mardoc			xp:	420047115	Magic Level:	65	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	15	Fishing:	20
+Lvl:172	Koziol			xp:	416509290	Magic Level:	22	Fist Fighting:	32	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	97	Shielding:	89	Fishing:	32
+Lvl:172	Grimm			xp:	412991700	Magic Level:	68	Fist Fighting:	24	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	11	Distance:	10	Shielding:	18	Fishing:	24
+Lvl:172	Beast			xp:	416015170	Magic Level:	23	Fist Fighting:	24	Club Fighting	10	Sword Fighting:	12	Axe Fighting:	10	Distance:	96	Shielding:	77	Fishing:	24
+Lvl:171	Xatton			xp:	405770350	Magic Level:	9	Fist Fighting:	53	Club Fighting	26	Sword Fighting:	106	Axe Fighting:	66	Distance:	10	Shielding:	92	Fishing:	53
+Lvl:171	Meleyel II			xp:	405458185	Magic Level:	78	Fist Fighting:	25	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	19	Fishing:	25
+Lvl:171	pelao II			xp:	402316180	Magic Level:	8	Fist Fighting:	141	Club Fighting	26	Sword Fighting:	71	Axe Fighting:	26	Distance:	10	Shielding:	99	Fishing:	141
+Lvl:170	SaynFlaw			xp:	395263910	Magic Level:	9	Fist Fighting:	34	Club Fighting	41	Sword Fighting:	94	Axe Fighting:	41	Distance:	12	Shielding:	99	Fishing:	34
+Lvl:170	Qubert			xp:	400743125	Magic Level:	73	Fist Fighting:	26	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	20	Fishing:	26
+Lvl:169	Dart Magier			xp:	394202380	Magic Level:	70	Fist Fighting:	20	Club Fighting	13	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	17	Fishing:	20
+Lvl:169	Rhan Hilll			xp:	392103635	Magic Level:	8	Fist Fighting:	45	Club Fighting	45	Sword Fighting:	98	Axe Fighting:	29	Distance:	11	Shielding:	96	Fishing:	45
+Lvl:169	Black Baer			xp:	394867220	Magic Level:	81	Fist Fighting:	26	Club Fighting	18	Sword Fighting:	11	Axe Fighting:	10	Distance:	15	Shielding:	19	Fishing:	26
+Lvl:168	Monroe			xp:	383362100	Magic Level:	70	Fist Fighting:	28	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	21	Fishing:	28
+Lvl:168	Xanto			xp:	385310250	Magic Level:	81	Fist Fighting:	25	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	21	Fishing:	25
+Lvl:168	Blademaster			xp:	387042305	Magic Level:	8	Fist Fighting:	89	Club Fighting	37	Sword Fighting:	110	Axe Fighting:	37	Distance:	12	Shielding:	113	Fishing:	89
+Lvl:167	Knight of Chaos			xp:	376483875	Magic Level:	72	Fist Fighting:	20	Club Fighting	11	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	19	Fishing:	20
+Lvl:167	Misiek Shady			xp:	377252740	Magic Level:	8	Fist Fighting:	64	Club Fighting	47	Sword Fighting:	98	Axe Fighting:	43	Distance:	13	Shielding:	90	Fishing:	64
+Lvl:167	Xyrion			xp:	377439325	Magic Level:	65	Fist Fighting:	25	Club Fighting	18	Sword Fighting:	11	Axe Fighting:	10	Distance:	13	Shielding:	20	Fishing:	25
+Lvl:166	Zwecko cp			xp:	371076825	Magic Level:	72	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	21	Fishing:	21
+Lvl:166	fido dido			xp:	368101705	Magic Level:	79	Fist Fighting:	21	Club Fighting	13	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	19	Fishing:	21
+Lvl:166	napierdalator			xp:	369486985	Magic Level:	73	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	14	Axe Fighting:	10	Distance:	10	Shielding:	19	Fishing:	20
+Lvl:166	Omietka			xp:	373096285	Magic Level:	71	Fist Fighting:	22	Club Fighting	17	Sword Fighting:	11	Axe Fighting:	10	Distance:	12	Shielding:	19	Fishing:	22
+Lvl:165	Ima Robot			xp:	365123340	Magic Level:	67	Fist Fighting:	47	Club Fighting	10	Sword Fighting:	11	Axe Fighting:	10	Distance:	10	Shielding:	21	Fishing:	47
+Lvl:165	Cheval			xp:	362362390	Magic Level:	22	Fist Fighting:	27	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	96	Shielding:	76	Fishing:	27
+Lvl:165	Clab			xp:	365459470	Magic Level:	8	Fist Fighting:	95	Club Fighting	36	Sword Fighting:	84	Axe Fighting:	36	Distance:	11	Shielding:	80	Fishing:	95
+Lvl:164	Ak druid			xp:	359462095	Magic Level:	75	Fist Fighting:	24	Club Fighting	14	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	19	Fishing:	24
+Lvl:164	Saweh			xp:	356277140	Magic Level:	22	Fist Fighting:	23	Club Fighting	11	Sword Fighting:	10	Axe Fighting:	10	Distance:	96	Shielding:	81	Fishing:	23
+Lvl:164	Six Feet Under			xp:	355224310	Magic Level:	61	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	19	Fishing:	20
+Lvl:164	Sofia Sorcerer			xp:	356398960	Magic Level:	69	Fist Fighting:	23	Club Fighting	11	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	19	Fishing:	23
+Lvl:164	Juan Hermosillo			xp:	357250005	Magic Level:	72	Fist Fighting:	27	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	16	Shielding:	21	Fishing:	27
+Lvl:164	Maciek Eternal Crew			xp:	358193720	Magic Level:	9	Fist Fighting:	81	Club Fighting	39	Sword Fighting:	104	Axe Fighting:	39	Distance:	12	Shielding:	100	Fishing:	81
+Lvl:164	Diel Teki			xp:	355639815	Magic Level:	80	Fist Fighting:	23	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	19	Fishing:	23
+Lvl:163	Blooddemon			xp:	349326335	Magic Level:	73	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	20	Fishing:	21
+Lvl:163	Knight of Luca			xp:	348820030	Magic Level:	8	Fist Fighting:	60	Club Fighting	40	Sword Fighting:	43	Axe Fighting:	106	Distance:	12	Shielding:	96	Fishing:	60
+Lvl:163	qluter			xp:	350030730	Magic Level:	69	Fist Fighting:	22	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	13	Distance:	11	Shielding:	18	Fishing:	22
+Lvl:163	Jeriko			xp:	352842600	Magic Level:	8	Fist Fighting:	55	Club Fighting	35	Sword Fighting:	96	Axe Fighting:	35	Distance:	11	Shielding:	93	Fishing:	55
+Lvl:162	Sina			xp:	344517300	Magic Level:	75	Fist Fighting:	25	Club Fighting	10	Sword Fighting:	11	Axe Fighting:	10	Distance:	11	Shielding:	19	Fishing:	25
+Lvl:162	gynox			xp:	341637205	Magic Level:	79	Fist Fighting:	29	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	12	Distance:	15	Shielding:	21	Fishing:	29
+Lvl:161	Beegy			xp:	335457075	Magic Level:	8	Fist Fighting:	46	Club Fighting	46	Sword Fighting:	99	Axe Fighting:	46	Distance:	13	Shielding:	95	Fishing:	46
+Lvl:161	Baldur Of Amn 			xp:	339398295	Magic Level:	8	Fist Fighting:	59	Club Fighting	44	Sword Fighting:	97	Axe Fighting:	44	Distance:	12	Shielding:	106	Fishing:	59
+Lvl:161	lord of the borrucu			xp:	336487460	Magic Level:	24	Fist Fighting:	35	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	98	Shielding:	79	Fishing:	35
+Lvl:161	Saphir			xp:	335476380	Magic Level:	80	Fist Fighting:	24	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	19	Fishing:	24
+Lvl:161	Mak			xp:	337830370	Magic Level:	8	Fist Fighting:	56	Club Fighting	41	Sword Fighting:	59	Axe Fighting:	110	Distance:	13	Shielding:	106	Fishing:	56
+Lvl:160	Bummel			xp:	332464325	Magic Level:	80	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	11	Distance:	13	Shielding:	19	Fishing:	21
+Lvl:160	Gunslinger			xp:	328833970	Magic Level:	23	Fist Fighting:	26	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	88	Shielding:	70	Fishing:	26
+Lvl:160	Alchimist Scar			xp:	334316975	Magic Level:	90	Fist Fighting:	20	Club Fighting	44	Sword Fighting:	11	Axe Fighting:	10	Distance:	28	Shielding:	28	Fishing:	20
+Lvl:160	Teh Pwnzor			xp:	331015550	Magic Level:	83	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	12	Axe Fighting:	10	Distance:	10	Shielding:	20	Fishing:	21
+Lvl:160	Dione of Titans			xp:	331982555	Magic Level:	8	Fist Fighting:	37	Club Fighting	22	Sword Fighting:	22	Axe Fighting:	104	Distance:	10	Shielding:	98	Fishing:	37
+Lvl:159	Lord Valls			xp:	325014795	Magic Level:	25	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	108	Shielding:	101	Fishing:	20
+Lvl:159	kogdan			xp:	322758090	Magic Level:	22	Fist Fighting:	28	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	11	Distance:	95	Shielding:	87	Fishing:	28
+Lvl:159	Collen			xp:	326523430	Magic Level:	77	Fist Fighting:	29	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	19	Fishing:	29
+Lvl:158	Xiil			xp:	321444660	Magic Level:	63	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	19	Fishing:	20
+Lvl:158	Takashy Sorcerer			xp:	319031120	Magic Level:	74	Fist Fighting:	29	Club Fighting	19	Sword Fighting:	12	Axe Fighting:	10	Distance:	14	Shielding:	21	Fishing:	29
+Lvl:158	Siggyy			xp:	317325435	Magic Level:	69	Fist Fighting:	20	Club Fighting	11	Sword Fighting:	14	Axe Fighting:	10	Distance:	10	Shielding:	24	Fishing:	20
+Lvl:158	Rytmus			xp:	316551935	Magic Level:	86	Fist Fighting:	33	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	19	Fishing:	33
+Lvl:158	The big show			xp:	321001345	Magic Level:	75	Fist Fighting:	29	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	20	Fishing:	29
+Lvl:158	Moshcu			xp:	317514635	Magic Level:	74	Fist Fighting:	33	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	20	Fishing:	33
+Lvl:157	Killerdaddy			xp:	314542140	Magic Level:	71	Fist Fighting:	21	Club Fighting	13	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	18	Fishing:	21
+Lvl:157	Home Boy			xp:	314868455	Magic Level:	80	Fist Fighting:	25	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	21	Fishing:	25
+Lvl:157	Thorval			xp:	315368180	Magic Level:	72	Fist Fighting:	23	Club Fighting	17	Sword Fighting:	12	Axe Fighting:	10	Distance:	14	Shielding:	18	Fishing:	23
+Lvl:157	Knirps			xp:	311292585	Magic Level:	22	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	91	Shielding:	71	Fishing:	21
+Lvl:156	Edu King			xp:	306209990	Magic Level:	8	Fist Fighting:	58	Club Fighting	36	Sword Fighting:	100	Axe Fighting:	41	Distance:	12	Shielding:	95	Fishing:	58
+Lvl:156	Argon			xp:	308249825	Magic Level:	78	Fist Fighting:	20	Club Fighting	13	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	17	Fishing:	20
+Lvl:156	Snikerer			xp:	304776975	Magic Level:	23	Fist Fighting:	30	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	87	Shielding:	70	Fishing:	30
+Lvl:155	Blaze the Knight			xp:	300279180	Magic Level:	8	Fist Fighting:	37	Club Fighting	21	Sword Fighting:	79	Axe Fighting:	88	Distance:	10	Shielding:	97	Fishing:	37
+Lvl:155	Gonyx			xp:	301768470	Magic Level:	76	Fist Fighting:	24	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	18	Fishing:	24
+Lvl:155	Darky			xp:	300151155	Magic Level:	8	Fist Fighting:	29	Club Fighting	87	Sword Fighting:	105	Axe Fighting:	33	Distance:	10	Shielding:	104	Fishing:	29
+Lvl:155	Huitzopotchilli			xp:	300205660	Magic Level:	8	Fist Fighting:	35	Club Fighting	100	Sword Fighting:	41	Axe Fighting:	32	Distance:	11	Shielding:	95	Fishing:	35
+Lvl:155	B-Rabbit			xp:	303612985	Magic Level:	8	Fist Fighting:	21	Club Fighting	28	Sword Fighting:	101	Axe Fighting:	28	Distance:	10	Shielding:	90	Fishing:	21
+Lvl:154	miodeuszek			xp:	294781420	Magic Level:	71	Fist Fighting:	23	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	20	Fishing:	23
+Lvl:154	Stone Giant			xp:	293895900	Magic Level:	8	Fist Fighting:	55	Club Fighting	55	Sword Fighting:	103	Axe Fighting:	55	Distance:	15	Shielding:	82	Fishing:	55
+Lvl:154	Medo Eagle Shadow			xp:	298303675	Magic Level:	83	Fist Fighting:	26	Club Fighting	15	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	20	Fishing:	26
+Lvl:153	Tank			xp:	291819905	Magic Level:	60	Fist Fighting:	98	Club Fighting	40	Sword Fighting:	40	Axe Fighting:	40	Distance:	40	Shielding:	89	Fishing:	98
+Lvl:153	Sir Tato III			xp:	289086395	Magic Level:	78	Fist Fighting:	31	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	19	Fishing:	31
+Lvl:153	Ertres			xp:	291505510	Magic Level:	21	Fist Fighting:	25	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	89	Shielding:	75	Fishing:	25
+Lvl:152	Death Hunter			xp:	282826850	Magic Level:	77	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	11	Axe Fighting:	11	Distance:	14	Shielding:	21	Fishing:	21
+Lvl:152	Reiss			xp:	286345755	Magic Level:	79	Fist Fighting:	30	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	21	Fishing:	30
+Lvl:152	Mondae			xp:	286633125	Magic Level:	70	Fist Fighting:	26	Club Fighting	17	Sword Fighting:	12	Axe Fighting:	10	Distance:	14	Shielding:	20	Fishing:	26
+Lvl:151	Drenriz			xp:	277490020	Magic Level:	68	Fist Fighting:	24	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	18	Fishing:	24
+Lvl:151	Deni black			xp:	276268145	Magic Level:	8	Fist Fighting:	46	Club Fighting	50	Sword Fighting:	102	Axe Fighting:	50	Distance:	14	Shielding:	90	Fishing:	46
+Lvl:151	Rayden			xp:	281171435	Magic Level:	71	Fist Fighting:	23	Club Fighting	15	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	19	Fishing:	23
+Lvl:151	FunnyBunny			xp:	278648965	Magic Level:	74	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	19	Fishing:	21
+Lvl:150	Quicksilver			xp:	273272170	Magic Level:	22	Fist Fighting:	27	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	102	Shielding:	75	Fishing:	27
+Lvl:150	MyFuckPk			xp:	270916655	Magic Level:	72	Fist Fighting:	30	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	21	Fishing:	30
+Lvl:150	Marlboro			xp:	274663875	Magic Level:	74	Fist Fighting:	21	Club Fighting	12	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	18	Fishing:	21
+Lvl:150	Stratocaster			xp:	271926495	Magic Level:	77	Fist Fighting:	36	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	20	Fishing:	36
+Lvl:149	Dabek			xp:	268843885	Magic Level:	7	Fist Fighting:	56	Club Fighting	29	Sword Fighting:	85	Axe Fighting:	29	Distance:	11	Shielding:	84	Fishing:	56
+Lvl:149	Mussa			xp:	269847960	Magic Level:	79	Fist Fighting:	25	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	20	Fishing:	25
+Lvl:149	Alfoner			xp:	264765885	Magic Level:	76	Fist Fighting:	24	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	18	Fishing:	24
+Lvl:149	Phobsie			xp:	268756460	Magic Level:	55	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	29	Shielding:	23	Fishing:	20
+Lvl:149	dwid zabijiaka			xp:	265941830	Magic Level:	68	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	14	Axe Fighting:	10	Distance:	10	Shielding:	21	Fishing:	20
+Lvl:149	Przemasik			xp:	266342590	Magic Level:	8	Fist Fighting:	52	Club Fighting	34	Sword Fighting:	106	Axe Fighting:	34	Distance:	12	Shielding:	97	Fishing:	52
+Lvl:149	MiLkA			xp:	266718360	Magic Level:	73	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	19	Fishing:	20
+Lvl:149	Navianamus			xp:	265723105	Magic Level:	67	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	16	Fishing:	20
+Lvl:148	Mantuso			xp:	259380900	Magic Level:	70	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	19	Fishing:	21
+Lvl:148	FireFighter			xp:	260614085	Magic Level:	75	Fist Fighting:	25	Club Fighting	18	Sword Fighting:	15	Axe Fighting:	10	Distance:	13	Shielding:	19	Fishing:	25
+Lvl:148	Raxujoho			xp:	259631400	Magic Level:	75	Fist Fighting:	22	Club Fighting	17	Sword Fighting:	12	Axe Fighting:	10	Distance:	13	Shielding:	20	Fishing:	22
+Lvl:148	Zoltren			xp:	260805770	Magic Level:	8	Fist Fighting:	64	Club Fighting	44	Sword Fighting:	96	Axe Fighting:	44	Distance:	13	Shielding:	92	Fishing:	64
+Lvl:148	Zerko			xp:	263238385	Magic Level:	68	Fist Fighting:	22	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	19	Fishing:	22
+Lvl:148	Kamarik			xp:	264592540	Magic Level:	78	Fist Fighting:	27	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	18	Fishing:	27
+Lvl:148	Rain of Blood			xp:	261910970	Magic Level:	86	Fist Fighting:	27	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	20	Fishing:	27
+Lvl:148	JaNieChcemUmierac			xp:	261298095	Magic Level:	8	Fist Fighting:	49	Club Fighting	31	Sword Fighting:	93	Axe Fighting:	31	Distance:	11	Shielding:	92	Fishing:	49
+Lvl:148	Lord Squall			xp:	262477950	Magic Level:	21	Fist Fighting:	26	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	99	Shielding:	76	Fishing:	26
+Lvl:147	Rener			xp:	257094200	Magic Level:	23	Fist Fighting:	25	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	92	Shielding:	67	Fishing:	25
+Lvl:147	Knight inferno			xp:	258704965	Magic Level:	8	Fist Fighting:	46	Club Fighting	51	Sword Fighting:	103	Axe Fighting:	51	Distance:	14	Shielding:	86	Fishing:	46
+Lvl:147	solrac			xp:	256280620	Magic Level:	22	Fist Fighting:	24	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	100	Shielding:	85	Fishing:	24
+Lvl:147	EL MONO GRANDE			xp:	255630395	Magic Level:	68	Fist Fighting:	21	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	18	Fishing:	21
+Lvl:146	Kakashy debrave			xp:	252417580	Magic Level:	66	Fist Fighting:	24	Club Fighting	12	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	17	Fishing:	24
+Lvl:146	Legend Knight			xp:	249824155	Magic Level:	8	Fist Fighting:	41	Club Fighting	27	Sword Fighting:	104	Axe Fighting:	26	Distance:	11	Shielding:	108	Fishing:	41
+Lvl:146	Muradin			xp:	252456120	Magic Level:	68	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	22	Fishing:	20
+Lvl:146	Sir Beregond			xp:	250254315	Magic Level:	78	Fist Fighting:	26	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	20	Fishing:	26
+Lvl:146	The Schadow			xp:	253743735	Magic Level:	69	Fist Fighting:	22	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	19	Fishing:	22
+Lvl:146	tito erik			xp:	253215390	Magic Level:	72	Fist Fighting:	30	Club Fighting	12	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	19	Fishing:	30
+Lvl:146	Pachanga			xp:	250641490	Magic Level:	68	Fist Fighting:	21	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	18	Fishing:	21
+Lvl:145	UZzi			xp:	245178125	Magic Level:	63	Fist Fighting:	24	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	19	Fishing:	24
+Lvl:145	Gabala			xp:	245724655	Magic Level:	22	Fist Fighting:	32	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	96	Shielding:	31	Fishing:	32
+Lvl:145	Archer Geko			xp:	244640205	Magic Level:	20	Fist Fighting:	22	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	83	Shielding:	74	Fishing:	22
+Lvl:144	Fosa			xp:	243526855	Magic Level:	70	Fist Fighting:	30	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	20	Fishing:	30
+Lvl:144	Kiretado			xp:	239305710	Magic Level:	22	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	12	Axe Fighting:	10	Distance:	94	Shielding:	78	Fishing:	21
+Lvl:144	Chaosfighter			xp:	242895985	Magic Level:	68	Fist Fighting:	24	Club Fighting	18	Sword Fighting:	11	Axe Fighting:	10	Distance:	13	Shielding:	18	Fishing:	24
+Lvl:143	Escaflowne			xp:	234323670	Magic Level:	75	Fist Fighting:	27	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	20	Fishing:	27
+Lvl:143	Kleshtrim			xp:	236316280	Magic Level:	8	Fist Fighting:	58	Club Fighting	49	Sword Fighting:	98	Axe Fighting:	53	Distance:	13	Shielding:	97	Fishing:	58
+Lvl:142	Don Henk			xp:	229152040	Magic Level:	74	Fist Fighting:	30	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	22	Fishing:	30
+Lvl:142	Sagev			xp:	230188800	Magic Level:	8	Fist Fighting:	37	Club Fighting	10	Sword Fighting:	12	Axe Fighting:	88	Distance:	10	Shielding:	91	Fishing:	37
+Lvl:142	Windforce			xp:	231219465	Magic Level:	62	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	16	Fishing:	21
+Lvl:142	Fantasybaby			xp:	228935090	Magic Level:	76	Fist Fighting:	33	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	22	Fishing:	33
+Lvl:142	HarunArRaschid			xp:	230824100	Magic Level:	66	Fist Fighting:	26	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	20	Fishing:	26
+Lvl:142	Bombe			xp:	228808840	Magic Level:	72	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	20	Fishing:	20
+Lvl:142	Bolle			xp:	232539320	Magic Level:	70	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	17	Fishing:	21
+Lvl:142	Coobra			xp:	229101455	Magic Level:	71	Fist Fighting:	26	Club Fighting	18	Sword Fighting:	11	Axe Fighting:	10	Distance:	14	Shielding:	20	Fishing:	26
+Lvl:142	Habibti			xp:	230826125	Magic Level:	69	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	19	Fishing:	20
+Lvl:142	Smok			xp:	232002350	Magic Level:	67	Fist Fighting:	32	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	21	Fishing:	32
+Lvl:142	Freak			xp:	229340735	Magic Level:	62	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	11	Distance:	11	Shielding:	21	Fishing:	21
+Lvl:142	Goldene Zitrone			xp:	232391005	Magic Level:	8	Fist Fighting:	37	Club Fighting	43	Sword Fighting:	96	Axe Fighting:	43	Distance:	12	Shielding:	91	Fishing:	37
+Lvl:142	Dimble			xp:	232843680	Magic Level:	70	Fist Fighting:	25	Club Fighting	11	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	21	Fishing:	25
+Lvl:141	TitioLalau			xp:	224592925	Magic Level:	22	Fist Fighting:	27	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	103	Shielding:	82	Fishing:	27
+Lvl:141	Tirek Kernkraft			xp:	226118930	Magic Level:	77	Fist Fighting:	31	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	22	Fishing:	31
+Lvl:141	Illum Zar			xp:	225915605	Magic Level:	71	Fist Fighting:	24	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	20	Fishing:	24
+Lvl:141	devilPoP			xp:	226849420	Magic Level:	72	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	19	Fishing:	20
+Lvl:141	Dark Burner			xp:	225998870	Magic Level:	66	Fist Fighting:	22	Club Fighting	10	Sword Fighting:	13	Axe Fighting:	10	Distance:	11	Shielding:	23	Fishing:	22
+Lvl:140	Konjina koja roka sv			xp:	223798720	Magic Level:	65	Fist Fighting:	24	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	18	Fishing:	24
+Lvl:140	Knight The Devil			xp:	220893090	Magic Level:	8	Fist Fighting:	46	Club Fighting	41	Sword Fighting:	104	Axe Fighting:	42	Distance:	12	Shielding:	91	Fishing:	46
+Lvl:140	Jab			xp:	219658710	Magic Level:	69	Fist Fighting:	20	Club Fighting	11	Sword Fighting:	13	Axe Fighting:	10	Distance:	10	Shielding:	18	Fishing:	20
+Lvl:140	Erzengel			xp:	221166435	Magic Level:	64	Fist Fighting:	23	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	18	Fishing:	23
+Lvl:140	Tazz			xp:	221098460	Magic Level:	72	Fist Fighting:	24	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	20	Fishing:	24
+Lvl:140	Goren			xp:	223038640	Magic Level:	76	Fist Fighting:	24	Club Fighting	17	Sword Fighting:	13	Axe Fighting:	10	Distance:	12	Shielding:	19	Fishing:	24
+Lvl:140	Meska			xp:	220877800	Magic Level:	68	Fist Fighting:	30	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	20	Fishing:	30
+Lvl:140	Nipy			xp:	221845590	Magic Level:	8	Fist Fighting:	51	Club Fighting	34	Sword Fighting:	91	Axe Fighting:	31	Distance:	11	Shielding:	91	Fishing:	51
+Lvl:140	Hitemm			xp:	220816795	Magic Level:	8	Fist Fighting:	72	Club Fighting	60	Sword Fighting:	100	Axe Fighting:	28	Distance:	22	Shielding:	97	Fishing:	72
+Lvl:139	Stephan			xp:	218944370	Magic Level:	64	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	13	Axe Fighting:	10	Distance:	10	Shielding:	23	Fishing:	20
+Lvl:139	Nemezis			xp:	216792325	Magic Level:	73	Fist Fighting:	25	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	19	Fishing:	25
+Lvl:139	Zwecko			xp:	216512580	Magic Level:	82	Fist Fighting:	34	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	22	Fishing:	34
+Lvl:139	Lome			xp:	214978000	Magic Level:	72	Fist Fighting:	22	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	21	Fishing:	22
+Lvl:139	Fenrir			xp:	217402785	Magic Level:	8	Fist Fighting:	58	Club Fighting	53	Sword Fighting:	89	Axe Fighting:	53	Distance:	14	Shielding:	112	Fishing:	58
+Lvl:139	Abdoz			xp:	215554415	Magic Level:	83	Fist Fighting:	27	Club Fighting	14	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	18	Fishing:	27
+Lvl:138	Krapek			xp:	213537260	Magic Level:	75	Fist Fighting:	35	Club Fighting	18	Sword Fighting:	20	Axe Fighting:	10	Distance:	13	Shielding:	25	Fishing:	35
+Lvl:138	Panic the looser			xp:	213090845	Magic Level:	8	Fist Fighting:	42	Club Fighting	99	Sword Fighting:	49	Axe Fighting:	49	Distance:	13	Shielding:	89	Fishing:	42
+Lvl:138	Silver Angel			xp:	213886485	Magic Level:	71	Fist Fighting:	23	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	17	Fishing:	23
+Lvl:138	The Macier			xp:	209912010	Magic Level:	74	Fist Fighting:	25	Club Fighting	18	Sword Fighting:	12	Axe Fighting:	10	Distance:	13	Shielding:	20	Fishing:	25
+Lvl:137	Arch Angel of Light			xp:	205560615	Magic Level:	77	Fist Fighting:	22	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	19	Fishing:	22
+Lvl:137	Hoki Dragonbreath			xp:	206045945	Magic Level:	66	Fist Fighting:	27	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	19	Fishing:	27
+Lvl:137	Kolbi			xp:	208475525	Magic Level:	83	Fist Fighting:	21	Club Fighting	16	Sword Fighting:	11	Axe Fighting:	10	Distance:	14	Shielding:	19	Fishing:	21
+Lvl:137	Super Dude			xp:	205789450	Magic Level:	8	Fist Fighting:	22	Club Fighting	30	Sword Fighting:	89	Axe Fighting:	52	Distance:	10	Shielding:	81	Fishing:	22
+Lvl:136	God of Heavens			xp:	203158380	Magic Level:	68	Fist Fighting:	27	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	19	Fishing:	27
+Lvl:136	Atilia			xp:	201842380	Magic Level:	69	Fist Fighting:	25	Club Fighting	17	Sword Fighting:	11	Axe Fighting:	10	Distance:	12	Shielding:	19	Fishing:	25
+Lvl:136	Bocian			xp:	204980760	Magic Level:	61	Fist Fighting:	24	Club Fighting	16	Sword Fighting:	11	Axe Fighting:	10	Distance:	14	Shielding:	18	Fishing:	24
+Lvl:136	Sacret			xp:	201140715	Magic Level:	66	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	18	Fishing:	20
+Lvl:136	Sky of Mar			xp:	202045830	Magic Level:	21	Fist Fighting:	24	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	97	Shielding:	84	Fishing:	24
+Lvl:136	Tomas El Knight			xp:	202562455	Magic Level:	8	Fist Fighting:	53	Club Fighting	32	Sword Fighting:	110	Axe Fighting:	30	Distance:	10	Shielding:	114	Fishing:	53
+Lvl:136	Tha Uber Melee Masta			xp:	201279320	Magic Level:	8	Fist Fighting:	37	Club Fighting	33	Sword Fighting:	95	Axe Fighting:	33	Distance:	11	Shielding:	54	Fishing:	37
+Lvl:136	Kaczucha			xp:	202334775	Magic Level:	72	Fist Fighting:	21	Club Fighting	15	Sword Fighting:	10	Axe Fighting:	10	Distance:	16	Shielding:	13	Fishing:	21
+Lvl:135	Jesaia			xp:	199009035	Magic Level:	80	Fist Fighting:	25	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	19	Fishing:	25
+Lvl:135	Karate Kid			xp:	197230190	Magic Level:	8	Fist Fighting:	51	Club Fighting	38	Sword Fighting:	70	Axe Fighting:	92	Distance:	10	Shielding:	97	Fishing:	51
+Lvl:135	Xeon Heaven			xp:	198415765	Magic Level:	66	Fist Fighting:	27	Club Fighting	18	Sword Fighting:	11	Axe Fighting:	10	Distance:	15	Shielding:	20	Fishing:	27
+Lvl:134	Sorda Seya			xp:	195498235	Magic Level:	8	Fist Fighting:	33	Club Fighting	29	Sword Fighting:	101	Axe Fighting:	32	Distance:	11	Shielding:	103	Fishing:	33
+Lvl:134	EdE of Odin Family			xp:	194142150	Magic Level:	21	Fist Fighting:	23	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	98	Shielding:	67	Fishing:	23
+Lvl:134	briht			xp:	195092580	Magic Level:	8	Fist Fighting:	35	Club Fighting	42	Sword Fighting:	55	Axe Fighting:	96	Distance:	13	Shielding:	99	Fishing:	35
+Lvl:134	Hades Adun			xp:	194684370	Magic Level:	65	Fist Fighting:	22	Club Fighting	17	Sword Fighting:	11	Axe Fighting:	10	Distance:	15	Shielding:	17	Fishing:	22
+Lvl:134	Saosin			xp:	192663760	Magic Level:	8	Fist Fighting:	27	Club Fighting	23	Sword Fighting:	80	Axe Fighting:	23	Distance:	10	Shielding:	75	Fishing:	27
+Lvl:134	Rikki Montana			xp:	195457280	Magic Level:	24	Fist Fighting:	24	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	97	Shielding:	81	Fishing:	24
+Lvl:133	Tessy HOn			xp:	188857735	Magic Level:	70	Fist Fighting:	30	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	20	Fishing:	30
+Lvl:133	Ralon			xp:	188495055	Magic Level:	66	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	20	Fishing:	21
+Lvl:133	Bhymor			xp:	190481015	Magic Level:	63	Fist Fighting:	25	Club Fighting	18	Sword Fighting:	11	Axe Fighting:	10	Distance:	13	Shielding:	19	Fishing:	25
+Lvl:132	ausgeleierte fotze			xp:	186137085	Magic Level:	8	Fist Fighting:	57	Club Fighting	46	Sword Fighting:	100	Axe Fighting:	46	Distance:	13	Shielding:	79	Fishing:	57
+Lvl:132	Pidzak			xp:	183345520	Magic Level:	8	Fist Fighting:	64	Club Fighting	46	Sword Fighting:	106	Axe Fighting:	46	Distance:	13	Shielding:	90	Fishing:	64
+Lvl:132	The Matrix			xp:	183920825	Magic Level:	78	Fist Fighting:	32	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	20	Fishing:	32
+Lvl:132	FiGuraDe			xp:	184155850	Magic Level:	72	Fist Fighting:	21	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	19	Fishing:	21
+Lvl:132	Elements			xp:	184659965	Magic Level:	65	Fist Fighting:	21	Club Fighting	12	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	19	Fishing:	21
+Lvl:132	Knight of Dead			xp:	184945815	Magic Level:	8	Fist Fighting:	49	Club Fighting	104	Sword Fighting:	37	Axe Fighting:	36	Distance:	11	Shielding:	99	Fishing:	49
+Lvl:131	Dark Star			xp:	182341945	Magic Level:	61	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	14	Axe Fighting:	10	Distance:	10	Shielding:	24	Fishing:	20
+Lvl:131	Kyril Impossible			xp:	181320325	Magic Level:	68	Fist Fighting:	26	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	19	Fishing:	26
+Lvl:131	Burnt			xp:	183106200	Magic Level:	73	Fist Fighting:	29	Club Fighting	16	Sword Fighting:	12	Axe Fighting:	10	Distance:	12	Shielding:	19	Fishing:	29
+Lvl:131	Chaosrulerin			xp:	182300145	Magic Level:	72	Fist Fighting:	25	Club Fighting	18	Sword Fighting:	13	Axe Fighting:	10	Distance:	13	Shielding:	19	Fishing:	25
+Lvl:131	Lowix			xp:	181005230	Magic Level:	8	Fist Fighting:	20	Club Fighting	13	Sword Fighting:	37	Axe Fighting:	86	Distance:	10	Shielding:	53	Fishing:	20
+Lvl:131	Maajk			xp:	179825450	Magic Level:	8	Fist Fighting:	74	Club Fighting	31	Sword Fighting:	94	Axe Fighting:	76	Distance:	10	Shielding:	88	Fishing:	74
+Lvl:131	Snoop doog			xp:	181989990	Magic Level:	67	Fist Fighting:	24	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	20	Fishing:	24
+Lvl:130	Agressiv Knight			xp:	174833145	Magic Level:	63	Fist Fighting:	26	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	20	Fishing:	26
+Lvl:130	Skuy			xp:	176979825	Magic Level:	8	Fist Fighting:	50	Club Fighting	38	Sword Fighting:	98	Axe Fighting:	38	Distance:	14	Shielding:	87	Fishing:	50
+Lvl:130	Sorcerer of The Mage			xp:	174897910	Magic Level:	66	Fist Fighting:	21	Club Fighting	16	Sword Fighting:	11	Axe Fighting:	10	Distance:	11	Shielding:	19	Fishing:	21
+Lvl:130	Horst Frankenstein			xp:	176734760	Magic Level:	45	Fist Fighting:	22	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	16	Fishing:	22
+Lvl:130	Bomben Bauer			xp:	174938800	Magic Level:	8	Fist Fighting:	47	Club Fighting	32	Sword Fighting:	100	Axe Fighting:	32	Distance:	11	Shielding:	103	Fishing:	47
+Lvl:130	Lavis			xp:	175658380	Magic Level:	69	Fist Fighting:	22	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	19	Fishing:	22
+Lvl:130	Buxdehude			xp:	176392965	Magic Level:	63	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	13	Axe Fighting:	10	Distance:	10	Shielding:	22	Fishing:	20
+Lvl:130	Soul Khan			xp:	175998985	Magic Level:	65	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	23	Fishing:	20
+Lvl:130	darksiite Master			xp:	178647355	Magic Level:	62	Fist Fighting:	20	Club Fighting	13	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	13	Fishing:	20
+Lvl:130	dark sorc 			xp:	175570275	Magic Level:	76	Fist Fighting:	30	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	21	Fishing:	30
+Lvl:129	Serulrikk			xp:	172471755	Magic Level:	8	Fist Fighting:	41	Club Fighting	25	Sword Fighting:	86	Axe Fighting:	26	Distance:	11	Shielding:	95	Fishing:	41
+Lvl:129	KiRx			xp:	172357375	Magic Level:	7	Fist Fighting:	40	Club Fighting	17	Sword Fighting:	67	Axe Fighting:	75	Distance:	10	Shielding:	73	Fishing:	40
+Lvl:129	Cassim Adersin			xp:	174107450	Magic Level:	60	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	23	Fishing:	21
+Lvl:128	master viner			xp:	169040690	Magic Level:	63	Fist Fighting:	26	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	19	Fishing:	26
+Lvl:128	Red Baroness			xp:	170167790	Magic Level:	8	Fist Fighting:	55	Club Fighting	42	Sword Fighting:	72	Axe Fighting:	101	Distance:	12	Shielding:	98	Fishing:	55
+Lvl:128	knight dark			xp:	168933530	Magic Level:	8	Fist Fighting:	63	Club Fighting	47	Sword Fighting:	101	Axe Fighting:	47	Distance:	13	Shielding:	92	Fishing:	63
+Lvl:128	Chaosneo			xp:	168093945	Magic Level:	79	Fist Fighting:	24	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	19	Fishing:	24
+Lvl:128	Master of the Darken			xp:	168631955	Magic Level:	69	Fist Fighting:	24	Club Fighting	16	Sword Fighting:	12	Axe Fighting:	10	Distance:	12	Shielding:	19	Fishing:	24
+Lvl:128	wydymaczka sloni			xp:	168892030	Magic Level:	7	Fist Fighting:	32	Club Fighting	42	Sword Fighting:	87	Axe Fighting:	27	Distance:	11	Shielding:	85	Fishing:	32
+Lvl:128	Taifun			xp:	167515500	Magic Level:	8	Fist Fighting:	41	Club Fighting	48	Sword Fighting:	86	Axe Fighting:	48	Distance:	13	Shielding:	70	Fishing:	41
+Lvl:128	Ganas			xp:	166865770	Magic Level:	8	Fist Fighting:	56	Club Fighting	47	Sword Fighting:	94	Axe Fighting:	47	Distance:	13	Shielding:	82	Fishing:	56
+Lvl:127	Nupoweskni			xp:	166079935	Magic Level:	69	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	19	Fishing:	20
+Lvl:127	minosking			xp:	165642910	Magic Level:	74	Fist Fighting:	28	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	19	Fishing:	28
+Lvl:127	ismael			xp:	164592290	Magic Level:	24	Fist Fighting:	30	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	105	Shielding:	79	Fishing:	30
+Lvl:127	Prinz von Belair			xp:	164876840	Magic Level:	64	Fist Fighting:	23	Club Fighting	17	Sword Fighting:	14	Axe Fighting:	10	Distance:	12	Shielding:	19	Fishing:	23
+Lvl:127	BlaZer Master			xp:	165546300	Magic Level:	68	Fist Fighting:	31	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	21	Fishing:	31
+Lvl:127	Dj Roman never die			xp:	163842115	Magic Level:	69	Fist Fighting:	25	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	18	Fishing:	25
+Lvl:127	Burz Grokhash			xp:	163615130	Magic Level:	7	Fist Fighting:	35	Club Fighting	31	Sword Fighting:	84	Axe Fighting:	69	Distance:	10	Shielding:	89	Fishing:	35
+Lvl:127	falconfire			xp:	163974445	Magic Level:	63	Fist Fighting:	24	Club Fighting	16	Sword Fighting:	12	Axe Fighting:	10	Distance:	12	Shielding:	18	Fishing:	24
+Lvl:127	Counter Tery			xp:	163880215	Magic Level:	62	Fist Fighting:	24	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	18	Fishing:	24
+Lvl:126	Trallamani			xp:	161028300	Magic Level:	22	Fist Fighting:	27	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	105	Shielding:	94	Fishing:	27
+Lvl:126	GermanDream			xp:	159446355	Magic Level:	8	Fist Fighting:	51	Club Fighting	55	Sword Fighting:	100	Axe Fighting:	55	Distance:	15	Shielding:	83	Fishing:	51
+Lvl:126	Furixi II			xp:	161556415	Magic Level:	61	Fist Fighting:	23	Club Fighting	17	Sword Fighting:	12	Axe Fighting:	10	Distance:	12	Shielding:	18	Fishing:	23
+Lvl:126	Marlena			xp:	158974730	Magic Level:	23	Fist Fighting:	29	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	100	Shielding:	92	Fishing:	29
+Lvl:126	The MestreY			xp:	160230185	Magic Level:	74	Fist Fighting:	27	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	20	Fishing:	27
+Lvl:126	Karma To Burn			xp:	160801090	Magic Level:	23	Fist Fighting:	25	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	97	Shielding:	67	Fishing:	25
+Lvl:126	Lumelia			xp:	160750400	Magic Level:	65	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	11	Axe Fighting:	10	Distance:	10	Shielding:	20	Fishing:	21
+Lvl:125	Deadbolt			xp:	157895265	Magic Level:	62	Fist Fighting:	27	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	18	Fishing:	27
+Lvl:125	Rikku			xp:	157444755	Magic Level:	8	Fist Fighting:	41	Club Fighting	36	Sword Fighting:	103	Axe Fighting:	45	Distance:	12	Shielding:	104	Fishing:	41
+Lvl:125	Boom			xp:	157155765	Magic Level:	64	Fist Fighting:	21	Club Fighting	11	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	16	Fishing:	21
+Lvl:125	Exsido			xp:	157465065	Magic Level:	18	Fist Fighting:	26	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	84	Shielding:	62	Fishing:	26
+Lvl:125	Big Warior			xp:	157749140	Magic Level:	8	Fist Fighting:	48	Club Fighting	47	Sword Fighting:	78	Axe Fighting:	98	Distance:	13	Shielding:	110	Fishing:	48
+Lvl:125	Maskulinus Homus			xp:	156252175	Magic Level:	65	Fist Fighting:	23	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	18	Fishing:	23
+Lvl:125	Amok			xp:	156389260	Magic Level:	76	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	16	Fishing:	20
+Lvl:125	Parlament			xp:	158522210	Magic Level:	79	Fist Fighting:	30	Club Fighting	20	Sword Fighting:	11	Axe Fighting:	10	Distance:	15	Shielding:	21	Fishing:	30
+Lvl:124	Sir Ali			xp:	154866100	Magic Level:	7	Fist Fighting:	45	Club Fighting	36	Sword Fighting:	84	Axe Fighting:	27	Distance:	10	Shielding:	72	Fishing:	45
+Lvl:124	Fast Gar			xp:	153573430	Magic Level:	7	Fist Fighting:	42	Club Fighting	48	Sword Fighting:	96	Axe Fighting:	48	Distance:	13	Shielding:	103	Fishing:	42
+Lvl:124	RiSeBaN			xp:	152971835	Magic Level:	64	Fist Fighting:	26	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	11	Distance:	13	Shielding:	19	Fishing:	26
+Lvl:124	zaos			xp:	151930810	Magic Level:	70	Fist Fighting:	21	Club Fighting	15	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	18	Fishing:	21
+Lvl:124	Romy			xp:	153644925	Magic Level:	8	Fist Fighting:	45	Club Fighting	94	Sword Fighting:	73	Axe Fighting:	102	Distance:	12	Shielding:	120	Fishing:	45
+Lvl:123	gary			xp:	150242875	Magic Level:	73	Fist Fighting:	22	Club Fighting	13	Sword Fighting:	12	Axe Fighting:	10	Distance:	13	Shielding:	20	Fishing:	22
+Lvl:123	Red Barret			xp:	150064095	Magic Level:	24	Fist Fighting:	29	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	101	Shielding:	84	Fishing:	29
+Lvl:123	Kaz			xp:	148966735	Magic Level:	61	Fist Fighting:	20	Club Fighting	13	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	19	Fishing:	20
+Lvl:123	Master Laik			xp:	147819555	Magic Level:	64	Fist Fighting:	26	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	19	Fishing:	26
+Lvl:123	kondziorex			xp:	148765235	Magic Level:	68	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	17	Fishing:	21
+Lvl:122	Ownerofthehighlvls			xp:	144363185	Magic Level:	68	Fist Fighting:	23	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	16	Fishing:	23
+Lvl:122	Lard sidrus			xp:	144327275	Magic Level:	8	Fist Fighting:	61	Club Fighting	35	Sword Fighting:	94	Axe Fighting:	35	Distance:	11	Shielding:	82	Fishing:	61
+Lvl:122	Munitis			xp:	145578690	Magic Level:	8	Fist Fighting:	49	Club Fighting	43	Sword Fighting:	102	Axe Fighting:	43	Distance:	12	Shielding:	104	Fishing:	49
+Lvl:121	Duke Kernkraft			xp:	141329585	Magic Level:	70	Fist Fighting:	31	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	21	Fishing:	31
+Lvl:121	Agressiv Bomb			xp:	141228505	Magic Level:	63	Fist Fighting:	24	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	18	Fishing:	24
+Lvl:121	AlienuS			xp:	143099040	Magic Level:	70	Fist Fighting:	23	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	14	Distance:	12	Shielding:	19	Fishing:	23
+Lvl:121	Fittim			xp:	140751065	Magic Level:	75	Fist Fighting:	31	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	20	Fishing:	31
+Lvl:121	Selur			xp:	141402255	Magic Level:	21	Fist Fighting:	29	Club Fighting	10	Sword Fighting:	11	Axe Fighting:	10	Distance:	105	Shielding:	73	Fishing:	29
+Lvl:121	Jezus			xp:	140898190	Magic Level:	20	Fist Fighting:	25	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	95	Shielding:	74	Fishing:	25
+Lvl:121	War Wizard			xp:	140599815	Magic Level:	61	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	12	Axe Fighting:	10	Distance:	13	Shielding:	18	Fishing:	21
+Lvl:121	Rado vas rozjebe			xp:	143748125	Magic Level:	72	Fist Fighting:	24	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	19	Fishing:	24
+Lvl:121	Fighter of Craft			xp:	142175795	Magic Level:	61	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	23	Fishing:	21
+Lvl:121	BlackSoul			xp:	140540820	Magic Level:	73	Fist Fighting:	24	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	18	Fishing:	24
+Lvl:121	Timon the pumba			xp:	142774700	Magic Level:	10	Fist Fighting:	30	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	20	Fishing:	30
+Lvl:120	Aleria Gloomy			xp:	137039605	Magic Level:	65	Fist Fighting:	26	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	19	Fishing:	26
+Lvl:120	Onia Lux			xp:	137876465	Magic Level:	62	Fist Fighting:	20	Club Fighting	12	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	17	Fishing:	20
+Lvl:120	Tamer			xp:	137859065	Magic Level:	20	Fist Fighting:	27	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	77	Shielding:	71	Fishing:	27
+Lvl:120	Master eL Mario			xp:	138666760	Magic Level:	68	Fist Fighting:	34	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	20	Fishing:	34
+Lvl:120	Kopytko			xp:	137825165	Magic Level:	69	Fist Fighting:	20	Club Fighting	11	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	23	Fishing:	20
+Lvl:120	Angels Ending			xp:	138975865	Magic Level:	8	Fist Fighting:	62	Club Fighting	91	Sword Fighting:	80	Axe Fighting:	77	Distance:	18	Shielding:	90	Fishing:	62
+Lvl:120	Mesjeburt			xp:	137136510	Magic Level:	7	Fist Fighting:	32	Club Fighting	23	Sword Fighting:	92	Axe Fighting:	23	Distance:	10	Shielding:	85	Fishing:	32
+Lvl:119	Archi			xp:	134702520	Magic Level:	66	Fist Fighting:	21	Club Fighting	14	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	15	Fishing:	21
+Lvl:119	Masterminded			xp:	135600275	Magic Level:	19	Fist Fighting:	24	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	89	Shielding:	19	Fishing:	24
+Lvl:119	Mighty Fighter			xp:	134967605	Magic Level:	63	Fist Fighting:	20	Club Fighting	14	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	17	Fishing:	20
+Lvl:119	Cranek Transword			xp:	136250500	Magic Level:	8	Fist Fighting:	55	Club Fighting	48	Sword Fighting:	97	Axe Fighting:	48	Distance:	13	Shielding:	85	Fishing:	55
+Lvl:119	Sorcer			xp:	134312590	Magic Level:	57	Fist Fighting:	35	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	16	Fishing:	35
+Lvl:119	Juancho			xp:	135136220	Magic Level:	73	Fist Fighting:	25	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	10	Distance:	16	Shielding:	18	Fishing:	25
+Lvl:119	karizma			xp:	133776570	Magic Level:	8	Fist Fighting:	52	Club Fighting	53	Sword Fighting:	100	Axe Fighting:	53	Distance:	14	Shielding:	72	Fishing:	52
+Lvl:119	soy mexicano we			xp:	136494850	Magic Level:	78	Fist Fighting:	29	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	19	Fishing:	29
+Lvl:118	Burning Soul			xp:	130865635	Magic Level:	80	Fist Fighting:	28	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	19	Fishing:	28
+Lvl:118	Sake			xp:	130379175	Magic Level:	94	Fist Fighting:	28	Club Fighting	19	Sword Fighting:	13	Axe Fighting:	10	Distance:	14	Shielding:	19	Fishing:	28
+Lvl:118	Titus			xp:	130194280	Magic Level:	20	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	94	Shielding:	75	Fishing:	21
+Lvl:118	Nervine			xp:	132946940	Magic Level:	7	Fist Fighting:	37	Club Fighting	17	Sword Fighting:	60	Axe Fighting:	88	Distance:	10	Shielding:	80	Fishing:	37
+Lvl:118	Hikucha			xp:	131574755	Magic Level:	63	Fist Fighting:	29	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	20	Fishing:	29
+Lvl:118	Broken			xp:	130942715	Magic Level:	20	Fist Fighting:	22	Club Fighting	10	Sword Fighting:	11	Axe Fighting:	10	Distance:	94	Shielding:	78	Fishing:	22
+Lvl:118	Lady Bekka			xp:	132358745	Magic Level:	53	Fist Fighting:	25	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	19	Fishing:	25
+Lvl:117	The Dark Ness			xp:	128164040	Magic Level:	65	Fist Fighting:	30	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	19	Fishing:	30
+Lvl:117	Teraus			xp:	127953605	Magic Level:	67	Fist Fighting:	24	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	18	Fishing:	24
+Lvl:117	Devil Mightwor			xp:	128289520	Magic Level:	73	Fist Fighting:	23	Club Fighting	15	Sword Fighting:	13	Axe Fighting:	10	Distance:	11	Shielding:	18	Fishing:	23
+Lvl:117	Ice of Inferno			xp:	129757130	Magic Level:	84	Fist Fighting:	28	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	19	Fishing:	28
+Lvl:117	Dahon Reih			xp:	129088935	Magic Level:	72	Fist Fighting:	21	Club Fighting	16	Sword Fighting:	12	Axe Fighting:	10	Distance:	11	Shielding:	17	Fishing:	21
+Lvl:117	Blue Wizard			xp:	128605745	Magic Level:	67	Fist Fighting:	30	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	21	Fishing:	30
+Lvl:117	King Hunter			xp:	127225010	Magic Level:	22	Fist Fighting:	22	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	91	Shielding:	86	Fishing:	22
+Lvl:117	Blade Spirit			xp:	127439505	Magic Level:	8	Fist Fighting:	38	Club Fighting	45	Sword Fighting:	97	Axe Fighting:	45	Distance:	13	Shielding:	94	Fishing:	38
+Lvl:117	Pancras Dragonheart			xp:	129653060	Magic Level:	23	Fist Fighting:	22	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	90	Shielding:	62	Fishing:	22
+Lvl:117	Eladamri			xp:	127384165	Magic Level:	19	Fist Fighting:	27	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	95	Shielding:	67	Fishing:	27
+Lvl:117	Littel Angel			xp:	129324720	Magic Level:	20	Fist Fighting:	27	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	101	Shielding:	34	Fishing:	27
+Lvl:116	Silent Assasin			xp:	123913075	Magic Level:	23	Fist Fighting:	26	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	103	Shielding:	84	Fishing:	26
+Lvl:116	Jesus JungleGuy			xp:	124931640	Magic Level:	71	Fist Fighting:	30	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	18	Fishing:	30
+Lvl:116	SwietliQ			xp:	124021665	Magic Level:	64	Fist Fighting:	23	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	18	Fishing:	23
+Lvl:116	DoNnY DaRk 			xp:	124751765	Magic Level:	8	Fist Fighting:	69	Club Fighting	51	Sword Fighting:	57	Axe Fighting:	90	Distance:	14	Shielding:	43	Fishing:	69
+Lvl:116	rahn of the futur			xp:	124020965	Magic Level:	59	Fist Fighting:	22	Club Fighting	11	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	18	Fishing:	22
+Lvl:116	Azamin			xp:	124628790	Magic Level:	67	Fist Fighting:	26	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	18	Fishing:	26
+Lvl:116	Ikan			xp:	125786120	Magic Level:	69	Fist Fighting:	29	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	20	Fishing:	29
+Lvl:116	Tofu			xp:	123526020	Magic Level:	66	Fist Fighting:	26	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	19	Fishing:	26
+Lvl:115	Ghia			xp:	120925725	Magic Level:	7	Fist Fighting:	59	Club Fighting	55	Sword Fighting:	97	Axe Fighting:	55	Distance:	15	Shielding:	75	Fishing:	59
+Lvl:115	Som Dracik			xp:	123397090	Magic Level:	8	Fist Fighting:	38	Club Fighting	19	Sword Fighting:	91	Axe Fighting:	19	Distance:	10	Shielding:	85	Fishing:	38
+Lvl:115	zipflgsicht			xp:	122803335	Magic Level:	54	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	12	Axe Fighting:	10	Distance:	10	Shielding:	23	Fishing:	20
+Lvl:115	Kaiba			xp:	121051810	Magic Level:	67	Fist Fighting:	30	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	11	Distance:	15	Shielding:	20	Fishing:	30
+Lvl:115	Ryu Sakawa			xp:	121418560	Magic Level:	56	Fist Fighting:	29	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	20	Fishing:	29
+Lvl:115	Magius			xp:	123117075	Magic Level:	57	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	12	Axe Fighting:	10	Distance:	10	Shielding:	22	Fishing:	20
+Lvl:115	Consellor Flawless			xp:	121097875	Magic Level:	7	Fist Fighting:	31	Club Fighting	32	Sword Fighting:	100	Axe Fighting:	32	Distance:	10	Shielding:	81	Fishing:	31
+Lvl:115	Shiskebab			xp:	121477785	Magic Level:	21	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	74	Shielding:	71	Fishing:	20
+Lvl:114	Sir Salsa			xp:	117946150	Magic Level:	60	Fist Fighting:	20	Club Fighting	11	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	23	Fishing:	20
+Lvl:114	GodLiKeHunTer			xp:	119070795	Magic Level:	19	Fist Fighting:	22	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	84	Shielding:	15	Fishing:	22
+Lvl:114	Toli 			xp:	119295230	Magic Level:	54	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	18	Fishing:	21
+Lvl:114	Scott			xp:	119262440	Magic Level:	63	Fist Fighting:	20	Club Fighting	12	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	19	Fishing:	20
+Lvl:114	Mathilda			xp:	119634160	Magic Level:	63	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	18	Fishing:	21
+Lvl:114	Robby			xp:	119373985	Magic Level:	7	Fist Fighting:	48	Club Fighting	25	Sword Fighting:	79	Axe Fighting:	98	Distance:	10	Shielding:	94	Fishing:	48
+Lvl:114	Billy			xp:	119264435	Magic Level:	8	Fist Fighting:	49	Club Fighting	54	Sword Fighting:	104	Axe Fighting:	54	Distance:	14	Shielding:	90	Fishing:	49
+Lvl:114	Ijzig			xp:	119059870	Magic Level:	74	Fist Fighting:	26	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	12	Distance:	17	Shielding:	16	Fishing:	26
+Lvl:114	Tito Pitups			xp:	117532665	Magic Level:	67	Fist Fighting:	22	Club Fighting	12	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	18	Fishing:	22
+Lvl:114	LoTeKu			xp:	117649855	Magic Level:	8	Fist Fighting:	67	Club Fighting	32	Sword Fighting:	101	Axe Fighting:	36	Distance:	11	Shielding:	89	Fishing:	67
+Lvl:114	Angel Kraus			xp:	119489335	Magic Level:	7	Fist Fighting:	51	Club Fighting	45	Sword Fighting:	45	Axe Fighting:	101	Distance:	13	Shielding:	103	Fishing:	51
+Lvl:114	Kama			xp:	118839660	Magic Level:	62	Fist Fighting:	21	Club Fighting	16	Sword Fighting:	11	Axe Fighting:	10	Distance:	11	Shielding:	14	Fishing:	21
+Lvl:113	Trampero			xp:	114709855	Magic Level:	66	Fist Fighting:	25	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	19	Fishing:	25
+Lvl:113	KaTakUmBa			xp:	115254840	Magic Level:	20	Fist Fighting:	26	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	93	Shielding:	76	Fishing:	26
+Lvl:113	Tutor Nordic			xp:	114756725	Magic Level:	40	Fist Fighting:	27	Club Fighting	11	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	11	Fishing:	27
+Lvl:113	Janco of Manik			xp:	115525855	Magic Level:	83	Fist Fighting:	27	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	18	Fishing:	27
+Lvl:113	Choco Mog			xp:	115591455	Magic Level:	19	Fist Fighting:	29	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	93	Shielding:	32	Fishing:	29
+Lvl:113	Ice Bolter			xp:	116605355	Magic Level:	19	Fist Fighting:	24	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	90	Shielding:	65	Fishing:	24
+Lvl:113	Sarah Impossible			xp:	115759175	Magic Level:	16	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	86	Shielding:	11	Fishing:	20
+Lvl:113	Buleczka			xp:	116652425	Magic Level:	59	Fist Fighting:	24	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	17	Fishing:	24
+Lvl:113	Spoxster			xp:	116756920	Magic Level:	76	Fist Fighting:	32	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	22	Fishing:	32
+Lvl:113	Archangel zeros			xp:	114984310	Magic Level:	70	Fist Fighting:	24	Club Fighting	13	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	16	Fishing:	24
+Lvl:113	Clearly			xp:	116693545	Magic Level:	7	Fist Fighting:	40	Club Fighting	48	Sword Fighting:	95	Axe Fighting:	48	Distance:	13	Shielding:	92	Fishing:	40
+Lvl:113	Kuki			xp:	114458355	Magic Level:	79	Fist Fighting:	22	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	78	Shielding:	11	Fishing:	22
+Lvl:113	Dertli			xp:	114859640	Magic Level:	73	Fist Fighting:	21	Club Fighting	13	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	14	Fishing:	21
+Lvl:112	DraP			xp:	112735300	Magic Level:	71	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	11	Axe Fighting:	10	Distance:	10	Shielding:	18	Fishing:	20
+Lvl:112	Dark Hero			xp:	112483855	Magic Level:	73	Fist Fighting:	29	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	19	Fishing:	29
+Lvl:112	Hades			xp:	111827260	Magic Level:	70	Fist Fighting:	20	Club Fighting	11	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	21	Fishing:	20
+Lvl:112	Popis			xp:	112892500	Magic Level:	7	Fist Fighting:	30	Club Fighting	22	Sword Fighting:	86	Axe Fighting:	22	Distance:	10	Shielding:	85	Fishing:	30
+Lvl:112	Escardone Soldier			xp:	111150040	Magic Level:	8	Fist Fighting:	47	Club Fighting	51	Sword Fighting:	100	Axe Fighting:	51	Distance:	14	Shielding:	87	Fishing:	47
+Lvl:112	Wizardi			xp:	111452465	Magic Level:	60	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	13	Axe Fighting:	10	Distance:	13	Shielding:	18	Fishing:	20
+Lvl:112	Ranntanplan			xp:	112882135	Magic Level:	72	Fist Fighting:	23	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	18	Fishing:	23
+Lvl:112	Gravitos			xp:	113551120	Magic Level:	57	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	17	Fishing:	21
+Lvl:112	Peditet			xp:	112159960	Magic Level:	58	Fist Fighting:	21	Club Fighting	15	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	19	Fishing:	21
+Lvl:112	Burundukas			xp:	112657630	Magic Level:	75	Fist Fighting:	29	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	18	Fishing:	29
+Lvl:112	Pox Powah			xp:	112240315	Magic Level:	65	Fist Fighting:	22	Club Fighting	15	Sword Fighting:	11	Axe Fighting:	10	Distance:	11	Shielding:	16	Fishing:	22
+Lvl:112	Master Kapusta			xp:	112549705	Magic Level:	63	Fist Fighting:	20	Club Fighting	11	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	17	Fishing:	20
+Lvl:112	Uam Ten Huam			xp:	112678730	Magic Level:	20	Fist Fighting:	27	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	90	Shielding:	83	Fishing:	27
+Lvl:111	Sonya			xp:	110250045	Magic Level:	70	Fist Fighting:	27	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	19	Fishing:	27
+Lvl:111	Puba II			xp:	110449540	Magic Level:	67	Fist Fighting:	21	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	18	Fishing:	21
+Lvl:111	Ahmitru			xp:	108095665	Magic Level:	20	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	82	Shielding:	74	Fishing:	21
+Lvl:111	Rafcio			xp:	108086435	Magic Level:	67	Fist Fighting:	23	Club Fighting	17	Sword Fighting:	11	Axe Fighting:	10	Distance:	13	Shielding:	18	Fishing:	23
+Lvl:111	Som Durex			xp:	108146000	Magic Level:	20	Fist Fighting:	23	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	88	Shielding:	80	Fishing:	23
+Lvl:111	Lalito II			xp:	108162900	Magic Level:	65	Fist Fighting:	31	Club Fighting	20	Sword Fighting:	11	Axe Fighting:	10	Distance:	15	Shielding:	21	Fishing:	31
+Lvl:111	ios the knight			xp:	108686000	Magic Level:	8	Fist Fighting:	58	Club Fighting	27	Sword Fighting:	88	Axe Fighting:	27	Distance:	12	Shielding:	89	Fishing:	58
+Lvl:111	Der Don			xp:	108789335	Magic Level:	58	Fist Fighting:	22	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	19	Fishing:	22
+Lvl:111	Amiguinho			xp:	108677505	Magic Level:	7	Fist Fighting:	31	Club Fighting	38	Sword Fighting:	97	Axe Fighting:	38	Distance:	12	Shielding:	86	Fishing:	31
+Lvl:111	EsserBabber			xp:	109667470	Magic Level:	21	Fist Fighting:	30	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	102	Shielding:	77	Fishing:	30
+Lvl:111	perfect dark			xp:	108696860	Magic Level:	65	Fist Fighting:	21	Club Fighting	14	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	21	Fishing:	21
+Lvl:111	master omar			xp:	108021415	Magic Level:	74	Fist Fighting:	37	Club Fighting	20	Sword Fighting:	11	Axe Fighting:	10	Distance:	15	Shielding:	21	Fishing:	37
+Lvl:111	Oneill			xp:	108521455	Magic Level:	19	Fist Fighting:	22	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	83	Shielding:	72	Fishing:	22
+Lvl:110	Iboz			xp:	107833100	Magic Level:	60	Fist Fighting:	25	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	18	Fishing:	25
+Lvl:110	Justafox			xp:	105586335	Magic Level:	22	Fist Fighting:	25	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	94	Shielding:	79	Fishing:	25
+Lvl:110	Exortes			xp:	106539990	Magic Level:	61	Fist Fighting:	28	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	19	Fishing:	28
+Lvl:110	Safios			xp:	105263045	Magic Level:	7	Fist Fighting:	22	Club Fighting	82	Sword Fighting:	73	Axe Fighting:	23	Distance:	10	Shielding:	72	Fishing:	22
+Lvl:110	Nummer X			xp:	105305375	Magic Level:	59	Fist Fighting:	21	Club Fighting	11	Sword Fighting:	10	Axe Fighting:	13	Distance:	13	Shielding:	20	Fishing:	21
+Lvl:110	Jimmy Outlaw			xp:	107295630	Magic Level:	73	Fist Fighting:	30	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	20	Fishing:	30
+Lvl:110	Voltio			xp:	106889455	Magic Level:	21	Fist Fighting:	26	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	96	Shielding:	77	Fishing:	26
+Lvl:110	Soul Arka			xp:	106587475	Magic Level:	59	Fist Fighting:	23	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	18	Fishing:	23
+Lvl:110	Raidens			xp:	106412730	Magic Level:	21	Fist Fighting:	24	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	89	Shielding:	62	Fishing:	24
+Lvl:110	Questitesti			xp:	106087815	Magic Level:	8	Fist Fighting:	46	Club Fighting	97	Sword Fighting:	94	Axe Fighting:	52	Distance:	14	Shielding:	100	Fishing:	46
+Lvl:110	Krysey			xp:	105585625	Magic Level:	21	Fist Fighting:	28	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	98	Shielding:	87	Fishing:	28
+Lvl:110	Sneak			xp:	105708215	Magic Level:	60	Fist Fighting:	28	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	19	Fishing:	28
+Lvl:110	Tatu			xp:	105564930	Magic Level:	77	Fist Fighting:	30	Club Fighting	11	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	20	Fishing:	30
+Lvl:110	Raulon			xp:	106507500	Magic Level:	57	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	12	Axe Fighting:	10	Distance:	15	Shielding:	19	Fishing:	21
+Lvl:110	noob character			xp:	107861930	Magic Level:	21	Fist Fighting:	31	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	97	Shielding:	95	Fishing:	31
+Lvl:109	WiLsOn WaVe			xp:	104898500	Magic Level:	18	Fist Fighting:	22	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	88	Shielding:	16	Fishing:	22
+Lvl:109	Green Baroness			xp:	102923500	Magic Level:	67	Fist Fighting:	28	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	21	Fishing:	28
+Lvl:109	Emrex			xp:	103928485	Magic Level:	63	Fist Fighting:	22	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	15	Fishing:	22
+Lvl:109	Morximal			xp:	103447400	Magic Level:	20	Fist Fighting:	22	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	93	Shielding:	76	Fishing:	22
+Lvl:109	Bizonski			xp:	104880970	Magic Level:	65	Fist Fighting:	22	Club Fighting	15	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	20	Fishing:	22
+Lvl:109	Lujury			xp:	104979980	Magic Level:	66	Fist Fighting:	21	Club Fighting	14	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	16	Fishing:	21
+Lvl:109	Skizoloko Pacieri			xp:	104248610	Magic Level:	59	Fist Fighting:	21	Club Fighting	15	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	16	Fishing:	21
+Lvl:109	golden Knight			xp:	103474355	Magic Level:	8	Fist Fighting:	87	Club Fighting	55	Sword Fighting:	102	Axe Fighting:	95	Distance:	15	Shielding:	91	Fishing:	87
+Lvl:109	Gwardzin wymiot			xp:	104108535	Magic Level:	54	Fist Fighting:	22	Club Fighting	16	Sword Fighting:	15	Axe Fighting:	10	Distance:	12	Shielding:	18	Fishing:	22
+Lvl:108	Kristina			xp:	99314250	Magic Level:	7	Fist Fighting:	38	Club Fighting	47	Sword Fighting:	89	Axe Fighting:	47	Distance:	13	Shielding:	82	Fishing:	38
+Lvl:108	Noricha			xp:	100659665	Magic Level:	20	Fist Fighting:	30	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	96	Shielding:	35	Fishing:	30
+Lvl:108	Dark Kirrel			xp:	101629220	Magic Level:	20	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	89	Shielding:	13	Fishing:	20
+Lvl:108	Beverly Hills Cop			xp:	99627325	Magic Level:	56	Fist Fighting:	21	Club Fighting	14	Sword Fighting:	11	Axe Fighting:	10	Distance:	10	Shielding:	18	Fishing:	21
+Lvl:108	Abala			xp:	99428205	Magic Level:	61	Fist Fighting:	20	Club Fighting	11	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	23	Fishing:	20
+Lvl:108	Evil Zambimaru			xp:	100521085	Magic Level:	67	Fist Fighting:	23	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	18	Fishing:	23
+Lvl:108	Herm			xp:	100991435	Magic Level:	21	Fist Fighting:	34	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	93	Shielding:	51	Fishing:	34
+Lvl:108	Po Outlaw			xp:	101744700	Magic Level:	68	Fist Fighting:	30	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	20	Fishing:	30
+Lvl:108	Pommespanzer			xp:	100822960	Magic Level:	63	Fist Fighting:	23	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	17	Fishing:	23
+Lvl:108	Lord fresa			xp:	101559205	Magic Level:	70	Fist Fighting:	27	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	20	Fishing:	27
+Lvl:108	Amur			xp:	100877640	Magic Level:	68	Fist Fighting:	25	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	19	Fishing:	25
+Lvl:108	LetZ			xp:	100300045	Magic Level:	74	Fist Fighting:	24	Club Fighting	18	Sword Fighting:	11	Axe Fighting:	10	Distance:	14	Shielding:	20	Fishing:	24
+Lvl:108	Tritt			xp:	101163205	Magic Level:	69	Fist Fighting:	22	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	18	Fishing:	22
+Lvl:108	LeBron			xp:	99621415	Magic Level:	20	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	91	Shielding:	62	Fishing:	21
+Lvl:108	Mike			xp:	99670065	Magic Level:	22	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	94	Shielding:	92	Fishing:	20
+Lvl:108	Sir Torq			xp:	99394315	Magic Level:	61	Fist Fighting:	25	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	19	Fishing:	25
+Lvl:107	Perykles			xp:	96787940	Magic Level:	66	Fist Fighting:	25	Club Fighting	18	Sword Fighting:	15	Axe Fighting:	10	Distance:	13	Shielding:	20	Fishing:	25
+Lvl:107	Knight of Darkness			xp:	96495540	Magic Level:	8	Fist Fighting:	48	Club Fighting	53	Sword Fighting:	102	Axe Fighting:	53	Distance:	14	Shielding:	98	Fishing:	48
+Lvl:107	Shuyin			xp:	96600125	Magic Level:	60	Fist Fighting:	22	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	17	Fishing:	22
+Lvl:107	Consellor Ultimatum			xp:	98538190	Magic Level:	6	Fist Fighting:	20	Club Fighting	33	Sword Fighting:	88	Axe Fighting:	30	Distance:	10	Shielding:	57	Fishing:	20
+Lvl:107	Agnz			xp:	96801505	Magic Level:	65	Fist Fighting:	21	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	17	Fishing:	21
+Lvl:107	Shill			xp:	98817385	Magic Level:	65	Fist Fighting:	22	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	18	Fishing:	22
+Lvl:107	Khalimdor			xp:	97492765	Magic Level:	62	Fist Fighting:	22	Club Fighting	10	Sword Fighting:	12	Axe Fighting:	10	Distance:	11	Shielding:	16	Fishing:	22
+Lvl:107	Druid Master Healer			xp:	97658520	Magic Level:	64	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	16	Shielding:	16	Fishing:	21
+Lvl:107	Magic Sorc			xp:	99056875	Magic Level:	65	Fist Fighting:	22	Club Fighting	17	Sword Fighting:	11	Axe Fighting:	10	Distance:	12	Shielding:	18	Fishing:	22
+Lvl:107	Piotrek przestepca			xp:	98827945	Magic Level:	63	Fist Fighting:	24	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	18	Fishing:	24
+Lvl:106	Hussto			xp:	94841565	Magic Level:	7	Fist Fighting:	33	Club Fighting	40	Sword Fighting:	90	Axe Fighting:	40	Distance:	12	Shielding:	83	Fishing:	33
+Lvl:106	Fintan			xp:	95358740	Magic Level:	73	Fist Fighting:	30	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	20	Fishing:	30
+Lvl:106	Azion Lock			xp:	94500150	Magic Level:	8	Fist Fighting:	50	Club Fighting	55	Sword Fighting:	106	Axe Fighting:	55	Distance:	15	Shielding:	102	Fishing:	50
+Lvl:106	Anthiet			xp:	94492015	Magic Level:	65	Fist Fighting:	25	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	18	Fishing:	25
+Lvl:106	Tentala			xp:	94632455	Magic Level:	19	Fist Fighting:	22	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	88	Shielding:	54	Fishing:	22
+Lvl:106	Teviron			xp:	93869200	Magic Level:	63	Fist Fighting:	23	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	18	Fishing:	23
+Lvl:106	MasterUnreal			xp:	95565150	Magic Level:	62	Fist Fighting:	23	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	18	Fishing:	23
+Lvl:106	Stormtrooper			xp:	95585240	Magic Level:	21	Fist Fighting:	28	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	100	Shielding:	75	Fishing:	28
+Lvl:106	Darkangeloflove			xp:	95187420	Magic Level:	7	Fist Fighting:	57	Club Fighting	55	Sword Fighting:	91	Axe Fighting:	55	Distance:	15	Shielding:	86	Fishing:	57
+Lvl:106	Lucie the Paladin			xp:	94526760	Magic Level:	20	Fist Fighting:	29	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	94	Shielding:	74	Fishing:	29
+Lvl:105	Neo Volcom			xp:	91797600	Magic Level:	7	Fist Fighting:	51	Club Fighting	50	Sword Fighting:	97	Axe Fighting:	50	Distance:	13	Shielding:	79	Fishing:	51
+Lvl:105	Sofia Katleen			xp:	92924455	Magic Level:	8	Fist Fighting:	56	Club Fighting	19	Sword Fighting:	101	Axe Fighting:	19	Distance:	10	Shielding:	100	Fishing:	56
+Lvl:105	Hells Druid			xp:	92901720	Magic Level:	62	Fist Fighting:	45	Club Fighting	11	Sword Fighting:	12	Axe Fighting:	10	Distance:	12	Shielding:	21	Fishing:	45
+Lvl:105	Gitch			xp:	93153575	Magic Level:	53	Fist Fighting:	20	Club Fighting	12	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	17	Fishing:	20
+Lvl:105	Chrisaurio			xp:	93521465	Magic Level:	70	Fist Fighting:	21	Club Fighting	12	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	18	Fishing:	21
+Lvl:105	Errardo			xp:	93203715	Magic Level:	44	Fist Fighting:	20	Club Fighting	11	Sword Fighting:	11	Axe Fighting:	10	Distance:	10	Shielding:	22	Fishing:	20
+Lvl:105	Nithrand Taurin			xp:	93281540	Magic Level:	7	Fist Fighting:	44	Club Fighting	51	Sword Fighting:	80	Axe Fighting:	90	Distance:	14	Shielding:	83	Fishing:	44
+Lvl:105	Tidus			xp:	92847120	Magic Level:	66	Fist Fighting:	25	Club Fighting	12	Sword Fighting:	11	Axe Fighting:	10	Distance:	12	Shielding:	19	Fishing:	25
+Lvl:105	zorrona del quince			xp:	93066095	Magic Level:	77	Fist Fighting:	32	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	19	Fishing:	32
+Lvl:105	Subimu			xp:	92850880	Magic Level:	7	Fist Fighting:	42	Club Fighting	48	Sword Fighting:	92	Axe Fighting:	48	Distance:	13	Shielding:	82	Fishing:	42
+Lvl:105	Airen Shadowfinder			xp:	91297045	Magic Level:	64	Fist Fighting:	23	Club Fighting	11	Sword Fighting:	13	Axe Fighting:	10	Distance:	10	Shielding:	17	Fishing:	23
+Lvl:105	XanGa			xp:	93064370	Magic Level:	62	Fist Fighting:	22	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	17	Fishing:	22
+Lvl:105	Huasteca			xp:	92803010	Magic Level:	60	Fist Fighting:	21	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	10	Distance:	11	Shielding:	16	Fishing:	21
+Lvl:105	Edlas			xp:	92630960	Magic Level:	20	Fist Fighting:	28	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	87	Shielding:	30	Fishing:	28
+Lvl:105	vurucu			xp:	93577895	Magic Level:	22	Fist Fighting:	29	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	99	Shielding:	25	Fishing:	29
+Lvl:105	Sir Alex			xp:	92602485	Magic Level:	21	Fist Fighting:	26	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	89	Shielding:	39	Fishing:	26
+Lvl:105	Lord Qualax			xp:	91590960	Magic Level:	7	Fist Fighting:	28	Club Fighting	25	Sword Fighting:	88	Axe Fighting:	25	Distance:	10	Shielding:	74	Fishing:	28
+Lvl:105	pharaoh			xp:	93232110	Magic Level:	68	Fist Fighting:	20	Club Fighting	13	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	17	Fishing:	20
+Lvl:104	Dragonstrike			xp:	90225290	Magic Level:	7	Fist Fighting:	45	Club Fighting	48	Sword Fighting:	91	Axe Fighting:	48	Distance:	13	Shielding:	86	Fishing:	45
+Lvl:104	Fuertesito			xp:	88655635	Magic Level:	20	Fist Fighting:	23	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	89	Shielding:	19	Fishing:	23
+Lvl:104	Meruz			xp:	89254625	Magic Level:	66	Fist Fighting:	28	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	16	Shielding:	19	Fishing:	28
+Lvl:104	Achillon			xp:	89277300	Magic Level:	60	Fist Fighting:	31	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	20	Fishing:	31
+Lvl:104	heakkermaster 			xp:	89068710	Magic Level:	63	Fist Fighting:	30	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	21	Fishing:	30
+Lvl:104	Wotan			xp:	89312835	Magic Level:	74	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	15	Fishing:	21
+Lvl:104	Antagron			xp:	88734995	Magic Level:	48	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	11	Axe Fighting:	10	Distance:	10	Shielding:	20	Fishing:	21
+Lvl:104	Carolina			xp:	88928330	Magic Level:	62	Fist Fighting:	22	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	17	Fishing:	22
+Lvl:104	Brandoni			xp:	89125805	Magic Level:	62	Fist Fighting:	23	Club Fighting	17	Sword Fighting:	13	Axe Fighting:	10	Distance:	13	Shielding:	18	Fishing:	23
+Lvl:104	Play-Boy			xp:	88482955	Magic Level:	8	Fist Fighting:	40	Club Fighting	27	Sword Fighting:	95	Axe Fighting:	27	Distance:	10	Shielding:	86	Fishing:	40
+Lvl:104	terroryuki			xp:	90715820	Magic Level:	7	Fist Fighting:	27	Club Fighting	27	Sword Fighting:	85	Axe Fighting:	27	Distance:	12	Shielding:	70	Fishing:	27
+Lvl:104	ShotS			xp:	89124280	Magic Level:	59	Fist Fighting:	24	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	18	Fishing:	24
+Lvl:104	Xoripom			xp:	90347015	Magic Level:	63	Fist Fighting:	27	Club Fighting	19	Sword Fighting:	12	Axe Fighting:	10	Distance:	14	Shielding:	20	Fishing:	27
+Lvl:104	sir maniek			xp:	89063110	Magic Level:	51	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	12	Axe Fighting:	10	Distance:	10	Shielding:	23	Fishing:	20
+Lvl:104	BaSsS BoxXx			xp:	89412670	Magic Level:	7	Fist Fighting:	24	Club Fighting	26	Sword Fighting:	89	Axe Fighting:	26	Distance:	10	Shielding:	82	Fishing:	24
+Lvl:104	Newba Noob			xp:	90815975	Magic Level:	60	Fist Fighting:	28	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	20	Fishing:	28
+Lvl:104	Zardos			xp:	90327125	Magic Level:	58	Fist Fighting:	22	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	15	Fishing:	22
+Lvl:104	Kusanagi 			xp:	88948965	Magic Level:	8	Fist Fighting:	33	Club Fighting	38	Sword Fighting:	100	Axe Fighting:	38	Distance:	12	Shielding:	62	Fishing:	33
+Lvl:103	puszkin malyk			xp:	87987355	Magic Level:	8	Fist Fighting:	59	Club Fighting	67	Sword Fighting:	96	Axe Fighting:	54	Distance:	15	Shielding:	89	Fishing:	59
+Lvl:103	Jamal			xp:	87922365	Magic Level:	62	Fist Fighting:	21	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	17	Fishing:	21
+Lvl:103	American Blend 			xp:	88410795	Magic Level:	70	Fist Fighting:	26	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	19	Fishing:	26
+Lvl:103	Lunicef			xp:	86376480	Magic Level:	22	Fist Fighting:	28	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	99	Shielding:	71	Fishing:	28
+Lvl:103	Tiny			xp:	87629145	Magic Level:	62	Fist Fighting:	24	Club Fighting	11	Sword Fighting:	15	Axe Fighting:	10	Distance:	12	Shielding:	21	Fishing:	24
+Lvl:103	Xaant			xp:	86797035	Magic Level:	61	Fist Fighting:	26	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	17	Fishing:	26
+Lvl:103	Dure			xp:	87848140	Magic Level:	49	Fist Fighting:	31	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	19	Fishing:	31
+Lvl:103	Der Tod			xp:	85894860	Magic Level:	76	Fist Fighting:	26	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	19	Fishing:	26
+Lvl:103	Exodia			xp:	87401235	Magic Level:	7	Fist Fighting:	46	Club Fighting	102	Sword Fighting:	48	Axe Fighting:	48	Distance:	13	Shielding:	108	Fishing:	46
+Lvl:103	Dangolina			xp:	86574445	Magic Level:	53	Fist Fighting:	23	Club Fighting	12	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	21	Fishing:	23
+Lvl:103	Tutor Lonely			xp:	86744240	Magic Level:	54	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	14	Fishing:	20
+Lvl:103	Supremo jonk			xp:	85912805	Magic Level:	7	Fist Fighting:	38	Club Fighting	47	Sword Fighting:	87	Axe Fighting:	47	Distance:	13	Shielding:	80	Fishing:	38
+Lvl:103	Kapusta Rado			xp:	86114370	Magic Level:	66	Fist Fighting:	26	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	18	Fishing:	26
+Lvl:103	Troco Contra			xp:	86218665	Magic Level:	61	Fist Fighting:	33	Club Fighting	20	Sword Fighting:	12	Axe Fighting:	11	Distance:	15	Shielding:	21	Fishing:	33
+Lvl:103	Hooligan			xp:	88185380	Magic Level:	59	Fist Fighting:	28	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	17	Fishing:	28
+Lvl:103	The king of Wizard			xp:	88253350	Magic Level:	66	Fist Fighting:	29	Club Fighting	12	Sword Fighting:	15	Axe Fighting:	15	Distance:	10	Shielding:	21	Fishing:	29
+Lvl:102	Bazoka			xp:	84005000	Magic Level:	60	Fist Fighting:	30	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	21	Fishing:	30
+Lvl:102	PsYCHoKlApStUhL			xp:	84847895	Magic Level:	21	Fist Fighting:	25	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	96	Shielding:	64	Fishing:	25
+Lvl:102	Gatekeeper			xp:	83513790	Magic Level:	22	Fist Fighting:	36	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	102	Shielding:	82	Fishing:	36
+Lvl:102	Duality			xp:	84237335	Magic Level:	8	Fist Fighting:	51	Club Fighting	50	Sword Fighting:	110	Axe Fighting:	50	Distance:	14	Shielding:	105	Fishing:	51
+Lvl:102	Inferno			xp:	84534735	Magic Level:	19	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	72	Shielding:	65	Fishing:	20
+Lvl:102	-dOOd			xp:	84654120	Magic Level:	53	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	12	Axe Fighting:	10	Distance:	10	Shielding:	24	Fishing:	20
+Lvl:102	doda el king			xp:	84337585	Magic Level:	70	Fist Fighting:	24	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	20	Fishing:	24
+Lvl:102	Brera			xp:	84936375	Magic Level:	67	Fist Fighting:	25	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	19	Fishing:	25
+Lvl:102	Arrok			xp:	83429655	Magic Level:	73	Fist Fighting:	26	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	21	Fishing:	26
+Lvl:102	Coyc II			xp:	85592835	Magic Level:	61	Fist Fighting:	22	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	16	Fishing:	22
+Lvl:101	Liu Kang			xp:	81426325	Magic Level:	62	Fist Fighting:	29	Club Fighting	19	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	20	Fishing:	29
+Lvl:101	---Jada			xp:	82314945	Magic Level:	53	Fist Fighting:	20	Club Fighting	13	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	23	Fishing:	20
+Lvl:101	Serius			xp:	83191280	Magic Level:	59	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	12	Axe Fighting:	10	Distance:	10	Shielding:	24	Fishing:	20
+Lvl:101	lemore			xp:	82716705	Magic Level:	71	Fist Fighting:	32	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	20	Fishing:	32
+Lvl:101	KoLuS Pall			xp:	81297120	Magic Level:	20	Fist Fighting:	27	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	94	Shielding:	28	Fishing:	27
+Lvl:101	Nervous			xp:	82156185	Magic Level:	73	Fist Fighting:	31	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	20	Fishing:	31
+Lvl:101	Qad Knight			xp:	82876910	Magic Level:	8	Fist Fighting:	79	Club Fighting	53	Sword Fighting:	104	Axe Fighting:	53	Distance:	14	Shielding:	96	Fishing:	79
+Lvl:101	Arsenios			xp:	81213265	Magic Level:	7	Fist Fighting:	52	Club Fighting	55	Sword Fighting:	96	Axe Fighting:	55	Distance:	15	Shielding:	85	Fishing:	52
+Lvl:101	Naldon			xp:	82282820	Magic Level:	63	Fist Fighting:	20	Club Fighting	11	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	21	Fishing:	20
+Lvl:101	Foxawy			xp:	81098945	Magic Level:	54	Fist Fighting:	22	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	16	Fishing:	22
+Lvl:101	Pelax			xp:	82582825	Magic Level:	57	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	14	Axe Fighting:	10	Distance:	10	Shielding:	20	Fishing:	20
+Lvl:100	Natus			xp:	78539520	Magic Level:	7	Fist Fighting:	22	Club Fighting	79	Sword Fighting:	35	Axe Fighting:	36	Distance:	10	Shielding:	68	Fishing:	22
+Lvl:100	Radar			xp:	80409030	Magic Level:	56	Fist Fighting:	22	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	17	Fishing:	22
+Lvl:100	Master Martin			xp:	78444135	Magic Level:	66	Fist Fighting:	25	Club Fighting	18	Sword Fighting:	14	Axe Fighting:	10	Distance:	13	Shielding:	18	Fishing:	25
+Lvl:100	Berons			xp:	80681385	Magic Level:	8	Fist Fighting:	43	Club Fighting	49	Sword Fighting:	91	Axe Fighting:	49	Distance:	13	Shielding:	72	Fishing:	43
+Lvl:100	Rozsylam syfa			xp:	78757300	Magic Level:	65	Fist Fighting:	22	Club Fighting	16	Sword Fighting:	10	Axe Fighting:	10	Distance:	14	Shielding:	17	Fishing:	22
+Lvl:100	Aktito			xp:	79074265	Magic Level:	59	Fist Fighting:	22	Club Fighting	17	Sword Fighting:	10	Axe Fighting:	10	Distance:	12	Shielding:	17	Fishing:	22
+Lvl:100	Hasso			xp:	79186115	Magic Level:	57	Fist Fighting:	31	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	20	Fishing:	31
+Lvl:100	Klubnichka			xp:	79342955	Magic Level:	63	Fist Fighting:	25	Club Fighting	18	Sword Fighting:	10	Axe Fighting:	10	Distance:	13	Shielding:	19	Fishing:	25
+Lvl:100	przeMyslaWik			xp:	79753585	Magic Level:	73	Fist Fighting:	28	Club Fighting	17	Sword Fighting:	11	Axe Fighting:	10	Distance:	13	Shielding:	19	Fishing:	28
+Lvl:100	Nizzlain			xp:	79210605	Magic Level:	62	Fist Fighting:	20	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	10	Shielding:	17	Fishing:	20
+Lvl:100	wtfass			xp:	79830640	Magic Level:	17	Fist Fighting:	27	Club Fighting	10	Sword Fighting:	10	Axe Fighting:	10	Distance:	96	Shielding:	28	Fishing:	27
+Lvl:100	Knight Mare			xp:	79690830	Magic Level:	67	Fist Fighting:	23	Club Fighting	16	Sword Fighting:	12	Axe Fighting:	10	Distance:	12	Shielding:	18	Fishing:	23
+Lvl:100	Prix			xp:	79655745	Magic Level:	63	Fist Fighting:	30	Club Fighting	20	Sword Fighting:	10	Axe Fighting:	10	Distance:	15	Shielding:	20	Fishing:	30
+Lvl:100	Dark GOD Daimon			xp:	5	Magic Level:	200	Fist Fighting:	410	Club Fighting	205	Sword Fighting:	235	Axe Fighting:	50	Distance:	50	Shielding:	236	Fishing:	410
+Lvl:100	Pasa Knight			xp:	80722320	Magic Level:	7	Fist Fighting:	31	Club Fighting	25	Sword Fighting:	84	Axe Fighting:	25	Distance:	10	Shielding:	58	Fishing:	31
+Lvl:100	Killers Knight			xp:	80235195	Magic Level:	7	Fist Fighting:	41	Club Fighting	47	Sword Fighting:	98	Axe Fighting:	47	Distance:	13	Shielding:	85	Fishing:	41
+Lvl:100	Dalitas 			xp:	78780795	Magic Level:	70	Fist Fighting:	27	Club Fighting	18	Sword Fighting:	11	Axe Fighting:	10	Distance:	13	Shielding:	20	Fishing:	27

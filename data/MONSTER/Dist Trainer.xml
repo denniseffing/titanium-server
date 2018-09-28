@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+               <monster name="Dist Trainer" level="1" maglevel="100" experience="1200" pushable="0" armor="1" defense="1" canpushitems="1" staticattack="50" changetarget="0" >
+               	<health now="10000" max="10000"/>
+               	<look type="93" head="20" body="30" legs="40" feet="50" corpse="1492"/>
+               	<combat targetdistance="0" runonhealth="10000"/>
+               <attacks>
+               	<attack type="distance" name="largerock" mindamage="0" maxdamage="1" exaustion="900000000" probability="1600"/>
+               	<attack type="distance" name="spear" mindamage="0" maxdamage="1" exaustion="900000000" probability="1600"/>
+               	<attack type="distance" name="bolt" mindamage="0" maxdamage="1" exaustion="900000000" probability="1600"/>
+               	<attack type="distance" name="power bolt" mindamage="0" maxdamage="1" exaustion="900000000" probability="1600"/>
+                  <attack type="distance" name="throwingknife" mindamage="0" maxdamage="1" exaustion="900000000" probability="1600"/>
+                  <attack type="distance" name="arrow" mindamage="0" maxdamage="1" exaustion="900000000" probability="1600"/>
+            	<attack type="distance" name="smallstone" mindamage="0" maxdamage="1" exaustion="900000000" probability="1600"/>
+               	<attack type="distance" name="poison-arrow" mindamage="0" maxdamage="1" exaustion="900000000" probability="1600"/>
+               </attacks>
+               
+               
+               <loot>
+          
+               </loot>
+               </monster>

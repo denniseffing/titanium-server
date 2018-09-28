@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+ <monster name="Death Pirate" level="40" maglevel="40" experience="3100" pushable="0" armor="40" defense="41" canpushitems="1" staticattack="50" changetarget="200" speed="220">
+ 	<health now="4000" max="4000"/>
+ 	 	<look type="33" head="20" body="30" legs="40" feet="50" corpse="2843"/>
+ 	<combat targetdistance="1" runonhealth="100"/>
+ 
+ <attacks>
+ 	<attack type="instant" name="deadsong" exhaustion="500" cycleticks="6000" probability="60"/>
+ 	<attack type="instant" name="exura" exhaustion="500" cycleticks="6000" probability="65"/>
+ 	<attack type="rune" name="lifedrain" exhaustion="500" cycleticks="3000" probability="50"/>
+ 	<attack type="melee" mindamage="60" maxdamage="310" probability="100"/>
+ </attacks>
+ 
+ <defenses>
+ 	<defense immunity="fire"/>
+ 	<defense immunity="invisible"/>
+ 	<!-- <defense immunity="poison"/> -->
+ 	<defense immunity="drunk"/>
+ </defenses>
+ 
+ <voices>
+ 	<voice sentence="Lonelyness seems to be happynessss"/>
+ 	<voice sentence="Be my friend , I got only dead friends"/>
+ </voices>
+ 
+ <loot>
+  	<item id="2672" countmax="2" chance1="20000" chancemax="0"/>
+  	<item id="2148" countmax="100" chance1="100000" chancemax="0"/>
+  	<item id="2398" chance="40000"/>
+  	<item id="2455" chance="12666"/>
+  	<item id="2434" chance="2333"/>
+	<item id="1996" chance="1600"/>
+
+	<inside>
+        	<item id="2148" countmax="1" chance1="28570" chancemax="0"/>
+        	</inside>
+  	<item id="2509" chance="2818"/>
+  	<item id="2406" chance="50000"/>
+  	<item id="2647" chance="4222"/>
+  	<item id="2459" chance="10000"/>
+
+  	<item id="2387" chance="8000"/>
+  	<item id="2397" chance="510000"/>
+  	<item id="2546" countmax="10" chance1="4000" chancemax="0"/>
+ 
+  	<item id="1987" chance="200000">
+
+  	<inside>
+  	<item id="2148" countmax="55" chance1="100000" chancemax="0"/>
+  	<item id="2516" chance="2000"/>
+<item id="2159" countmax="2" chance1="400" chancemax="0"/>
+ 	<item id="2145" countmax="5" chance1="1538" chancemax="0"/>
+  	<item id="2177" chance="4000"/>
+  	<item id="2413" chance="12666"/>
+  	<item id="2409" chance="1609"/>
+  	</inside>
+  	</item>
+ </loot>
+ </monster>

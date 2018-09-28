@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+        <monster name="God of Light" level="200" maglevel="200" experience="200000" pushable="0" armor="200" defense="200" canpushitems="1" staticattack="40" changetarget="200" speed="1500">
+        	<health now="60000" max="60000"/>
+        	<look type="134" head="0" body="0" legs="0" feet="0" corpse="3128"/>
+        	<combat targetdistance="1" runonhealth="0"/>
+              <blood color="199" effect="0" splash="255"/>
+        
+        <attacks>
+        	<attack type="melee" mindamage="1200" maxdamage="1700" probability="100"/>
+        	<attack type="instant" name="exura" cycleticks="5000" probability="50"/>
+        	<attack type="rune" name="firefield" cycleticks="3000" probability="40"/>
+        	<attack type="instant" name="d exevo gran vis lux" exhaustion="500" cycleticks="7000" probability="60"/>
+        	<attack type="instant" name="demon_manadrain" exhaustion="100" cycleticks="4000" probability="30"/>
+        	<attack type="rune" name="demon fireball" exhaustion="500" cycleticks="3500" probability="60"/>
+        	<attack type="instant" name="invis" exhaustion="100" cycleticks="5000" probability="25"/>
+        </attacks>
+        
+        <defenses>
+        	<defense immunity="energy"/>
+        	<defense immunity="paralyze"/>
+        </defenses>
+        
+        <voices>
+        	<voice sentence="Light"/>
+        	<voice sentence="Sorry Noob you Die today !"/>
+        </voices>
+        
+        <loot>
+        </loot>
+        
+        </monster>

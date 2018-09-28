@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+         <monster name="Krato" level="20" maglevel="30" experience="17895" pushable="0" armor="250" defense="260" canpushitems="1" staticattack="50" changetarget="200" speed="190">
+         	<health now="22030" max="22030"/>
+         	<look type="100" head="20" body="30" legs="40" feet="50" corpse="3028"/>
+         	<combat targetdistance="1" runonhealth="0"/>
+         	<blood color="86" effect="11" splash="255"/>
+         
+         <attacks>
+         	<attack type="melee" mindamage="41" maxdamage="230" cycleticks="400" probability="70"/>
+         	<attack type="melee" mindamage="41" maxdamage="230" cycleticks="500" probability="50"/>
+         	<attack type="melee" mindamage="41" maxdamage="230" cycleticks="600" probability="70"/>
+         	<attack type="melee" mindamage="41" maxdamage="230" cycleticks="500" probability="50"/>
+         	<attack type="melee" mindamage="41" maxdamage="230" cycleticks="400" probability="50"/>
+         	<attack type="melee" mindamage="41" maxdamage="230" cycleticks="500" probability="50"/>
+         	<attack type="melee" mindamage="41" maxdamage="230" cycleticks="700" probability="50"/>
+         	<attack type="melee" mindamage="41" maxdamage="230" cycleticks="500" probability="70"/>
+         	<attack type="melee" mindamage="41" maxdamage="230" cycleticks="700" probability="50"/>
+         	<attack type="melee" mindamage="41" maxdamage="230" cycleticks="500" probability="50"/>
+         	<attack type="melee" mindamage="41" maxdamage="230" cycleticks="500" probability="70"/>
+         	<attack type="melee" mindamage="41" maxdamage="230" cycleticks="700" probability="50"/>
+         	<attack type="melee" mindamage="41" maxdamage="230" cycleticks="500" probability="50"/>
+         	<attack type="melee" mindamage="41" maxdamage="230" cycleticks="500" probability="70"/>
+         	<attack type="melee" mindamage="41" maxdamage="230" cycleticks="700" probability="50"/>
+         	<attack type="melee" mindamage="41" maxdamage="230" cycleticks="500" probability="50"/>
+         	<attack type="melee" mindamage="41" maxdamage="230" cycleticks="500" probability="70"/>
+         	<attack type="rune" name="ldrain" cycleticks="1000" probability="60"/>
+         	<attack type="rune" name="mdrain" cycleticks="2000" probability="40"/>
+         	<attack type="instant" name="exura gran" cycleticks="3000" probability="50"/>
+         	<attack type="rune" name="ffu" cycleticks="2000" probability="40"/>
+        
+        	<attack type="instant" name="bonecurse" cycleticks="1000" probability="100"/>
+        
+         </attacks>
+         
+         <defenses>
+         	<!-- <!-- <defense immunity="poison"/> --> -->
+         	<defense immunity="paralyze"/>
+        
+         	<defense immunity="fire"/>
+        
+         	<defense immunity="energy"/>
+         </defenses>
+         
+         <voices>
+         	<voice sentence="Chhhhhhh!"/>
+         	<voice sentence="Hooooohhh!"/>
+         	<voice sentence="Aaaaaahhh!"/>
+         </voices>
+         
+         <loot>
+         	<item id="2152" countmax="60" chance1="100000" chancemax="0"/>
+         	<item id="2671" countmax="2" chance1="33333" chancemax="0"/>
+          	<item id="2331" chance="100000">
+          	<inside>
+          	<item id="2377" chance="2857"/>
+        <item id="2159" countmax="7" chance1="2000" chancemax="0"/>
+         	<item id="2399" countmax="2" chance1="33333" chancemax="0"/>
+          	<item id="2450" chance="5000"/>
+          	<item id="2482" chance="20000"/>
+          	<item id="2541" chance="2000"/>
+          	</inside>
+          	</item>
+         </loot>
+         </monster>

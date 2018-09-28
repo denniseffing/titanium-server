@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+ <monster name="Cerberus" level="90" maglevel="56" experience="11000" pushable="0" armor="49" defense="51" canpushitems="1" staticattack="40" changetarget="200" speed="230">
+ 	<health now="8200" max="8200"/>
+ 	<look type="101" head="20" body="30" legs="40" feet="50" corpse="3031"/>
+ 	<combat targetdistance="1" runonhealth="0"/>
+       <blood color="199" effect="8" splash="255"/>
+ 
+ <attacks>
+ 	<attack type="melee" mindamage="122" maxdamage="200"  probability="50"/>
+	<attack type="melee" mindamage="122" maxdamage="200" probability="50"/>
+	<attack type="melee" mindamage="122" maxdamage="200" probability="50"/>
+	<attack type="melee" mindamage="122" maxdamage="200" probability="50"/>
+	<attack type="melee" mindamage="122" maxdamage="200" probability="50"/>
+	<attack type="melee" mindamage="122" maxdamage="200" probability="50"/>
+	<attack type="melee" mindamage="122" maxdamage="200" probability="50"/>
+	<attack type="melee" mindamage="122" maxdamage="200" probability="50"/>
+
+
+ 	<attack type="instant" name="exura gran" cycleticks="3000" probability="50"/>
+ 	<attack type="rune" name="firefield" cycleticks="3000" probability="40"/>
+ 	<attack type="instant" name="demon_manadrain" exhaustion="100" cycleticks="4000" probability="30"/>
+ 	<attack type="rune" name="demon fireball" exhaustion="500" cycleticks="3500" probability="60"/>
+ 	<attack type="rune" name="ffu" exhaustion="500" cycleticks="300" probability="60"/>
+ 	<attack type="instant" name="domino hellio" cycleticks="1000" probability="50"/>
+ 	<attack type="instant" name="exori hellio" cycleticks="1000" probability="50"/>
+	<attack type="instant" name="exori vita sec" cycleticks="2000" probability="50"/>
+	<attack type="instant" name="bonecurse" cycleticks="1000" probability="50"/>
+
+ </attacks>
+ 
+ <defenses>
+ 	<defense immunity="energy"/>
+ 	<defense immunity="fire"/>
+ 	<!-- <defense immunity="poison"/> -->
+ 	<defense immunity="paralyze"/>
+ 	<defense immunity="invisible"/>
+ 	<defense immunity="drunk"/>
+ </defenses>
+ 
+ <voices>
+ 	<voice sentence="Wuff"/>
+ 	<voice sentence="Mi teh Protectar"/>
+ 	<voice sentence="I love to play with food"/>
+ 	<voice sentence="Ghrrrrrrrr"/>
+ </voices>
+ 
+ <loot>
+  	<item id="2148" countmax="100" chance1="100000" chancemax="0"/>
+  	<item id="2152" countmax="10" chance1="100000" chancemax="0"/>
+  	<item id="2393" chance="1000"/>
+  	<item id="2514" chance="550"/>
+	<item id="1993" chance="1400"/>
+  	<item id="2432" chance="1438"/>
+  	<item id="2472" chance="433"/>
+ <item id="2159" countmax="4" chance1="1666" chancemax="0"/>
+  	<item id="1987" chance="63333">
+  	<inside>
+   	<item id="2678" countmax="3" chance1="20000" chancemax="0"/>
+  	<item id="2148" countmax="100" chance1="200000" chancemax="0"/>
+  	<item id="2151" countmax="4" chance1="8000" chancemax="0"/>
+  	<item id="2462" chance="1055"/>
+ 	<item id="2149" countmax="3" chance1="2428" chancemax="0"/>
+  	<item id="2171" chance="1233"/>
+  	<item id="2387" chance="6666"/>
+  	<item id="2470" chance="600"/>
+  	<item id="2520" chance="866"/>
+  	<item id="2418" chance="1033"/>
+  	<item id="2377" chance="2633"/>
+  	<item id="4386" chance="2633"/>
+  	</inside>
+  	</item>
+ </loot>
+ 
+ <summons maxSummons="2">
+  	<summon name="Hellhound" chance="1333"/>
+ </summons>
+ 
+ </monster>

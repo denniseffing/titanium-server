@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+           <npc name="Event gatekeeper" script="data/npc/scripts/eventtra.lua" access="5">
+            	<look type="35" head="2" body="95" legs="60" feet="132"/>
+           </npc>

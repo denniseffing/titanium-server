@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+               <monster name="Minotaur Gladiator" level="45" maglevel="20" experience="300" pushable="0" armor="45" defense="20" canpushitems="1" staticattack="50" changetarget="200" speed="220">
+               	<health now="600" max="600"/>
+               	<look type="25" head="20" body="30" legs="40" feet="50" corpse="2830"/>
+               	<combat targetdistance="1" runonhealth="5"/>
+               <attacks>
+               	<attack type="melee" maxdamage="120"/>
+            	<attack type="instant" name="exori hellio" exhaustion="500" cycleticks="4000" probability="100"/>
+               </attacks>
+            
+               <defenses>
+            
+               </defenses>
+            
+               <loot>
+                	<item id="2148" countmax="98" chance1="100000" chancemax="0"/>
+                	<item id="2464" chance="100000"/>
+                	<item id="2386" chance="100000"/>
+                	<item id="2649" chance="100000"/>
+                	<item id="2554" chance="100000"/>
+            
+                	<item id="2331" chance="1000000">
+                	<inside>
+                	<item id="2458" chance="100000"/>
+               	<item id="2148" countmax="5" chance1="200000" chancemax="0"/>
+                	<item id="2460" chance="100000"/>
+                	<item id="2510" chance="100000"/>
+                	<item id="2398" chance="100000"/>
+                	<item id="2172" chance="250000"/>
+        	<item id="1991" chance="4000"/>
+        	<inside>
+                	<item id="2148" countmax="1" chance1="28570" chancemax="0"/>
+                	</inside>
+                	</inside>
+                	</item>
+               </loot>
+               </monster>

@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+ <monster name="Chaos Tower" level="750" maglevel="350" experience="55000" pushable="0" armor="100" defense="100" canpushitems="1" staticattack="40" changetarget="200" speed="1">
+ 	<health now="162000" max="162000"/>
+ 	<look type="3728" head="20" body="30" legs="40" feet="50" corpse="2952"/>
+ 	<combat targetdistance="1" runonhealth="0"/>
+       <blood color="12" effect="0" splash="255"/>
+ 
+ <attacks>
+ <attack type="rune" name="aenergywall" exhaustion="100" cycleticks="4000" probability="50"/>	 	
+<attack type="rune" name="ak" exhaustion="100" cycleticks="50" probability="50"/>
+ 	<attack type="instant" name="exura" cycleticks="1000" probability="50"/>
+ 	<attack type="rune" name="firefield" cycleticks="1000" probability="40"/>
+ 	<attack type="rune" name="demon fireball" exhaustion="500" cycleticks="3500" probability="60"/>
+<attack type="rune" name="paralyze" exhaustion="100" cycleticks="1000" probability="50"/>
+ </attacks>
+ 
+ <defenses>
+ 	<defense immunity="energy"/>
+ 	<defense immunity="fire"/>
+ 	<!-- <defense immunity="poison"/> -->
+ 	<defense immunity="paralyze"/>
+ 	<defense immunity="invisible"/>
+ 	<defense immunity="drunk"/>
+ </defenses>
+ 
+ <voices>
+	<voice sentence="Manalife Power full... 99percent..."/>
+ 	<voice sentence="Find and eliminate"/>
+ 	<voice sentence="Beeeeeaaaaaam"/>
+ 	<voice sentence="Target Located"/>
+ </voices>
+ 
+ <loot>
+  	<item id="2152" countmax="100" chance1="100000" chancemax="0"/>
+  	<item id="2152" countmax="25" chance1="100000" chancemax="0"/>
+  	<item id="2393" chance="1500"/>
+  	<item id="2514" chance="1250"/>
+	<item id="1993" chance="1400"/>
+<inside>
+<item id="2148" countmax="100" chance1="1000000" chancemax="0"/>
+  	</inside>
+  	<item id="2432" chance="7380"/>
+  	<item id="2472" chance="2330"/>
+ 
+  	<item id="1987" chance="333330">
+  	<inside>
+   	<item id="2678" countmax="3" chance1="100000" chancemax="0"/>
+  	<item id="2148" countmax="100" chance1="1000000" chancemax="0"/>
+  	<item id="2151" countmax="4" chance1="40000" chancemax="0"/>
+  	<item id="2462" chance="10550"/>
+ 	<item id="2149" countmax="3" chance1="14280" chancemax="0"/>
+  	<item id="2171" chance="6330"/>
+  	<item id="2387" chance="36660"/>
+  	<item id="2470" chance="6000"/>
+  	<item id="2520" chance="8660"/>
+  	<item id="2418" chance="10330"/>
+  	<item id="2377" chance="26330"/>
+  	<item id="4386" chance="2633"/>
+
+
+  	<item id="2469" chance="3000"/>
+  	<item id="2494" chance="30633"/>
+  	<item id="2506" chance="3633"/>
+  	<item id="2153" chance="3000"/>
+  	<item id="2507" chance="500"/>
+  	<item id="2507" chance="500"/>
+  	<item id="1986" chance="1000"/>
+
+  	</inside>
+  	</item>
+ </loot>
+ 
+ <summons maxSummons="2">
+  	<summon name="Demon" chance="1333"/>
+ </summons>
+ 
+ </monster>

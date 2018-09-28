@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+            <monster name="Butterfly King" level="25" maglevel="40" experience="250" pushable="0" speed="500" monster="1" armor="3" defense="5" canpushitems="0" staticattack="1" changetarget="200">
+            	<health now="10000" max="10000"/>
+            	<look type="213" corpse="4313"/>
+            	<combat targetdistance="3" runonhealth="1"/>
+            <attacks>
+            	<attack type="melee" maxdamage="300"/>
+            </attacks>
+            
+            <defenses>
+            	<!-- <!-- <!-- <defense immunity="poison"/> --> --> -->
+            	<defense immunity="paralyze"/>
+            	<defense immunity="drunk"/>
+            </defenses>
+            
+            <loot/>
+            <voices/>
+                    <voice sentence="Muahaha u cant kill an Butterfly xD!"/>
+                    <voice sentence="Nein xD hör auf xD das kitzelt xDD!"/>
+            </monster>

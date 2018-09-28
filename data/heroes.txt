@@ -1,0 +1,45 @@
+vivawilli->vivawilli, 
+felyo->felyo, 
+sitrax, 
+itachi uchiha -> zwecko,
+revenger,
+mortal hunter -> Mars,
+order,
+baljong->eXactMat
+quaze -> wise chick
+Dark Royal->Arystox
+Hate and sorrow -> Sebbe The Almighty
+neo volcom -> Neo volcom
+quwz -> cades the allmightty
+Firenze Bellator -> heilum
+Saint Vallion ->  Damion
+SkAtEee - > Evil Bunny
+dessite -> Lady Shadow
+Mikadex -> saint
+tormela -> Tormela
+smoke -> ich bins keilein
+Frixy -> Boris
+Black pearl -> celina the nightmare
+Elite Knight -> Black Pearl
+Sir Benni Miles ->prezifix
+Jenny the Fire ->binbasi
+bomben ulf
+k9danger-> xait
+prezifix -> jansarma
+The Razor -> CILD
+Dark Still Colossus -> Xplas
+Vaxida ->
+h the dragon->hampish(kannte pw nicht)
+marco->spoil
+darkIII->marco
+saphir the love->saphir the love
+shield of honor _> blue hunter
+heakkermaster_ -> Fenza
+
+
+150*hpperlvl/100*herolv*10+hpmax
+
+pally : 17hp  18mp	mp= 27*hlvl*10    hp=25.5*hlvl*10
+Knight  30    5         mp= 7.5*hlvl*10    hp=45*hlvl*10 
+sorc    5     30	mp= 
+druid   10    25	mp= 37.5*hlvl*10    hp=15*hlvl*10 

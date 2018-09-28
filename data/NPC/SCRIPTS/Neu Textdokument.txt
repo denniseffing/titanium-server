@@ -1,0 +1,8 @@
+if msgcontains(msg, 'isab') and focus == cid then
+  queststatus = getPlayerStorageValue(cid,1100)
+if queststatus == -1 then
+	selfSay('Thank you yes now i remmember you have right, here is little present for you, this is my Hearth of suffer.')
+	setPlayerStorageValue(cid,1100,1)
+	doPlayerAddItem(cid,2353,1)
+  		talk_start = os.clock()
+  	end

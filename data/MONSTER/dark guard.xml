@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+         <monster name="Dark Guard" level="50" maglevel="15" experience="3600" pushable="1" armor="63" defense="55" canpushitems="1" staticattack="50" changetarget="200" speed="690">
+         	<health now="5200" max="5200"/>
+         	<mana now="23200" max="23200"/>
+         	<look type="131" head="95" body="95" legs="95" feet="95" corpse="3128"/>
+         	<combat targetdistance="1" runonhealth="0"/>
+         
+         <attacks>
+         	<attack type="melee" mindamage="120" maxdamage="350" probability="100"/>
+         	<attack type="melee" mindamage="120" maxdamage="350" probability="100"/>
+         	<attack type="distance" name="spear" mindamage="90" maxdamage="180"/>
+         	<attack type="distance" name="spear" mindamage="90" maxdamage="180"/>
+         	<attack type="instant" name="exura vita" cycleticks="5000" probability="50"/>
+         	<attack type="instant" name="demon_manadrain" exhaustion="100" cycleticks="2000" probability="30"/>
+        <attack type="distance" name="throwingknife" mindamage="38" maxdamage="390" cycleticks="2000" probability="40"/>
+         	<attack type="instant" name="bk exori" exhaustion="500" cycleticks="5000" probability="70"/>
+        	<attack type="instant" name="exori vita" exhaustion="500" cycleticks="15000" probability="70"/>
+        	<attack type="instant" name="utani gran hur" exhaustion="500" cycleticks="6000" probability="70"/>
+        	<attack type="instant" name="utevo gran lux" exhaustion="500" cycleticks="9000" probability="70"/>
+         </attacks>
+         
+         <defenses>
+         	<defense immunity="invisible"/>
+        
+         </defenses>
+         
+         <voices>
+         	<voice sentence="HhhhHHhaaaaa"/>
+         	<voice sentence="This is the way of an Shinobi!"/>
+         	<voice sentence="My Chakra is greater than urs!"/>
+         	<voice sentence="I will die for my Master!"/>
+         	<voice sentence="Master what shall i do?"/>
+         </voices>
+         
+         <loot>
+          	 <item id="2148" countmax="10" chance1="100000" chancemax="0"/>
+         	<item id="2148" countmax="100" chance1="100000" chancemax="0"/>
+          	<item id="2476" chance="1000"/>
+          	<item id="2489" chance="1428"/>
+          	<item id="2490" chance="6666"/>
+          	<item id="2381" chance="5000"/>
+          	<item id="2389" countmax="1" chance1="20000" chancemax="0"/>
+         
+          	<item id="2331" chance="100000">
+          	<inside>
+          	<item id="2463" chance="2500"/>
+          	<item id="2148" countmax="15" chance1="100000" chancemax="0"/>
+          	<item id="2120" chance="20000"/>
+          	<item id="2387" chance="6666"/>
+          	<item id="2377" chance="2857"/>
+          	<item id="2430" chance="1333"/>
+          	<item id="2414" chance="909"/>
+          	<item id="2195" chance="555"/>
+          	</inside>
+          	</item>
+         </loot>
+         </monster>

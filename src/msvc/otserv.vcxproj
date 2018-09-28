@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Managed|Win32">
+      <Configuration>Managed</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7F2B493B-3287-4117-8B47-E14ED57E8E40}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Managed|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>OldSyntax</CLRSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>false</CLRSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Managed|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.27924.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>c:\YurOTS\Debug\</OutDir>
+    <IntDir>c:\YurOTS\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>c:\YurOTS\Release\</OutDir>
+    <IntDir>c:\YurOTS\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Managed|Win32'">
+    <OutDir>c:\YurOTS\Managed\</OutDir>
+    <IntDir>c:\YurOTS\Managed\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>-DUSE_SQL %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>c:\usr\libxml\include;c:\usr\iconv\include;c:\usr\lua\include;c:\boost;c:\usr\mysql\include;C:\usr\mysql++\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_CONSOLE;TLM_BUY_SELL;TLM_SERVER_SAVE;TLM_HOUSE_SYSTEM;BDB_UTEVO_LUX;WOLV_LOAD_NPC;BD_HOUSE_WINDOW;TR_ANTI_AFK;ELEM_VIP_LIST;SD_BATTLE_WINDOW;TR_SUMMONS;TRS_GM_INVISIBLE;SG_ROTATE_ITEM;TLM_SKULLS_PARTY;BRN_EXIVA;SD_BURST_ARROW;__DEBUG_PLAYERS__;YUR_ICE_RAPIER;YUR_AOL;YUR_LOGIN_QUEUE;YUR_MULTIPLIERS;YUR_BOH;YUR_NPC_EXT;YUR_GUILD_SYSTEM;YUR_CMD_EXT;YUR_ITEM_EXT;YUR_NO_MONSTER_HEAL;YUR_PVP_ARENA;YUR_RINGS_AMULETS;YUR_CONFIG_CAP;YUR_FIGHT_MODE;YUR_READABLES;YUR_PROMOTION;YUR_LEARN_SPELLS;YUR_HEAL_EXHAUST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>libxml2.lib liblua.lib liblualib.lib wsock32.lib %(AdditionalOptions)</AdditionalOptions>
+      <OutputFile>c:\YurOTS\YurOTSd.exe</OutputFile>
+      <AdditionalLibraryDirectories>c:\Users\janka\git\libxml\include\libxml2\;C:\usr\lua\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)otserv.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/D "_X86_" /c  %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>c:\usr\libxml\include;c:\usr\iconv\include;c:\usr\lua\include;c:\usr\boost;c:\usr\mysql\include;C:\usr\mysql++\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;TLM_BUY_SELL;TLM_SERVER_SAVE;TLM_HOUSE_SYSTEM;BDB_UTEVO_LUX;WOLV_LOAD_NPC;BD_HOUSE_WINDOW;TR_ANTI_AFK;ELEM_VIP_LIST;TR_SUMMONS;TRS_GM_INVISIBLE;TLM_SKULLS_PARTY;BRN_EXIVA;SD_BURST_ARROW;BDB_REPLACE_SPEARS;BD_ITEM_LOOK;SM_RELOAD_CONFIG;JD_DEATH_LIST;CT_EXANI_TERA;CVS_DAY_CYCLE;TJ_MONSTER_BLOOD;JD_WANDS;SM_SUMMON_ATTACK;MSVC_EXCEPTION_TRACER;__DEBUG_PLAYERS__;YUR_CVS_MODS;YUR_ICE_RAPIER;YUR_AOL;YUR_LOGIN_QUEUE;YUR_MULTIPLIERS;YUR_BOH;YUR_NPC_EXT;YUR_GUILD_SYSTEM;YUR_CMD_EXT;YUR_ITEM_EXT;YUR_ACT_EXT;YUR_NO_MONSTER_HEAL;YUR_PVP_ARENA;YUR_RINGS_AMULETS;YUR_CONFIG_CAP;YUR_FIGHT_MODE;YUR_READABLES;YUR_LEARN_SPELLS;YUR_HEAL_EXHAUST;YUR_SHUTDOWN;YUR_ROOKGARD;YUR_LIGHT_ITEM;YUR_CLEAN_MAP;YUR_GM_LOOK;YUR_HIGH_LEVELS;YUR_PREMIUM_PROMOTION;YUR_INVISIBLE;YUR_DRAINS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader />
+      <PrecompiledHeaderFile />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>libxml2.lib lualib.lib lua.lib wsock32.lib %(AdditionalOptions)</AdditionalOptions>
+      <OutputFile>c:\YurOTS\YurOTSx.exe</OutputFile>
+      <AdditionalLibraryDirectories>C:\usr\libxml\lib;C:\usr\lua\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>false</AssemblyDebug>
+      <GenerateMapFile>false</GenerateMapFile>
+      <MapFileName />
+      <MapExports>false</MapExports>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Managed|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/D "_X86_" /c  %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>c:\usr\libxml\include;c:\usr\iconv\include;c:\usr\lua\include;c:\boost;c:\usr\mysql\include;C:\usr\mysql++\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalUsingDirectories>c:\YurOTS;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;TLM_BUY_SELL;TLM_SERVER_SAVE;TLM_HOUSE_SYSTEM;BDB_UTEVO_LUX;WOLV_LOAD_NPC;BD_HOUSE_WINDOW;TR_ANTI_AFK;ELEM_VIP_LIST;SD_BATTLE_WINDOW;TR_SUMMONS;TRS_GM_INVISIBLE;SG_ROTATE_ITEM;TLM_SKULLS_PARTY;BRN_EXIVA;SD_BURST_ARROW;__DEBUG_PLAYERS__;YUR_ICE_RAPIER;YUR_AOL;YUR_LOGIN_QUEUE;YUR_MULTIPLIERS;YUR_BOH;YUR_NPC_EXT;YUR_GUILD_SYSTEM;YUR_CMD_EXT;YUR_ITEM_EXT;YUR_NO_MONSTER_HEAL;YUR_PVP_ARENA;YUR_RINGS_AMULETS;YUR_CONFIG_CAP;YUR_FIGHT_MODE;YUR_READABLES;YUR_PROMOTION;YUR_LEARN_SPELLS;YUR_HEAL_EXHAUST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader />
+      <PrecompiledHeaderFile />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>libxml2.lib lualib.lib lua.lib wsock32.lib %(AdditionalOptions)</AdditionalOptions>
+      <OutputFile>c:\YurOTS\YurOTSmng.exe</OutputFile>
+      <AdditionalLibraryDirectories>C:\usr\libxml\lib;C:\usr\lua\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\account.cpp" />
+    <ClCompile Include="..\actions.cpp" />
+    <ClCompile Include="..\chat.cpp" />
+    <ClCompile Include="..\commands.cpp" />
+    <ClCompile Include="..\container.cpp" />
+    <ClCompile Include="..\creature.cpp" />
+    <ClCompile Include="..\fileloader.cpp" />
+    <ClCompile Include="..\game.cpp" />
+    <ClCompile Include="..\guilds.cpp" />
+    <ClCompile Include="..\houses.cpp" />
+    <ClCompile Include="..\ioaccount.cpp" />
+    <ClCompile Include="..\ioaccountxml.cpp" />
+    <ClCompile Include="..\iomapotbm.cpp" />
+    <ClCompile Include="..\iomapxml.cpp" />
+    <ClCompile Include="..\ioplayer.cpp" />
+    <ClCompile Include="..\ioplayerxml.cpp" />
+    <ClCompile Include="..\item.cpp" />
+    <ClCompile Include="..\itemloader.cpp" />
+    <ClCompile Include="..\items.cpp" />
+    <ClCompile Include="..\loginqueue.cpp" />
+    <ClCompile Include="..\luascript.cpp" />
+    <ClCompile Include="..\magic.cpp" />
+    <ClCompile Include="..\map.cpp" />
+    <ClCompile Include="..\md5.cpp" />
+    <ClCompile Include="..\mdump.cpp" />
+    <ClCompile Include="..\monster.cpp" />
+    <ClCompile Include="..\monsters.cpp" />
+    <ClCompile Include="..\networkmessage.cpp" />
+    <ClCompile Include="..\npc.cpp" />
+    <ClCompile Include="..\otserv.cpp" />
+    <ClCompile Include="..\player.cpp" />
+    <ClCompile Include="..\position.cpp" />
+    <ClCompile Include="..\protocol.cpp" />
+    <ClCompile Include="..\protocol76.cpp" />
+    <ClCompile Include="..\pvparena.cpp" />
+    <ClCompile Include="..\readables.cpp" />
+    <ClCompile Include="..\scheduler.cpp" />
+    <ClCompile Include="..\spawn.cpp" />
+    <ClCompile Include="..\spells.cpp" />
+    <ClCompile Include="..\status.cpp" />
+    <ClCompile Include="..\summons.cpp" />
+    <ClCompile Include="..\thing.cpp" />
+    <ClCompile Include="..\tile.cpp" />
+    <ClCompile Include="..\tools.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\account.h" />
+    <ClInclude Include="..\actions.h" />
+    <ClInclude Include="..\chat.h" />
+    <ClInclude Include="..\commands.h" />
+    <ClInclude Include="..\const76.h" />
+    <ClInclude Include="..\container.h" />
+    <ClInclude Include="..\creature.h" />
+    <ClInclude Include="..\definitions.h" />
+    <ClInclude Include="..\fileloader.h" />
+    <ClInclude Include="..\game.h" />
+    <ClInclude Include="..\guilds.h" />
+    <ClInclude Include="..\houses.h" />
+    <ClInclude Include="..\ioaccount.h" />
+    <ClInclude Include="..\ioaccountxml.h" />
+    <ClInclude Include="..\iomap.h" />
+    <ClInclude Include="..\iomapotbm.h" />
+    <ClInclude Include="..\iomapxml.h" />
+    <ClInclude Include="..\ioplayer.h" />
+    <ClInclude Include="..\ioplayerxml.h" />
+    <ClInclude Include="..\item.h" />
+    <ClInclude Include="..\itemloader.h" />
+    <ClInclude Include="..\items.h" />
+    <ClInclude Include="..\loginqueue.h" />
+    <ClInclude Include="..\luascript.h" />
+    <ClInclude Include="..\magic.h" />
+    <ClInclude Include="..\map.h" />
+    <ClInclude Include="..\md5.h" />
+    <ClInclude Include="..\mdump.h" />
+    <ClInclude Include="..\monster.h" />
+    <ClInclude Include="..\monsters.h" />
+    <ClInclude Include="..\networkmessage.h" />
+    <ClInclude Include="..\npc.h" />
+    <ClInclude Include="..\otsystem.h" />
+    <ClInclude Include="..\player.h" />
+    <ClInclude Include="..\position.h" />
+    <ClInclude Include="..\protocol.h" />
+    <ClInclude Include="..\protocol76.h" />
+    <ClInclude Include="..\pvparena.h" />
+    <ClInclude Include="..\readables.h" />
+    <ClInclude Include="..\scheduler.h" />
+    <ClInclude Include="..\spawn.h" />
+    <ClInclude Include="..\spells.h" />
+    <ClInclude Include="..\status.h" />
+    <ClInclude Include="..\summons.h" />
+    <ClInclude Include="..\tasks.h" />
+    <ClInclude Include="..\templates.h" />
+    <ClInclude Include="..\texcept.h" />
+    <ClInclude Include="..\thing.h" />
+    <ClInclude Include="..\tile.h" />
+    <ClInclude Include="..\tools.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="otserv.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="otserv.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\data\npc\scripts\bug.lua" />
+    <None Include="..\data\npc\scripts\lib\npc.lua" />
+    <None Include="..\data\npc\scripts\sven.lua" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

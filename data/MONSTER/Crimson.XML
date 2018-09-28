@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+ <monster name="Crimson" level="120" maglevel="60" experience="13500" pushable="0" armor="44" defense="42" canpushitems="1" staticattack="50" changetarget="600" speed="270">
+ 	<health now="14000" max="14000"/>
+ 	 	<look type="214" corpse="4307"/>
+ 	<combat targetdistance="1" runonhealth="1000"/>
+ 
+ <attacks>
+ 	<attack type="melee" mindamage="160" maxdamage="400" probability="100"/>
+
+ 	<attack type="melee" mindamage="27" maxdamage="85"/>
+ 	<attack type="rune" name="aenergyfield" exhaustion="100" cycleticks="2000" probability="50"/>
+ 	<attack type="rune" name="warlock_manadrain" exhaustion="100" cycleticks="4000" probability="30"/>
+ 	<attack type="rune" name="paralyze" exhaustion="100" cycleticks="3000" probability="50"/>
+ 	<attack type="rune" name="aak" exhaustion="100" cycleticks="50" probability="50"/>
+ 	<attack type="instant" name="invis" exhaustion="100" cycleticks="5000" probability="25"/>
+
+ 
+ </attacks>
+ 
+ <defenses>
+ 	<defense immunity="fire"/>
+ 	<!-- <defense immunity="poison"/> -->
+ 	<defense immunity="energy"/>
+ 	<defense immunity="invisible"/>
+ 	<defense immunity="paralyze"/>
+ </defenses>
+ 
+ <voices>
+ 	<voice sentence="Chrush the intruders!"/>
+ 	<voice sentence="You'r so little!"/>
+ 	<voice sentence="Human flesh - so delicious!"/>
+ 
+ </voices>
+ 
+  <loot>
+  	<item id="2148" countmax="70" chance1="100000" chancemax="0"/>
+  	<item id="2671" countmax="3" chance1="10000" chancemax="0"/>
+  	<item id="2023" chance="5000"/>
+  	<item id="2387" chance="4000"/>
+  	<item id="2377" chance="1818"/>
+  	<item id="2393" chance="588"/>
+         <item id="1987" chance="100000">
+  	<inside>
+  	<item id="2148" countmax="40" chance1="100000" chancemax="0"/>
+  	<item id="2645" chance="500"/>
+         <item id="4382" chance="1000"/>
+<item id="2159" countmax="7" chance1="2000" chancemax="0"/>
+  	<item id="2161" chance="3333"/>
+  	</inside>
+  	</item>
+ </loot>
+ </monster>

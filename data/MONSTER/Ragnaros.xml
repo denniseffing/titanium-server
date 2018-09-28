@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+          <monster name="Ragnaros" level="100" maglevel="75" experience="200000" pushable="0" armor="100" defense="75" canpushitems="1" staticattack="50" changetarget="200" speed="270">
+          <health now="30000" max="30000"/>
+          <look type="88" head="95" body="116" legs="119" feet="115" corpse="3025" />
+          <combat targetdistance="1" runonhealth="80" />
+          
+          <attacks>
+          	<attack type="melee" mindamage="300" exhaustion="300" maxdamage="500" cycleticks="2000" probability="65" />
+          	<attack type="rune" name="Explosion" exhaustion="500" mindamage="20" maxdamage="2000" cycleticks="1700" probability="45" />
+          	<attack type="rune" name="Heavy Magic Missile" mindamage="100" maxdamage="300" cycleticks="2000" probability="35" />
+          	<attack type="instant" name="exura vita" mindamage="0" maxdamage="1000" cycleticks="2000" probability="25" />
+          </attacks>
+          
+          <defenses>
+          	<defense immunity="fire" />
+                  <defense immunity="energy" />
+          	<defense immunity="poison" />
+          	<defense immunity="paralyze" />
+          	<defense immunity="drunk" />
+          </defenses>
+          
+          <voices>
+          	<voice sentence="Run so fast you can... but you'll you die! die ! and only Die!" />
+                  <voice sentence="I'm the boss of the bosses ! Run just run and you're dead."/>
+          </voices>
+          
+          <loot>
+          	<item id="2152" countmax="100" chance1="100000" chancemax="0"/>
+          	<item id="2414" chance="100000"/>
+          	<item id="2546" chance="10" countmax="100" chancel="100000" chancemax="0"/>
+          	<item id="2547" chance="10" countmax="100" chancel="100000" chancemax="0"/>
+                  <item id="2214" chance="100000"/>
+          	<item id="2151" countmax="12" chance1="80000" chancemax="0"/>
+          	<item id="1988" chance="1000000">
+          	<inside>
+          	<item id="2501" chance="10000"/>
+          	<item id="2534" chance="10000"/>
+          	<item id="2195" chance="10000"/>
+          	<item id="2179" chance="10000"/>
+          	<item id="2493" chance="1000"/>
+          	<item id="2494" chance="1000"/>
+          	<item id="2495" chance="1000"/>
+          	<item id="2656" chance="1000"/>
+          	<item id="2646" chance="100"/>
+          	<item id="3972" chance="10"/>
+          	</inside>
+          	</item>
+          </loot>
+          
+          <summons maxSummons="2">
+           	<summon name="Behemoth" chance="5000"/>
+          </summons>
+          
+          </monster>
+          

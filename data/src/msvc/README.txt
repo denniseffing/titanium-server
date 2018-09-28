@@ -1,0 +1,1 @@
+This files were generated when I tried to build the project on my windows 10, visual studio community 2017. karaffa

@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+ <monster name="Death Doll" level="40" maglevel="40" experience="13000" pushable="0" armor="43" defense="71" canpushitems="1" staticattack="50" changetarget="200" speed="640">
+ 	<health now="3200" max="3200"/>
+	<look type="216" corpse="4307"/> 	
+ 	<combat targetdistance="1" runonhealth="800"/>
+ 
+ <attacks>
+ 	<attack type="melee" mindamage="200" maxdamage="705"/>
+
+ 	<attack type="rune" name="aenergyfield" exhaustion="500" cycleticks="700" probability="60"/>
+ 	<attack type="instant" name="maleattack" exhaustion="500" cycleticks="1000" probability="90"/>
+ 	<attack type="rune" name="amdrain" exhaustion="100" cycleticks="4000" probability="40"/>
+ 	<attack type="rune" name="paralyze" exhaustion="100" cycleticks="3000" probability="50"/>
+	<attack type="instant" name="behe_haste" exhaustion="500" cycleticks="4000" probability="25"/>
+ 	<attack type="distance" name="largerock" mindamage="92" maxdamage="170" exhaustion="500" cycleticks="3000" probability="80"/>
+ 
+ </attacks>
+ 
+ <defenses>
+ 	<defense immunity="energy"/>
+ 	<defense immunity="fire"/>
+ 	<!-- <defense immunity="poison"/> -->
+ 	<defense immunity="paralyze"/>
+ 	<defense immunity="drunk"/>
+ 	<defense immunity="invisible"/>
+ </defenses>
+ 
+ <voices>
+ 	<voice sentence="Even a rat is a better mage than you."/>
+ </voices>
+ 
+ <loot>
+  	<item id="2148" countmax="100" chance1="100000" chancemax="0"/>
+  	<item id="2600" chance="10000"/>
+ 
+  	<item id="1987" chance="100000">
+  	<inside>
+  	<item id="2148" countmax="50" chance1="80000" chancemax="0"/>
+  	<item id="2411" chance="5000"/>
+ 	<item id="2792" countmax="5" chance1="6666" chancemax="0"/>
+ 	<item id="2793" countmax="2" chance1="6666" chancemax="0"/>
+  	<item id="2656" chance="1333"/>
+  	<item id="2466" chance="1111"/>
+  	<item id="2436" chance="1428"/>
+<item id="2159" countmax="4" chance1="1200" chancemax="0"/>
+  	<item id="2123" chance="1200"/>
+  	</inside>
+  	</item>
+ </loot>
+ 
+ <summons maxSummons="3">
+  	<summon name="Stone Golem" chance="1000"/>
+ </summons>
+ 
+ </monster>

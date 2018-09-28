@@ -1,0 +1,15 @@
+<action itemid="2148" script="gold.lua" />
+<action itemid="2152" script="platinum.lua" />
+<action itemid="2160" script="crystal.lua" />
+<action itemid="2157" script="titanium.lua" />
+
+
+
+
+<action itemid="1945" script="hellfiresumo.lua" />
+
+
+
+
+
+<action itemid="4387" script="califf.lua" />

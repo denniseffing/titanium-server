@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+ <monster name="Arcc" level="100" maglevel="60" experience="11000" pushable="0" armor="45" defense="38" canpushitems="1" staticattack="50" changetarget="200" speed="640">
+ 	<health now="11200" max="11200"/>
+ 	<look type="214" corpse="4307"/> 	
+ 	<combat targetdistance="5" runonhealth="1000"/>
+ 
+ <attacks>
+ 	<attack type="melee" mindamage="27" maxdamage="85"/>
+ 	<attack type="instant" name="ass kick" exhaustion="500" cycleticks="6000" probability="90"/>
+ 	<attack type="rune" name="warlock_manadrain" exhaustion="100" cycleticks="4000" probability="30"/>
+ 	<attack type="rune" name="paralyze" exhaustion="100" cycleticks="3000" probability="50"/>
+ 	<attack type="rune" name="ak" exhaustion="100" cycleticks="50" probability="50"/>
+ 	<attack type="instant" name="invis" exhaustion="100" cycleticks="5000" probability="25"/>
+ </attacks>
+ 
+ <defenses>
+ 	<defense immunity="energy"/>
+ 	<defense immunity="fire"/>
+ 	<!-- <defense immunity="poison"/> -->
+ 	<defense immunity="paralyze"/>
+ 	<defense immunity="drunk"/>
+ 	<defense immunity="invisible"/>
+ </defenses>
+ 
+ <voices>
+ 	<voice sentence="Even a rat is a better mage than you."/>
+ </voices>
+ 
+ <loot>
+  	<item id="2148" countmax="100" chance1="100000" chancemax="0"/>
+  	<item id="2600" chance="10000"/>
+ 
+  	<item id="1987" chance="100000">
+  	<inside>
+  	<item id="2148" countmax="50" chance1="80000" chancemax="0"/>
+  	<item id="2411" chance="5000"/>
+ 	<item id="2792" countmax="5" chance1="6666" chancemax="0"/>
+ 	<item id="2793" countmax="2" chance1="6666" chancemax="0"/>
+  	<item id="2656" chance="1333"/>
+  	<item id="2466" chance="1111"/>
+<item id="2159" countmax="7" chance1="2400" chancemax="0"/>
+  	<item id="2436" chance="1428"/>
+  	<item id="2123" chance="1200"/>
+  	</inside>
+  	</item>
+ </loot>
+ 
+ <summons maxSummons="3">
+  	<summon name="Stone Golem" chance="1000"/>
+ </summons>
+ 
+ </monster>

@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<raids>
+<raid name="Orc" message="Principal city is under atak!" brodcaster="GM DeVoN SiX">
+<area monster="Orc Leader" count="10" posxfrom="216" posyfrom="44" poszfrom="7" posxto="222" posyto="50" poszto="7" />
+<area monster="Orc Warlod" count="7" posxfrom="230" posyfrom="40" poszfrom="7" posxto="236" posyto="45" poszto="7" />
+<area monster="Orc Shaman" count="15" posxfrom="223" posyfrom="47" poszfrom="7" posxto="234" posyto="53" poszto="7" />
+<area monster="Orc Berserker" count="15" posxfrom="223" posyfrom="47" poszfrom="7" posxto="234" posyto="53" poszto="7" />
+<area monster="Orc Leader" count="10" posxfrom="216" posyfrom="113" poszfrom="7" posxto="232" posyto="129" poszto="7" />
+<area monster="Orc Warlod" count="10" posxfrom="216" posyfrom="113" poszfrom="7" posxto="232" posyto="129" poszto="7" />
+<area monster="Orc Shaman" count="10" posxfrom="216" posyfrom="113" poszfrom="7" posxto="232" posyto="129" poszto="7" />
+<area monster="Orc Berserker" count="10" posxfrom="216" posyfrom="113" poszfrom="7" posxto="232" posyto="129" poszto="7" />
+</raid>
+<raid name="Daramian" message="Desert city is under atak" brodcaster="GOD Spartakos">
+<area monster="Necromancer" count="5" posxfrom="319" posyfrom="243" poszfrom="7" posxto="235" posyto="257" poszto="7" />
+<area monster="Mummy" count="20" posxfrom="319" posyfrom="243" poszfrom="7" posxto="235" posyto="257" poszto="7" />
+<area monster="Ghoul" count="25" posxfrom="319" posyfrom="243" poszfrom="7" posxto="235" posyto="257" poszto="7" />
+<area monster="Beholder" count="10" posxfrom="319" posyfrom="243" poszfrom="7" posxto="235" posyto="257" poszto="7" />
+<area monster="Lich" count="6" posxfrom="319" posyfrom="243" poszfrom="7" posxto="235" posyto="257" poszto="7" />
+<area monster="Vampire" count="10" posxfrom="319" posyfrom="243" poszfrom="7" posxto="235" posyto="257" poszto="7" />
+</raid>
+</raids>

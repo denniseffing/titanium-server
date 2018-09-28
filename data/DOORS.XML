@@ -1,0 +1,21 @@
+<doors>
+<door level="100" x="376" y="183" z="11"/>
+<door level="60" x="376" y="57" z="4"/>
+<door level="50" x="86" y="158" z="8"/>
+<door level="40" x="461" y="228" z="9"/>
+<door level="60" x="429" y="167" z="10"/>
+<door level="100" x="376" y="183" z="11"/>
+<door level="35" x="229" y="158" z="11"/>
+<door level="80" x="80" y="213" z="14"/>
+<door level="80" x="436" y="265" z="14"/>
+<door level="20" x="429" y="263" z="9"/>
+<door level="60" x="222" y="240" z="9"/>
+<door level="20" x="140" y="313" z="9"/>
+<door level="40" x="140" y="320" z="9"/>
+<door level="60" x="140" y="329" z="9"/>
+<door level="60" x="342" y="222" z="12"/>
+<door level="60" x="345" y="222" z="12"/>
+<door level="80" x="107" y="225" z="12"/>
+<door level="60" x="189" y="317" z="8"/>
+<door level="50" x="152" y="100" z="10"/>
+</doors>

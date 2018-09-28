@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<npclist>
+<npc name="Seller" x="145" y="50" z="7"/>
+<npc name="Dark Rodo" x="129" y="50" z="6"/>
+<npc name="Mad" x="145" y="51" z="6"/>
+<npc name="Lector" x="127" y="49" z="7"/>
+<npc name="Perac" x="144" y="54" z="5"/>
+<npc name="Dufi" x="128" y="55" z="7"/>
+<npc name="Seller" x="208" y="80" z="7"/>
+<npc name="Dark Rodo" x="207" y="71" z="7"/>
+<npc name="Cody" x="129" y="30" z="7"/>
+<npc name="Pirate Jack" x="177" y="64" z="7"/>
+<npc name="Guild Master" x="129" y="51" z="5"/>
+<npc name="Obi" x="173" y="46" z="7"/>
+<npc name="Harry Potter" x="341" y="400" z="3"/>
+<npc name="Ebay" x="345" y="397" z="3"/>
+<npc name="Ermos the brother of Eremo" x="339" y="399" z="1"/>
+<npc name="Weapon Trader" x="345" y="396" z="2"/>
+<npc name="Distance Dude" x="341" y="395" z="1"/>
+<npc name="MC Donald" x="341" y="398" z="2"/>
+<npc name="Trainer" x="347" y="435" z="0"/>
+<npc name="Trainer" x="343" y="431" z="3"/>
+<npc name="Trainer" x="140" y="49" z="7"/>
+<npc name="Trainer" x="136" y="58" z="7"/>
+
+<npc name="Fargum" x="171" y="63" z="7"/>
+<npc name="Nimral" x="122" y="117" z="7"/>
+
+<npc name="Dagor" x="132" y="29" z="7"/>
+<npc name="Diamati" x="132" y="29" z="6"/>
+<npc name="Azemor" x="132" y="29" z="5"/>
+<npc name="Shanti" x="132" y="29" z="4"/>
+<npc name="Orlan" x="127" y="49" z="4"/>
+
+
+<npc name="Trainer" x="347" y="408" z="3"/>
+<npc name="Captain Huck" x="432" y="79" z="7"/>
+
+
+<npc name="MC Donald" x="42" y="277" z="7"/>
+<npc name="Harry Potter" x="35" y="273" z="7"/>
+<npc name="Distance Dude" x="39" y="277" z="7"/>
+<npc name="Ebay" x="46" y="273" z="7"/>
+<npc name="Wedding Priest" x="1425" y="74" z="7"/>
+<npc name="Ruffy" x="402" y="390" z="3"/>
+<npc name="Adventurer" x="121" y="60" z="7"/>
+<npc name="Arnold the House item seller" x="345" y="437" z="2"/>
+<npc name="Radok" x="1341" y="51" z="7"/>
+
+<npc name="dissky" x="363" y="393" z="0"/>
+<npc name="masky" x="374" y="383" z="0"/>
+<npc name="knisky" x="363" y="386" z="1"/>
+<npc name="drusky" x="360" y="383" z="0"/>
+<npc name="aolrad" x="1456" y="36" z="5"/>
+<npc name="foodrad" x="1455" y="63" z="6"/>
+<npc name="disshorad" x="1463" y="36" z="6"/>
+<npc name="runerad" x="1461" y="36" z="7"/>
+<npc name="weprad" x="1462" y="36" z="6"/>
+<npc name="fluidrad" x="1454" y="36" z="7"/>
+<npc name="tempold" x="157" y="53" z="7"/>
+<npc name="tempsky" x="354" y="467" z="3"/>
+<npc name="temprad" x="394" y="81" z="7"/>
+<npc name="post" x="133" y="58" z="7"/>
+<npc name="post" x="342" y="410" z="3"/>
+<npc name="post" x="1460" y="45" z="7"/>
+
+<npc name="Seller" x="411" y="818" z="13"/>
+<npc name="Mad" x="393" y="822" z="13"/>
+<npc name="Dufi" x="397" y="800" z="13"/>
+<npc name="Dark Rodo" x="389" y="807" z="13"/>
+<npc name="Perac" x="414" y="810" z="13"/>
+<npc name="Dufi" x="473" y="769" z="13"/>
+<npc name="Secret Traveler" x="877" y="37" z="7"/>
+<npc name="Sergej Savchenko" x="82" y="184" z="7"/>
+<npc name="Sergej Savchenko" x="825" y="79" z="7"/>
+<npc name="Torben Drake" x="81" y="221" z="7"/>   
+<npc name="Survived Demon" x="552" y="112" z="6"/>
+
+<npc name="Old Heiller" x="325" y="793" z="3"/>
+
+<npc name="S seller" x="829" y="44" z="6"/>
+<npc name="S eq" x="835" y="44" z="6"/>
+<npc name="S rune" x="829" y="51" z="6"/>
+<npc name="S dis" x="836" y="50" z="6"/>
+
+<npc name="S aol" x="829" y="43" z="5"/>
+<npc name="S Guild Master" x="836" y="43" z="5"/>
+<npc name="S House item" x="829" y="51" z="5"/>
+<npc name="S Backpack" x="836" y="51" z="5"/>
+
+<npc name="S Backpack" x="365" y="391" z="2"/>
+
+
+
+
+<npc name="S seller" x="338" y="171" z="7"/>
+<npc name="S Backpack" x="338" y="177" z="7"/>
+<npc name="S aol" x="331" y="177" z="7"/>
+<npc name="S rune" x="304" y="189" z="7"/>
+<npc name="S House item" x="334" y="174" z="6"/>
+<npc name="S Guild Master" x="336" y="174" z="6"/>
+
+<npc name="S eq" x="334" y="176" z="5"/>
+<npc name="S dis" x="338" y="172" z="5"/>
+<npc name="Trainer" x="334" y="173" z="4"/>
+<npc name="Trainer" x="340" y="185" z="7"/>
+<npc name="Ancient" x="452" y="355" z="0"/>
+<npc name="Ancient" x="365" y="390" z="0"/>
+<npc name="combotravel" x="374" y="148" z="7"/>
+
+
+
+<npc name="Capitan Iglo" x="2657" y="337" z="6"/>
+
+<npc name="Jamela" x="316" y="127" z="11"/>
+
+<npc name="ghost" x="631" y="166" z="14"/>
+<npc name="the oracle" x="210" y="290" z="4"/>
+<npc name="oracle" x="146" y="297" z="14"/>
+<npc name="monika" x="171" y="282" z="6"/>
+
+</npclist>

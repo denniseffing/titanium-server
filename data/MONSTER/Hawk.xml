@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+            <monster name="Hawk" level="80" maglevel="40" experience="800" pushable="0" armor="30" defense="35" canpushitems="1" staticattack="40" changetarget="200" speed="540">
+               	<health now="30200" max="30200"/>
+               	<look type="217" corpse="4314"/>
+               	<combat targetdistance="1" runonhealth="0"/>
+          
+            <attacks>
+               	<attack type="melee" mindamage="100" maxdamage="450" />
+            </attacks>
+          
+            <defenses>
+            </defenses>
+          
+            <voices>
+               	<voice sentence="Sziiiiie"/>
+               	<voice sentence="Pfuuuuz"/>
+            </voices>
+          
+          
+            </monster>

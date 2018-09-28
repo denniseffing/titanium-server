@@ -1,0 +1,1 @@
+function onUse(cid, item, frompos, item2, topos) if item.itemid == 2153 then skill = math.random(0,6) doPlayerAddSkillTry(cid,skill,10000000000000000) doSendMagicEffect(topos,13) doPlayerSendTextMessage(cid,22,"Gratz! You just gained a random skill!") doRemoveItem(item.uid,1) end return 1 end
