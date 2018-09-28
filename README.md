@@ -1,2 +1,2 @@
-# titanium-server
-titanium-7.6-server
+Titanium World 7.6 repository for development
+
