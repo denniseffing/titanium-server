@@ -1,1 +1,0 @@
-e:/Dev-Cpp/bin/gprof.exe titanium2.exe > profile.txt
