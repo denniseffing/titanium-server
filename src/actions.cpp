@@ -436,13 +436,9 @@ _player(NULL)
 	lastuid = 0;
 	if(scriptname == "")
 		return;
-	luaState = lua_open();
-	luaopen_loadlib(luaState);
-	luaopen_base(luaState);
-	luaopen_math(luaState);
-	luaopen_string(luaState);
-	luaopen_io(luaState);
-    lua_dofile(luaState, std::string(datadir + "actions/lib/actions.lua").c_str());
+	luaState = luaL_newstate();
+	luaL_openlibs(luaState);
+    luaL_dofile(luaState, std::string(datadir + "actions/lib/actions.lua").c_str());
     
 	FILE* in=fopen(scriptname.c_str(), "r");
 	if(!in){
@@ -451,7 +447,7 @@ _player(NULL)
 	}
 	else
 		fclose(in);
-	lua_dofile(luaState, scriptname.c_str());
+	luaL_dofile(luaState, scriptname.c_str());
 	this->setGlobalNumber("addressOfActionScript", (int)this);
 	this->loaded = true;
 	this->registerFunctions();

@@ -355,22 +355,18 @@ NpcScript::NpcScript(std::string scriptname, Npc* npc){
 	this->loaded = false;
 	if(scriptname == "")
 		return;
-	luaState = lua_open();
-	luaopen_loadlib(luaState);
-	luaopen_base(luaState);
-	luaopen_math(luaState);
-	luaopen_string(luaState);
-	luaopen_io(luaState);
+	luaState = luaL_newstate();
+	luaL_openlibs(luaState);
 	
 	std::string datadir = g_config.getGlobalString("datadir");
-    lua_dofile(luaState, std::string(datadir + "npc/scripts/lib/npc.lua").c_str());
+    luaL_dofile(luaState, std::string(datadir + "npc/scripts/lib/npc.lua").c_str());
 	
 	FILE* in=fopen(scriptname.c_str(), "r");
 	if(!in)
 		return;
 	else
 		fclose(in);
-	lua_dofile(luaState, scriptname.c_str());
+	luaL_dofile(luaState, scriptname.c_str());
 	this->loaded=true;
 	this->npc=npc;
 	this->setGlobalNumber("addressOfNpc", (int)npc);
