@@ -29,10 +29,8 @@
 #ifdef __PARTYSYSTEM__
 #include "party.h"
 #endif
-// #include <libxml/xmlmemory.h>
-// #include <libxml/parser.h> 
-#include "c:\Users\janka\git\libxml\include\libxml2\libxml\xmlmemory.h"
-#include "c:\Users\janka\git\libxml\include\libxml2\libxml\parser.h"
+#include <libxml/xmlmemory.h>
+#include <libxml/parser.h> 
 
 #include "actions.h"
 
