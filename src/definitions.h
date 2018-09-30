@@ -24,7 +24,6 @@
 
 
 
-typedef unsigned long long uint64_t;
 
 #ifdef XML_GCC_FREE
 #define xmlFreeOTSERV(s)	free(s)
