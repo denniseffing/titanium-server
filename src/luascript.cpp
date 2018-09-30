@@ -40,9 +40,9 @@ LuaScript::~LuaScript()
 
 int LuaScript::OpenFile(const char *filename)
 {
-	luaState = lua_open();
+	luaState = luaL_newstate();
 
-	if (lua_dofile(luaState, filename))
+	if (luaL_dofile(luaState, filename))
 		return false;
 	NO_VOC_SPEED = atof(getGlobalStringField("speed", 1, "2.0").c_str());
     SORC_SPEED = atof(getGlobalStringField("speed", 2, "2.0").c_str());

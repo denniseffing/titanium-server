@@ -251,20 +251,16 @@ SpellScript::SpellScript(const std::string &datadir, std::string scriptname, Spe
 	this->loaded = false;
 	if(scriptname == "")
 		return;
-	luaState = lua_open();
-	luaopen_loadlib(luaState);
-	luaopen_base(luaState);
-	luaopen_math(luaState);
-	luaopen_string(luaState);
-	luaopen_io(luaState);
-    lua_dofile(luaState, std::string(datadir + "spells/lib/spells.lua").c_str());
+	luaState = luaL_newstate();
+	luaL_openlibs(luaState);
+    luaL_dofile(luaState, std::string(datadir + "spells/lib/spells.lua").c_str());
 	
 	FILE* in=fopen(scriptname.c_str(), "r");
 	if(!in)
 		return;
 	else
 		fclose(in);
-	lua_dofile(luaState, scriptname.c_str());
+	luaL_dofile(luaState, scriptname.c_str());
 	this->loaded=true;
 	this->spell=spell;
 	this->setGlobalNumber("addressOfSpell", (int)spell);
