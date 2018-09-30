@@ -22,6 +22,7 @@
 #include <sstream>
 #include <fstream>
 #include <utility>
+#include <stdlib.h>
 
 #include "commands.h"
 #include "player.h"
@@ -743,7 +744,7 @@ bool Commands::showExpForLvl(Creature* c, const std::string &cmd, const std::str
 	if (player)
 	{
 		char buf[128];
-		_i64toa(player->getExpForNextLevel(), buf, 10);
+		sprintf(buf, "%d", player->getExpForNextLevel());
 
 		std::string msg = std::string("You need ") + std::string(buf) + std::string(" experience points to gain level.");
 		player->sendTextMessage(MSG_BLUE_TEXT, msg.c_str());
@@ -758,7 +759,7 @@ bool Commands::showManaForLvl(Creature* c, const std::string &cmd, const std::st
 	if (player)
 	{
 		char buf[36];
-		ltoa((long)player->getManaForNextMLevel(), buf, 10);
+		sprintf(buf, "%d", (long)player->getManaForNextMLevel());
 
 		std::string msg = std::string("You need to spent ") + std::string(buf) + std::string(" mana to gain magic level.");
 		player->sendTextMessage(MSG_BLUE_TEXT, msg.c_str());

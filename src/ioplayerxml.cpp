@@ -744,7 +744,7 @@ bool IOPlayerXML::savePlayer(Player* player){
 	
 #ifdef YUR_HIGH_LEVELS
 	char buf[128];
-	_i64toa(player->experience, buf, 10);
+	sprintf(buf, "%d", player->experience);
 	xmlSetProp(root, (const xmlChar*) "exp", (const xmlChar*) buf);
 #else
 	sb << player->experience;         xmlSetProp(root, (const xmlChar*) "exp", (const xmlChar*)sb.str().c_str());       sb.str("");	
