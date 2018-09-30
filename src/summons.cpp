@@ -18,6 +18,7 @@
 // Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 //////////////////////////////////////////////////////////////////////
 #ifdef TR_SUMMONS
+#include <string.h>
 #include "summons.h"
 #include "luascript.h"
 #include <libxml/xmlmemory.h>
