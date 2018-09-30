@@ -3684,11 +3684,10 @@ void Game::creatureMakeDamage(Creature *creature, Creature *attackedCreature, fi
 
 				if(spectator->CanSee(gainexpCreature->pos.x, gainexpCreature->pos.y, gainexpCreature->pos.z)) {
 					char exp[128];
-#ifdef YUR_HIGH_LEVELS	// TODO: format like this: 1,000,000
-					_i64toa(attackedCreature->getGainedExperience(gainexpCreature), exp, 10);
-#else
-					itoa(attackedCreature->getGainedExperience(gainexpCreature), exp, 10);
-#endif //YUR_HIGH_LEVLES
+// #ifdef YUR_HIGH_LEVELS	// TODO: format like this: 1,000,000, AND DELETE COMMENTED LINES IF WORKING
+					sprintf(exp, "%d", attackedCreature->getGainedExperience(gainexpCreature));
+// #else
+// #endif //YUR_HIGH_LEVLES
 					spectator->sendAnimatedText(gainexpCreature->pos, 0xD7, exp);
 				}
 			}
@@ -6599,7 +6598,7 @@ bool Game::setSpellbookText(Player* player, Item* item)
                 if(sit != tmp->end()){
                     InstantSpell* instant = dynamic_cast<InstantSpell*>(sit->second);
                     if(instant){
-                        text << "\'" << instant->getName() << "' · \'" << instant->getWords() << "\' · mana: " << instant->getMana() << " · level: " << instant->getMagLv();
+                        text << "\'" << instant->getName() << "' ï¿½ \'" << instant->getWords() << "\' ï¿½ mana: " << instant->getMana() << " ï¿½ level: " << instant->getMagLv();
                         text << "\n";
                     }
                 }
