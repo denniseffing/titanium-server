@@ -17,7 +17,7 @@
           </attacks>
           
           <defenses>
-            	<!-- <!-- <defense immunity="poison"/> --> --> 
+            	<!-- <defense immunity="poison"/> --> 
             	<defense immunity="paralyze"/>
             	<defense immunity="drunk"/>
           </defenses>

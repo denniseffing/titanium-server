@@ -11,7 +11,7 @@
         
          <defenses>
          	<defense immunity="energy"/>
-         	<!-- <!-- <defense immunity="poison"/> --> -->
+         	<!-- <defense immunity="poison"/> -->
          	<defense immunity="invisible"/>
          </defenses>
          

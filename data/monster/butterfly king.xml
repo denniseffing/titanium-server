@@ -8,7 +8,7 @@
             </attacks>
             
             <defenses>
-            	<!-- <!-- <!-- <defense immunity="poison"/> --> --> -->
+            	<!-- <defense immunity="poison"/> -->
             	<defense immunity="paralyze"/>
             	<defense immunity="drunk"/>
             </defenses>
@@ -16,5 +16,5 @@
             <loot/>
             <voices/>
                     <voice sentence="Muahaha u cant kill an Butterfly xD!"/>
-                    <voice sentence="Nein xD hör auf xD das kitzelt xDD!"/>
+                    <voice sentence="Nein xD hï¿½r auf xD das kitzelt xDD!"/>
             </monster>

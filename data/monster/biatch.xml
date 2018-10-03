@@ -13,7 +13,7 @@
           
             <defenses>
                	<defense immunity="fire"/>
-                <!-- <!-- <defense immunity="poison"/> --> --> 
+                <!-- <defense immunity="poison"/> --> 
             </defenses>
           
             </monster>

@@ -14,7 +14,7 @@
          
          <defenses>
          	<defense immunity="fire"/>
-         	<!-- <!-- <defense immunity="poison"/> --> -->
+         	<!-- <defense immunity="poison"/> -->
          	<defense immunity="invisible"/>
          	<defense immunity="drunk"/>
          </defenses>

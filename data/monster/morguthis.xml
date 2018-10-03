@@ -3,7 +3,8 @@
          	<health now="6000" max="6000"/>
          	<look type="85" head="20" body="30" legs="40" feet="50" corpse="3016"/>
          	<combat targetdistance="1" runonhealth="100"/>
-         <attacks>
+         
+<attacks>
          	<attack type="melee" maxdamage="290"/>
          	<attack type="distance" name="bolt" mindamage="110" maxdamage="160"/>
          	<attack type="distance" name="throwingstar" mindamage="10" maxdamage="100" cycleticks="2000" probability="100"/>
@@ -13,8 +14,8 @@
          
          <defenses>
          	<defense immunity="energy"/>
-         	<defense immunity="fire"/>
-         	<!-- <!-- <defense immunity="poison"/> --> -->
+         	<!--immunity="fire"/>
+         	<defense immunity="poison"/> -->
          	<defense immunity="paralyze"/>
          	<defense immunity="drunk"/>
          	<defense immunity="invisible"/>

@@ -4,7 +4,8 @@
                	<look type="76" head="20" body="30" legs="40" feet="50" corpse="2995"/>
                	<combat targetdistance="1" runonhealth="0"/>
           
-            <attacks>
+            
+<attacks>
              	<attack type="melee" maxdamage="370"/>
              	<attack type="distance" name="bolt" mindamage="120" maxdamage="500"/>
              	<attack type="distance" name="throwingstar" mindamage="100" maxdamage="350" cycleticks="2000" probability="100"/>
@@ -14,8 +15,8 @@
             
                <defenses>
                	<defense immunity="energy"/>
-               	<defense immunity="fire"/>
-               	<!-- <!-- <!-- <defense immunity="poison"/> --> --> -->
+               	<!--ity="fire"/>
+               	<!-- <defense immunity="poison"/> -->
                	<defense immunity="paralyze"/>
                	<defense immunity="drunk"/>
                </defenses>

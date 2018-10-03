@@ -16,7 +16,7 @@
           <defenses>
           	<defense immunity="energy"/>
           	<defense immunity="fire"/>
-          	<!-- <!-- <!-- <defense immunity="poison"/> --> --> -->
+          	<!-- <defense immunity="poison"/> -->
           	<defense immunity="paralyze"/>
           	<defense immunity="drunk"/>
           </defenses>
