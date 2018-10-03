@@ -1,6 +1,9 @@
 # list all files
-file(GLOB_RECURSE SRC_LIST *.cpp)
-file(GLOB_RECURSE HDR_LIST *.h)
+# file(GLOB_RECURSE SRC_LIST *.cpp)
+# file(GLOB_RECURSE HDR_LIST *.h)
+
+file(GLOB SRC_LIST *.cpp)
+file(GLOB HDR_LIST *.h)
 
 # static linking
 if(USE_STATIC_LIBS)
