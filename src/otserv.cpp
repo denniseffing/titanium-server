@@ -550,7 +550,7 @@ int main(int argc, char *argv[])
 
 	// load item data
 	std::cout << ":: Loading items.otb...             ";
-	if (Item::items.loadFromOtb(g_config.getGlobalString("datadir") + "items/items.otb"))
+	if (!Item::items.loadFromOtb(g_config.getGlobalString("datadir") + "items/items.otb"))
 	{
 		ErrorMessage("Could not load items.otb!");
 		return -1;
