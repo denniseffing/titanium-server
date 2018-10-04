@@ -241,7 +241,7 @@ std::string Npc::getDescription(bool self) const
 }
             
 void Npc::onThingMove(const Player *player, const Thing *thing, const Position *oldPos,
-	unsigned char oldstackpos, unsigned char oldcount, unsigned char count){
+	uint8_t oldstackpos, uint8_t oldcount, uint8_t count){
 	//not yet implemented
 }
 
@@ -249,11 +249,11 @@ void Npc::onCreatureAppear(const Creature *creature){
 	this->script->onCreatureAppear(creature->getID());
 }
 
-void Npc::onCreatureDisappear(const Creature *creature, unsigned char stackPos, bool tele){
+void Npc::onCreatureDisappear(const Creature *creature, uint8_t stackPos, bool tele){
 	this->script->onCreatureDisappear(creature->getID());
 }
 
-void Npc::onThingDisappear(const Thing* thing, unsigned char stackPos){
+void Npc::onThingDisappear(const Thing* thing, uint8_t stackPos){
 	const Creature *creature = dynamic_cast<const Creature*>(thing);
 	if(creature)
 		this->script->onCreatureDisappear(creature->getID());
@@ -264,12 +264,12 @@ void Npc::onThingAppear(const Thing* thing){
 		this->script->onCreatureAppear(creature->getID());
 }
 
-void Npc::onCreatureTurn(const Creature *creature, unsigned char stackpos){
+void Npc::onCreatureTurn(const Creature *creature, uint8_t stackpos){
 	//not implemented yet, do we need it?
 }
 
 /*
-void Npc::setAttackedCreature(unsigned long id){
+void Npc::setAttackedCreature(uint32_t id){
 	//not implemented yet
 }
 */
@@ -389,7 +389,7 @@ void NpcScript::onThink(){
 }
 
 
-void NpcScript::onCreatureAppear(unsigned long cid){
+void NpcScript::onCreatureAppear(uint32_t cid){
 	if(npc->getID() != cid){
 		lua_pushstring(luaState, "onCreatureAppear");
 		lua_gettable(luaState, LUA_GLOBALSINDEX);
@@ -718,7 +718,7 @@ int NpcScript::luaPayMoney(lua_State *L)
 int NpcScript::luaGetPlayerStorageValue(lua_State* L)
 {
 	int id = (int)lua_tonumber(L, -2);
-	unsigned long key = (unsigned long)lua_tonumber(L, -1);
+	uint32_t key = (uint32_t)lua_tonumber(L, -1);
 	lua_pop(L, 2);
 
 	Npc* mynpc = getNpc(L);
@@ -737,7 +737,7 @@ int NpcScript::luaGetPlayerStorageValue(lua_State* L)
 int NpcScript::luaSetPlayerStorageValue(lua_State* L)
 {
 	int id = (int)lua_tonumber(L, -3);
-	unsigned long key = (unsigned long)lua_tonumber(L, -2);
+	uint32_t key = (uint32_t)lua_tonumber(L, -2);
 	long value = (long)lua_tonumber(L, -1);
 	lua_pop(L, 3);
 
@@ -754,7 +754,7 @@ int NpcScript::luaSetPlayerStorageValue(lua_State* L)
 int NpcScript::luaPlayerRemoveItem(lua_State* L)
 {
 	int id = (int)lua_tonumber(L, -2);
-	unsigned long item_id = (unsigned long)lua_tonumber(L, -1);
+	uint32_t item_id = (uint32_t)lua_tonumber(L, -1);
 	lua_pop(L, 2);
 
 	Npc* mynpc = getNpc(L);

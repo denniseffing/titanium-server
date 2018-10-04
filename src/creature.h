@@ -37,7 +37,7 @@ extern LuaScript g_config;
 #ifdef YUR_HIGH_LEVELS
 typedef __int64 exp_t;
 #else
-typedef unsigned long exp_t;
+typedef uint32_t exp_t;
 #endif //YUR_HIGH_LEVELS
 
 typedef std::vector<Creature*> CreatureVector;
@@ -132,8 +132,8 @@ public:
 	virtual const std::string& getName() const = 0;
 	
 	void setID(){this->id = auto_id | this->idRange();}
-	virtual unsigned long idRange() = 0;
-	unsigned long getID() const { return id; }
+	virtual uint32_t idRange() = 0;
+	uint32_t getID() const { return id; }
 	virtual void removeList() = 0;
 	virtual void addList() = 0;
 
@@ -175,7 +175,7 @@ public:
 	virtual void die(){};
 	virtual std::string getDescription(bool self = false) const;
 	virtual void setAttackedCreature(const Creature* creature);
-	//virtual void setAttackedCreature(unsigned long id);
+	//virtual void setAttackedCreature(uint32_t id);
 	
 	virtual void setMaster(Creature* creature);
 	virtual Creature* getMaster() {return master;}
@@ -193,7 +193,7 @@ public:
 		return 0;
 	}
 	
-	unsigned long attackedCreature;
+	uint32_t attackedCreature;
 	
 	virtual bool isAttackable() const { return true; };
 	virtual bool isPushable() const {return true;}
@@ -215,7 +215,7 @@ public:
 	long manaShieldTicks, hasteTicks, paralyzeTicks;
 	int immunities;
 	
-	//unsigned long experience;
+	//uint32_t experience;
 	Position masterPos;
 	
 	int health, healthmax;
@@ -223,14 +223,14 @@ public:
 
 #ifdef TJ_MONSTER_BLOOD
 	int bloodcolor;
-    unsigned char bloodeffect;
-    unsigned char bloodsplash;
+    uint8_t bloodeffect;
+    uint8_t bloodsplash;
 #endif //TJ_MONSTER_BLOOD
 	
 	long long getSleepTicks() const;
 	int getStepDuration() const;
 	
-	unsigned short getSpeed() const {            
+	uint16_t getSpeed() const {            
 		return speed;
 	};
 	
@@ -281,7 +281,7 @@ public:
 	virtual exp_t getLostExperience();
 	virtual int getInflicatedDamage(Creature* attacker);
 	virtual int getTotalInflictedDamage();
-	virtual int getInflicatedDamage(unsigned long id);
+	virtual int getInflicatedDamage(uint32_t id);
 
 #ifdef TR_SUMMONS
 	size_t getSummonCount() const { return summons.size(); }
@@ -303,8 +303,8 @@ protected:
 	int invisibleTicks;
 #endif //YUR_INVISIBLE
 
-	unsigned long eventCheck;
-	unsigned long eventCheckAttacking;
+	uint32_t eventCheck;
+	uint32_t eventCheckAttacking;
 
 	Creature *master;
 	std::list<Creature*> summons;
@@ -317,40 +317,40 @@ protected:
 protected:
 	virtual int onThink(int& newThinkTicks){newThinkTicks = 300; return 300;};
 	virtual void onThingMove(const Creature *player, const Thing *thing, const Position *oldPos,
-		unsigned char oldstackpos, unsigned char oldcount, unsigned char count) { };
+		uint8_t oldstackpos, uint8_t oldcount, uint8_t count) { };
 	
 	virtual void onCreatureAppear(const Creature *creature) { };
-	virtual void onCreatureDisappear(const Creature *creature, unsigned char stackPos, bool tele = false) { };
-	virtual void onThingDisappear(const Thing* thing, unsigned char stackPos) = 0;
+	virtual void onCreatureDisappear(const Creature *creature, uint8_t stackPos, bool tele = false) { };
+	virtual void onThingDisappear(const Thing* thing, uint8_t stackPos) = 0;
 	virtual void onThingTransform(const Thing* thing,int stackpos) = 0;
 	virtual void onThingAppear(const Thing* thing) = 0;
-	virtual void onCreatureTurn(const Creature *creature, unsigned char stackPos) { };
+	virtual void onCreatureTurn(const Creature *creature, uint8_t stackPos) { };
 	virtual void onCreatureSay(const Creature *creature, SpeakClasses type, const std::string &text) { };
 	
 	virtual void onCreatureChangeOutfit(const Creature* creature) { };
 	virtual void onTileUpdated(const Position &pos) { };
 	
-	virtual void onTeleport(const Creature *creature, const Position *oldPos, unsigned char oldstackpos) { };
+	virtual void onTeleport(const Creature *creature, const Position *oldPos, uint8_t oldstackpos) { };
 	
 	//container to container
-	virtual void onThingMove(const Creature *creature, const Container *fromContainer, unsigned char from_slotid,
-		const Item* fromItem, int oldFromCount, Container *toContainer, unsigned char to_slotid,
+	virtual void onThingMove(const Creature *creature, const Container *fromContainer, uint8_t from_slotid,
+		const Item* fromItem, int oldFromCount, Container *toContainer, uint8_t to_slotid,
 		const Item *toItem, int oldToCount, int count) {};
 	
 	//inventory to container
 	virtual void onThingMove(const Creature *creature, slots_t fromSlot, const Item* fromItem,
-		int oldFromCount, const Container *toContainer, unsigned char to_slotid, const Item *toItem, int oldToCount, int count) {};
+		int oldFromCount, const Container *toContainer, uint8_t to_slotid, const Item *toItem, int oldToCount, int count) {};
 	
 	//inventory to inventory
 	virtual void onThingMove(const Creature *creature, slots_t fromSlot, const Item* fromItem,
 		int oldFromCount, slots_t toSlot, const Item* toItem, int oldToCount, int count) {};
 	
 	//container to inventory
-	virtual void onThingMove(const Creature *creature, const Container *fromContainer, unsigned char from_slotid,
+	virtual void onThingMove(const Creature *creature, const Container *fromContainer, uint8_t from_slotid,
 		const Item* fromItem, int oldFromCount, slots_t toSlot, const Item *toItem, int oldToCount, int count) {};
 	
 	//container to ground
-	virtual void onThingMove(const Creature *creature, const Container *fromContainer, unsigned char from_slotid,
+	virtual void onThingMove(const Creature *creature, const Container *fromContainer, uint8_t from_slotid,
 		const Item* fromItem, int oldFromCount, const Position &toPos, const Item *toItem, int oldToCount, int count) {};
 	
 	//inventory to ground
@@ -359,7 +359,7 @@ protected:
 	
 	//ground to container
 	virtual void onThingMove(const Creature *creature, const Position &fromPos, int stackpos, const Item* fromItem,
-		int oldFromCount, const Container *toContainer, unsigned char to_slotid, const Item *toItem, int oldToCount, int count) {};
+		int oldFromCount, const Container *toContainer, uint8_t to_slotid, const Item *toItem, int oldToCount, int count) {};
 	
 	//ground to inventory
 	virtual void onThingMove(const Creature *creature, const Position &fromPos, int stackpos, const Item* fromItem,
@@ -370,7 +370,7 @@ protected:
 	friend class Commands;
 	friend class GameState;
 	
-	unsigned long id;
+	uint32_t id;
 	//std::string name;
 };
 

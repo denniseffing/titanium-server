@@ -21,7 +21,7 @@
 #include "chat.h"
 #include "player.h"
 
-ChatChannel::ChatChannel(unsigned short channelId, std::string channelName)
+ChatChannel::ChatChannel(uint16_t channelId, std::string channelName)
 {
 	m_id = channelId;
 	m_name = channelName;
@@ -47,7 +47,7 @@ bool ChatChannel::removeUser(Player *player)
 	return true;
 }
 	
-bool ChatChannel::talk(Player *fromPlayer, SpeakClasses type, std::string &text, unsigned short channelId)
+bool ChatChannel::talk(Player *fromPlayer, SpeakClasses type, std::string &text, uint16_t channelId)
 {
 	bool success = false;
 	UsersMap::iterator it;
@@ -84,7 +84,7 @@ Chat::Chat()
 		m_normalChannels[0x07] = newChannel;
 }
 
-ChatChannel *Chat::createChannel(Player *player, unsigned short channelId)
+ChatChannel *Chat::createChannel(Player *player, uint16_t channelId)
 {
 	if(getChannel(player, channelId))
 		return NULL;
@@ -101,7 +101,7 @@ ChatChannel *Chat::createChannel(Player *player, unsigned short channelId)
 	return NULL;
 }
 
-bool Chat::deleteChannel(Player *player, unsigned short channelId)
+bool Chat::deleteChannel(Player *player, uint16_t channelId)
 {
 	if(channelId == 0x00){
 		GuildChannelMap::iterator it = m_guildChannels.find(player->getGuildId());
@@ -116,7 +116,7 @@ bool Chat::deleteChannel(Player *player, unsigned short channelId)
 	return false;
 }
 	
-bool Chat::addUserToChannel(Player *player, unsigned short channelId)
+bool Chat::addUserToChannel(Player *player, uint16_t channelId)
 {
 	ChatChannel *channel = getChannel(player, channelId);
 	if(!channel)
@@ -128,7 +128,7 @@ bool Chat::addUserToChannel(Player *player, unsigned short channelId)
 		return false;
 }
 
-bool Chat::removeUserFromChannel(Player *player, unsigned short channelId)
+bool Chat::removeUserFromChannel(Player *player, uint16_t channelId)
 {
 	ChatChannel *channel = getChannel(player, channelId);
 	if(!channel)
@@ -151,7 +151,7 @@ void Chat::removeUserFromAllChannels(Player *player)
 	}
 }
 	
-bool Chat::talkToChannel(Player *player, SpeakClasses type, std::string &text, unsigned short channelId)
+bool Chat::talkToChannel(Player *player, SpeakClasses type, std::string &text, uint16_t channelId)
 {
 	ChatChannel *channel = getChannel(player, channelId);
 	if(!channel)
@@ -169,7 +169,7 @@ bool Chat::talkToChannel(Player *player, SpeakClasses type, std::string &text, u
 	
 }
 	
-std::string Chat::getChannelName(Player *player, unsigned short channelId)
+std::string Chat::getChannelName(Player *player, uint16_t channelId)
 {	
 	ChatChannel *channel = getChannel(player, channelId);
 	if(channel)
@@ -200,7 +200,7 @@ ChannelList Chat::getChannelList(Player *player)
 	return list;
 }
 
-ChatChannel *Chat::getChannel(Player *player, unsigned short channelId)
+ChatChannel *Chat::getChannel(Player *player, uint16_t channelId)
 {
 	if(channelId == 0x00){	
 		GuildChannelMap::iterator it = m_guildChannels.find(player->getGuildId());

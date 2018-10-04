@@ -58,7 +58,7 @@
 
 	struct logBlock {
 		bool lock;
-		unsigned long mutexaddr;
+		uint32_t mutexaddr;
 		std::string str;
 		uint64_t time;
 		int threadid;
@@ -228,7 +228,7 @@ public:
 			return;
 
     logBlock lb;
-		lb.mutexaddr = (unsigned long)(a);
+		lb.mutexaddr = (uint32_t)(a);
 		lb.lock = lock;
 		lb.str = s;
 		lb.time = OTSYS_TIME();

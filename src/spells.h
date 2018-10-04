@@ -63,7 +63,7 @@ public:
 	}
 	
 	//////////////////
-  std::map<unsigned short, Spell*>* getVocRuneSpells(int voc){
+  std::map<uint16_t, Spell*>* getVocRuneSpells(int voc){
 		if(voc>maxVoc || voc<0){
 			return 0;
 		}
@@ -71,7 +71,7 @@ public:
 		return &(vocationRuneSpells.at(voc));
 	}
   
-	std::map<unsigned short, Spell*>* getAllRuneSpells(){
+	std::map<uint16_t, Spell*>* getAllRuneSpells(){
 		return &allRuneSpells;
 	}
 	//////////////////
@@ -80,8 +80,8 @@ protected:
   std::map<std::string, Spell*> allSpells;
   std::vector<std::map<std::string, Spell*> > vocationSpells;
 
-	std::map<unsigned short, Spell*> allRuneSpells;
-	std::vector<std::map<unsigned short, Spell*> > vocationRuneSpells;
+	std::map<uint16_t, Spell*> allRuneSpells;
+	std::vector<std::map<uint16_t, Spell*> > vocationRuneSpells;
   bool loaded;
   int maxVoc;
 };
@@ -122,11 +122,11 @@ protected:
 class RuneSpell : public Spell
 {
 public:
-	RuneSpell(const std::string& ,std::string name, unsigned short id, unsigned short charges, int magLv, int mana, Game* game);
+	RuneSpell(const std::string& ,std::string name, uint16_t id, uint16_t charges, int magLv, int mana, Game* game);
 
 protected:
-  unsigned short id;
-	unsigned short charges;
+  uint16_t id;
+	uint16_t charges;
 };
 
 class SpellScript : protected LuaScript{
@@ -169,7 +169,7 @@ protected:
 	static void internalGetMagicEffect(lua_State *L, MagicEffectClass &me);
 	static void internalLoadDamageVec(lua_State *L, ConditionVec& condvec);
 	static void internalLoadTransformVec(lua_State *L, TransformMap& transformMap);
-	static int  internalMakeRune(Player *p,unsigned short sl_id,Spell *S,unsigned short id, unsigned char charges);
+	static int  internalMakeRune(Player *p,uint16_t sl_id,Spell *S,uint16_t id, uint8_t charges);
 	int registerFunctions();
 	Spell* spell;
 	bool loaded;      

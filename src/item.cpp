@@ -32,7 +32,7 @@
 #include <iomanip>
 
 
-Item* Item::CreateItem(const unsigned short _type, unsigned short _count /*= 0*/)
+Item* Item::CreateItem(const uint16_t _type, uint16_t _count /*= 0*/)
 {
 	Item *newItem;
 	if(items[_type].isContainer()){
@@ -54,19 +54,19 @@ Item* Item::CreateItem(const unsigned short _type, unsigned short _count /*= 0*/
 
 //////////////////////////////////////////////////
 // returns the ID of this item's ItemType
-unsigned short Item::getID() const {
+uint16_t Item::getID() const {
 	return id;
 }
 
 //////////////////////////////////////////////////
 // sets the ID of this item's ItemType
-void Item::setID(unsigned short newid) {
+void Item::setID(uint16_t newid) {
 	id = newid;
 }
 
 //////////////////////////////////////////////////
 // return how many items are stacked or 0 if non stackable
-unsigned short Item::getItemCountOrSubtype() const {
+uint16_t Item::getItemCountOrSubtype() const {
 	if(isStackable()) {
 		return count;
 	}
@@ -79,7 +79,7 @@ unsigned short Item::getItemCountOrSubtype() const {
 		return 0;
 }
 
-void Item::setItemCountOrSubtype(unsigned char n)
+void Item::setItemCountOrSubtype(uint8_t n)
 {
 	if(isStackable()){
 		/*if(n == 0){
@@ -98,17 +98,17 @@ void Item::setItemCountOrSubtype(unsigned char n)
 		chargecount = n;
 };
 
-void Item::setActionId(unsigned short n){
+void Item::setActionId(uint16_t n){
 	 if(n < 100)
 	 	n = 100;
 	actionId = n;
 }
 
-unsigned short Item::getActionId() const{
+uint16_t Item::getActionId() const{
 	return actionId;
 }
 
-void Item::setUniqueId(unsigned short n){
+void Item::setUniqueId(uint16_t n){
 	//uniqueId only can be set 1 time
 	if(uniqueId != 0)
 		return;
@@ -118,11 +118,11 @@ void Item::setUniqueId(unsigned short n){
 	ActionScript::AddThingToMapUnique(this);
 }
 
-unsigned short Item::getUniqueId() const{
+uint16_t Item::getUniqueId() const{
 	return uniqueId;
 }
 
-Item::Item(const unsigned short _type) {
+Item::Item(const uint16_t _type) {
 	//std::cout << "Item constructor1 " << this << std::endl;
 	id = _type;
 	count = 0;
@@ -189,7 +189,7 @@ Item::Item(const Item &i){
 
 Item* Item::decay()
 {
-	unsigned short decayTo   = Item::items[getID()].decayTo;
+	uint16_t decayTo   = Item::items[getID()].decayTo;
 
 	if(decayTo == 0) {
 		return NULL;
@@ -236,7 +236,7 @@ bool Item::rotate()
 	return false;
 }
 
-Item::Item(const unsigned short _type, unsigned short _count) {
+Item::Item(const uint16_t _type, uint16_t _count) {
 	//std::cout << "Item constructor2 " << this << std::endl;
 	id = _type;
 	count = 0;
@@ -248,7 +248,7 @@ Item::Item(const unsigned short _type, unsigned short _count) {
 	isDecaying  = 0;
 	specialDescription = NULL;
 	text = NULL;
-	setItemCountOrSubtype((unsigned char)_count);
+	setItemCountOrSubtype((uint8_t)_count);
 	/*
 	if(isStackable()){
 		if(_count == 0){
@@ -742,7 +742,7 @@ bool Item::canDecay(){
 	return items[id].canDecay;
 }
 //Teleport class
-Teleport::Teleport(const unsigned short _type) : Item(_type)
+Teleport::Teleport(const uint16_t _type) : Item(_type)
 {
 	useCount = 0;
 	destPos.x = 0;

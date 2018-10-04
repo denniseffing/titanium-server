@@ -51,7 +51,7 @@ Protocol::~Protocol()
 	game = NULL;
 }
 
-unsigned long Protocol::getIP() const
+uint32_t Protocol::getIP() const
 {
 	sockaddr_in sain;
 	socklen_t salen = sizeof(sockaddr_in);

@@ -34,7 +34,7 @@ IOAccountXML::IOAccountXML(){
 	}
 }
 
-Account IOAccountXML::loadAccount(unsigned long accno){
+Account IOAccountXML::loadAccount(uint32_t accno){
 	Account acc;
 
 	std::stringstream accsstr;
@@ -109,7 +109,7 @@ Account IOAccountXML::loadAccount(unsigned long accno){
 }
 
 
-bool IOAccountXML::getPassword(unsigned long accno, const std::string &name, std::string &password)
+bool IOAccountXML::getPassword(uint32_t accno, const std::string &name, std::string &password)
 {
 	std::string acc_password;
 	

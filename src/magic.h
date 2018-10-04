@@ -112,10 +112,10 @@ public:
 
 	attacktype_t attackType;
 
-	unsigned char animationColor;
-	unsigned char animationEffect;
-	unsigned char hitEffect;
-	unsigned char damageEffect;
+	uint8_t animationColor;
+	uint8_t animationEffect;
+	uint8_t hitEffect;
+	uint8_t damageEffect;
 };
 
 //Need a target. Example sudden death
@@ -141,7 +141,7 @@ class MagicEffectTargetCreatureCondition : public MagicEffectTargetClass
 {
 public:
 	MagicEffectTargetCreatureCondition() {};
-	MagicEffectTargetCreatureCondition(unsigned long creatureid);
+	MagicEffectTargetCreatureCondition(uint32_t creatureid);
 	virtual ~MagicEffectTargetCreatureCondition() {};
 
 	virtual bool isIndirect() const
@@ -165,12 +165,12 @@ public:
 		//this class shouldn't have any distance shoots, just return.
 	}
 
-	const unsigned long getOwnerID() const {return ownerid;}
-	void setOwnerID(unsigned long owner) { ownerid=owner;}
+	const uint32_t getOwnerID() const {return ownerid;}
+	void setOwnerID(uint32_t owner) { ownerid=owner;}
 	
 
 protected:
-	unsigned long ownerid;
+	uint32_t ownerid;
 };
 
 
@@ -213,7 +213,7 @@ typedef std::vector<CreatureCondition> ConditionVec;
 typedef std::pair<long, ConditionVec> TransformItem;;
 
 //<type, <duration, <<delayTicks, conditionCount>, MagicEffectTargetCreatureCondition>> >
-typedef std::map<unsigned short, TransformItem> TransformMap;
+typedef std::map<uint16_t, TransformItem> TransformMap;
 
 //Needs target, holds a damage list. Example: Soul fire.
 class MagicEffectTargetExClass : public MagicEffectTargetClass
@@ -316,10 +316,10 @@ public:
 
 	virtual void getArea(const Position& rcenterpos, MagicAreaVec& list) const;
 
-	unsigned char direction;
-	unsigned char areaEffect;
+	uint8_t direction;
+	uint8_t areaEffect;
 	
-	std::vector< std::vector<unsigned char> > areaVec;
+	std::vector< std::vector<uint8_t> > areaVec;
 };
 
 //Dont need target. Example: Poison storm

@@ -54,7 +54,7 @@ private:
 	int radius;
 
 	bool isInSpawnRange(const Position &pos);
-	Monster* respawn(unsigned long spawnid, Position &pos, std::string &name, Direction dir);
+	Monster* respawn(uint32_t spawnid, Position &pos, std::string &name, Direction dir);
 
 	struct spawninfo {
 		Position pos;
@@ -65,11 +65,11 @@ private:
 	};
 
 	//List of monsters in the spawn
-	typedef std::map<unsigned long, struct spawninfo> SpawnMap;
+	typedef std::map<uint32_t, struct spawninfo> SpawnMap;
 	SpawnMap spawnmap;
 
 	//For spawned monsters
-	typedef std::multimap<unsigned long, Monster*, std::less<unsigned long> > SpawnedMap;
+	typedef std::multimap<uint32_t, Monster*, std::less<uint32_t> > SpawnedMap;
 	typedef SpawnedMap::value_type spawned_pair;
 	SpawnedMap spawnedmap;
 };

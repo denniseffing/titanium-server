@@ -448,13 +448,13 @@ bool Spawn::addMonster(std::string name, Direction dir, int x, int y, int spawnt
 	si.spawntime = spawntime;
 	si.lastspawn = 0;
 
-	unsigned long spawnid = (int)spawnmap.size() + 1;
+	uint32_t spawnid = (int)spawnmap.size() + 1;
 	spawnmap[spawnid] = si;
 
 	return true;
 }
 
-Monster* Spawn::respawn(unsigned long spawnid, Position &pos, std::string &name, Direction dir)
+Monster* Spawn::respawn(uint32_t spawnid, Position &pos, std::string &name, Direction dir)
 {
 	//Monster *monster = new Monster(name, game);
 	Monster* monster = Monster::createMonster(name, game);

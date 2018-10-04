@@ -20,7 +20,7 @@
 
 #include "container.h"
 
-Container::Container(const unsigned short _type) : Item(_type)
+Container::Container(const uint16_t _type) : Item(_type)
 {
 	//std::cout << "Container constructor " << this << std::endl;
 	maxitems = items[this->getID()].maxItems;
@@ -90,7 +90,7 @@ bool Container::removeItem(Item* item)
 	return false;
 }
 
-void Container::moveItem(unsigned char from_slot, unsigned char to_slot)
+void Container::moveItem(uint8_t from_slot, uint8_t to_slot)
 {
 	int n = 0;
 	for (ContainerList::iterator cit = lcontained.begin(); cit != lcontained.end(); ++cit) {
@@ -104,7 +104,7 @@ void Container::moveItem(unsigned char from_slot, unsigned char to_slot)
 	}
 }
 
-Item* Container::getItem(unsigned long slot_num)
+Item* Container::getItem(uint32_t slot_num)
 {
 	size_t n = 0;			
 	for (ContainerList::const_iterator cit = getItems(); cit != getEnd(); ++cit) {
@@ -117,7 +117,7 @@ Item* Container::getItem(unsigned long slot_num)
 	return NULL;
 }
 
-const Item* Container::getItem(unsigned long slot_num) const
+const Item* Container::getItem(uint32_t slot_num) const
 {
 	size_t n = 0;			
 	for (ContainerList::const_iterator cit = getItems(); cit != getEnd(); ++cit) {
@@ -130,9 +130,9 @@ const Item* Container::getItem(unsigned long slot_num) const
 	return NULL;
 }
 
-unsigned char Container::getSlotNumberByItem(const Item* item) const
+uint8_t Container::getSlotNumberByItem(const Item* item) const
 {
-	unsigned char n = 0;			
+	uint8_t n = 0;			
 	for (ContainerList::const_iterator cit = getItems(); cit != getEnd(); ++cit) {
 		if(*cit == item)
 			return n;

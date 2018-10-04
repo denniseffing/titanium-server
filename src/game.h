@@ -158,14 +158,14 @@ bool setSpellbookText(Player* player, Item* item);
 	/**
 	  * Get a single tile of the map.
 	  * \returns A Pointer to the tile */
-	Tile* getTile(unsigned short _x, unsigned short _y, unsigned char _z);
+	Tile* getTile(uint16_t _x, uint16_t _y, uint8_t _z);
 	Tile* getTile(const Position& pos);
 
 	/**
 	  * Set a Tile to a specific ground id
 	  * \param groundId ID of the ground to set
 	  */
-	void setTile(unsigned short _x, unsigned short _y, unsigned char _z, unsigned short groundId);
+	void setTile(uint16_t _x, uint16_t _y, uint8_t _z, uint16_t groundId);
 
 	/**
 	  * Place Creature on the map.
@@ -191,30 +191,30 @@ bool setSpellbookText(Player* player, Item* item);
 	uint32_t getCreaturesOnline();
 
 	void thingMove(Creature *creature, Thing *thing,
-			unsigned short to_x, unsigned short to_y, unsigned char to_z, unsigned char count);
+			uint16_t to_x, uint16_t to_y, uint8_t to_z, uint8_t count);
 
 	//container/inventory to container/inventory
 	void thingMove(Player *player,
-			unsigned char from_cid, unsigned char from_slotid, unsigned short itemid,bool fromInventory,
-			unsigned char to_cid, unsigned char to_slotid, bool toInventory,
-			unsigned char count);
+			uint8_t from_cid, uint8_t from_slotid, uint16_t itemid,bool fromInventory,
+			uint8_t to_cid, uint8_t to_slotid, bool toInventory,
+			uint8_t count);
 
 	//container/inventory to ground
 	void thingMove(Player *player,
-			unsigned char from_cid, unsigned char from_slotid, unsigned short itemid, bool fromInventory,
-			const Position& toPos, unsigned char count);
+			uint8_t from_cid, uint8_t from_slotid, uint16_t itemid, bool fromInventory,
+			const Position& toPos, uint8_t count);
 
 	//ground to container/inventory
 	void thingMove(Player *player,
-			const Position& fromPos, unsigned char stackPos, unsigned short itemid,
-			unsigned char to_cid, unsigned char to_slotid,
-			bool isInventory, unsigned char count);
+			const Position& fromPos, uint8_t stackPos, uint16_t itemid,
+			uint8_t to_cid, uint8_t to_slotid,
+			bool isInventory, uint8_t count);
 	
 	//ground to ground
 	void thingMove(Creature *creature,
-			unsigned short from_x, unsigned short from_y, unsigned char from_z,
-			unsigned char stackPos,unsigned short itemid,
-			unsigned short to_x, unsigned short to_y, unsigned char to_z, unsigned char count);
+			uint16_t from_x, uint16_t from_y, uint8_t from_z,
+			uint8_t stackPos,uint16_t itemid,
+			uint16_t to_x, uint16_t to_y, uint8_t to_z, uint8_t count);
 
 	/**
 		* Creature wants to turn.
@@ -237,7 +237,7 @@ bool setSpellbookText(Player* player, Item* item);
 	void creatureYell(Creature *creature, std::string &text);
   	void creatureSpeakTo(Creature *creature, SpeakClasses type, const std::string &receiver, const std::string &text);
 	void creatureBroadcastMessage(Creature *creature, const std::string &text);
-  	void creatureTalkToChannel(Player *player, SpeakClasses type, std::string &text, unsigned short channelId);
+  	void creatureTalkToChannel(Player *player, SpeakClasses type, std::string &text, uint16_t channelId);
 	void creatureMonsterYell(Monster* monster, const std::string& text);
 	void creatureChangeOutfit(Creature *creature);
 
@@ -246,26 +246,26 @@ bool setSpellbookText(Player* player, Item* item);
 	bool creatureSaySpell(Creature *creature, const std::string &text);
 
 	void playerAutoWalk(Player* player, std::list<Direction>& path);
-	bool playerUseItemEx(Player *player, const Position& posFrom,const unsigned char  stack_from,
-		const Position &posTo,const unsigned char stack_to, const unsigned short itemid);
-	bool playerUseItem(Player *player, const Position& pos, const unsigned char stackpos, const unsigned short itemid, const unsigned char index);
-	bool playerUseBattleWindow(Player *player, Position &posFrom, unsigned char stackpos, unsigned short itemid, unsigned long creatureid);
-	bool playerRotateItem(Player *player, const Position& pos, const unsigned char stackpos, const unsigned short itemid);
+	bool playerUseItemEx(Player *player, const Position& posFrom,const uint8_t  stack_from,
+		const Position &posTo,const uint8_t stack_to, const uint16_t itemid);
+	bool playerUseItem(Player *player, const Position& pos, const uint8_t stackpos, const uint16_t itemid, const uint8_t index);
+	bool playerUseBattleWindow(Player *player, Position &posFrom, uint8_t stackpos, uint16_t itemid, uint32_t creatureid);
+	bool playerRotateItem(Player *player, const Position& pos, const uint8_t stackpos, const uint16_t itemid);
 
 	void playerRequestTrade(Player *player, const Position& pos,
-		const unsigned char stackpos, const unsigned short itemid, unsigned long playerid);
+		const uint8_t stackpos, const uint16_t itemid, uint32_t playerid);
 	void playerAcceptTrade(Player* player);
 	void playerLookInTrade(Player* player, bool lookAtCounterOffer, int index);
 	void playerCloseTrade(Player* player);
 	void autoCloseTrade(const Item* item, bool itemMoved = false);
   void autoCloseAttack(Player* player, Creature* target);
 	
-	void playerSetAttackedCreature(Player* player, unsigned long creatureid);
+	void playerSetAttackedCreature(Player* player, uint32_t creatureid);
 
-  void changeOutfitAfter(unsigned long id, int looktype, long time);
-  void changeSpeed(unsigned long id, unsigned short speed);
-	unsigned long addEvent(SchedulerTask*);
-	bool stopEvent(unsigned long eventid);
+  void changeOutfitAfter(uint32_t id, int looktype, long time);
+  void changeSpeed(uint32_t id, uint16_t speed);
+	uint32_t addEvent(SchedulerTask*);
+	bool stopEvent(uint32_t eventid);
 
 	//void creatureBroadcastTileUpdated(const Position& pos);
 	void teleport(Thing *thing, const Position& newPos);
@@ -277,17 +277,17 @@ bool setSpellbookText(Player* player, Item* item);
   std::vector<Thing*> ToReleaseThings;   
   void FreeThing(Thing* thing);
 
-  Thing* getThing(const Position &pos,unsigned char stack,Player* player = NULL);
+  Thing* getThing(const Position &pos,uint8_t stack,Player* player = NULL);
   void addThing(Player* player,const Position &pos,Thing* thing);
   bool removeThing(Player* player,const Position &pos,Thing* thing, bool setRemoved = true);
   Position getThingMapPos(Player *player, const Position &pos);
   
   void sendAddThing(Player* player,const Position &pos,const Thing* thing);
-  void sendRemoveThing(Player* player,const Position &pos,const Thing* thing,const unsigned char stackpos = 1,const bool autoclose = false);
-  void sendUpdateThing(Player* player,const Position &pos,const Thing* thing,const unsigned char stackpos = 1);
+  void sendRemoveThing(Player* player,const Position &pos,const Thing* thing,const uint8_t stackpos = 1,const bool autoclose = false);
+  void sendUpdateThing(Player* player,const Position &pos,const Thing* thing,const uint8_t stackpos = 1);
 		
-	Creature* getCreatureByID(unsigned long id);
-	Player* getPlayerByID(unsigned long id);
+	Creature* getCreatureByID(uint32_t id);
+	Player* getPlayerByID(uint32_t id);
     Creature* getCreatureByPosition(int x, int y, int z);  
 	Creature* getCreatureByName(const std::string &s);
 	Player* getPlayerByName(const std::string &s);
@@ -303,8 +303,8 @@ bool setSpellbookText(Player* player, Item* item);
   OTSYS_THREAD_LOCKVAR gameLock; 
 
 #ifdef CVS_DAY_CYCLE
-	void creatureChangeLight(Player* player, int time, unsigned char lightlevel, unsigned char lightcolor);
-	unsigned char getLightLevel();
+	void creatureChangeLight(Player* player, int time, uint8_t lightlevel, uint8_t lightcolor);
+	uint8_t getLightLevel();
 #endif //CVS_DAY_CYCLE
 
 #ifdef WOLV_LOAD_NPC
@@ -337,7 +337,7 @@ bool setSpellbookText(Player* player, Item* item);
 #ifdef TLM_SKULLS_PARTY
 	void onPvP(Creature* creature, Creature* attacked, bool murder = false);
 	void Skull(Player* player);
-	void disbandParty(unsigned long partyID);
+	void disbandParty(uint32_t partyID);
 	void LeaveParty(Player *player);
 #endif //TLM_SKULLS_PARTY
 
@@ -366,7 +366,7 @@ bool setSpellbookText(Player* player, Item* item);
 	void checkSpell(Player* player, SpeakClasses type, std::string text);
 
 protected:
-	std::map<Item*, unsigned long> tradeItems; //list of items that are in trading state, mapped to the player
+	std::map<Item*, uint32_t> tradeItems; //list of items that are in trading state, mapped to the player
 	
 	AutoList<Creature> listCreature;
 
@@ -408,29 +408,29 @@ protected:
 
 	//container/inventory to container/inventory
 	void thingMoveInternal(Player *player,
-			unsigned char from_cid, unsigned char from_slotid, unsigned short itemid, 
-			bool fromInventory,unsigned char to_cid, unsigned char to_slotid, 
-			bool toInventory,unsigned char count);
+			uint8_t from_cid, uint8_t from_slotid, uint16_t itemid, 
+			bool fromInventory,uint8_t to_cid, uint8_t to_slotid, 
+			bool toInventory,uint8_t count);
 
 	//container/inventory to ground
 	void thingMoveInternal(Player *player,
-			unsigned char from_cid, unsigned char from_slotid, unsigned short itemid,
-			bool fromInventory,const Position& toPos, unsigned char count);
+			uint8_t from_cid, uint8_t from_slotid, uint16_t itemid,
+			bool fromInventory,const Position& toPos, uint8_t count);
 
 	//ground to container/inventory
 	void thingMoveInternal(Player *player,
-			const Position& fromPos, unsigned char stackPos,unsigned short itemid,
-			unsigned char to_cid, unsigned char to_slotid,
-			bool toInventory, unsigned char count);
+			const Position& fromPos, uint8_t stackPos,uint16_t itemid,
+			uint8_t to_cid, uint8_t to_slotid,
+			bool toInventory, uint8_t count);
 
 	// use this internal function to move things around to avoid the need of
   // recursive locks
   void thingMoveInternal(Creature *player,
-      unsigned short from_x, unsigned short from_y, unsigned char from_z,
-      unsigned char stackPos,unsigned short itemid,
-			unsigned short to_x, unsigned short to_y, unsigned char to_z, unsigned char count);
+      uint16_t from_x, uint16_t from_y, uint8_t from_z,
+      uint8_t stackPos,uint16_t itemid,
+			uint16_t to_x, uint16_t to_y, uint8_t to_z, uint8_t count);
 
-	void changeOutfit(unsigned long id, int looktype);
+	void changeOutfit(uint32_t id, int looktype);
 	bool creatureOnPrepareAttack(Creature *creature, Position pos);
 	void creatureMakeDamage(Creature *creature, Creature *attackedCreature, fight_t damagetype);
 
@@ -467,9 +467,9 @@ protected:
 		void*    data;
 	};
 
-	void checkPlayerWalk(unsigned long id);
-	void checkCreature(unsigned long id);
-	void checkCreatureAttacking(unsigned long id);
+	void checkPlayerWalk(uint32_t id);
+	void checkCreature(uint32_t id);
+	void checkCreatureAttacking(uint32_t id);
 	void checkDecay(int t);
 	
 	#define DECAY_INTERVAL  10000
@@ -481,11 +481,11 @@ protected:
 	std::list<decayBlock*> decayVector;
 	
 #ifdef CVS_DAY_CYCLE
-	static const unsigned char LIGHT_LEVEL_DAY = 220;
-	static const unsigned char LIGHT_LEVEL_NIGHT = 25;
+	static const uint8_t LIGHT_LEVEL_DAY = 220;
+	static const uint8_t LIGHT_LEVEL_NIGHT = 25;
 	static const int SUNSET = 1305;
 	static const int SUNRISE = 430;
-	unsigned char lightlevel;
+	uint8_t lightlevel;
 	eLightState light_state;
 	int light_hour;
 	int light_hour_delta;
@@ -495,8 +495,8 @@ protected:
 
 	void checkSpawns(int t);
 	std::priority_queue<SchedulerTask*, std::vector<SchedulerTask*>, lessSchedTask > eventList;
-	std::map<unsigned long, SchedulerTask*> eventIdMap;
-	unsigned long eventIdCount;
+	std::map<uint32_t, SchedulerTask*> eventIdMap;
+	uint32_t eventIdCount;
 
 	uint32_t max_players;
 	enum_world_type worldType;

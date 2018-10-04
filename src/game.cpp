@@ -76,7 +76,7 @@ extern Actions actions;
 extern Commands commands;
 extern Chat g_chat;
 
-extern std::vector< std::pair<unsigned long, unsigned long> > bannedIPs;
+extern std::vector< std::pair<uint32_t, uint32_t> > bannedIPs;
 typedef std::vector<std::string> StringVector;
 GameState::GameState(Game *game, const Range &range)
 {
@@ -532,7 +532,7 @@ void GameState::onAttackedCreature(Tile* tile, Creature *attacker, Creature* att
 		if (attackedplayer && attacker)
 			attackedplayer->addDeath(attacker->getName(), attackedplayer->level, time(0));
 #endif //JD_DEATH_LIST
-		unsigned char stackpos = tile->getThingStackPos(attackedCreature);
+		uint8_t stackpos = tile->getThingStackPos(attackedCreature);
 
 		//Prepare body
 		Item *corpseitem = Item::CreateItem(attackedCreature->getLookCorpse());
@@ -818,7 +818,7 @@ OTSYS_THREAD_RETURN Game::eventThread(void *p)
 		}
 
 		if(task) {
-			std::map<unsigned long, SchedulerTask*>::iterator it = _this->eventIdMap.find(task->getEventId());
+			std::map<uint32_t, SchedulerTask*>::iterator it = _this->eventIdMap.find(task->getEventId());
 			if(it != _this->eventIdMap.end()) {
 				_this->eventIdMap.erase(it);
 				runtask = true;
@@ -839,7 +839,7 @@ OTSYS_THREAD_RETURN Game::eventThread(void *p)
 
 }
 
-unsigned long Game::addEvent(SchedulerTask* event) {
+uint32_t Game::addEvent(SchedulerTask* event) {
   bool do_signal = false;
   OTSYS_THREAD_LOCK(eventLock, "addEvent()")
 
@@ -878,13 +878,13 @@ unsigned long Game::addEvent(SchedulerTask* event) {
 	return event->getEventId();
 }
 
-bool Game::stopEvent(unsigned long eventid) {
+bool Game::stopEvent(uint32_t eventid) {
 	if(eventid == 0)
 		return false;
 
   OTSYS_THREAD_LOCK(eventLock, "stopEvent()")
 
-	std::map<unsigned long, SchedulerTask*>::iterator it = eventIdMap.find(eventid);
+	std::map<uint32_t, SchedulerTask*>::iterator it = eventIdMap.find(eventid);
 	if(it != eventIdMap.end()) {
 
 #ifdef __DEBUG__EVENTSCHEDULER__
@@ -909,7 +909,7 @@ uint32_t Game::getMonstersOnline() {return (uint32_t)Monster::listMonster.list.s
 uint32_t Game::getNpcsOnline() {return (uint32_t)Npc::listNpc.list.size();};
 uint32_t Game::getCreaturesOnline() {return (uint32_t)listCreature.list.size();};
 
-Tile* Game::getTile(unsigned short _x, unsigned short _y, unsigned char _z)
+Tile* Game::getTile(uint16_t _x, uint16_t _y, uint8_t _z)
 {
 	return map->getTile(_x, _y, _z);
 }
@@ -919,12 +919,12 @@ Tile* Game::getTile(const Position& pos)
 	return map->getTile(pos);
 }
 
-void Game::setTile(unsigned short _x, unsigned short _y, unsigned char _z, unsigned short groundId)
+void Game::setTile(uint16_t _x, uint16_t _y, uint8_t _z, uint16_t groundId)
 {
 	map->setTile(_x, _y, _z, groundId);
 }
 
-Creature* Game::getCreatureByID(unsigned long id)
+Creature* Game::getCreatureByID(uint32_t id)
 {
 	if(id == 0)
 		return NULL;
@@ -937,7 +937,7 @@ Creature* Game::getCreatureByID(unsigned long id)
 	return NULL; //just in case the player doesnt exist
 }
 
-Player* Game::getPlayerByID(unsigned long id)
+Player* Game::getPlayerByID(uint32_t id)
 {
 	if(id == 0)
 		return NULL;
@@ -1107,7 +1107,7 @@ bool Game::removeCreature(Creature* c)
 }
 
 void Game::thingMove(Creature *creature, Thing *thing,
-	unsigned short to_x, unsigned short to_y, unsigned char to_z, unsigned char count)
+	uint16_t to_x, uint16_t to_y, uint8_t to_z, uint8_t count)
 {
 	OTSYS_THREAD_LOCK_CLASS lockClass(gameLock, "Game::thingMove() - 1");
 
@@ -1121,8 +1121,8 @@ void Game::thingMove(Creature *creature, Thing *thing,
 }
 
 
-void Game::thingMove(Creature *creature, unsigned short from_x, unsigned short from_y, unsigned char from_z,
-	unsigned char stackPos, unsigned short itemid, unsigned short to_x, unsigned short to_y, unsigned char to_z, unsigned char count)
+void Game::thingMove(Creature *creature, uint16_t from_x, uint16_t from_y, uint8_t from_z,
+	uint8_t stackPos, uint16_t itemid, uint16_t to_x, uint16_t to_y, uint8_t to_z, uint8_t count)
 {
 	OTSYS_THREAD_LOCK_CLASS lockClass(gameLock, "Game::thingMove() - 2");
 
@@ -1144,9 +1144,9 @@ void Game::thingMove(Creature *creature, unsigned short from_x, unsigned short f
 
 //container/inventory to container/inventory
 void Game::thingMove(Player *player,
-	unsigned char from_cid, unsigned char from_slotid, unsigned short itemid, bool fromInventory,
-	unsigned char to_cid, unsigned char to_slotid, bool toInventory,
-	unsigned char count)
+	uint8_t from_cid, uint8_t from_slotid, uint16_t itemid, bool fromInventory,
+	uint8_t to_cid, uint8_t to_slotid, bool toInventory,
+	uint8_t count)
 {
 	OTSYS_THREAD_LOCK_CLASS lockClass(gameLock, "Game::thingMove() - 3");
 
@@ -1156,8 +1156,8 @@ void Game::thingMove(Player *player,
 
 //container/inventory to ground
 void Game::thingMove(Player *player,
-	unsigned char from_cid, unsigned char from_slotid, unsigned short itemid, bool fromInventory,
-	const Position& toPos, unsigned char count)
+	uint8_t from_cid, uint8_t from_slotid, uint16_t itemid, bool fromInventory,
+	const Position& toPos, uint8_t count)
 {
 	OTSYS_THREAD_LOCK_CLASS lockClass(gameLock, "Game::thingMove() - 4");
 
@@ -1166,9 +1166,9 @@ void Game::thingMove(Player *player,
 
 //ground to container/inventory
 void Game::thingMove(Player *player,
-	const Position& fromPos, unsigned char stackPos, unsigned short itemid,
-	unsigned char to_cid, unsigned char to_slotid, bool toInventory,
-	unsigned char count)
+	const Position& fromPos, uint8_t stackPos, uint16_t itemid,
+	uint8_t to_cid, uint8_t to_slotid, bool toInventory,
+	uint8_t count)
 {
 	OTSYS_THREAD_LOCK_CLASS lockClass(gameLock, "Game::thingMove() - 5");
 	thingMoveInternal(player, fromPos, stackPos, itemid, to_cid, to_slotid, toInventory, count);
@@ -1599,9 +1599,9 @@ bool Game::onPrepareMoveThing(Player *player, const Item *item,
 
 //container/inventory to container/inventory
 void Game::thingMoveInternal(Player *player,
-	unsigned char from_cid, unsigned char from_slotid, unsigned short itemid,
-	bool fromInventory,unsigned char to_cid, unsigned char to_slotid, bool toInventory,
-	unsigned char count)
+	uint8_t from_cid, uint8_t from_slotid, uint16_t itemid,
+	bool fromInventory,uint8_t to_cid, uint8_t to_slotid, bool toInventory,
+	uint8_t count)
 {
 	Container *fromContainer = NULL;
 	Container *toContainer = NULL;
@@ -2016,8 +2016,8 @@ void Game::thingMoveInternal(Player *player,
 
 //container/inventory to ground
 void Game::thingMoveInternal(Player *player,
-	unsigned char from_cid, unsigned char from_slotid, unsigned short itemid, bool fromInventory,
-	const Position& toPos, unsigned char count)
+	uint8_t from_cid, uint8_t from_slotid, uint16_t itemid, bool fromInventory,
+	const Position& toPos, uint8_t count)
 {
 	Container *fromContainer = NULL;
 	Tile *toTile = map->getTile(toPos);
@@ -2245,8 +2245,8 @@ void Game::thingMoveInternal(Player *player,
 }
 
 //ground to container/inventory
-void Game::thingMoveInternal(Player *player, const Position& fromPos, unsigned char stackPos,
-	unsigned short itemid, unsigned char to_cid, unsigned char to_slotid, bool toInventory, unsigned char count)
+void Game::thingMoveInternal(Player *player, const Position& fromPos, uint8_t stackPos,
+	uint16_t itemid, uint8_t to_cid, uint8_t to_slotid, bool toInventory, uint8_t count)
 {
 	Tile *fromTile = map->getTile(fromPos);
 	if(!fromTile)
@@ -2479,8 +2479,8 @@ void Game::thingMoveInternal(Player *player, const Position& fromPos, unsigned c
 }
 
 //ground to ground
-void Game::thingMoveInternal(Creature *creature, unsigned short from_x, unsigned short from_y, unsigned char from_z,
-	unsigned char stackPos, unsigned short itemid, unsigned short to_x, unsigned short to_y, unsigned char to_z, unsigned char count)
+void Game::thingMoveInternal(Creature *creature, uint16_t from_x, uint16_t from_y, uint8_t from_z,
+	uint8_t stackPos, uint16_t itemid, uint16_t to_x, uint16_t to_y, uint8_t to_z, uint8_t count)
 {
 	Tile *fromTile = getTile(from_x, from_y, from_z);
 	if(!fromTile)
@@ -3182,7 +3182,7 @@ void Game::creatureSpeakTo(Creature *creature, SpeakClasses type,const std::stri
 	player->sendTextMessage(MSG_SMALLINFO, ss.str().c_str());
 }
 
-void Game::creatureTalkToChannel(Player *player, SpeakClasses type, std::string &text, unsigned short channelId)
+void Game::creatureTalkToChannel(Player *player, SpeakClasses type, std::string &text, uint16_t channelId)
 {
 	OTSYS_THREAD_LOCK_CLASS lockClass(gameLock, "Game::creatureTalkToChannel");
 
@@ -3735,7 +3735,7 @@ std::list<Position> Game::getPathTo(Creature *creature, Position start, Position
 	return map->getPathTo(creature, start, to, creaturesBlock);
 }
 
-void Game::checkPlayerWalk(unsigned long id)
+void Game::checkPlayerWalk(uint32_t id)
 {
 	OTSYS_THREAD_LOCK_CLASS lockClass(gameLock, "Game::checkPlayerWalk");
 
@@ -3802,7 +3802,7 @@ void Game::checkPlayerWalk(unsigned long id)
 		player->eventAutoWalk = 0;
 }
 
-void Game::checkCreature(unsigned long id)
+void Game::checkCreature(uint32_t id)
 {
 	OTSYS_THREAD_LOCK_CLASS lockClass(gameLock, "Game::checkCreature()");
 
@@ -3970,7 +3970,7 @@ flushSendBuffers();
 }
 }
 
-void Game::changeOutfit(unsigned long id, int looktype){
+void Game::changeOutfit(uint32_t id, int looktype){
 
 	OTSYS_THREAD_LOCK_CLASS lockClass(gameLock, "Game::changeOutfit()");
 
@@ -3981,12 +3981,12 @@ void Game::changeOutfit(unsigned long id, int looktype){
 	}
 }
 
-void Game::changeOutfitAfter(unsigned long id, int looktype, long time)
+void Game::changeOutfitAfter(uint32_t id, int looktype, long time)
 {
 	addEvent(makeTask(time, boost::bind(&Game::changeOutfit, this,id, looktype)));
 }
 
-void Game::changeSpeed(unsigned long id, unsigned short speed)
+void Game::changeSpeed(uint32_t id, uint16_t speed)
 {
 	OTSYS_THREAD_LOCK_CLASS lockClass(gameLock, "Game::changeSpeed()");
 
@@ -4005,7 +4005,7 @@ void Game::changeSpeed(unsigned long id, unsigned short speed)
 
 		getSpectators(Range(creature->pos), list);
 
-		//for(unsigned int i = 0; i < list.size(); i++)
+		//for(uint32_t i = 0; i < list.size(); i++)
 		for(it = list.begin(); it != list.end(); ++it) {
 			Player* p = dynamic_cast<Player*>(*it);
 			if(p)
@@ -4014,7 +4014,7 @@ void Game::changeSpeed(unsigned long id, unsigned short speed)
 	}
 }
 
-void Game::checkCreatureAttacking(unsigned long id)
+void Game::checkCreatureAttacking(uint32_t id)
 {
 	OTSYS_THREAD_LOCK_CLASS lockClass(gameLock, "Game::checkCreatureAttacking()");
 
@@ -4191,7 +4191,7 @@ void Game::startDecay(Item* item){
 		return;//dont add 2 times the same item
 	//get decay time
 	item->isDecaying = true;
-	unsigned long dtime = item->getDecayTime();
+	uint32_t dtime = item->getDecayTime();
 	if(dtime == 0)
 		return;
 	//round time
@@ -4286,7 +4286,7 @@ bool Game::creatureSaySpell(Creature *creature, const std::string &text)
 
 	Player* player = dynamic_cast<Player*>(creature);
 	std::string temp, var;
-	unsigned int loc = (uint32_t)text.find( "\"", 0 );
+	uint32_t loc = (uint32_t)text.find( "\"", 0 );
 	if( loc != string::npos && loc >= 0){
 		temp = std::string(text, 0, loc-1);
 		var = std::string(text, (loc+1), text.size()-loc-1);
@@ -4354,8 +4354,8 @@ void Game::playerAutoWalk(Player* player, std::list<Direction>& path)
 	//player->pathlist = path;
 }
 
-bool Game::playerUseItemEx(Player *player, const Position& posFrom,const unsigned char  stack_from,
-		const Position &posTo,const unsigned char stack_to, const unsigned short itemid)
+bool Game::playerUseItemEx(Player *player, const Position& posFrom,const uint8_t  stack_from,
+		const Position &posTo,const uint8_t stack_to, const uint16_t itemid)
 {
 	OTSYS_THREAD_LOCK_CLASS lockClass(gameLock, "Game::playerUseItemEx()");
 
@@ -4369,7 +4369,7 @@ bool Game::playerUseItemEx(Player *player, const Position& posFrom,const unsigne
 
 	if(item) {
 		//Runes
-		std::map<unsigned short, Spell*>::iterator sit = spells.getAllRuneSpells()->find(item->getID());
+		std::map<uint16_t, Spell*>::iterator sit = spells.getAllRuneSpells()->find(item->getID());
 		if(sit != spells.getAllRuneSpells()->end()) {
 			if( (abs(thingpos.x - player->pos.x) > 1) || (abs(thingpos.y - player->pos.y) > 1) ) {
 				player->sendCancel("To far away...");
@@ -4408,7 +4408,7 @@ bool Game::playerUseItemEx(Player *player, const Position& posFrom,const unsigne
 }
 
 
-bool Game::playerUseItem(Player *player, const Position& pos, const unsigned char stackpos, const unsigned short itemid, unsigned char index)
+bool Game::playerUseItem(Player *player, const Position& pos, const uint8_t stackpos, const uint16_t itemid, uint8_t index)
 {
 	OTSYS_THREAD_LOCK_CLASS lockClass(gameLock, "Game::playerUseItem()");
 
@@ -4424,7 +4424,7 @@ bool Game::playerUseItem(Player *player, const Position& pos, const unsigned cha
 	return true;
 }
 
-bool Game::playerUseBattleWindow(Player *player, Position &posFrom, unsigned char stackpos, unsigned short itemid, unsigned long creatureid)
+bool Game::playerUseBattleWindow(Player *player, Position &posFrom, uint8_t stackpos, uint16_t itemid, uint32_t creatureid)
 {
 	OTSYS_THREAD_LOCK_CLASS lockClass(gameLock, "Game::playerUseBattleWindow");
 
@@ -4444,7 +4444,7 @@ bool Game::playerUseBattleWindow(Player *player, Position &posFrom, unsigned cha
 	Item *item = dynamic_cast<Item*>(getThing(posFrom, stackpos, player));
 	if(item) {
 		//Runes
-		std::map<unsigned short, Spell*>::iterator sit = spells.getAllRuneSpells()->find(item->getID());
+		std::map<uint16_t, Spell*>::iterator sit = spells.getAllRuneSpells()->find(item->getID());
 		if(sit != spells.getAllRuneSpells()->end()) {
 			if( (abs(thingpos.x - player->pos.x) > 1) || (abs(thingpos.y - player->pos.y) > 1) ) {
 				player->sendCancel("To far away...");
@@ -4475,7 +4475,7 @@ bool Game::playerUseBattleWindow(Player *player, Position &posFrom, unsigned cha
 	return ret;
 }
 
-bool Game::playerRotateItem(Player *player, const Position& pos, const unsigned char stackpos, const unsigned short itemid)
+bool Game::playerRotateItem(Player *player, const Position& pos, const uint8_t stackpos, const uint16_t itemid)
 {
 	OTSYS_THREAD_LOCK_CLASS lockClass(gameLock, "Game::playerRotateItem()");
 
@@ -4496,7 +4496,7 @@ bool Game::playerRotateItem(Player *player, const Position& pos, const unsigned 
 }
 
 void Game::playerRequestTrade(Player* player, const Position& pos,
-	const unsigned char stackpos, const unsigned short itemid, unsigned long playerid)
+	const uint8_t stackpos, const uint16_t itemid, uint32_t playerid)
 {
 	OTSYS_THREAD_LOCK_CLASS lockClass(gameLock, "Game::playerRequestTrade()");
 
@@ -4533,7 +4533,7 @@ void Game::playerRequestTrade(Player* player, const Position& pos,
 		return;
 	}
 
-	std::map<Item*, unsigned long>::const_iterator it;
+	std::map<Item*, uint32_t>::const_iterator it;
 	const Container* container = NULL;
 	for(it = tradeItems.begin(); it != tradeItems.end(); it++) {
 		if(tradeItem == it->first ||
@@ -4606,7 +4606,7 @@ void Game::playerAcceptTrade(Player* player)
 			tradePartner->sendTextMessage(MSG_SMALLINFO, "Sorry not possible.");
 		}
 		
-		std::map<Item*, unsigned long>::iterator it;
+		std::map<Item*, uint32_t>::iterator it;
 		
 		it = tradeItems.find(tradeItem1);
 		if(it != tradeItems.end()) {
@@ -4694,7 +4694,7 @@ void Game::playerCloseTrade(Player* player)
 
 	std::vector<Item*>::iterator it;
 	if(player->getTradeItem()) {
-		std::map<Item*, unsigned long>::iterator it = tradeItems.find(player->getTradeItem());
+		std::map<Item*, uint32_t>::iterator it = tradeItems.find(player->getTradeItem());
 		if(it != tradeItems.end()) {
 			FreeThing(it->first);
 			tradeItems.erase(it);
@@ -4707,7 +4707,7 @@ void Game::playerCloseTrade(Player* player)
 
 	if(tradePartner) {
 		if(tradePartner->getTradeItem()) {
-			std::map<Item*, unsigned long>::iterator it = tradeItems.find(tradePartner->getTradeItem());
+			std::map<Item*, uint32_t>::iterator it = tradeItems.find(tradePartner->getTradeItem());
 			if(it != tradeItems.end()) {
 				FreeThing(it->first);
 				tradeItems.erase(it);
@@ -4725,7 +4725,7 @@ void Game::autoCloseTrade(const Item* item, bool itemMoved /*= false*/)
 	if(!item)
 		return;
 
-	std::map<Item*, unsigned long>::const_iterator it;
+	std::map<Item*, uint32_t>::const_iterator it;
 	const Container* container = NULL;
 	for(it = tradeItems.begin(); it != tradeItems.end(); it++) {
 		if(item == it->first ||
@@ -4751,7 +4751,7 @@ void Game::autoCloseAttack(Player* player, Creature* target)
   }
 }
 
-void Game::playerSetAttackedCreature(Player* player, unsigned long creatureid)
+void Game::playerSetAttackedCreature(Player* player, uint32_t creatureid)
 {
 	OTSYS_THREAD_LOCK_CLASS lockClass(gameLock, "Game::playerSetAttackedCreature()");
 
@@ -4810,14 +4810,14 @@ bool Game::requestAddVip(Player* player, const std::string &vip_name)
 	OTSYS_THREAD_LOCK_CLASS lockClass(gameLock, "Game::requestAddVip");
 	std::string real_name;
 	real_name = vip_name;
-	unsigned long guid;
-	unsigned long access_lvl;
+	uint32_t guid;
+	uint32_t access_lvl;
 
 	if(!IOPlayer::instance()->getGuidByName(guid, access_lvl, real_name)){
 		player->sendTextMessage(MSG_SMALLINFO, "A player with that name doesn't exist.");
 		return false;
 	}
-	if(access_lvl > (unsigned long)player->access){
+	if(access_lvl > (uint32_t)player->access){
 		player->sendTextMessage(MSG_SMALLINFO, "You can not add this player.");
 		return false;
 	}
@@ -4905,7 +4905,7 @@ void Game::sendAddThing(Player* player,const Position &pos,const Thing* thing){
 			if(!item)
 				return;
 
-			unsigned char containerid = pos.y & 0x0F;
+			uint8_t containerid = pos.y & 0x0F;
 			Container* container = player->getContainer(containerid);
 			if(!container)
 				return;
@@ -4966,7 +4966,7 @@ void Game::sendAddThing(Player* player,const Position &pos,const Thing* thing){
 	}
 }
 
-void Game::sendRemoveThing(Player* player,const Position &pos,const Thing* thing,const unsigned char stackpos /*=1*/ ,const bool autoclose/* =false*/){
+void Game::sendRemoveThing(Player* player,const Position &pos,const Thing* thing,const uint8_t stackpos /*=1*/ ,const bool autoclose/* =false*/){
 	if(!thing)
 		return;
 
@@ -4985,13 +4985,13 @@ void Game::sendRemoveThing(Player* player,const Position &pos,const Thing* thing
 			if(!item)
 				return;
 
-			unsigned char containerid = pos.y & 0x0F;
+			uint8_t containerid = pos.y & 0x0F;
 			Container* container = player->getContainer(containerid);
 			if(!container)
 				return;
 
 			//check that item is in the container
-			unsigned char slot = container->getSlotNumberByItem(item);
+			uint8_t slot = container->getSlotNumberByItem(item);
 
 			SpectatorVec list;
 			SpectatorVec::iterator it;
@@ -5054,7 +5054,7 @@ void Game::sendRemoveThing(Player* player,const Position &pos,const Thing* thing
 	}
 }
 
-void Game::sendUpdateThing(Player* player,const Position &pos,const Thing* thing,const unsigned char stackpos/*=1*/){
+void Game::sendUpdateThing(Player* player,const Position &pos,const Thing* thing,const uint8_t stackpos/*=1*/){
 
 	if(pos.x == 0xFFFF) {
 		if(!player)
@@ -5067,12 +5067,12 @@ void Game::sendUpdateThing(Player* player,const Position &pos,const Thing* thing
 			if(!item)
 				return;
 
-			unsigned char containerid = pos.y & 0x0F;
+			uint8_t containerid = pos.y & 0x0F;
 			Container* container = player->getContainer(containerid);
 			if(!container)
 				return;
 			//check that item is in the container
-			unsigned char slot = container->getSlotNumberByItem(item);
+			uint8_t slot = container->getSlotNumberByItem(item);
 
 			SpectatorVec list;
 			SpectatorVec::iterator it;
@@ -5136,7 +5136,7 @@ void Game::addThing(Player* player,const Position &pos,Thing* thing)
 			return;
 
 		if(pos.y & 0x40) { //container
-			unsigned char containerid = pos.y & 0x0F;
+			uint8_t containerid = pos.y & 0x0F;
 			Container* container = player->getContainer(containerid);
 			if(!container)
 				return;
@@ -5233,7 +5233,7 @@ bool Game::removeThing(Player* player,const Position &pos,Thing* thing,  bool se
 			return false;
 
 		if(pos.y & 0x40) { //container
-			unsigned char containerid = pos.y & 0x0F;
+			uint8_t containerid = pos.y & 0x0F;
 			Container* container = player->getContainer(containerid);
 			if(!container)
 				return false;
@@ -5264,7 +5264,7 @@ bool Game::removeThing(Player* player,const Position &pos,Thing* thing,  bool se
 		//Tile *tile = map->getTile(pos.x, pos.y, pos.z);
 		Tile *tile = map->getTile(pos);
 		if(tile){
-			unsigned char stackpos = tile->getThingStackPos(thing);
+			uint8_t stackpos = tile->getThingStackPos(thing);
 			if(!tile->removeThing(thing))
 				return false;
 			sendRemoveThing(NULL,pos,thing,stackpos,true);
@@ -5286,7 +5286,7 @@ Position Game::getThingMapPos(Player *player, const Position &pos)
 		if(!player)
 			return dummyPos;
 		if(pos.y & 0x40) { //from container
-			unsigned char containerid = pos.y & 0x0F;
+			uint8_t containerid = pos.y & 0x0F;
 			const Container* container = player->getContainer(containerid);
 			if(!container){
 				return dummyPos;
@@ -5309,13 +5309,13 @@ Position Game::getThingMapPos(Player *player, const Position &pos)
 	}
 }
 
-Thing* Game::getThing(const Position &pos,unsigned char stack, Player* player /*=NULL*/)
+Thing* Game::getThing(const Position &pos,uint8_t stack, Player* player /*=NULL*/)
 {
 	if(pos.x == 0xFFFF) {
 		if(!player)
 			return NULL;
 		if(pos.y & 0x40) { //from container
-			unsigned char containerid = pos.y & 0x0F;
+			uint8_t containerid = pos.y & 0x0F;
 			Container* container = player->getContainer(containerid);
 			if(!container)
 				return NULL;
@@ -6177,7 +6177,7 @@ void Game::LeaveParty(Player *player)
 	player->party = 0;
 }
 
-void Game::disbandParty(unsigned long partyID)
+void Game::disbandParty(uint32_t partyID)
 {
 	OTSYS_THREAD_LOCK_CLASS lockClass(gameLock, "Game::disbandParty()");
 
@@ -6207,7 +6207,7 @@ public:
 void Game::burstArrow(Creature* c, const Position& pos)
 {
 	OTSYS_THREAD_LOCK_CLASS lockClass(gameLock, "Game::burstArrow()");
-	std::vector<unsigned char> col;
+	std::vector<uint8_t> col;
 	MagicEffectAreaNoExhaustionClass runeAreaSpell;
 
 	runeAreaSpell.attackType = ATTACK_PHYSICAL;
@@ -6303,7 +6303,7 @@ long Game::cleanMap()
 
 
 #ifdef CVS_DAY_CYCLE
-void Game::creatureChangeLight(Player* player, int time, unsigned char lightlevel, unsigned char lightcolor)
+void Game::creatureChangeLight(Player* player, int time, uint8_t lightlevel, uint8_t lightcolor)
 {
 	OTSYS_THREAD_LOCK_CLASS lockClass(gameLock, "Game::creatureChangeLight()");
 
@@ -6358,7 +6358,7 @@ void Game::checkLight(int t)
 	}
 }
 
-unsigned char Game::getLightLevel(){
+uint8_t Game::getLightLevel(){
 	return lightlevel;
 }
 #endif //CVS_DAY_CYCLE
@@ -6562,7 +6562,7 @@ void Game::useWand(Creature *creature, Creature *attackedCreature, int wandid)
 
 	if (mana > 0)
 	{
-		std::vector<unsigned char> col;
+		std::vector<uint8_t> col;
 				
 		col.push_back(0);
 		col.push_back(0);

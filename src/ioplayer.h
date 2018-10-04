@@ -45,8 +45,8 @@ class IOPlayer {
 	  */
 	virtual bool savePlayer(Player* player);
 	
-	virtual bool getGuidByName(unsigned long &guid, unsigned long &alvl, std::string &name);
-	virtual bool getNameByGuid(unsigned long guid, std::string &name);
+	virtual bool getGuidByName(uint32_t &guid, uint32_t &alvl, std::string &name);
+	virtual bool getNameByGuid(uint32_t guid, std::string &name);
 	
   protected:
 	IOPlayer(){};

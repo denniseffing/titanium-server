@@ -170,13 +170,13 @@ public:
 	AStarNode* createOpenNode();
 	AStarNode* getBestNode();
 	void closeNode(AStarNode* node);
-	unsigned long countClosedNodes();
-	unsigned long countOpenNodes();
-	bool isInList(unsigned long x, unsigned long y);
+	uint32_t countClosedNodes();
+	uint32_t countOpenNodes();
+	bool isInList(uint32_t x, uint32_t y);
 private:
 	AStarNode nodes[MAX_NODES];
 	std::bitset<MAX_NODES> openNodes;
-	unsigned long curNode;
+	uint32_t curNode;
 };
 
 template<class T> class lessPointer : public std::binary_function<T*, T*, bool> {
@@ -210,7 +210,7 @@ class Map {
 	  * Get a single tile.
 	  * \returns A pointer to that tile.
 	  */
-    Tile* getTile(unsigned short _x, unsigned short _y, unsigned char _z);
+    Tile* getTile(uint16_t _x, uint16_t _y, uint8_t _z);
     Tile* getTile(const Position &pos);
     
 	/**
@@ -218,9 +218,9 @@ class Map {
 	  * \param groundId Ground kind (ID)
 	  * \returns Nothing =]
 	  */
-    void setTile(unsigned short _x, unsigned short _y, unsigned char _z, unsigned short groundId);
+    void setTile(uint16_t _x, uint16_t _y, uint8_t _z, uint16_t groundId);
 
-	Tile* setTile(unsigned short _x, unsigned short _y, unsigned char _z);
+	Tile* setTile(uint16_t _x, uint16_t _y, uint8_t _z);
 
 	/**
 	  * Place a creature on the map
@@ -273,7 +273,7 @@ class Map {
 	  * Get the Creatures within a specific Range */
 	void getSpectators(const Range& range, SpectatorVec& list);
     
-    typedef std::map<unsigned long, Tile*> TileMap;
+    typedef std::map<uint32_t, Tile*> TileMap;
 	//TileMap tileMaps[32][32][MAP_LAYER];	
 	//TileMap tileMaps[256][256];
 	TileMap tileMaps[128][128];

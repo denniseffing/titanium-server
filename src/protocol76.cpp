@@ -387,7 +387,7 @@ void Protocol76::GetTileDescription(const Tile* tile, NetworkMessage &msg
 				if(!player->gmInvisible || player->gmInvisible && player == p || p->access >= player->access)
 				{
 					bool known;
-					unsigned long removedKnown;
+					uint32_t removedKnown;
 					checkCreatureAsKnown((*itc)->getID(), known, removedKnown);
 					AddCreature(msg,*itc, known, removedKnown);
 					count++;
@@ -396,7 +396,7 @@ void Protocol76::GetTileDescription(const Tile* tile, NetworkMessage &msg
 			else
 			{
 				bool known;
-				unsigned long removedKnown;
+				uint32_t removedKnown;
 				checkCreatureAsKnown((*itc)->getID(), known, removedKnown);
 				AddCreature(msg,*itc, known, removedKnown);
 				count++;
@@ -407,7 +407,7 @@ void Protocol76::GetTileDescription(const Tile* tile, NetworkMessage &msg
 		for (itc = tile->creatures.begin(); ((itc !=tile->creatures.end()) && (count < 10)); ++itc)
 		{
 			bool known;
-			unsigned long removedKnown;
+			uint32_t removedKnown;
 			checkCreatureAsKnown((*itc)->getID(), known, removedKnown);
 			AddCreature(msg,*itc, known, removedKnown);
 			count++;
@@ -422,8 +422,8 @@ void Protocol76::GetTileDescription(const Tile* tile, NetworkMessage &msg
 	}
 }
 
-void Protocol76::GetMapDescription(unsigned short x, unsigned short y, unsigned char z,
-                                   unsigned short width, unsigned short height,
+void Protocol76::GetMapDescription(uint16_t x, uint16_t y, uint8_t z,
+                                   uint16_t width, uint16_t height,
                                    NetworkMessage &msg
 #ifdef TRS_GM_INVISIBLE
 								   , Player* p
@@ -496,10 +496,10 @@ void Protocol76::GetMapDescription(unsigned short x, unsigned short y, unsigned 
 }
 
 
-void Protocol76::checkCreatureAsKnown(unsigned long id, bool &known, unsigned long &removedKnown)
+void Protocol76::checkCreatureAsKnown(uint32_t id, bool &known, uint32_t &removedKnown)
 {
 	// loop through the known player and check if the given player is in
-	std::list<unsigned long>::iterator i;
+	std::list<uint32_t>::iterator i;
 	for(i = knownPlayers.begin(); i != knownPlayers.end(); ++i)
 	{
 		if((*i) == id)
@@ -576,14 +576,14 @@ void Protocol76::parseGetChannels(NetworkMessage &msg){
 }
 
 void Protocol76::parseOpenChannel(NetworkMessage &msg){
-	unsigned short channelId = msg.GetU16();
+	uint16_t channelId = msg.GetU16();
 	OTSYS_THREAD_LOCK_CLASS lockClass(game->gameLock, "Protocol76::parseOpenChannel()");
 	if(g_chat.addUserToChannel(player, channelId))
 		sendChannel(channelId, g_chat.getChannelName(player, channelId));
 }
 
 void Protocol76::parseCloseChannel(NetworkMessage &msg){
-	unsigned short channelId = msg.GetU16();
+	uint16_t channelId = msg.GetU16();
 	OTSYS_THREAD_LOCK_CLASS lockClass(game->gameLock, "Protocol76::parseCloseChannel()");
 	g_chat.removeUserFromChannel(player, channelId);
 }
@@ -643,7 +643,7 @@ void Protocol76::parseMoveByMouse(NetworkMessage &msg)
 	std::list<Direction> path;
 	size_t numdirs = msg.GetByte();
 	for (size_t i = 0; i < numdirs; ++i) {
-		unsigned char rawdir = msg.GetByte();
+		uint8_t rawdir = msg.GetByte();
 		Direction dir = SOUTH;
 		
 		switch(rawdir) {
@@ -925,7 +925,7 @@ void Protocol76::sendSetOutfit(const Creature* creature) {
 	}
 }
 
-void Protocol76::sendInventory(unsigned char sl_id){	
+void Protocol76::sendInventory(uint8_t sl_id){	
 	NetworkMessage msg;
 	AddPlayerInventoryItem(msg,player,sl_id);
 	WriteBuffer(msg);
@@ -943,7 +943,7 @@ void Protocol76::sendTextMessage(MessageClasses mclass, const char* message){
 	WriteBuffer(msg);
 }
 
-void Protocol76::sendTextMessage(MessageClasses mclass, const char* message,const Position &pos, unsigned char type){
+void Protocol76::sendTextMessage(MessageClasses mclass, const char* message,const Position &pos, uint8_t type){
 	NetworkMessage msg;
 	AddMagicEffect(msg,pos,type);
 	AddTextMessage(msg,mclass, message);
@@ -958,7 +958,7 @@ void Protocol76::sendChannelsDialog(){
 	
 	newmsg.AddByte(0xAB);
 	
-	newmsg.AddByte((unsigned char)list.size()); //how many
+	newmsg.AddByte((uint8_t)list.size()); //how many
 	
 	while(list.size())
 	{
@@ -972,7 +972,7 @@ void Protocol76::sendChannelsDialog(){
 	WriteBuffer(newmsg);
 }
 
-void Protocol76::sendChannel(unsigned short channelId, std::string channelName){
+void Protocol76::sendChannel(uint16_t channelId, std::string channelName){
 	NetworkMessage newmsg;
 	
 	newmsg.AddByte(0xAC);
@@ -1021,11 +1021,11 @@ void Protocol76::parseSetOutfit(NetworkMessage &msg)
 void Protocol76::parseUseItemEx(NetworkMessage &msg)
 {
 	Position pos_from = msg.GetPosition();
-	unsigned short itemid = msg.GetItemId();
-	unsigned char from_stackpos = msg.GetByte();
+	uint16_t itemid = msg.GetItemId();
+	uint8_t from_stackpos = msg.GetByte();
 	Position pos_to = msg.GetPosition();
-	/*unsigned short tile_id = */msg.GetU16();
-	unsigned char to_stackpos = msg.GetByte();
+	/*uint16_t tile_id = */msg.GetU16();
+	uint8_t to_stackpos = msg.GetByte();
 	
 	game->playerUseItemEx(player,pos_from,from_stackpos, pos_to, to_stackpos, itemid);
 	
@@ -1034,14 +1034,14 @@ void Protocol76::parseUseItemEx(NetworkMessage &msg)
 void Protocol76::parseBattleWindow(NetworkMessage &msg)
 {
 	Position pos_from = msg.GetPosition();
-	unsigned short itemid = msg.GetItemId();
-	unsigned char from_stackpos = msg.GetByte();
-	unsigned long creatureid = msg.GetU32();
+	uint16_t itemid = msg.GetItemId();
+	uint8_t from_stackpos = msg.GetByte();
+	uint32_t creatureid = msg.GetU32();
 
 	game->playerUseBattleWindow(player, pos_from, from_stackpos, itemid, creatureid);
 }
 
-void Protocol76::sendContainer(unsigned char index, Container *container)
+void Protocol76::sendContainer(uint8_t index, Container *container)
 {
 	if(!container)
 		return;
@@ -1108,7 +1108,7 @@ void Protocol76::sendTradeItemRequest(const Player* player, const Item* item, bo
 			}
 		}
 		
-		msg.AddByte((unsigned char)itemstack.size());
+		msg.AddByte((uint8_t)itemstack.size());
 		while(itemstack.size() > 0) {
 			const Item* item = itemstack.front();
 			itemstack.pop_front();
@@ -1131,7 +1131,7 @@ void Protocol76::sendCloseTrade()
 	WriteBuffer(msg);
 }
 
-void Protocol76::sendCloseContainer(unsigned char containerid)
+void Protocol76::sendCloseContainer(uint8_t containerid)
 {
 	NetworkMessage msg;
 	
@@ -1143,9 +1143,9 @@ void Protocol76::sendCloseContainer(unsigned char containerid)
 void Protocol76::parseUseItem(NetworkMessage &msg)
 {
 	Position pos = msg.GetPosition();
-	unsigned short itemid = msg.GetItemId();
-	unsigned char stack = msg.GetByte();
-	unsigned char index = msg.GetByte();
+	uint16_t itemid = msg.GetItemId();
+	uint8_t stack = msg.GetByte();
+	uint8_t index = msg.GetByte();
 	
 #ifdef __DEBUG__
 	std::cout << "parseUseItem: " << "x: " << pos.x << ", y: " << (int)pos.y <<  ", z: " << (int)pos.z << ", item: " << (int)item << ", stack: " << (int)stack << ", index: " << (int)index << std::endl;
@@ -1156,14 +1156,14 @@ void Protocol76::parseUseItem(NetworkMessage &msg)
 
 void Protocol76::parseCloseContainer(NetworkMessage &msg)
 {
-	unsigned char containerid = msg.GetByte();
+	uint8_t containerid = msg.GetByte();
 	player->closeContainer(containerid);
 	sendCloseContainer(containerid);
 }
 
 void Protocol76::parseUpArrowContainer(NetworkMessage &msg)
 {
-	unsigned char containerid = msg.GetByte();
+	uint8_t containerid = msg.GetByte();
 	OTSYS_THREAD_LOCK_CLASS lockClass(game->gameLock, "Protocol76::parseUpArrowContainer()");
 	Container *container = player->getContainer(containerid);
 	if(!container)
@@ -1177,15 +1177,15 @@ void Protocol76::parseUpArrowContainer(NetworkMessage &msg)
 
 void Protocol76::parseThrow(NetworkMessage &msg)
 {
-	unsigned short from_x     = msg.GetU16();
-	unsigned short from_y     = msg.GetU16(); 
-	unsigned char  from_z     = msg.GetByte();
-	unsigned short itemid     = msg.GetItemId();
-	unsigned char  from_stack = msg.GetByte();
-	unsigned short to_x       = msg.GetU16();
-	unsigned short to_y       = msg.GetU16(); 
-	unsigned char  to_z       = msg.GetByte();
-	unsigned char count       = msg.GetByte();
+	uint16_t from_x     = msg.GetU16();
+	uint16_t from_y     = msg.GetU16(); 
+	uint8_t  from_z     = msg.GetByte();
+	uint16_t itemid     = msg.GetItemId();
+	uint8_t  from_stack = msg.GetByte();
+	uint16_t to_x       = msg.GetU16();
+	uint16_t to_y       = msg.GetU16(); 
+	uint8_t  to_z       = msg.GetByte();
+	uint8_t count       = msg.GetByte();
 	/*
 	std::cout << "parseThrow: " << "from_x: " << (int)from_x << ", from_y: " << (int)from_y
 	<<  ", from_z: " << (int)from_z << ", item: " << (int)itemid << ", from_stack: " 
@@ -1208,7 +1208,7 @@ if(parcel)
 bool canSend = true;
 bool foundLabel = false;
 std::string receiver;
-unsigned int depotid;
+uint32_t depotid;
 Container* parcel2 = dynamic_cast<Container*>(parcel);
 if(parcel2 && itemid == ITEM_PARCEL)
 {
@@ -1283,7 +1283,7 @@ parcel->setID((itemid == ITEM_LETTER?ITEM_STLETTER:ITEM_STPARCEL));
 Container* depot = player->getDepot(depotid);
 if(depot)
 depot->addItem(parcel);
-std::vector<unsigned char> containerlist;
+std::vector<uint8_t> containerlist;
 containerLayout::const_iterator cit;
 for(cit = player->getContainers(); cit != player->getEndContainer(); ++cit)
 {
@@ -1322,51 +1322,51 @@ return;
 	
 	//container/inventory to container/inventory
 	if(from_x == 0xFFFF && to_x == 0xFFFF) {
-		unsigned char from_cid;
-		unsigned char to_cid;
+		uint8_t from_cid;
+		uint8_t to_cid;
 		
 		if(from_y & 0x40) {
 			from_cid = from_y & 0x0F;
 		}
 		else {
 			fromInventory = true;
-			from_cid = static_cast<unsigned char>(from_y);
+			from_cid = static_cast<uint8_t>(from_y);
 		}
 		
 		if(to_y & 0x40) {
-			to_cid = static_cast<unsigned char>(to_y & 0x0F);
+			to_cid = static_cast<uint8_t>(to_y & 0x0F);
 		}
 		else {
 			toInventory = true;
-			to_cid = static_cast<unsigned char>(to_y);
+			to_cid = static_cast<uint8_t>(to_y);
 		}
 		
 		game->thingMove(player, from_cid, from_z, itemid,fromInventory, to_cid, to_z, toInventory, count);
 	}
 	//container/inventory to ground
 	else if(from_x == 0xFFFF && to_x != 0xFFFF) {
-		unsigned char from_cid;
+		uint8_t from_cid;
 		
 		if(0x40 & from_y) {
-			from_cid = static_cast<unsigned char>(from_y & 0x0F);
+			from_cid = static_cast<uint8_t>(from_y & 0x0F);
 		}
 		else {
 			fromInventory = true;
-			from_cid = static_cast<unsigned char>(from_y);
+			from_cid = static_cast<uint8_t>(from_y);
 		}
 		
 		game->thingMove(player, from_cid, from_z, itemid, fromInventory, Position(to_x, to_y, to_z), count);
 	}
 	//ground to container/inventory
 	else if(from_x != 0xFFFF && to_x == 0xFFFF) {
-		unsigned char to_cid;
+		uint8_t to_cid;
 		
 		if(0x40 & to_y) {
-			to_cid = static_cast<unsigned char>(to_y & 0x0F);
+			to_cid = static_cast<uint8_t>(to_y & 0x0F);
 		}
 		else {
 			toInventory = true;
-			to_cid = static_cast<unsigned char>(to_y);
+			to_cid = static_cast<uint8_t>(to_y);
 			
 			if(to_cid > 11) {
 				return;
@@ -1402,8 +1402,8 @@ return;
 
 void Protocol76::parseLookAt(NetworkMessage &msg){
 	Position LookPos = msg.GetPosition();
-	unsigned short ItemNum = msg.GetU16();
-	unsigned char stackpos = msg.GetByte();
+	uint16_t ItemNum = msg.GetU16();
+	uint8_t stackpos = msg.GetByte();
 	
 #ifdef __DEBUG__
 	std::cout << "look at: " << LookPos << std::endl;
@@ -1433,8 +1433,8 @@ void Protocol76::parseLookAt(NetworkMessage &msg){
 	else {
 		//from container/inventory
 		if(LookPos.y & 0x40) {
-			unsigned char from_cid = LookPos.y & 0x0F;
-			unsigned char slot = LookPos.z;
+			uint8_t from_cid = LookPos.y & 0x0F;
+			uint8_t slot = LookPos.z;
 			
 			Container *parentcontainer = player->getContainer(from_cid);
 			if(!parentcontainer)
@@ -1443,7 +1443,7 @@ void Protocol76::parseLookAt(NetworkMessage &msg){
 			item = parentcontainer->getItem(slot);
 		}
 		else {
-			unsigned char from_cid = static_cast<unsigned char>(LookPos.y);
+			uint8_t from_cid = static_cast<uint8_t>(LookPos.y);
 			item = player->getItem(from_cid);
 		}
 	}
@@ -1505,7 +1505,7 @@ void Protocol76::parseSay(NetworkMessage &msg)
 	SpeakClasses type = (SpeakClasses)msg.GetByte();
 	
 	std::string receiver;
-	unsigned short channelId = 0;
+	uint16_t channelId = 0;
 	if(type == SPEAK_PRIVATE ||
 		type == SPEAK_PRIVATE_RED)
 		receiver = msg.GetString();
@@ -1547,13 +1547,13 @@ void Protocol76::parseSay(NetworkMessage &msg)
 
 void Protocol76::parseAttack(NetworkMessage &msg)
 {
-	unsigned long creatureid = msg.GetU32();
+	uint32_t creatureid = msg.GetU32();
 	game->playerSetAttackedCreature(player, creatureid);
 }
 
 void Protocol76::parseTextWindow(NetworkMessage &msg)
 {
-    unsigned long id = msg.GetU32(); 
+    uint32_t id = msg.GetU32(); 
     std::string new_text = msg.GetString(); 
     if(readItem && windowTextID == id) 
 { 
@@ -1566,9 +1566,9 @@ void Protocol76::parseTextWindow(NetworkMessage &msg)
 void Protocol76::parseRequestTrade(NetworkMessage &msg)
 {
 	Position pos = msg.GetPosition();
-	unsigned short itemid = msg.GetItemId();
-	unsigned char stack = msg.GetByte();
-	unsigned long playerid = msg.GetU32();
+	uint16_t itemid = msg.GetItemId();
+	uint8_t stack = msg.GetByte();
+	uint32_t playerid = msg.GetU32();
 	
 	game->playerRequestTrade(player, pos, stack, itemid, playerid);
 }
@@ -1601,15 +1601,15 @@ void Protocol76::parseAddVip(NetworkMessage &msg)
 
 void Protocol76::parseRemVip(NetworkMessage &msg)
 {
-	unsigned long id = msg.GetU32();
+	uint32_t id = msg.GetU32();
 	player->removeVIP(id);
 }
 
 void Protocol76::parseRotateItem(NetworkMessage &msg)
 {
 	Position pos = msg.GetPosition();
-	unsigned short itemid = msg.GetItemId();
-	unsigned char stackpos = msg.GetByte();
+	uint16_t itemid = msg.GetItemId();
+	uint8_t stackpos = msg.GetByte();
 	
 	game->playerRotateItem(player, pos, stackpos, itemid);
 	
@@ -1693,8 +1693,8 @@ void Protocol76::sendTileUpdated(const Position &pos)
 }
 
 //container to container
-void Protocol76::sendThingMove(const Creature *creature, const Container *fromContainer, unsigned char from_slotid,
-							   const Item* fromItem, int oldFromCount, Container *toContainer, unsigned char to_slotid, const Item *toItem, int oldToCount, int count)
+void Protocol76::sendThingMove(const Creature *creature, const Container *fromContainer, uint8_t from_slotid,
+							   const Item* fromItem, int oldFromCount, Container *toContainer, uint8_t to_slotid, const Item *toItem, int oldToCount, int count)
 {
 	if(player->NeedUpdateStats()) {
 		player->sendStats();
@@ -1740,7 +1740,7 @@ void Protocol76::sendThingMove(const Creature *creature, const Container *fromCo
 	Item *container = NULL;
 	for(containerLayout::const_iterator cit = player->getContainers(); cit != player->getEndContainer(); ++cit) {
 		container  = cit->second;
-		unsigned char cid = cit->first;
+		uint8_t cid = cit->first;
 		
 		if(container && container == fromContainer) {
 			if(toContainer == fromContainer) {
@@ -1827,7 +1827,7 @@ void Protocol76::sendThingMove(const Creature *creature, const Container *fromCo
 
 //inventory to container
 void Protocol76::sendThingMove(const Creature *creature, slots_t fromSlot, const Item* fromItem,
-							   int oldFromCount, const Container *toContainer, unsigned char to_slotid, const Item *toItem, int oldToCount, int count)
+							   int oldFromCount, const Container *toContainer, uint8_t to_slotid, const Item *toItem, int oldToCount, int count)
 {
 	if(player->NeedUpdateStats()) {
 		player->sendStats();
@@ -1837,7 +1837,7 @@ void Protocol76::sendThingMove(const Creature *creature, slots_t fromSlot, const
 	
 	for(containerLayout::const_iterator cit = player->getContainers(); cit != player->getEndContainer(); ++cit) {
 		if(cit->second == toContainer) {
-			unsigned char cid = cit->first;
+			uint8_t cid = cit->first;
 			
 			if(fromItem->isStackable()) {
 				if(toItem && fromItem->getID() == toItem->getID() && toItem->getItemCountOrSubtype() != oldToCount) {
@@ -1899,7 +1899,7 @@ void Protocol76::sendThingMove(const Creature *creature, slots_t fromSlot, const
 
 //container to inventory
 void Protocol76::sendThingMove(const Creature *creature, const Container *fromContainer,
-							   unsigned char from_slotid, const Item* fromItem, int oldFromCount, slots_t toSlot, const Item *toItem, int oldToCount, int count)
+							   uint8_t from_slotid, const Item* fromItem, int oldFromCount, slots_t toSlot, const Item *toItem, int oldToCount, int count)
 {
 	if(player->NeedUpdateStats()) {
 		player->sendStats();
@@ -1909,7 +1909,7 @@ void Protocol76::sendThingMove(const Creature *creature, const Container *fromCo
 	
 	for(containerLayout::const_iterator cit = player->getContainers(); cit != player->getEndContainer(); ++cit) {
 		if(cit->second == fromContainer) {
-			unsigned char cid = cit->first;
+			uint8_t cid = cit->first;
 			
 			if(!fromItem->isStackable() || (oldFromCount == count && oldToCount + count <= 100)) {
 				//remove item				
@@ -1952,7 +1952,7 @@ void Protocol76::sendThingMove(const Creature *creature, const Container *fromCo
 }
 
 //container to ground
-void Protocol76::sendThingMove(const Creature *creature, const Container *fromContainer, unsigned char from_slotid,
+void Protocol76::sendThingMove(const Creature *creature, const Container *fromContainer, uint8_t from_slotid,
 							   const Item* fromItem, int oldFromCount, const Position &toPos, const Item *toItem, int oldToCount, int count)
 {
 	if(player->NeedUpdateStats()) {
@@ -1989,7 +1989,7 @@ void Protocol76::sendThingMove(const Creature *creature, const Container *fromCo
 	}
 	
 	for(containerLayout::const_iterator cit = player->getContainers(); cit != player->getEndContainer(); ++cit) {
-		unsigned char cid = cit->first;
+		uint8_t cid = cit->first;
 		if(cit->second == fromContainer) {
 			
 			if(!fromItem->isStackable() || fromItem->getItemCountOrSubtype() == 0 || count == oldFromCount) {
@@ -2063,7 +2063,7 @@ void Protocol76::sendThingMove(const Creature *creature, slots_t fromSlot,
 
 //ground to container
 void Protocol76::sendThingMove(const Creature *creature, const Position &fromPos, int stackpos, const Item* fromItem,
-							   int oldFromCount, const Container *toContainer, unsigned char to_slotid, const Item *toItem, int oldToCount, int count)
+							   int oldFromCount, const Container *toContainer, uint8_t to_slotid, const Item *toItem, int oldToCount, int count)
 {
 	if(player->NeedUpdateStats()) {
 		player->sendStats();
@@ -2122,7 +2122,7 @@ void Protocol76::sendThingMove(const Creature *creature, const Position &fromPos
 	for(containerLayout::const_iterator cit = player->getContainers(); cit != player->getEndContainer(); ++cit) {
 		container = cit->second;
 		if(container == toContainer) {
-			unsigned char cid = cit->first;
+			uint8_t cid = cit->first;
 			
 			if(fromItem->isStackable()) {
 				if(toItem && fromItem->getID() == toItem->getID() && toItem->getItemCountOrSubtype() != oldToCount) {
@@ -2201,7 +2201,7 @@ void Protocol76::sendThingMove(const Creature *creature, const Position &fromPos
 
 //ground to ground
 void Protocol76::sendThingMove(const Creature *creature, const Thing *thing,
-							   const Position *oldPos, unsigned char oldStackPos, unsigned char oldcount, unsigned char count, bool tele)
+							   const Position *oldPos, uint8_t oldStackPos, uint8_t oldcount, uint8_t count, bool tele)
 {
 	NetworkMessage msg;
 	
@@ -2238,7 +2238,7 @@ void Protocol76::sendThingMove(const Creature *creature, const Thing *thing,
 			AddAppearThing(msg,thing->pos);      
 			if (c) {
 				bool known;
-				unsigned long removedKnown;
+				uint32_t removedKnown;
 				checkCreatureAsKnown(((Creature*)thing)->getID(), known, removedKnown);
 				AddCreature(msg,(Creature*)thing, known, removedKnown);
 			}
@@ -2332,7 +2332,7 @@ void Protocol76::sendThingMove(const Creature *creature, const Thing *thing,
 //close container and its child containers
 void Protocol76::autoCloseContainers(const Container *container, NetworkMessage &msg)
 {
-	std::vector<unsigned char> containerlist;
+	std::vector<uint8_t> containerlist;
 	for(containerLayout::const_iterator cit = player->getContainers(); cit != player->getEndContainer(); ++cit) {
 		Container *tmpcontainer = cit->second;
 		while(tmpcontainer != NULL) {
@@ -2345,14 +2345,14 @@ void Protocol76::autoCloseContainers(const Container *container, NetworkMessage 
 		}
 	}
 	
-	for(std::vector<unsigned char>::iterator it = containerlist.begin(); it != containerlist.end(); ++it) {
+	for(std::vector<uint8_t>::iterator it = containerlist.begin(); it != containerlist.end(); ++it) {
 		player->closeContainer(*it);
 		msg.AddByte(0x6F);
 		msg.AddByte(*it);
 	}						
 }
 
-void Protocol76::sendCreatureTurn(const Creature *creature, unsigned char stackPos)
+void Protocol76::sendCreatureTurn(const Creature *creature, uint8_t stackPos)
 {
 	if (CanSee(creature))
 	{
@@ -2378,7 +2378,7 @@ void Protocol76::sendCreatureSay(const Creature *creature, SpeakClasses type, co
 	WriteBuffer(msg);
 }
 
-void Protocol76::sendToChannel(const Creature * creature, SpeakClasses type, const std::string &text, unsigned short channelId){
+void Protocol76::sendToChannel(const Creature * creature, SpeakClasses type, const std::string &text, uint16_t channelId){
 	NetworkMessage msg;
 	AddCreatureSpeak(msg,creature, type, text, channelId);
 	WriteBuffer(msg);
@@ -2416,7 +2416,7 @@ void Protocol76::sendCancelWalk()
 	WriteBuffer(netmsg);
 }
 
-void Protocol76::sendThingDisappear(const Thing *thing, unsigned char stackPos, bool tele)
+void Protocol76::sendThingDisappear(const Thing *thing, uint8_t stackPos, bool tele)
 {
 	NetworkMessage msg;
 	const Creature* creature = dynamic_cast<const Creature*>(thing);
@@ -2575,7 +2575,7 @@ void Protocol76::sendThingAppear(const Thing *thing){
 		}
 		else if(CanSee(creature)){
 			bool known;
-			unsigned long removedKnown;
+			uint32_t removedKnown;
 			checkCreatureAsKnown(creature->getID(), known, removedKnown);
 			AddAppearThing(msg,creature->pos);
 			AddCreature(msg,creature, known, removedKnown);		
@@ -2664,17 +2664,17 @@ void Protocol76::sendThingRemove(const Thing *thing){
 	WriteBuffer(msg);
 }
 
-void Protocol76::sendDistanceShoot(const Position &from, const Position &to, unsigned char type){
+void Protocol76::sendDistanceShoot(const Position &from, const Position &to, uint8_t type){
 	NetworkMessage msg;
 	AddDistanceShoot(msg,from, to,type);
 	WriteBuffer(msg);
 }
-void Protocol76::sendMagicEffect(const Position &pos, unsigned char type){
+void Protocol76::sendMagicEffect(const Position &pos, uint8_t type){
 	NetworkMessage msg;
 	AddMagicEffect(msg,pos,type);
 	WriteBuffer(msg);
 }
-void Protocol76::sendAnimatedText(const Position &pos, unsigned char color, std::string text){
+void Protocol76::sendAnimatedText(const Position &pos, uint8_t color, std::string text){
 	NetworkMessage msg;
 	AddAnimatedText(msg,pos,color,text);
 	WriteBuffer(msg);
@@ -2687,32 +2687,32 @@ void Protocol76::sendCreatureHealth(const Creature *creature){
 
 void Protocol76::sendItemAddContainer(const Container *container, const Item *item){
 	NetworkMessage msg;
-	unsigned char cid = player->getContainerID(container);
+	uint8_t cid = player->getContainerID(container);
 	if(cid != 0xFF){
 		AddItemContainer(msg,cid,item);
 		WriteBuffer(msg);
 	}
 }
 
-void Protocol76::sendItemRemoveContainer(const Container *container, const unsigned char slot)   {
+void Protocol76::sendItemRemoveContainer(const Container *container, const uint8_t slot)   {
 	NetworkMessage msg;
-	unsigned char cid = player->getContainerID(container);
+	uint8_t cid = player->getContainerID(container);
 	if(cid != 0xFF){
 		RemoveItemContainer(msg,cid,slot);
 		WriteBuffer(msg);
 	}
 }
 
-void Protocol76::sendItemUpdateContainer(const Container *container, const Item* item,const unsigned char slot){
+void Protocol76::sendItemUpdateContainer(const Container *container, const Item* item,const uint8_t slot){
 	NetworkMessage msg;
-	unsigned char cid = player->getContainerID(container);
+	uint8_t cid = player->getContainerID(container);
 	if(cid != 0xFF){
 		TransformItemContainer(msg,cid,slot,item);
 		WriteBuffer(msg);
 	}
 }
 
-void Protocol76::sendTextWindow(Item* item,const unsigned short maxlen, const bool canWrite){
+void Protocol76::sendTextWindow(Item* item,const uint16_t maxlen, const bool canWrite){
 	NetworkMessage msg;
 	msg.AddByte(0x96);
 	windowTextID++;
@@ -2726,7 +2726,7 @@ void Protocol76::sendTextWindow(Item* item,const unsigned short maxlen, const bo
 		readItem = item;
 	}
 	else{		
-		msg.AddU16((unsigned short)item->getText().size());
+		msg.AddU16((uint16_t)item->getText().size());
 		msg.AddString(item->getText());									
 		readItem = NULL;		
 	}
@@ -2735,7 +2735,7 @@ void Protocol76::sendTextWindow(Item* item,const unsigned short maxlen, const bo
 	WriteBuffer(msg);
 }
 
-void Protocol76::sendVIPLogIn(unsigned long guid)
+void Protocol76::sendVIPLogIn(uint32_t guid)
 {
 	NetworkMessage msg;
 	msg.AddByte(0xD3);
@@ -2743,7 +2743,7 @@ void Protocol76::sendVIPLogIn(unsigned long guid)
 	WriteBuffer(msg);
 }
 
-void Protocol76::sendVIPLogOut(unsigned long guid)
+void Protocol76::sendVIPLogOut(uint32_t guid)
 {
 	NetworkMessage msg;
 	msg.AddByte(0xD4);
@@ -2751,7 +2751,7 @@ void Protocol76::sendVIPLogOut(unsigned long guid)
 	WriteBuffer(msg);
 }
 
-void Protocol76::sendVIP(unsigned long guid, const std::string &name, bool isOnline)
+void Protocol76::sendVIP(uint32_t guid, const std::string &name, bool isOnline)
 {
 	NetworkMessage msg;
 	
@@ -2771,7 +2771,7 @@ void Protocol76::AddTextMessage(NetworkMessage &msg,MessageClasses mclass, const
 	msg.AddString(message);
 }
 
-void Protocol76::AddAnimatedText(NetworkMessage &msg,const Position &pos, unsigned char color, std::string text)
+void Protocol76::AddAnimatedText(NetworkMessage &msg,const Position &pos, uint8_t color, std::string text)
 {
 #ifdef __DEBUG__
 	if(text.length() == 0) {
@@ -2786,7 +2786,7 @@ void Protocol76::AddAnimatedText(NetworkMessage &msg,const Position &pos, unsign
 }
 
 
-void Protocol76::AddMagicEffect(NetworkMessage &msg,const Position &pos, unsigned char type)
+void Protocol76::AddMagicEffect(NetworkMessage &msg,const Position &pos, uint8_t type)
 {
 	msg.AddByte(0x83);
 	msg.AddPosition(pos);
@@ -2794,7 +2794,7 @@ void Protocol76::AddMagicEffect(NetworkMessage &msg,const Position &pos, unsigne
 }
 
 
-void Protocol76::AddDistanceShoot(NetworkMessage &msg,const Position &from, const Position &to, unsigned char type)
+void Protocol76::AddDistanceShoot(NetworkMessage &msg,const Position &from, const Position &to, uint8_t type)
 {
 	msg.AddByte(0x85); 
 	msg.AddPosition(from);
@@ -2803,7 +2803,7 @@ void Protocol76::AddDistanceShoot(NetworkMessage &msg,const Position &from, cons
 }
 
 
-void Protocol76::AddCreature(NetworkMessage &msg,const Creature *creature, bool known, unsigned int remove)
+void Protocol76::AddCreature(NetworkMessage &msg,const Creature *creature, bool known, uint32_t remove)
 {
 	if (known)
 	{
@@ -2823,7 +2823,7 @@ void Protocol76::AddCreature(NetworkMessage &msg,const Creature *creature, bool 
 	
 	msg.AddByte(std::max(1, creature->health*100/creature->healthmax));
 	
-	msg.AddByte((unsigned char)creature->getDirection());
+	msg.AddByte((uint8_t)creature->getDirection());
 	
 #ifdef BD_ITEM_LOOK
 	if (creature->looktype > 1000)
@@ -2903,7 +2903,7 @@ void Protocol76::AddPlayerStats(NetworkMessage &msg,const Player *player)
 	msg.AddByte(0xA0);
 	msg.AddU16(player->getHealth());
 	msg.AddU16(player->getPlayerInfo(PLAYERINFO_MAXHEALTH));
-	msg.AddU16((unsigned short)std::floor(player->getFreeCapacity()));
+	msg.AddU16((uint16_t)std::floor(player->getFreeCapacity()));
 
 #ifdef YUR_HIGH_LEVELS
 	if (player->getPlayerInfo(PLAYERINFO_LEVEL) > 65535)
@@ -2918,7 +2918,7 @@ void Protocol76::AddPlayerStats(NetworkMessage &msg,const Player *player)
 	}
 	else
 	{
-		msg.AddU32((unsigned long)player->getExperience());
+		msg.AddU32((uint32_t)player->getExperience());
 		msg.AddU16(player->getPlayerInfo(PLAYERINFO_LEVEL));
 	}
 #else
@@ -2971,7 +2971,7 @@ void Protocol76::AddPlayerInventoryItem(NetworkMessage &msg,const Player *player
 }
 
 
-void Protocol76::AddCreatureSpeak(NetworkMessage &msg,const Creature *creature, SpeakClasses  type, std::string text, unsigned short channelId)
+void Protocol76::AddCreatureSpeak(NetworkMessage &msg,const Creature *creature, SpeakClasses  type, std::string text, uint16_t channelId)
 {
 	msg.AddByte(0xAA);
 	msg.AddString(creature->getName());
@@ -3001,7 +3001,7 @@ void Protocol76::AddCreatureHealth(NetworkMessage &msg,const Creature *creature)
 	msg.AddByte(std::max(1, creature->health*100/creature->healthmax));
 }
 
-void Protocol76::AddRemoveThing(NetworkMessage &msg, const Position &pos,unsigned char stackpos){
+void Protocol76::AddRemoveThing(NetworkMessage &msg, const Position &pos,uint8_t stackpos){
 	if(stackpos < 10) {
 		if(CanSee(pos.x, pos.y, pos.z)) {
 			msg.AddByte(0x6C);
@@ -3035,26 +3035,26 @@ void Protocol76::AddAppearThing(NetworkMessage &msg, const Position &pos){
 	}
 }
 
-void Protocol76::AddItemContainer(NetworkMessage &msg,unsigned char cid, const Item *item){
+void Protocol76::AddItemContainer(NetworkMessage &msg,uint8_t cid, const Item *item){
 	msg.AddByte(0x70);
 	msg.AddByte(cid);
 	msg.AddItem(item);
 }
 
-void Protocol76::AddItemContainer(NetworkMessage &msg,unsigned char cid, const Item *item,unsigned char count){
+void Protocol76::AddItemContainer(NetworkMessage &msg,uint8_t cid, const Item *item,uint8_t count){
 	msg.AddByte(0x70);
 	msg.AddByte(cid);
 	msg.AddItem(item->getID(), count);
 }
 
-void Protocol76::TransformItemContainer(NetworkMessage &msg,unsigned char cid,unsigned char slot,const  Item *item){
+void Protocol76::TransformItemContainer(NetworkMessage &msg,uint8_t cid,uint8_t slot,const  Item *item){
 	msg.AddByte(0x71);
 	msg.AddByte(cid);
 	msg.AddByte(slot);
 	msg.AddItem(item);
 }
 
-void Protocol76::RemoveItemContainer(NetworkMessage &msg,unsigned char cid,unsigned char slot){
+void Protocol76::RemoveItemContainer(NetworkMessage &msg,uint8_t cid,uint8_t slot){
 	msg.AddByte(0x72);
 	msg.AddByte(cid);
 	msg.AddByte(slot);
@@ -3086,7 +3086,7 @@ void Protocol76::WriteBuffer(NetworkMessage &add){
 
 
 #ifdef CVS_DAY_CYCLE
-void Protocol76::sendWorldLightLevel(unsigned char lightlevel, unsigned char color)
+void Protocol76::sendWorldLightLevel(uint8_t lightlevel, uint8_t color)
 { 
 	NetworkMessage msg; 
 	msg.AddByte(0x82);
@@ -3115,15 +3115,15 @@ void Protocol76::sendHouseWindow(std::string members)
 	msg.AddByte(0x01);// window ID?
 	msg.AddByte(0x4E);//  U16 Part 1     ItemId
 	msg.AddByte(0xC5);//  U16 Part 2
-	msg.AddU16((unsigned short)members.size());
+	msg.AddU16((uint16_t)members.size());
 	msg.AddString(members);
 	sendNetworkMessage(&msg);
 }
 
 void Protocol76::parseHouseWindow(NetworkMessage& msg)
 {
-	unsigned long id     = msg.GetU32();
-	unsigned short size  = msg.GetU16();
+	uint32_t id     = msg.GetU32();
+	uint16_t size  = msg.GetU16();
 	msg.GetByte();
 	std::string new_text = msg.GetRaw();
 	player->receiveHouseWindow(new_text);
@@ -3169,7 +3169,7 @@ void Protocol76::elemParseAddVip(NetworkMessage &msg)
 
 void Protocol76::elemParseRemoveVip(NetworkMessage &msg)
 {
-	unsigned long id = msg.GetU32();
+	uint32_t id = msg.GetU32();
 	if(id >= 1 && id <= MAX_VIPS)
 		player->vip[id-1].clear();
 }
@@ -3207,7 +3207,7 @@ void Protocol76::sendPartyIcons(const Player *playa, int icontype, bool skull, b
 
 void Protocol76::parseInviteParty(NetworkMessage &msg)
 {
-	unsigned long creatureid = msg.GetU32();
+	uint32_t creatureid = msg.GetU32();
 	Creature* creature = game->getCreatureByID(creatureid);
 	Player* target = dynamic_cast<Player*>(creature);
 
@@ -3246,7 +3246,7 @@ void Protocol76::parseInviteParty(NetworkMessage &msg)
 
 void Protocol76::parseRevokeParty(NetworkMessage &msg)
 {
- unsigned long creatureid = msg.GetU32();
+ uint32_t creatureid = msg.GetU32();
  Creature* creature = game->getCreatureByID(creatureid);
  Player* target = dynamic_cast<Player*>(creature);
  std::vector<Player*>::iterator invited = std::find(player->invitedplayers.begin(), player->invitedplayers.end(), target);
@@ -3264,7 +3264,7 @@ void Protocol76::parseRevokeParty(NetworkMessage &msg)
 
 void Protocol76::parseJoinParty(NetworkMessage &msg)
 {
- unsigned long creatureid = msg.GetU32();
+ uint32_t creatureid = msg.GetU32();
  Creature* creature = game->getCreatureByID(creatureid);
  Player* target = dynamic_cast<Player*>(creature);
  player->party = target->party;
@@ -3295,7 +3295,7 @@ void Protocol76::parseJoinParty(NetworkMessage &msg)
 
 void Protocol76::parsePassLeadership(NetworkMessage &msg)
 {
- unsigned long creatureid = msg.GetU32();
+ uint32_t creatureid = msg.GetU32();
  Creature* creature = game->getCreatureByID(creatureid);
  Player* target = dynamic_cast<Player*>(creature);
  target->sendTextMessage(MSG_INFO, "You are now leader of your party.");

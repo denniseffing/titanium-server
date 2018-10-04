@@ -119,7 +119,7 @@ int Map::loadMap(std::string filename, std::string filekind) {
 	}
 }
 
-Tile* Map::getTile(unsigned short _x, unsigned short _y, unsigned char _z)
+Tile* Map::getTile(uint16_t _x, uint16_t _y, uint8_t _z)
 {
 	if(_z < MAP_LAYER){
 		// _x & 0x7F  is like _x % 128
@@ -148,7 +148,7 @@ Tile* Map::getTile(const Position &pos)
 	return getTile(pos.x, pos.y, pos.z);
 }
 
-void Map::setTile(unsigned short _x, unsigned short _y, unsigned char _z, unsigned short groundId)
+void Map::setTile(uint16_t _x, uint16_t _y, uint8_t _z, uint16_t groundId)
 {
 	Tile* tile = setTile(_x, _y, _z);
 
@@ -164,7 +164,7 @@ void Map::setTile(unsigned short _x, unsigned short _y, unsigned char _z, unsign
 	}
 }
 
-Tile* Map::setTile(unsigned short _x, unsigned short _y, unsigned char _z)
+Tile* Map::setTile(uint16_t _x, uint16_t _y, uint8_t _z)
 {
 	Tile *tile = getTile(_x, _y, _z);
 
@@ -409,7 +409,7 @@ std::list<Position> Map::getPathTo(Creature *creature, Position start, Position 
 	startNode->x = start.x;
 	startNode->y = start.y;
 
-	while(!found && nodes.countClosedNodes() < (unsigned long)maxNodSize){
+	while(!found && nodes.countClosedNodes() < (uint32_t)maxNodSize){
 		AStarNode* current = nodes.getBestNode();
 		if(!current)
 			return path; //no path
@@ -481,7 +481,7 @@ AStarNode* AStarNodes::createOpenNode()
 	if(curNode >= MAX_NODES)
 		return NULL;
 
-	unsigned long ret_node = curNode;
+	uint32_t ret_node = curNode;
 	curNode++;
 	openNodes[ret_node] = 1;
 	return &nodes[ret_node];
@@ -493,14 +493,14 @@ AStarNode* AStarNodes::getBestNode()
 		return NULL;
 
 	int best_node_h;
-	unsigned long best_node;
+	uint32_t best_node;
 	bool found;
 
 	best_node_h = 100000;
 	best_node = 0;
 	found = false;
 
-	for(unsigned long i = 0; i < curNode; i++){
+	for(uint32_t i = 0; i < curNode; i++){
 		if(nodes[i].h < best_node_h && openNodes[i] == 1){
 			found = true;
 			best_node_h = nodes[i].h;
@@ -517,7 +517,7 @@ AStarNode* AStarNodes::getBestNode()
 
 void AStarNodes::closeNode(AStarNode* node)
 {
-	unsigned long pos = (unsigned long)GET_NODE_INDEX(node);
+	uint32_t pos = (uint32_t)GET_NODE_INDEX(node);
 	if(pos < 0 || pos >= MAX_NODES){
 		std::cout << "AStarNodes. trying to close node out of range" << std::endl;
 		return;
@@ -525,10 +525,10 @@ void AStarNodes::closeNode(AStarNode* node)
 	openNodes[pos] = 0;
 }
 
-unsigned long AStarNodes::countClosedNodes()
+uint32_t AStarNodes::countClosedNodes()
 {
-	unsigned long counter = 0;
-	for(unsigned long i = 0; i < curNode; i++){
+	uint32_t counter = 0;
+	for(uint32_t i = 0; i < curNode; i++){
 		if(openNodes[i] == 0){
 			counter++;
 		}
@@ -536,10 +536,10 @@ unsigned long AStarNodes::countClosedNodes()
 	return counter;
 }
 
-unsigned long AStarNodes::countOpenNodes()
+uint32_t AStarNodes::countOpenNodes()
 {
-	unsigned long counter = 0;
-	for(unsigned long i = 0; i < curNode; i++){
+	uint32_t counter = 0;
+	for(uint32_t i = 0; i < curNode; i++){
 		if(openNodes[i] == 1){
 			counter++;
 		}
@@ -548,7 +548,7 @@ unsigned long AStarNodes::countOpenNodes()
 }
 
 
-bool AStarNodes::isInList(unsigned long x, unsigned long y)
+bool AStarNodes::isInList(uint32_t x, uint32_t y)
 {
 	for(unsigned i = 0; i < curNode; i++){
 		if(nodes[i].x == x && nodes[i].y == y){

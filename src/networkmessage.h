@@ -50,10 +50,10 @@ public:
 
 
   // simply read functions for incoming message
-  unsigned char  GetByte();
-  unsigned short GetU16();
-  unsigned short GetItemId();
-  unsigned int   GetU32();
+  uint8_t  GetByte();
+  uint16_t GetU16();
+  uint16_t GetItemId();
+  uint32_t   GetU32();
   std::string    GetString();
   std::string	 GetRaw();
   Position       GetPosition();
@@ -64,9 +64,9 @@ public:
 
 
   // simply write functions for outgoing message
-  void AddByte(unsigned char  value);
-  void AddU16 (unsigned short value);
-  void AddU32 (unsigned int   value);
+  void AddByte(uint8_t  value);
+  void AddU16 (uint16_t value);
+  void AddU32 (uint32_t   value);
 
   void AddString(const std::string &value);
   void AddString(const char* value);
@@ -74,10 +74,10 @@ public:
 
   // write functions for complex types
   void AddPosition(const Position &pos);
-	void AddItem(unsigned short id, unsigned char count);
+	void AddItem(uint16_t id, uint8_t count);
 	void AddItem(const Item *item);
 	void AddItemId(const Item *item);
-  void AddCreature(const Creature *creature, bool known, unsigned int remove);
+  void AddCreature(const Creature *creature, bool known, uint32_t remove);
 
   int getMessageLength(){
       return m_MsgSize;
@@ -93,7 +93,7 @@ protected:
   int m_MsgSize;
   int m_ReadPos;
 
-  unsigned char m_MsgBuf[NETWORKMESSAGE_MAXSIZE];
+  uint8_t m_MsgBuf[NETWORKMESSAGE_MAXSIZE];
 };
 
 

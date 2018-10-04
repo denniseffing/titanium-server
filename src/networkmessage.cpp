@@ -101,8 +101,8 @@ bool NetworkMessage::WriteToSocket(SOCKET socket)
 	if (m_MsgSize == 0)
 		return true;
 
-	m_MsgBuf[0] = (unsigned char)(m_MsgSize);
-	m_MsgBuf[1] = (unsigned char)(m_MsgSize >> 8);
+	m_MsgBuf[0] = (uint8_t)(m_MsgSize);
+	m_MsgBuf[1] = (uint8_t)(m_MsgSize >> 8);
   
 	bool ret = true;
 	int sendBytes = 0;
@@ -110,7 +110,7 @@ bool NetworkMessage::WriteToSocket(SOCKET socket)
 
 #if defined WIN32 || defined __WINDOWS__
 	// Set the socket I/O mode; iMode = 0 for blocking; iMode != 0 for non-blocking
-	unsigned long mode = 1;
+	uint32_t mode = 1;
 	ioctlsocket(socket, FIONBIO, &mode);
 	flags = 0;
 #else
@@ -153,28 +153,28 @@ bool NetworkMessage::WriteToSocket(SOCKET socket)
 /******************************************************************************/
 
 
-unsigned char NetworkMessage::GetByte()
+uint8_t NetworkMessage::GetByte()
 {
   return m_MsgBuf[m_ReadPos++];
 }
 
 
-unsigned short NetworkMessage::GetU16()
+uint16_t NetworkMessage::GetU16()
 {
-  unsigned short v = ((m_MsgBuf[m_ReadPos]) | (m_MsgBuf[m_ReadPos+1] << 8));
+  uint16_t v = ((m_MsgBuf[m_ReadPos]) | (m_MsgBuf[m_ReadPos+1] << 8));
   m_ReadPos += 2;
   return v;
 }
 
-unsigned short NetworkMessage::GetItemId()
+uint16_t NetworkMessage::GetItemId()
 {
-	unsigned short v = this->GetU16();
-	return (unsigned short)Item::items.reverseLookUp(v);
+	uint16_t v = this->GetU16();
+	return (uint16_t)Item::items.reverseLookUp(v);
 }
 
-unsigned int NetworkMessage::GetU32()
+uint32_t NetworkMessage::GetU32()
 {
-  unsigned int v = ((m_MsgBuf[m_ReadPos  ]      ) | (m_MsgBuf[m_ReadPos+1] <<  8) |
+  uint32_t v = ((m_MsgBuf[m_ReadPos  ]      ) | (m_MsgBuf[m_ReadPos+1] <<  8) |
                     (m_MsgBuf[m_ReadPos+2] << 16) | (m_MsgBuf[m_ReadPos+3] << 24));
   m_ReadPos += 4;
   return v;
@@ -220,7 +220,7 @@ void NetworkMessage::SkipBytes(int count)
 /******************************************************************************/
 
 
-void NetworkMessage::AddByte(unsigned char value)
+void NetworkMessage::AddByte(uint8_t value)
 {
   if(!canAdd(1))
     return;
@@ -229,24 +229,24 @@ void NetworkMessage::AddByte(unsigned char value)
 }
 
 
-void NetworkMessage::AddU16(unsigned short value)
+void NetworkMessage::AddU16(uint16_t value)
 {
   if(!canAdd(2))
     return;
-  m_MsgBuf[m_ReadPos++] = (unsigned char)(value);
-  m_MsgBuf[m_ReadPos++] = (unsigned char)(value >> 8);
+  m_MsgBuf[m_ReadPos++] = (uint8_t)(value);
+  m_MsgBuf[m_ReadPos++] = (uint8_t)(value >> 8);
   m_MsgSize += 2;
 }
 
 
-void NetworkMessage::AddU32(unsigned int value)
+void NetworkMessage::AddU32(uint32_t value)
 {
   if(!canAdd(4))
     return;
-  m_MsgBuf[m_ReadPos++] = (unsigned char)(value);
-  m_MsgBuf[m_ReadPos++] = (unsigned char)(value >>  8);
-  m_MsgBuf[m_ReadPos++] = (unsigned char)(value >> 16);
-  m_MsgBuf[m_ReadPos++] = (unsigned char)(value >> 24);
+  m_MsgBuf[m_ReadPos++] = (uint8_t)(value);
+  m_MsgBuf[m_ReadPos++] = (uint8_t)(value >>  8);
+  m_MsgBuf[m_ReadPos++] = (uint8_t)(value >> 16);
+  m_MsgBuf[m_ReadPos++] = (uint8_t)(value >> 24);
   m_MsgSize += 4;
 }
 
@@ -259,10 +259,10 @@ void NetworkMessage::AddString(const std::string &value)
 
 void NetworkMessage::AddString(const char* value)
 {
-  unsigned long stringlen = (unsigned long) strlen(value);
+  uint32_t stringlen = (uint32_t) strlen(value);
   if(!canAdd(stringlen+2) || stringlen > 8192)
     return;
-  AddU16((unsigned short)stringlen);
+  AddU16((uint16_t)stringlen);
   strcpy((char*)m_MsgBuf + m_ReadPos, value);
   m_ReadPos += stringlen;
   m_MsgSize += stringlen;
@@ -280,7 +280,7 @@ void NetworkMessage::AddPosition(const Position &pos)
 }
 
 
-void NetworkMessage::AddItem(unsigned short id, unsigned char count)
+void NetworkMessage::AddItem(uint16_t id, uint8_t count)
 {
 	const ItemType &it = Item::items[id];
 
@@ -297,7 +297,7 @@ void NetworkMessage::AddItem(const Item *item)
 	AddU16(it.clientId);
 
 	if(it.stackable || it.isSplash() || it.isFluidContainer())
-    AddByte((unsigned char)item->getItemCountOrSubtype());
+    AddByte((uint8_t)item->getItemCountOrSubtype());
 }
 
 void NetworkMessage::AddItemId(const Item *item)

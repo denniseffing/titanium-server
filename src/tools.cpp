@@ -51,7 +51,7 @@ int random_range(int lowest_number, int highest_number)
 
 //////////////////////////////////////////////////
 // dump a part of the memory to stderr.
-void hexdump(unsigned char *_data, int _len) {
+void hexdump(uint8_t *_data, int _len) {
     int i;
     for (; _len > 0; _data += 16, _len -= 16) {
         for (i = 0; i < 16 && i < _len; i++)

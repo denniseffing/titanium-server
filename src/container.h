@@ -30,12 +30,12 @@ class Container : public Item
 	private:
 		int useCount;
 		Container *parent;
-		unsigned short maxitems; //number of max items in container  
-		unsigned short actualitems; // number of items in container
+		uint16_t maxitems; //number of max items in container  
+		uint16_t actualitems; // number of items in container
 		ContainerList lcontained;
 
 	public:
-		Container(const unsigned short _type);
+		Container(const uint16_t _type);
 		virtual ~Container();
 		virtual void useThing() {
 			//std::cout << "Container: useThing() " << this << std::endl;
@@ -50,7 +50,7 @@ class Container : public Item
 				delete this;
 		};
 
-		unsigned long depot;
+		uint32_t depot;
 		int size() const {return actualitems;};
 		int capacity() const {return maxitems;};
 		void setParent(Container* container) {parent = container;};
@@ -63,10 +63,10 @@ class Container : public Item
 		ContainerList::const_iterator getEnd() const;       // iterator beyond the last element
 		bool addItem(Item* newitem);     // add an item to the container
 		bool removeItem(Item* item); //remove an item from the container
-		void moveItem(unsigned char from_slot, unsigned char to_slot);
-		Item* getItem(unsigned long slot_num);
-		const Item* getItem(unsigned long slot_num) const;
-		unsigned char getSlotNumberByItem(const Item* item) const;
+		void moveItem(uint8_t from_slot, uint8_t to_slot);
+		Item* getItem(uint32_t slot_num);
+		const Item* getItem(uint32_t slot_num) const;
+		uint8_t getSlotNumberByItem(const Item* item) const;
 		bool isHoldingItem(const Item* item) const;
 		long getItemHoldingCount() const;
 		virtual double getWeight() const;

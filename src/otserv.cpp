@@ -84,8 +84,8 @@ OTSYS_THREAD_LOCK_CLASS::LogList OTSYS_THREAD_LOCK_CLASS::loglist;
 MiniDumper miniDumper("TiTaNiUm 1");
 #endif //MSVC_EXCEPTION_TRACER
 
-std::vector< std::pair<unsigned long, unsigned long> > serverIPs;
-std::vector< std::pair<unsigned long, unsigned long> > bannedIPs;
+std::vector< std::pair<uint32_t, uint32_t> > serverIPs;
+std::vector< std::pair<uint32_t, uint32_t> > bannedIPs;
 
 LuaScript g_config;
 
@@ -117,12 +117,12 @@ bool passwordTest(std::string &plain, std::string &hash)
 		std::string plainHash;
 
 		MD5Init(&m_md5, 0);
-		MD5Update(&m_md5, (const unsigned char*)plain.c_str(), (unsigned int)plain.length());
+		MD5Update(&m_md5, (const uint8_t*)plain.c_str(), (uint32_t)plain.length());
 		MD5Final(&m_md5);
 
 		hexStream.flags(std::ios::hex);
 		for(int i=0;i<16;i++){
-			hexStream << std::setw(2) << std::setfill('0') << (unsigned long)m_md5.digest[i];
+			hexStream << std::setw(2) << std::setfill('0') << (uint32_t)m_md5.digest[i];
 		}
 
 		plainHash = hexStream.str();
@@ -154,7 +154,7 @@ bool isclientBanished(SOCKET s)
 
 	if (getpeername(s, (sockaddr*)&sain, &salen) == 0)
 	{
-		unsigned long clientip = *(unsigned long*)&sain.sin_addr;
+		uint32_t clientip = *(uint32_t*)&sain.sin_addr;
 
 		for (size_t i = 0; i < bannedIPs.size(); ++i) {
       if ((bannedIPs[i].first & bannedIPs[i].second) == (clientip & bannedIPs[i].second))
@@ -200,13 +200,13 @@ OTSYS_THREAD_RETURN ConnectionHandler(void *dat)
 	NetworkMessage msg;
 	if (msg.ReadFromSocket(s))
 	{
-		unsigned short protId = msg.GetU16();
+		uint16_t protId = msg.GetU16();
 
 		// login server connection
 		if (protId == 0x0201)
 		{
 			msg.SkipBytes(15);
-			unsigned int accnumber = msg.GetU32();
+			uint32_t accnumber = msg.GetU32();
 			std::string  password  = msg.GetString();
 
 			int serverip = serverIPs[0].first;
@@ -215,8 +215,8 @@ OTSYS_THREAD_RETURN ConnectionHandler(void *dat)
 			socklen_t salen = sizeof(sockaddr_in);
 			if (getpeername(s, (sockaddr*)&sain, &salen) == 0)
 			{
-				unsigned long clientip = *(unsigned long*)&sain.sin_addr;
-				for (unsigned int i = 0; i < serverIPs.size(); i++)
+				uint32_t clientip = *(uint32_t*)&sain.sin_addr;
+				for (uint32_t i = 0; i < serverIPs.size(); i++)
 					if ((serverIPs[i].first & serverIPs[i].second) == (clientip & serverIPs[i].second))
 					{
 						serverip = serverIPs[i].first;
@@ -270,10 +270,10 @@ OTSYS_THREAD_RETURN ConnectionHandler(void *dat)
 		// gameworld connection tibia 7.6
 		else if (protId == 0x020A)
 		{
-			unsigned char  clientos = msg.GetByte();
-			unsigned short version  = msg.GetU16();
-			unsigned char  unknown = msg.GetByte();
-			unsigned long accnumber = msg.GetU32();
+			uint8_t  clientos = msg.GetByte();
+			uint16_t version  = msg.GetU16();
+			uint8_t  unknown = msg.GetByte();
+			uint32_t accnumber = msg.GetU32();
 			std::string name     = msg.GetString();
 			std::string password = msg.GetString();
 		
@@ -502,7 +502,7 @@ int main(int argc, char *argv[])
 
 	// random numbers generator
 	std::cout << ":: Initializing the random numbers... ";
-	srand ( (unsigned int)time(NULL) );
+	srand ( (uint32_t)time(NULL) );
 	std::cout << "[done]" << std::endl;
 
 	// read global config
@@ -728,7 +728,7 @@ int main(int argc, char *argv[])
 #endif
 
 
-	std::pair<unsigned long, unsigned long> IpNetMask;
+	std::pair<uint32_t, uint32_t> IpNetMask;
 	IpNetMask.first  = inet_addr("127.0.0.1");
 	IpNetMask.second = 0xFFFFFFFF;
 	serverIPs.push_back(IpNetMask);
@@ -743,16 +743,16 @@ int main(int argc, char *argv[])
 		if (he)
 		{
 			std::cout << ":: Local IP address(es):  ";
-			unsigned char** addr = (unsigned char**)he->h_addr_list;
+			uint8_t** addr = (uint8_t**)he->h_addr_list;
 
 			while (addr[0] != NULL)
 			{
-				std::cout << (unsigned int)(addr[0][0]) << "."
-				<< (unsigned int)(addr[0][1]) << "."
-				<< (unsigned int)(addr[0][2]) << "."
-				<< (unsigned int)(addr[0][3]) << "  ";
+				std::cout << (uint32_t)(addr[0][0]) << "."
+				<< (uint32_t)(addr[0][1]) << "."
+				<< (uint32_t)(addr[0][2]) << "."
+				<< (uint32_t)(addr[0][3]) << "  ";
 
-			IpNetMask.first  = *(unsigned long*)(*addr);
+			IpNetMask.first  = *(uint32_t*)(*addr);
 			IpNetMask.second = 0x0000FFFF;
 			serverIPs.push_back(IpNetMask);
 

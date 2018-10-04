@@ -34,8 +34,8 @@
 #include "tlhelp32.h"
 #endif
 
-unsigned long max_off;
-unsigned long min_off;
+uint32_t max_off;
+uint32_t min_off;
 FunctionMap functionMap;
 bool maploaded = false;
 OTSYS_THREAD_LOCKVAR maploadlock;
@@ -48,7 +48,7 @@ EXCEPTION_DISPOSITION
      struct _CONTEXT *ContextRecord,
      void * DispatcherContext
      );
-void printPointer(std::ostream* output,unsigned long p);
+void printPointer(std::ostream* output,uint32_t p);
 #endif
 
 #ifdef __GNUC__
@@ -121,13 +121,13 @@ EXCEPTION_DISPOSITION
      void * DispatcherContext
      ){
 	//
-	unsigned long *esp;
-	unsigned long *next_ret;
-	unsigned long stack_val;
-	unsigned long *stacklimit;
-	unsigned long *stackstart;
-	unsigned long nparameters = 0;
-	unsigned long file,foundRetAddress = 0;
+	uint32_t *esp;
+	uint32_t *next_ret;
+	uint32_t stack_val;
+	uint32_t *stacklimit;
+	uint32_t *stackstart;
+	uint32_t nparameters = 0;
+	uint32_t file,foundRetAddress = 0;
 	_MEMORY_BASIC_INFORMATION mbi;
 	
 	std::ostream *outdriver;
@@ -167,7 +167,7 @@ EXCEPTION_DISPOSITION
 		systemtime.wHour << ":" << systemtime.wMinute << ":" << 
 		systemtime.wSecond << std::endl;
 	// kernel time
-	unsigned long miliseconds;
+	uint32_t miliseconds;
 	miliseconds = FTkernel.dwHighDateTime * 429497 + FTkernel.dwLowDateTime/10000;
 	*outdriver << "Kernel time: " << miliseconds/3600000;
 	miliseconds = miliseconds - (miliseconds/3600000)*3600000;
@@ -209,13 +209,13 @@ EXCEPTION_DISPOSITION
 	*outdriver << std::endl;
 	//exception header type and eip
 	outdriver->flags(std::ios::hex | std::ios::showbase);
-	*outdriver << "Exception: " << (unsigned long)ExceptionRecord->ExceptionCode << 
-		" at eip = " << (unsigned long)ExceptionRecord->ExceptionAddress;
+	*outdriver << "Exception: " << (uint32_t)ExceptionRecord->ExceptionCode << 
+		" at eip = " << (uint32_t)ExceptionRecord->ExceptionAddress;
 	FunctionMap::iterator functions;
-	if((unsigned long)(ExceptionRecord->ExceptionAddress) >= min_off &&
-		(unsigned long)(ExceptionRecord->ExceptionAddress) <= max_off){
+	if((uint32_t)(ExceptionRecord->ExceptionAddress) >= min_off &&
+		(uint32_t)(ExceptionRecord->ExceptionAddress) <= max_off){
 		for(functions = functionMap.begin(); functions != functionMap.end(); ++functions) {
-			if(functions->first > (unsigned long)(ExceptionRecord->ExceptionAddress) && 
+			if(functions->first > (uint32_t)(ExceptionRecord->ExceptionAddress) && 
 					functions != functionMap.begin()) {
 				functions--;
 				*outdriver << "(" <<functions->second << ")" ;
@@ -238,22 +238,22 @@ EXCEPTION_DISPOSITION
 	*outdriver << std::endl;
 	
 	//stack dump
-	esp = (unsigned long *)(ContextRecord->Esp);
+	esp = (uint32_t *)(ContextRecord->Esp);
 	VirtualQuery(esp, &mbi, sizeof(mbi));
-	stacklimit = (unsigned long*)((unsigned long)(mbi.BaseAddress) + mbi.RegionSize);
+	stacklimit = (uint32_t*)((uint32_t)(mbi.BaseAddress) + mbi.RegionSize);
 	
 	*outdriver << "---Stack Trace---" << std::endl;
-	*outdriver << "From: " << (unsigned long)esp <<
-		" to: " << (unsigned long)stacklimit << std::endl;
+	*outdriver << "From: " << (uint32_t)esp <<
+		" to: " << (uint32_t)stacklimit << std::endl;
 	
 	stackstart = esp;
-	next_ret = (unsigned long*)(ContextRecord->Ebp);
+	next_ret = (uint32_t*)(ContextRecord->Ebp);
 	while(esp<stacklimit){
 		stack_val = *esp;
 		if(foundRetAddress)
 			nparameters++;
 		if(esp - stackstart < 20 || nparameters < 10 || std::abs(esp - next_ret) < 10){
-			*outdriver  << (unsigned long)esp << " | ";
+			*outdriver  << (uint32_t)esp << " | ";
 			printPointer(outdriver,stack_val);
 			if(esp == next_ret){
 				*outdriver << " \\\\\\\\\\\\ stack frame //////";
@@ -262,7 +262,7 @@ EXCEPTION_DISPOSITION
 				*outdriver << " <-- ret" ;
 			}
 			else if(esp - next_ret == 9){
-				next_ret = (unsigned long*)*(esp - 9);
+				next_ret = (uint32_t*)*(esp - 9);
 			}
 			*outdriver<< std::endl;
 		}
@@ -273,7 +273,7 @@ EXCEPTION_DISPOSITION
 			for(functions = functionMap.begin(); functions != functionMap.end(); ++functions) {
 				if(functions->first > stack_val && functions != functionMap.begin()) {
 					functions--;
-					*outdriver  << (unsigned long)esp << "  " << 
+					*outdriver  << (uint32_t)esp << "  " << 
 					functions->second <<"("  << stack_val <<")" << std::endl;
 					break;
 				}
@@ -290,10 +290,10 @@ EXCEPTION_DISPOSITION
 	return ExceptionContinueSearch;
 }
 
-void printPointer(std::ostream* output,unsigned long p){
+void printPointer(std::ostream* output,uint32_t p){
 	*output << p;
 	if(IsBadReadPtr((void*)p,4) == 0){
-		*output << " -> " << *(unsigned long*)p;
+		*output << " -> " << *(uint32_t*)p;
 	}
 }
 
@@ -340,7 +340,7 @@ bool ExceptionHandler::LoadMap(){
 			//read hex offset
 			std::string hexnumber = line.substr(pos,10);
 			char *pEnd;
-			unsigned long offset = strtol(hexnumber.c_str(),&pEnd,0);
+			uint32_t offset = strtol(hexnumber.c_str(),&pEnd,0);
 			if(offset){
 				//read function name
 				std::string::size_type pos2 = line.find_first_not_of(space,pos+10);

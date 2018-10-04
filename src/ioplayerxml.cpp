@@ -68,7 +68,7 @@ bool IOPlayerXML::loadPlayer(Player* player, std::string name){
 		xmlMutexLock(xmlmutex);
 		
 		player->password = a.password;
-		if (a.accnumber == 0 || a.accnumber != (unsigned long)account) {
+		if (a.accnumber == 0 || a.accnumber != (uint32_t)account) {
 		  xmlFreeDoc(doc);		  
 		  xmlMutexUnlock(xmlmutex);		  
 		  return false;
@@ -198,7 +198,7 @@ bool IOPlayerXML::loadPlayer(Player* player, std::string name){
 		}
 		
 		//level percent
-		player->level_percent  = (unsigned char)(100*(player->experience-player->getExpForLv(player->level))/(1.*player->getExpForLv(player->level+1)-player->getExpForLv(player->level)));
+		player->level_percent  = (uint8_t)(100*(player->experience-player->getExpForLv(player->level))/(1.*player->getExpForLv(player->level+1)-player->getExpForLv(player->level)));
 		while (p)
 		{
 			std::string str=(char*)p->name;
@@ -228,7 +228,7 @@ bool IOPlayerXML::loadPlayer(Player* player, std::string name){
 				else
 					isLoaded = false;
 
-				player->maglevel_percent  = (unsigned char)(100*(player->manaspent/(1.*player->getReqMana(player->maglevel+1, player->vocation))));
+				player->maglevel_percent  = (uint8_t)(100*(player->manaspent/(1.*player->getReqMana(player->maglevel+1, player->vocation))));
 			}
 			else if(str=="health")
 			{
@@ -462,7 +462,7 @@ bool IOPlayerXML::loadPlayer(Player* player, std::string name){
 
 						player->skills[s_id][SKILL_LEVEL]=s_lvl;
 						player->skills[s_id][SKILL_TRIES]=s_tries;
-						player->skills[s_id][SKILL_PERCENT] = (unsigned int)(100*(player->skills[s_id][SKILL_TRIES])/(1.*player->getReqSkillTries (s_id, (player->skills[s_id][SKILL_LEVEL]+1), player->vocation)));
+						player->skills[s_id][SKILL_PERCENT] = (uint32_t)(100*(player->skills[s_id][SKILL_TRIES])/(1.*player->getReqSkillTries (s_id, (player->skills[s_id][SKILL_LEVEL]+1), player->vocation)));
 					}
 					tmp=tmp->next;
 				}
@@ -535,7 +535,7 @@ bool IOPlayerXML::loadPlayer(Player* player, std::string name){
 					if (strcmp((const char*)slot->name, "slot") == 0)
 					{
 						int sl_id = 0;
-						unsigned int id = 0;
+						uint32_t id = 0;
 						nodeValue = (char*)xmlGetProp(slot, (const xmlChar *)"slotid");
 						if(nodeValue) {
 							sl_id = atoi(nodeValue);
@@ -573,7 +573,7 @@ bool IOPlayerXML::loadPlayer(Player* player, std::string name){
 					if (strcmp((const char*)slot->name, "depot") == 0)
 					{
 						int dp_id = 0;
-						unsigned int id = 0;
+						uint32_t id = 0;
 						
 						nodeValue = (char*)xmlGetProp(slot, (const xmlChar *)"depotid");
 						if(nodeValue) {
@@ -610,7 +610,7 @@ bool IOPlayerXML::loadPlayer(Player* player, std::string name){
 				while(slot){
 					if (strcmp((const char*)slot->name, "data") == 0)
 					{
-						unsigned long key = 0;
+						uint32_t key = 0;
 						long value = 0;
 
 						nodeValue = (char*)xmlGetProp(slot, (const xmlChar *)"key"); 
@@ -655,8 +655,8 @@ bool IOPlayerXML::loadPlayer(Player* player, std::string name){
 bool IOPlayerXML::LoadContainer(xmlNodePtr nodeitem,Container* ccontainer)
 {
 	xmlNodePtr tmp,p;
-	/*unsigned short s_id;
-	unsigned char s_count;
+	/*uint16_t s_id;
+	uint8_t s_count;
 	Item *new_item;*/
 	if(nodeitem==NULL){
 		return false;
@@ -671,7 +671,7 @@ bool IOPlayerXML::LoadContainer(xmlNodePtr nodeitem,Container* ccontainer)
 		//load items
 		p=tmp->children;
 		while(p){
-			unsigned int id = 0;
+			uint32_t id = 0;
 
 			nodeValue = (char*)xmlGetProp(p, (const xmlChar *) "id");
 			if(nodeValue) {

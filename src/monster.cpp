@@ -36,7 +36,7 @@ extern Monsters g_monsters;
 
 Monster* Monster::createMonster(const std::string& name, Game* game)
 {
-	unsigned long id = g_monsters.getIdByName(name);
+	uint32_t id = g_monsters.getIdByName(name);
 	if(!id){
 		return NULL;
 	}
@@ -82,8 +82,8 @@ Creature()
 #endif //TJ_MONSTER_BLOOD
 }
 
-unsigned long Monster::getRandom(){
-	return (unsigned long)((rand()<< 16 | rand()) % CHANCE_MAX);
+uint32_t Monster::getRandom(){
+	return (uint32_t)((rand()<< 16 | rand()) % CHANCE_MAX);
 }
 
 
@@ -665,7 +665,7 @@ bool Monster::isInRange(const Position &p)
 }
 
 void Monster::onThingMove(const Creature *creature, const Thing* thing,
-	const Position* oldPos, unsigned char oldstackpos, unsigned char oldcount, unsigned char count)
+	const Position* oldPos, uint8_t oldstackpos, uint8_t oldcount, uint8_t count)
 {
 	const Creature* moveCreature = dynamic_cast<const Creature *>(thing);
 	if(moveCreature && (moveCreature != this || creature != moveCreature)) {
@@ -687,7 +687,7 @@ void Monster::onCreatureAppear(const Creature* creature)
 	}
 }
 
-void Monster::onCreatureDisappear(const Creature* creature, unsigned char stackPos, bool tele)
+void Monster::onCreatureDisappear(const Creature* creature, uint8_t stackPos, bool tele)
 {
 	if(creature == this) {
 		stopThink();
@@ -697,7 +697,7 @@ void Monster::onCreatureDisappear(const Creature* creature, unsigned char stackP
 	onCreatureLeave(creature);
 }
 
-void Monster::onThingDisappear(const Thing* thing, unsigned char stackPos)
+void Monster::onThingDisappear(const Thing* thing, uint8_t stackPos)
 {
 	const Creature *creature = dynamic_cast<const Creature*>(thing);
 
@@ -735,7 +735,7 @@ void Monster::onThingAppear(const Thing* thing){
 	}
 }
 
-void Monster::onTeleport(const Creature	*creature, const Position* oldPos, unsigned char oldstackpos)
+void Monster::onTeleport(const Creature	*creature, const Position* oldPos, uint8_t oldstackpos)
 {
 	if(creature == this) {
 		Creature* attackedCreature = game->getCreatureByID(this->attackedCreature);
@@ -1180,7 +1180,7 @@ bool Monster::doAttacks(Creature* attackedCreature, monstermode_t mode /*= MODE_
 				TimeProbabilityClass& timeprobsystem = *asIt;
 				if(timeprobsystem.onTick(500) || (random_range(1, 100) <= modeProb)) {
 
-					std::map<unsigned short, Spell*>::iterator rit = spells.getAllRuneSpells()->find(raIt->first);
+					std::map<uint16_t, Spell*>::iterator rit = spells.getAllRuneSpells()->find(raIt->first);
 					if(rit != spells.getAllRuneSpells()->end()) {
 						bool success = rit->second->getSpellScript()->castSpell(this, attackedCreature->pos, "");
 
@@ -1308,7 +1308,7 @@ bool Monster::monsterMoveItem(Item* item, int radius)
 			int oldstackpos = fromTile->getThingStackPos(item);
 
 			game->thingMoveInternal(this, item->pos.x, item->pos.y, item->pos.z,
-				oldstackpos, item->getID(), tryPos.x, tryPos.y, tryPos.z, (unsigned char)count);
+				oldstackpos, item->getID(), tryPos.x, tryPos.y, tryPos.z, (uint8_t)count);
 
 			if(item->pos == tryPos){
 				return true;
@@ -1318,7 +1318,7 @@ bool Monster::monsterMoveItem(Item* item, int radius)
 	return false;
 }
 
-bool Monster::canMoveTo(unsigned short x, unsigned short y, unsigned char z)
+bool Monster::canMoveTo(uint16_t x, uint16_t y, uint8_t z)
 {
 	Tile *t = game->map->getTile(x, y, pos.z);
 	if(t) {

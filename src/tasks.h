@@ -31,7 +31,7 @@
 /*
 class MovePlayer : public std::binary_function<Game*, Direction, int> {
 public:
-	MovePlayer(unsigned long playerid) : _pid(playerid) {}
+	MovePlayer(uint32_t playerid) : _pid(playerid) {}
 
 	virtual result_type operator()(const first_argument_type& game, const second_argument_type& dir) const
 	{
@@ -99,12 +99,12 @@ public:
 	}
 
 protected:
-	unsigned long _pid;
+	uint32_t _pid;
 };
 
 class StopMovePlayer : public std::unary_function<Game*, bool> {
 public:
-		StopMovePlayer(unsigned long playerid) : _pid(playerid) { }
+		StopMovePlayer(uint32_t playerid) : _pid(playerid) { }
 		
 		virtual result_type operator()(const argument_type& game) const {
 			// get the player we want to move...
@@ -125,7 +125,7 @@ public:
 		}
 
 protected:
-	unsigned long _pid;
+	uint32_t _pid;
 
 };
 */
