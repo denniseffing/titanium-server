@@ -23,9 +23,9 @@
 
 #include "fileloader.h"
 
-typedef unsigned char attribute_t;
-typedef unsigned short datasize_t;
-typedef unsigned long flags_t;
+typedef uint8_t attribute_t;
+typedef uint16_t datasize_t;
+typedef uint32_t flags_t;
 
 enum itemgroup_t{
 	ITEM_GROUP_NONE = 0,
@@ -148,37 +148,37 @@ enum subfightOTB_t {
 
 #pragma pack(8)
 struct decayBlock{
-	unsigned short decayTo;
-	unsigned short decayTime;
+	uint16_t decayTo;
+	uint16_t decayTime;
 };
 
 struct weaponBlock{
-	unsigned char weaponType;
-	unsigned char amuType;
-	unsigned char shootType;
-	unsigned char attack;
-	unsigned char defence;
+	uint8_t weaponType;
+	uint8_t amuType;
+	uint8_t shootType;
+	uint8_t attack;
+	uint8_t defence;
 };
 
 struct amuBlock{
-	unsigned char amuType;
-	unsigned char shootType;
-	unsigned char attack;
+	uint8_t amuType;
+	uint8_t shootType;
+	uint8_t attack;
 };
 
 struct armorBlock{
-	unsigned short armor;
+	uint16_t armor;
 	double weight;
-	unsigned short slot_position;
+	uint16_t slot_position;
 };
 
 struct writeableBlock{
-	unsigned short readOnlyId;
+	uint16_t readOnlyId;
 };
 
 struct lightBlock{
-	unsigned short lightLevel;
-	unsigned short lightColor;
+	uint16_t lightLevel;
+	uint16_t lightColor;
 };
 #pragma pack()
 
@@ -186,44 +186,44 @@ struct lightBlock{
 #pragma pack(1)
 
 struct VERSIONINFO{
-	unsigned long dwMajorVersion;
-	unsigned long dwMinorVersion;
-	unsigned long dwBuildNumber;
+	uint32_t dwMajorVersion;
+	uint32_t dwMinorVersion;
+	uint32_t dwBuildNumber;
 	char CSDVersion[128];
 };
 
 struct decayBlock2{
-	unsigned short decayTo;
-	unsigned short decayTime;
+	uint16_t decayTo;
+	uint16_t decayTime;
 };
 
 struct weaponBlock2{
-	unsigned char weaponType;
-	unsigned char amuType;
-	unsigned char shootType;
-	unsigned char attack;
-	unsigned char defence;
+	uint8_t weaponType;
+	uint8_t amuType;
+	uint8_t shootType;
+	uint8_t attack;
+	uint8_t defence;
 };
 
 struct amuBlock2{
-	unsigned char amuType;
-	unsigned char shootType;
-	unsigned char attack;
+	uint8_t amuType;
+	uint8_t shootType;
+	uint8_t attack;
 };
 
 struct armorBlock2{
-	unsigned short armor;
+	uint16_t armor;
 	double weight;
-	unsigned short slot_position;
+	uint16_t slot_position;
 };
 
 struct writeableBlock2{
-	unsigned short readOnlyId;
+	uint16_t readOnlyId;
 };
 
 struct lightBlock2{
-	unsigned short lightLevel;
-	unsigned short lightColor;
+	uint16_t lightLevel;
+	uint16_t lightColor;
 };
 
 #pragma pack()

@@ -25,7 +25,7 @@
 #include <map>
 #include <string>
 
-typedef std::map<unsigned long, std::string> FunctionMap;
+typedef std::map<uint32_t, std::string> FunctionMap;
 
 struct SEHChain{
 	SEHChain *prev;

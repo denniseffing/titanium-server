@@ -235,7 +235,7 @@ InstantSpell::InstantSpell(const std::string &datadir, std::string iname, std::s
 }
 
 
-RuneSpell::RuneSpell(const std::string &datadir, std::string iname, unsigned short id, unsigned short charges, int magLv, int mana, Game* game)
+RuneSpell::RuneSpell(const std::string &datadir, std::string iname, uint16_t id, uint16_t charges, int magLv, int mana, Game* game)
 : Spell(iname, magLv, mana, game)
 {
 	this->id = id;
@@ -334,7 +334,7 @@ Spell* SpellScript::getSpell(lua_State *L) {
 
 void SpellScript::internalGetArea(lua_State *L, MagicEffectAreaClass &magicArea)
 {
-	std::vector<unsigned char> col;
+	std::vector<uint8_t> col;
 
 	int i=0, j = 0;
 	lua_pushnil(L);  /* first key */
@@ -343,7 +343,7 @@ void SpellScript::internalGetArea(lua_State *L, MagicEffectAreaClass &magicArea)
 		lua_pushnil(L);
 		col.clear();
     while (lua_next(L, -2) != 0) {
-			col.push_back((unsigned char)lua_tonumber(L, -1));
+			col.push_back((uint8_t)lua_tonumber(L, -1));
 			
 			lua_pop(L, 1);  /* removes `value'; keeps `key' for next iteration */
 			j++;
@@ -460,7 +460,7 @@ int SpellScript::luaActionDoTargetSpell(lua_State *L)
 	Spell* spell = getSpell(L);
 	magicTarget.manaCost = spell->getMana();
 
-	Creature* creature = spell->game->getCreatureByID((unsigned long)lua_tonumber(L, -1));
+	Creature* creature = spell->game->getCreatureByID((uint32_t)lua_tonumber(L, -1));
   	lua_pop(L,1);
 	if(!creature){
 		lua_pushboolean(L, false);
@@ -486,7 +486,7 @@ int SpellScript::luaActionDoTargetExSpell(lua_State *L)
 	Spell* spell = getSpell(L);
   magicTargetEx.manaCost = spell->getMana();
 
-	Creature* creature = spell->game->getCreatureByID((unsigned long)lua_tonumber(L, -1));
+	Creature* creature = spell->game->getCreatureByID((uint32_t)lua_tonumber(L, -1));
   lua_pop(L,1);
 	if(!creature){
 		lua_pushboolean(L, false);
@@ -517,7 +517,7 @@ int SpellScript::luaActionDoTargetGroundSpell(lua_State *L)
 	Spell* spell = getSpell(L);
  	magicGround.manaCost = spell->getMana();
 
-	Creature* creature = spell->game->getCreatureByID((unsigned long)lua_tonumber(L, -1));
+	Creature* creature = spell->game->getCreatureByID((uint32_t)lua_tonumber(L, -1));
 	if(!creature){
 		lua_pushboolean(L, false);
 		return 1;
@@ -543,7 +543,7 @@ int SpellScript::luaActionDoAreaSpell(lua_State *L)
 	Spell* spell = getSpell(L);
   magicArea.manaCost = spell->getMana();
   
-	Creature* creature = spell->game->getCreatureByID((unsigned long)lua_tonumber(L, -1));
+	Creature* creature = spell->game->getCreatureByID((uint32_t)lua_tonumber(L, -1));
 	lua_pop(L,1);
 	if(!creature){
 		lua_pushboolean(L, false);
@@ -597,7 +597,7 @@ int SpellScript::luaActionDoAreaExSpell(lua_State *L)
 	Spell* spell = getSpell(L);
   magicAreaEx.manaCost = spell->getMana();
   
-	Creature* creature = spell->game->getCreatureByID((unsigned long)lua_tonumber(L, -1));
+	Creature* creature = spell->game->getCreatureByID((uint32_t)lua_tonumber(L, -1));
 	lua_pop(L,1);
 	if(!creature){
 		lua_pushboolean(L, false);
@@ -648,7 +648,7 @@ int SpellScript::luaActionDoAreaGroundSpell(lua_State *L)
 	Spell* spell = getSpell(L);
   magicGroundEx.manaCost = spell->getMana();
 
-	Creature* creature = spell->game->getCreatureByID((unsigned long)lua_tonumber(L, -1));
+	Creature* creature = spell->game->getCreatureByID((uint32_t)lua_tonumber(L, -1));
 	lua_pop(L, 1);
 	if(!creature){
 		lua_pushboolean(L, false);
@@ -679,7 +679,7 @@ int SpellScript::luaActionChangeOutfit(lua_State *L){
 	lua_pop(L,1);
 	
 	Spell* spell = getSpell(L);
-	Creature* creature = spell->game->getCreatureByID((unsigned long)lua_tonumber(L, -1));
+	Creature* creature = spell->game->getCreatureByID((uint32_t)lua_tonumber(L, -1));
 	lua_pop(L,1);
 	
 	creature->looktype = looktype;
@@ -692,7 +692,7 @@ int SpellScript::luaActionChangeOutfit(lua_State *L){
 void SpellScript::internalLoadDamageVec(lua_State *L, ConditionVec& condvec)
 {
 	//cid
-	unsigned long cid = (int)lua_tonumber(L, 1);
+	uint32_t cid = (int)lua_tonumber(L, 1);
 
 	MagicEffectTargetCreatureCondition magicTargetCondition(cid);
 	
@@ -743,7 +743,7 @@ int SpellScript::luaActionManaShield(lua_State *L)
 	lua_pop(L,1);
 	
 	Spell* spell = getSpell(L);
-	Creature* creature = spell->game->getCreatureByID((unsigned long)lua_tonumber(L, -1));
+	Creature* creature = spell->game->getCreatureByID((uint32_t)lua_tonumber(L, -1));
 	lua_pop(L,1);
 	creature->manaShieldTicks = time;
 	
@@ -760,7 +760,7 @@ int SpellScript::luaActionChangeSpeed(lua_State *L){
  lua_pop(L,1);
  
  Spell* spell = getSpell(L);
- Creature* creature = spell->game->getCreatureByID((unsigned long)lua_tonumber(L, -1));
+ Creature* creature = spell->game->getCreatureByID((uint32_t)lua_tonumber(L, -1));
  lua_pop(L,1);
  
  spell->game->addEvent(makeTask(time, boost::bind(&Game::changeSpeed, spell->game,creature->getID(), creature->getNormalSpeed()+creature->boh+creature->timeRing)));
@@ -768,7 +768,7 @@ int SpellScript::luaActionChangeSpeed(lua_State *L){
  if(p){
       creature->hasteSpeed = speed;
       int newspeed = creature->getNormalSpeed()+creature->hasteSpeed+creature->boh+creature->timeRing;
-         spell->game->changeSpeed(creature->getID(), (unsigned short)newspeed); 
+         spell->game->changeSpeed(creature->getID(), (uint16_t)newspeed); 
       creature->hasteTicks = time;
          p->sendIcons();
       }
@@ -788,7 +788,7 @@ int SpellScript::luaActionParalyze(lua_State *L){
  Position centerpos;
  internalGetPosition(L, centerpos);
  
- unsigned long cid = (unsigned long)lua_tonumber(L, -1);
+ uint32_t cid = (uint32_t)lua_tonumber(L, -1);
  lua_pop(L,1);
  
  Spell* spell = getSpell(L);
@@ -833,7 +833,7 @@ int SpellScript::luaActionChangeSpeedMonster(lua_State *L){
 	lua_pop(L,1);
 	
 	Spell* spell = getSpell(L);
-	Creature* creature = spell->game->getCreatureByID((unsigned long)lua_tonumber(L, -1));
+	Creature* creature = spell->game->getCreatureByID((uint32_t)lua_tonumber(L, -1));
 	lua_pop(L,1);
 	
 	if(creature){
@@ -847,7 +847,7 @@ int SpellScript::luaActionChangeSpeedMonster(lua_State *L){
 
 int SpellScript::luaActionGetSpeed(lua_State *L){
 	Spell* spell = getSpell(L);
-	Creature* creature = spell->game->getCreatureByID((unsigned long)lua_tonumber(L, -1));
+	Creature* creature = spell->game->getCreatureByID((uint32_t)lua_tonumber(L, -1));
 	lua_pop(L,1);
 	
 	lua_pushnumber(L, creature->getNormalSpeed());
@@ -892,14 +892,14 @@ int SpellScript::luaActionGetPos(lua_State *L){
 }
 
 int SpellScript::luaActionMakeRune(lua_State *L){
-	unsigned char charges = (unsigned char)lua_tonumber(L, -1);
+	uint8_t charges = (uint8_t)lua_tonumber(L, -1);
 	lua_pop(L,1);
 	
-	unsigned short type = (unsigned short)lua_tonumber(L, -1);
+	uint16_t type = (uint16_t)lua_tonumber(L, -1);
 	lua_pop(L,1);
 	
 	Spell* spell = getSpell(L);
-	Creature* creature = spell->game->getCreatureByID((unsigned long)lua_tonumber(L, -1));
+	Creature* creature = spell->game->getCreatureByID((uint32_t)lua_tonumber(L, -1));
 	lua_pop(L,1);
 		
 	Player* player = dynamic_cast<Player*>(creature);
@@ -964,7 +964,7 @@ int SpellScript::luaActionMakeRune(lua_State *L){
 }
 
 //create new runes and delete blank ones
-int SpellScript::internalMakeRune(Player *p,unsigned short sl_id,Spell *S,unsigned short id, unsigned char charges){
+int SpellScript::internalMakeRune(Player *p,uint16_t sl_id,Spell *S,uint16_t id, uint8_t charges){
 	//check mana
 	if(p->mana < S->getMana() || p->exhaustedTicks >= 1000)
 		return -1;
@@ -985,14 +985,14 @@ int SpellScript::internalMakeRune(Player *p,unsigned short sl_id,Spell *S,unsign
 }
 
 int SpellScript::luaActionMakeArrows(lua_State *L){
-	unsigned char count = (unsigned char)lua_tonumber(L, -1);
+	uint8_t count = (uint8_t)lua_tonumber(L, -1);
 	lua_pop(L,1);
 
-	unsigned short id = (unsigned short)lua_tonumber(L, -1);
+	uint16_t id = (uint16_t)lua_tonumber(L, -1);
 	lua_pop(L,1);
 
 	Spell* spell = getSpell(L);
-	Creature* creature = spell->game->getCreatureByID((unsigned long)lua_tonumber(L, -1));
+	Creature* creature = spell->game->getCreatureByID((uint32_t)lua_tonumber(L, -1));
 	lua_pop(L,1);
  
 	Player* player = dynamic_cast<Player*>(creature);
@@ -1032,11 +1032,11 @@ int SpellScript::luaActionMakeArrows(lua_State *L){
 }
 
 int SpellScript::luaActionMakeFood(lua_State *L){
-	unsigned char count = (unsigned char)lua_tonumber(L, -1);
+	uint8_t count = (uint8_t)lua_tonumber(L, -1);
 	lua_pop(L,1);
 	
 	Spell* spell = getSpell(L);
-	Creature* creature = spell->game->getCreatureByID((unsigned long)lua_tonumber(L, -1));
+	Creature* creature = spell->game->getCreatureByID((uint32_t)lua_tonumber(L, -1));
 	lua_pop(L,1);
 	
 	Player* player = dynamic_cast<Player*>(creature);
@@ -1113,7 +1113,7 @@ int SpellScript::luaActionInvisible(lua_State *L)
 	lua_pop(L,1);
 	
 	Spell* spell = getSpell(L);
-	Creature* creature = spell->game->getCreatureByID((unsigned long)lua_tonumber(L, -1));
+	Creature* creature = spell->game->getCreatureByID((uint32_t)lua_tonumber(L, -1));
 	lua_pop(L,1);
 
 	creature->setInvisible(time);

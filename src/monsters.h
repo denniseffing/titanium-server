@@ -104,10 +104,10 @@ public:
 
 #define CHANCE_MAX  100000
 struct LootBlock{
-	unsigned short id;
-	unsigned short countmax;
-	unsigned long chance1;
-	unsigned long chancemax;
+	uint16_t id;
+	uint16_t countmax;
+	uint32_t chance1;
+	uint32_t chancemax;
 	typedef std::list<LootBlock> LootItems;
 	LootItems childLoot;
 	LootBlock(){
@@ -120,13 +120,13 @@ struct LootBlock{
 
 struct summonBlock{
 	std::string name;
-	unsigned long summonChance;
+	uint32_t summonChance;
 };
 
 typedef std::list<LootBlock> LootItems;
 typedef std::vector<TimeProbabilityClass> TimeProbabilityClassVec;	
 typedef std::map<std::string, TimeProbabilityClassVec> InstantAttackSpells;
-typedef std::map<unsigned short, TimeProbabilityClassVec> RuneAttackSpells;
+typedef std::map<uint16_t, TimeProbabilityClassVec> RuneAttackSpells;
 typedef std::map<PhysicalAttackClass*, TimeProbabilityClass> PhysicalAttacks;
 typedef std::vector<std::pair<std::string, TimeProbabilityClass> > YellingSentences;
 typedef std::list<summonBlock> SummonSpells;
@@ -144,9 +144,9 @@ public:
 	int defense;
 	bool hasDistanceAttack;
 	bool canPushItems;
-	unsigned long staticLook;
-	unsigned long staticAttack;
-	unsigned short changeTargetChance;  
+	uint32_t staticLook;
+	uint32_t staticAttack;
+	uint16_t changeTargetChance;  
 	int maxSummons;
 	int targetDistance;
 	int runAwayHealth;
@@ -161,8 +161,8 @@ public:
 
 #ifdef TJ_MONSTER_BLOOD
 	int bloodcolor;
-	unsigned char bloodeffect;
-	unsigned char bloodsplash; 
+	uint8_t bloodeffect;
+	uint8_t bloodsplash; 
 #endif //TJ_MONSTER_BLOOD
 	
 	InstantAttackSpells instantSpells;
@@ -187,18 +187,18 @@ public:
 	bool isLoaded(){return loaded;}	
 	bool reload();
 	
-	MonsterType* getMonsterType(unsigned long mid);
-	unsigned long getIdByName(const std::string& name);
+	MonsterType* getMonsterType(uint32_t mid);
+	uint32_t getIdByName(const std::string& name);
 	
 private:
 	MonsterType* loadMonster(const std::string& file, const std::string& monster_name, bool reloading = false);
 	bool loadLootContainer(xmlNodePtr, LootBlock&);
 	bool loadLootItem(xmlNodePtr, LootBlock&);
 
-	typedef std::map<std::string, unsigned long> MonsterNameMap;
+	typedef std::map<std::string, uint32_t> MonsterNameMap;
 	MonsterNameMap monsterNames;
 	
-	typedef std::map<unsigned long, MonsterType*> MonsterMap;
+	typedef std::map<uint32_t, MonsterType*> MonsterMap;
 	MonsterMap monsters;
 	
 	bool loaded;

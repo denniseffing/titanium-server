@@ -44,10 +44,10 @@ public:
 	NpcScript(std::string name, Npc* npc);
 	virtual ~NpcScript(){}
 	//	virtual void onThingMove(const Player *player, const Thing *thing, const Position *oldPos,
-	//	unsigned char oldstackpos, unsigned char oldcount, unsigned char count);
-	virtual void onCreatureAppear(unsigned long cid);
+	//	uint8_t oldstackpos, uint8_t oldcount, uint8_t count);
+	virtual void onCreatureAppear(uint32_t cid);
 	virtual void onCreatureDisappear(int cid);
-	//	virtual void onCreatureTurn(const Creature *creature, unsigned char stackpos);
+	//	virtual void onCreatureTurn(const Creature *creature, uint8_t stackpos);
 	virtual void onCreatureSay(int cid, SpeakClasses, const std::string &text);
 	virtual void onThink();
 	//	virtual void onCreatureChangeOutfit(const Creature* creature);
@@ -125,7 +125,7 @@ public:
 			delete this;
 	};
 
-	virtual unsigned long idRange(){ return 0x30000000;}
+	virtual uint32_t idRange(){ return 0x30000000;}
 	static AutoList<Npc> listNpc;
 	void removeList() {listNpc.removeList(getID());}
 	void addList() {listNpc.addList(this);}
@@ -153,17 +153,17 @@ public:
 protected:
 	int useCount;
 	virtual void onThingMove(const Player *player, const Thing *thing, const Position *oldPos,
-		unsigned char oldstackpos, unsigned char oldcount, unsigned char count);
+		uint8_t oldstackpos, uint8_t oldcount, uint8_t count);
 	virtual void onCreatureAppear(const Creature *creature);
-	virtual void onCreatureDisappear(const Creature *creature, unsigned char stackPos, bool tele);
-	virtual void onThingDisappear(const Thing* thing, unsigned char stackPos);
+	virtual void onCreatureDisappear(const Creature *creature, uint8_t stackPos, bool tele);
+	virtual void onThingDisappear(const Thing* thing, uint8_t stackPos);
 	virtual void onThingTransform(const Thing* thing,int stackpos){};
 	virtual void onThingAppear(const Thing* thing);
-	virtual void onCreatureTurn(const Creature *creature, unsigned char stackpos);
+	virtual void onCreatureTurn(const Creature *creature, uint8_t stackpos);
 	virtual void onCreatureSay(const Creature *creature, SpeakClasses type, const std::string &text);
 	virtual void onCreatureChangeOutfit(const Creature* creature);
 	virtual int onThink(int& newThinkTicks);
-	//virtual void setAttackedCreature(unsigned long id);
+	//virtual void setAttackedCreature(uint32_t id);
 	virtual std::string getDescription(bool self = false) const;
 
 	virtual bool isAttackable() const { return false; };

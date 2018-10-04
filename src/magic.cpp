@@ -233,7 +233,7 @@ int MagicEffectTargetExClass::getDamage(Creature *target, const Creature *attack
 }
 
 //Burning/poisoned/energized
-MagicEffectTargetCreatureCondition::MagicEffectTargetCreatureCondition(const unsigned long creatureid)
+MagicEffectTargetCreatureCondition::MagicEffectTargetCreatureCondition(const uint32_t creatureid)
 : ownerid(creatureid)
 {
 	//
@@ -471,7 +471,7 @@ MagicEffectItem::MagicEffectItem(const TransformMap& transformMap)
 {
 	this->transformMap = transformMap;
 	useCount = 0;
-	unsigned short type = 0;
+	uint16_t type = 0;
 	TransformMap::const_iterator dm = transformMap.begin();
 	if(dm != transformMap.end()) {
 		type = dm->first;		

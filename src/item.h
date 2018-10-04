@@ -38,12 +38,12 @@ class Player;
 class Item : public Thing
 {
 protected:
-	unsigned short id;  // the same id as in ItemType
-	unsigned char count; // number of stacked items
-	unsigned char chargecount; //number of charges on the item
-	unsigned char fluid;
-	unsigned short actionId;
-	unsigned short uniqueId;
+	uint16_t id;  // the same id as in ItemType
+	uint8_t count; // number of stacked items
+	uint8_t chargecount; //number of charges on the item
+	uint8_t fluid;
+	uint16_t actionId;
+	uint16_t uniqueId;
 	std::string *specialDescription;
 	std::string *text;	//text written
 
@@ -59,11 +59,11 @@ private:
 	int useCount;
 
 public:
-	static Item* CreateItem(const unsigned short _type, unsigned short _count = 0); //Factory member to create item of right type based on type
+	static Item* CreateItem(const uint16_t _type, uint16_t _count = 0); //Factory member to create item of right type based on type
 	static Items items;
 
-	unsigned short getID() const;    // ID as in ItemType
-	void setID(unsigned short newid);
+	uint16_t getID() const;    // ID as in ItemType
+	void setID(uint16_t newid);
 
 	WeaponType getWeaponType() const;
 	amu_t	getAmuType() const;
@@ -125,20 +125,20 @@ public:
 	virtual xmlNodePtr serialize();
 
   // get the number of items
-	unsigned short getItemCountOrSubtype() const;
-	void setItemCountOrSubtype(unsigned char n);
+	uint16_t getItemCountOrSubtype() const;
+	void setItemCountOrSubtype(uint8_t n);
 
-	unsigned char getItemCharge() const {return chargecount;};
-	void setItemCharge(unsigned char n) {chargecount = n;};
+	uint8_t getItemCharge() const {return chargecount;};
+	void setItemCharge(uint8_t n) {chargecount = n;};
 
-	unsigned char getFluidType() const {return fluid;};
-	void setFluidType(unsigned char n) {fluid = n;};
+	uint8_t getFluidType() const {return fluid;};
+	void setFluidType(uint8_t n) {fluid = n;};
 
-	void setActionId(unsigned short n);
-	unsigned short getActionId() const;
+	void setActionId(uint16_t n);
+	uint16_t getActionId() const;
 
-	void setUniqueId(unsigned short n);
-	unsigned short getUniqueId() const;
+	void setUniqueId(uint16_t n);
+	uint16_t getUniqueId() const;
 
 	virtual long getDecayTime();
 	bool canDecay();
@@ -153,8 +153,8 @@ public:
 	bool rotate();
 
   // Constructor for items
-	Item(const unsigned short _type);
-	Item(const unsigned short _type, unsigned short _count);
+	Item(const uint16_t _type);
+	Item(const uint16_t _type, uint16_t _count);
 	Item();
 	Item(const Item &i);
 
@@ -178,7 +178,7 @@ public:
 class Teleport : public Item
 {
 public:
-	Teleport(const unsigned short _type);
+	Teleport(const uint16_t _type);
 	virtual ~Teleport();
 	virtual void useThing() {
 		//std::cout << "Teleport: useThing() " << this << std::endl;

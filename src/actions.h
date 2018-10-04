@@ -61,14 +61,14 @@ public:
 	virtual ~Actions();
 	void clear();
 	
-	bool UseItem(Player* player, const Position &pos,const unsigned char stack, 
-		const unsigned short itemid, const unsigned char index);
+	bool UseItem(Player* player, const Position &pos,const uint8_t stack, 
+		const uint16_t itemid, const uint8_t index);
 	bool UseItemEx(Player* player, const Position &from_pos,
-		const unsigned char from_stack,const Position &to_pos,
-		const unsigned char to_stack,const unsigned short itemid);
+		const uint8_t from_stack,const Position &to_pos,
+		const uint8_t to_stack,const uint16_t itemid);
 		
 	
-	bool openContainer(Player *player,Container *container, const unsigned char index);
+	bool openContainer(Player *player,Container *container, const uint8_t index);
 	
 	Game* game;
 	bool loaded;
@@ -78,7 +78,7 @@ public:
   
 protected:
 	std::string datadir;
-	typedef std::map<unsigned short, Action*> ActionUseMap;
+	typedef std::map<uint16_t, Action*> ActionUseMap;
 	ActionUseMap useItemMap;
 	ActionUseMap uniqueItemMap;
 	ActionUseMap actionItemMap;
@@ -147,7 +147,7 @@ public:
 	void ClearMap();
 	static void AddThingToMapUnique(Thing *thing);
 	void UpdateThingPos(int uid, PositionEx &pos);
-	unsigned int AddThingToMap(Thing *thing,PositionEx &pos);
+	uint32_t AddThingToMap(Thing *thing,PositionEx &pos);
 	const KnownThing* GetThingByUID(int uid);
 	const KnownThing* GetItemByUID(int uid);
 	const KnownThing* GetCreatureByUID(int uid);
@@ -218,12 +218,12 @@ protected:
 	
 	Game *game;
 	Player *_player;
-	unsigned int lastuid;
+	uint32_t lastuid;
 	
 	friend class Action;
 	
-	std::map<unsigned int,KnownThing*> ThingMap;
-	static std::map<unsigned int,KnownThing*> uniqueIdMap;
+	std::map<uint32_t,KnownThing*> ThingMap;
+	static std::map<uint32_t,KnownThing*> uniqueIdMap;
 	
 	//lua related functions
 	int registerFunctions();
@@ -232,9 +232,9 @@ protected:
 	static ActionScript* getActionScript(lua_State *L);
 	static void internalAddPositionEx(lua_State *L, const PositionEx& pos);
 	static void internalGetPositionEx(lua_State *L, PositionEx& pos);
-	static unsigned long internalGetNumber(lua_State *L);
+	static uint32_t internalGetNumber(lua_State *L);
 	static const char* internalGetString(lua_State *L);
-	static void internalAddThing(lua_State *L, const Thing *thing, const unsigned int thingid);
+	static void internalAddThing(lua_State *L, const Thing *thing, const uint32_t thingid);
 	
 	static Position internalGetRealPosition(ActionScript *action, Player *player, const Position &pos);
 	static int internalGetPlayerInfo(lua_State *L, ePlayerInfo info);

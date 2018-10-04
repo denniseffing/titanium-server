@@ -107,11 +107,11 @@ enum trade_state {
 	TRADE_ACKNOWLEDGE
 };
 
-typedef std::pair<unsigned char, Container*> containerItem;
+typedef std::pair<uint8_t, Container*> containerItem;
 typedef std::vector<containerItem> containerLayout;
-typedef std::map<unsigned long, Container*> DepotMap;
-typedef std::map<unsigned long,long> StorageMap;
-typedef std::set<unsigned long> VIPListSet;
+typedef std::map<uint32_t, Container*> DepotMap;
+typedef std::map<uint32_t,long> StorageMap;
+typedef std::set<uint32_t> VIPListSet;
 
 //////////////////////////////////////////////////////////////////////
 // Defines a player...
@@ -121,9 +121,9 @@ class Player : public Creature
 public:
 	Player(const std::string& name, Protocol* p);
 	virtual ~Player();
-	void setGUID(unsigned long _guid) {guid = _guid;};
-	unsigned long getGUID() const { return guid;};
-	virtual unsigned long idRange(){ return 0x10000000;}
+	void setGUID(uint32_t _guid) {guid = _guid;};
+	uint32_t getGUID() const { return guid;};
+	virtual uint32_t idRange(){ return 0x10000000;}
 	static AutoList<Player> listPlayer;
 	void removeList();
 	void addList();
@@ -134,13 +134,13 @@ public:
 	bool addItem(Item* item, bool test = false);
 	bool internalAddItemContainer(Container *container,Item* item);
 
-	freeslot_t getFreeSlot(Container **container,unsigned char &slot, const Item* item);
+	freeslot_t getFreeSlot(Container **container,uint8_t &slot, const Item* item);
 	Container* getFreeContainerSlot(Container *parent);
 
-	bool removeItem(unsigned short id,long count);
+	bool removeItem(uint16_t id,long count);
 	bool removeItem(Item* item, bool test = false);
 	bool internalRemoveItemContainer(Container *parent, Item* item, bool test = false);
-	int getItemCount(unsigned short id);
+	int getItemCount(uint16_t id);
 
 	int removeItemInventory(int pos, bool internal = false);
 	int addItemInventory(Item* item, int pos, bool internal = false);
@@ -148,14 +148,14 @@ public:
 	containerLayout::const_iterator getContainers() const { return vcontainers.begin();}
 	containerLayout::const_iterator getEndContainer() const { return vcontainers.end();}
 
-	Container* getContainer(unsigned char containerid);
-	unsigned char getContainerID(const Container* container) const;
+	Container* getContainer(uint8_t containerid);
+	uint8_t getContainerID(const Container* container) const;
 	bool isHoldingContainer(const Container* container) const;
-	void addContainer(unsigned char containerid, Container *container);
-	void closeContainer(unsigned char containerid);
+	void addContainer(uint8_t containerid, Container *container);
+	void closeContainer(uint8_t containerid);
 
-	void addStorageValue(const unsigned long key, const long value);
-	bool getStorageValue(const unsigned long key, long &value) const;
+	void addStorageValue(const uint32_t key, const long value);
+	bool getStorageValue(const uint32_t key, long &value) const;
 	inline StorageMap::const_iterator getStorageIteratorBegin() const {return storageMap.begin();}
 	inline StorageMap::const_iterator getStorageIteratorEnd() const {return storageMap.end();}
 
@@ -169,7 +169,7 @@ public:
 
 	const std::string& getName() const {return name;};
 	const std::string& getGuildName() const {return guildName;};
-	unsigned long getGuildId() const {return guildId;};
+	uint32_t getGuildId() const {return guildId;};
 
 
 	int getPlayerInfo(playerinfo_t playerinfo) const;
@@ -206,17 +206,17 @@ public:
 	Item* getItem(int pos) const;
 	Item* GetDistWeapon() const;
 
-	void addManaSpent(unsigned long spent);
+	void addManaSpent(uint32_t spent);
 	void addExp(exp_t exp);
 	virtual int getWeaponDamage() const;
 	virtual int getArmor() const;
 	virtual int getDefense() const;
-	unsigned long getMoney();
-	bool substractMoney(unsigned long money);
-	bool substractMoneyItem(Item *item, unsigned long money);
+	uint32_t getMoney();
+	bool substractMoney(uint32_t money);
+	bool substractMoneyItem(Item *item, uint32_t money);
 
 
-	unsigned long eventAutoWalk;
+	uint32_t eventAutoWalk;
 
 	//items
 	containerLayout vcontainers;
@@ -233,9 +233,9 @@ public:
 			delete this;
 	};
 
-	unsigned long getIP() const;
-	Container* getDepot(unsigned long depotId);
-	bool addDepot(Container* depot,unsigned long depotIs);
+	uint32_t getIP() const;
+	Container* getDepot(uint32_t depotId);
+	bool addDepot(Container* depot,uint32_t depotIs);
 	//depots
 	DepotMap depots;
 	long max_depot_items;
@@ -248,20 +248,20 @@ public:
 
 	void sendIcons();
 	void sendChangeSpeed(Creature* creature);
-	void sendToChannel(Creature *creature, SpeakClasses type, const std::string &text, unsigned short channelId);
+	void sendToChannel(Creature *creature, SpeakClasses type, const std::string &text, uint16_t channelId);
 	virtual void sendCancel(const char *msg) const;
 	virtual void sendCancelWalk() const;
-	int sendInventory(unsigned char sl_id);
+	int sendInventory(uint8_t sl_id);
 	void sendStats();
 	void sendTextMessage(MessageClasses mclass, const char* message) const;
-	void sendTextMessage(MessageClasses mclass, const char* message,const Position &pos, unsigned char type) const;
+	void sendTextMessage(MessageClasses mclass, const char* message,const Position &pos, uint8_t type) const;
 	void sendPing();
-	void sendCloseContainer(unsigned char containerid);
-	void sendContainer(unsigned char index, Container *container);
-	void sendTextWindow(Item* item,const unsigned short maxlen, const bool canWrite);
-	void sendDistanceShoot(const Position &from, const Position &to, unsigned char type);
-	void sendMagicEffect(const Position &pos, unsigned char type);
-	void sendAnimatedText(const Position &pos, unsigned char color, std::string text);
+	void sendCloseContainer(uint8_t containerid);
+	void sendContainer(uint8_t index, Container *container);
+	void sendTextWindow(Item* item,const uint16_t maxlen, const bool canWrite);
+	void sendDistanceShoot(const Position &from, const Position &to, uint8_t type);
+	void sendMagicEffect(const Position &pos, uint8_t type);
+	void sendAnimatedText(const Position &pos, uint8_t color, std::string text);
 	void sendCreatureHealth(const Creature *creature);
 	void sendTradeItemRequest(const Player* player, const Item* item, bool ack);
 	void sendCloseTrade();
@@ -270,7 +270,7 @@ public:
 
 	void die();      //player loses exp/skills/maglevel on death
 
-	//virtual void setAttackedCreature(unsigned long id);
+	//virtual void setAttackedCreature(uint32_t id);
 	virtual bool isAttackable() const { return (access < g_config.ACCESS_PROTECT); };
 	virtual bool isPushable() const;
 	virtual void dropLoot(Container *corpse);
@@ -282,18 +282,18 @@ public:
 	//ground
 	void onThingAppear(const Thing* thing);
 	void onThingTransform(const Thing* thing,int stackpos);
-	void onThingDisappear(const Thing* thing, unsigned char stackPos);
+	void onThingDisappear(const Thing* thing, uint8_t stackPos);
 	void onThingRemove(const Thing* thing); //auto-close containers
 
 	//container
 	void onItemAddContainer(const Container* container,const Item* item);
-	void onItemRemoveContainer(const Container* container,const unsigned char slot);
-	void onItemUpdateContainer(const Container* container,const Item* item,const unsigned char slot);
+	void onItemRemoveContainer(const Container* container,const uint8_t slot);
+	void onItemUpdateContainer(const Container* container,const Item* item,const uint8_t slot);
 
-	//inventory - for this use int sendInventory(unsigned char sl_id)
-	//void onItemAddInvnetory(const unsigned char sl_id);
-	//void onItemRemoveInvnetory(const unsigned char sl_id);
-	//void onItemUpdateInvnetory(const unsigned char sl_id);
+	//inventory - for this use int sendInventory(uint8_t sl_id)
+	//void onItemAddInvnetory(const uint8_t sl_id);
+	//void onItemRemoveInvnetory(const uint8_t sl_id);
+	//void onItemUpdateInvnetory(const uint8_t sl_id);
 
 	void setAcceptTrade(bool b);
 	bool getAcceptTrade() {return (tradeState == TRADE_ACCEPT);};
@@ -301,30 +301,30 @@ public:
 
 	void notifyLogIn(Player* player);
 	void notifyLogOut(Player* player);
-	bool removeVIP(unsigned long guid);
-	bool addVIP(unsigned long guid, std::string &name, bool isOnline, bool interal = false);
+	bool removeVIP(uint32_t guid);
+	bool addVIP(uint32_t guid, std::string &name, bool isOnline, bool interal = false);
 
 	VIPListSet VIPList;
 
 	playervoc_t getVocation() const { return vocation; }
 
 #ifdef CVS_DAY_CYCLE
-	void sendWorldLightLevel(unsigned char lightlevel, unsigned char color);
+	void sendWorldLightLevel(uint8_t lightlevel, uint8_t color);
 	void sendPlayerLightLevel(Player* player);
-	virtual unsigned char getLightLevel() const { return lightlevel; }
-	virtual unsigned char getLightColor() const { return lightcolor; }
-	virtual void setLightLevel(unsigned char light, unsigned char color) { lightlevel = light; lightcolor = color; }
+	virtual uint8_t getLightLevel() const { return lightlevel; }
+	virtual uint8_t getLightColor() const { return lightcolor; }
+	virtual void setLightLevel(uint8_t light, uint8_t color) { lightlevel = light; lightcolor = color; }
 #endif //CVS_DAY_CYCLE
 
 #ifdef TLM_BUY_SELL
-	bool getCoins(unsigned long requiredcoins);
-	unsigned long getContainerCoins(Container* container, unsigned long coins);
+	bool getCoins(uint32_t requiredcoins);
+	uint32_t getContainerCoins(Container* container, uint32_t coins);
 	bool removeCoins(signed long cost);
 	signed long removeContainerCoins(Container* container, signed long cost);
-	void TLMaddItem(int itemid, unsigned char count);
+	void TLMaddItem(int itemid, uint8_t count);
 	bool removeItem(int itemid, int count);
 	signed long removeContainerItem(Container* container, int itemid, int count);
-	void payBack(unsigned long cost);
+	void payBack(uint32_t cost);
 	bool getItem(int itemid, int count);
 	signed long getContainerItem(Container* container, int itemid, int count);
 #endif //TLM_BUY_SELL
@@ -344,7 +344,7 @@ public:
 #endif //BD_HOUSE_WINDOW
 
 #ifdef YUR_GUILD_SYSTEM
-	void setGuildInfo(gstat_t gstat, unsigned long gid, std::string gname, std::string grank, std::string nick);
+	void setGuildInfo(gstat_t gstat, uint32_t gid, std::string gname, std::string grank, std::string nick);
 #endif //YUR_GUILD_SYSTEM
 
 #ifdef TR_ANTI_AFK
@@ -368,7 +368,7 @@ public:
 
 #ifdef YUR_CMD_EXT
 	exp_t getExpForNextLevel();
-	unsigned long getManaForNextMLevel();
+	uint32_t getManaForNextMLevel();
 #endif //YUR_CMD_EXT
 
 #ifdef YUR_LOGIN_QUEUE
@@ -387,7 +387,7 @@ public:
 #ifdef TLM_SKULLS_PARTY
 	bool banned;
 	int skullTicks, skullKills, absolveTicks;
-	unsigned long party;
+	uint32_t party;
 	void onPartyIcons(const Player *playa, int icontype, bool skull, bool removeskull);
 	void onSkull(Player* player);
 	bool checkSkull(int thinkTics);
@@ -440,34 +440,34 @@ protected:
 	void sendCancelAttacking();
 	void addSkillTryInternal(int skilltry,int skill);
 	virtual void onCreatureAppear(const Creature *creature);
-	virtual void onCreatureDisappear(const Creature *creature, unsigned char stackPos, bool tele);
-	virtual void onCreatureTurn(const Creature *creature, unsigned char stackpos);
+	virtual void onCreatureDisappear(const Creature *creature, uint8_t stackPos, bool tele);
+	virtual void onCreatureTurn(const Creature *creature, uint8_t stackpos);
 	virtual void onCreatureSay(const Creature *creature, SpeakClasses type, const std::string &text);
 	virtual void onCreatureChangeOutfit(const Creature* creature);
-	virtual void onTeleport(const Creature *creature, const Position *oldPos, unsigned char oldstackpos);
+	virtual void onTeleport(const Creature *creature, const Position *oldPos, uint8_t oldstackpos);
 	virtual int onThink(int& newThinkTicks);
 
 	virtual void onTileUpdated(const Position &pos);
 
 	//container to container
-	virtual void onThingMove(const Creature *creature, const Container *fromContainer, unsigned char from_slotid,
-		const Item* fromItem, int oldFromCount, Container *toContainer, unsigned char to_slotid,
+	virtual void onThingMove(const Creature *creature, const Container *fromContainer, uint8_t from_slotid,
+		const Item* fromItem, int oldFromCount, Container *toContainer, uint8_t to_slotid,
 		const Item *toItem, int oldToCount, int count);
 
 	//inventory to container
 	virtual void onThingMove(const Creature *creature, slots_t fromSlot, const Item* fromItem,
-		int oldFromCount, const Container *toContainer, unsigned char to_slotid, const Item *toItem, int oldToCount, int count);
+		int oldFromCount, const Container *toContainer, uint8_t to_slotid, const Item *toItem, int oldToCount, int count);
 
 	//inventory to inventory
 	virtual void onThingMove(const Creature *creature, slots_t fromSlot, const Item* fromItem,
 		int oldFromCount, slots_t toSlot, const Item* toItem, int oldToCount, int count);
 
 	//container to inventory
-	virtual void onThingMove(const Creature *creature, const Container *fromContainer, unsigned char from_slotid,
+	virtual void onThingMove(const Creature *creature, const Container *fromContainer, uint8_t from_slotid,
 		const Item* fromItem, int oldFromCount, slots_t toSlot, const Item *toItem, int oldToCount, int count);
 
 	//container to ground
-	virtual void onThingMove(const Creature *creature, const Container *fromContainer, unsigned char from_slotid,
+	virtual void onThingMove(const Creature *creature, const Container *fromContainer, uint8_t from_slotid,
 		const Item* fromItem, int oldFromCount, const Position &toPos, const Item *toItem, int oldToCount, int count);
 
 	//inventory to ground
@@ -476,7 +476,7 @@ protected:
 
 	//ground to container
 	virtual void onThingMove(const Creature *creature, const Position &fromPos, int stackpos, const Item* fromItem,
-		int oldFromCount, const Container *toContainer, unsigned char to_slotid, const Item *toItem, int oldToCount, int count);
+		int oldFromCount, const Container *toContainer, uint8_t to_slotid, const Item *toItem, int oldToCount, int count);
 
 	//ground to inventory
 	virtual void onThingMove(const Creature *creature, const Position &fromPos, int stackpos, const Item* fromItem,
@@ -484,20 +484,20 @@ protected:
 
 	//ground to ground
 	virtual void onThingMove(const Creature *creature, const Thing *thing, const Position *oldPos,
-		unsigned char oldstackpos, unsigned char oldcount, unsigned char count);
+		uint8_t oldstackpos, uint8_t oldcount, uint8_t count);
 
 protected:
 	Protocol *client;
 	int useCount;
-	//unsigned long experience;
+	//uint32_t experience;
 	exp_t experience;
 
 	playervoc_t vocation;
 	playersex_t sex;
 
 #ifdef CVS_DAY_CYCLE
-	unsigned char lightlevel;
-	unsigned char lightcolor;
+	uint8_t lightlevel;
+	uint8_t lightcolor;
 	int last_worldlightlevel;
 #endif //CVS_DAY_CYCLE
 
@@ -554,13 +554,13 @@ protected:
 	int accountNumber;
 	std::string password;
 	
-	unsigned long lastip;
+	uint32_t lastip;
 
 	//inventory variables
 	Item* items[11]; //equipement of the player
 
 	//player advances variables
-	unsigned int skills[7][3];
+	uint32_t skills[7][3];
 #ifdef CVS_GAINS_MULS
 	//reminder: 0 = None, 1 = Sorcerer, 2 = Druid, 3 = Paladin, 4 = Knight
 	static int CapGain[5];          //for level advances
@@ -570,18 +570,18 @@ protected:
 
 	static const int gainManaVector[5][2];
 	static const int gainHealthVector[5][2];
-	unsigned short manaTick;
-	unsigned short healthTick;
+	uint16_t manaTick;
+	uint16_t healthTick;
 
 #ifdef YUR_PREMIUM_PROMOTION
 	static const int promotedGainManaVector[5][2];
 	static const int promotedGainHealthVector[5][2];
 #endif //YUR_PREMIUM_PROMOTION
 
-	unsigned char level_percent;
-	unsigned char maglevel_percent;
+	uint8_t level_percent;
+	uint8_t maglevel_percent;
 	//trade variables
-	unsigned long tradePartner;
+	uint32_t tradePartner;
 	trade_state tradeState;
 	//bool acceptTrade;
 	Item *tradeItem;
@@ -591,7 +591,7 @@ protected:
 
 	//cache some data
 	struct SkillCache{
-		unsigned int tries;
+		uint32_t tries;
 		int level;
 		//int voc;
 		playervoc_t vocation;
@@ -614,13 +614,13 @@ protected:
 	SentStats lastSentStats;
 	// we need our name
 	std::string name;
-	unsigned long guid;
+	uint32_t guid;
 
 #ifdef YUR_GUILD_SYSTEM
 	gstat_t guildStatus;
 #endif //YUR_GUILD_SYSTEM
 
-	unsigned long guildId;
+	uint32_t guildId;
 	std::string guildName;
 	std::string guildRank;
 	std::string guildNick;
@@ -639,10 +639,10 @@ protected:
 
 
 	//for skill advances
-	unsigned int getReqSkillTries (int skill, int level, playervoc_t voc);
+	uint32_t getReqSkillTries (int skill, int level, playervoc_t voc);
 
 	//for magic level advances
-	unsigned int getReqMana(int maglevel, playervoc_t voc);
+	uint32_t getReqMana(int maglevel, playervoc_t voc);
 
 	friend OTSYS_THREAD_RETURN ConnectionHandler(void *dat);
 

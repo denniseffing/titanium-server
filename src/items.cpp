@@ -231,8 +231,8 @@ int Items::loadFromOtb(std::string file)
 		return f.getError();
 	}
 
-	unsigned long type,len;
-	const unsigned char* data;
+	uint32_t type,len;
+	const uint8_t* data;
 	NODE node = f.getChildNode(NO_NODE, type);
 
 	PropStream props;
@@ -240,7 +240,7 @@ int Items::loadFromOtb(std::string file)
 		//4 byte flags
 		//attributes
 		//0x01 = version data
-		unsigned long flags;
+		uint32_t flags;
 		if(!props.GET_ULONG(flags)){
 			return ERROR_INVALID_FORMAT;
 		}
@@ -280,7 +280,7 @@ int Items::loadFromOtb(std::string file)
 
 		flags_t flags;
 		if(data != NULL) {
-			const unsigned char* p = &data[0];
+			const uint8_t* p = &data[0];
 			ItemType* iType = new ItemType();
 			bool loadedFlags = false;
 
@@ -355,10 +355,10 @@ int Items::loadFromOtb(std::string file)
 
 							case ITEM_ATTR_SERVERID:
 							{
-								if(datalen != sizeof(unsigned short))
+								if(datalen != sizeof(uint16_t))
 									return ERROR_INVALID_FORMAT;
 
-								unsigned short serverid = *(unsigned short*)p;
+								uint16_t serverid = *(uint16_t*)p;
 								if(serverid > 20000 && serverid < 20100)
 									serverid = serverid - 20000;
 
@@ -367,10 +367,10 @@ int Items::loadFromOtb(std::string file)
 							}
 							case ITEM_ATTR_CLIENTID:
 							{
-								if(datalen != sizeof(unsigned short))
+								if(datalen != sizeof(uint16_t))
 									return ERROR_INVALID_FORMAT;
 
-								memcpy(&iType->clientId, p, sizeof(unsigned short));
+								memcpy(&iType->clientId, p, sizeof(uint16_t));
 								break;
 							}
 							case ITEM_ATTR_NAME:
@@ -398,18 +398,18 @@ int Items::loadFromOtb(std::string file)
 							}
 							case ITEM_ATTR_SPEED:
 							{
-								if(datalen != sizeof(unsigned short))
+								if(datalen != sizeof(uint16_t))
 									return ERROR_INVALID_FORMAT;
 
-								memcpy(&iType->speed, p, sizeof(unsigned short));
+								memcpy(&iType->speed, p, sizeof(uint16_t));
 								break;
 							}
 							case ITEM_ATTR_SLOT:
 							{
-								if(datalen != sizeof(unsigned short))
+								if(datalen != sizeof(uint16_t))
 									return ERROR_INVALID_FORMAT;
 
-								unsigned short otb_slot = *(unsigned short*)p;
+								uint16_t otb_slot = *(uint16_t*)p;
 
 								switch(otb_slot){
 								case OTB_SLOT_DEFAULT:
@@ -447,10 +447,10 @@ int Items::loadFromOtb(std::string file)
 							}
 							case ITEM_ATTR_MAXITEMS:
 							{
-								if(datalen != sizeof(unsigned short))
+								if(datalen != sizeof(uint16_t))
 									return ERROR_INVALID_FORMAT;
 
-								memcpy(&iType->maxItems, p, sizeof(unsigned short));
+								memcpy(&iType->maxItems, p, sizeof(uint16_t));
 								break;
 							}
 							case ITEM_ATTR_WEIGHT:
@@ -510,19 +510,19 @@ int Items::loadFromOtb(std::string file)
 							}*/
 							case ITEM_ATTR_MAGLEVEL:
 							{
-								if(datalen != sizeof(unsigned short))
+								if(datalen != sizeof(uint16_t))
 									return ERROR_INVALID_FORMAT;
 
-								memcpy(&iType->runeMagLevel, p, sizeof(unsigned short));
+								memcpy(&iType->runeMagLevel, p, sizeof(uint16_t));
 
 								break;
 							}
 							case ITEM_ATTR_MAGFIELDTYPE:
 							{
-								if(datalen != sizeof(unsigned char))
+								if(datalen != sizeof(uint8_t))
 									return ERROR_INVALID_FORMAT;
 
-								memcpy(&iType->magicfieldtype, p, sizeof(unsigned char));
+								memcpy(&iType->magicfieldtype, p, sizeof(uint8_t));
 
 								break;
 							}
@@ -540,10 +540,10 @@ int Items::loadFromOtb(std::string file)
 							}*/
 							case ITEM_ATTR_ROTATETO:
 							{
-								if(datalen != sizeof(unsigned short))
+								if(datalen != sizeof(uint16_t))
 									return ERROR_INVALID_FORMAT;
 
-								iType->rotateTo = *(unsigned short*)p;
+								iType->rotateTo = *(uint16_t*)p;
 
 								break;
 							}
@@ -567,20 +567,20 @@ int Items::loadFromOtb(std::string file)
 
 							case ITEM_ATTR_MINIMAPCOLOR:
 							{
-								if(datalen != sizeof(unsigned short))
+								if(datalen != sizeof(uint16_t))
 									return ERROR_INVALID_FORMAT;
 								break;
 							}
 							case ITEM_ATTR_07:
 							{
-								if(datalen != sizeof(unsigned short))
+								if(datalen != sizeof(uint16_t))
 									return ERROR_INVALID_FORMAT;
 								break;
 							}
 
 							case ITEM_ATTR_08:
 							{
-								if(datalen != sizeof(unsigned short))
+								if(datalen != sizeof(uint16_t))
 									return ERROR_INVALID_FORMAT;
 								break;
 							}
@@ -692,7 +692,7 @@ int Items::loadFromOtb(std::string file)
 
 			//get rune mag level from spells.xml
 			if(iType->group == ITEM_GROUP_RUNE){
-				std::map<unsigned short, Spell*>::iterator it = spells.getAllRuneSpells()->find(iType->id);
+				std::map<uint16_t, Spell*>::iterator it = spells.getAllRuneSpells()->find(iType->id);
 				if(it != spells.getAllRuneSpells()->end()){
 					iType->runeMagLevel = it->second->getMagLv();
 				}
@@ -803,7 +803,7 @@ const ItemType& Items::operator[](int id)
 	return dummyItemType;
 }
 
-unsigned long Items::reverseLookUp(unsigned long id)
+uint32_t Items::reverseLookUp(uint32_t id)
 {
 	ReverseItemMap::iterator it = revItems.find(id);
 	if(it != revItems.end()){

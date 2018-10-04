@@ -51,7 +51,7 @@
 #include "md5.h"
 
 /* Padding */
-static unsigned char MD5_PADDING[64] = {
+static uint8_t MD5_PADDING[64] = {
 	0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -182,7 +182,7 @@ static void MD5_Transform (UINT4 *buf, UINT4 *in)
 }
 
 // Set pseudoRandomNumber to zero for RFC MD5 implementation
-void MD5Init (MD5_CTX *mdContext, unsigned long pseudoRandomNumber)
+void MD5Init (MD5_CTX *mdContext, uint32_t pseudoRandomNumber)
 {
 	mdContext->i[0] = mdContext->i[1] = (UINT4)0;
 
@@ -193,11 +193,11 @@ void MD5Init (MD5_CTX *mdContext, unsigned long pseudoRandomNumber)
 	mdContext->buf[3] = (UINT4)0x10325476 + (pseudoRandomNumber * 97);
 }
 
-void MD5Update (MD5_CTX *mdContext, const unsigned char *inBuf, unsigned int inLen)
+void MD5Update (MD5_CTX *mdContext, const uint8_t *inBuf, uint32_t inLen)
 {
 	UINT4 in[16];
 	int mdi = 0;
-	unsigned int i = 0, ii = 0;
+	uint32_t i = 0, ii = 0;
 
 	/* Compute number of bytes mod 64 */
 	mdi = (int)((mdContext->i[0] >> 3) & 0x3F);
@@ -232,7 +232,7 @@ void MD5Final (MD5_CTX *mdContext)
 {
 	UINT4 in[16];
 	int mdi = 0;
-	unsigned int i = 0, ii = 0, padLen = 0;
+	uint32_t i = 0, ii = 0, padLen = 0;
 
 	/* Save number of bits */
 	in[14] = mdContext->i[0];
@@ -256,9 +256,9 @@ void MD5Final (MD5_CTX *mdContext)
 	/* Store buffer in digest */
 	for (i = 0, ii = 0; i < 4; i++, ii += 4)
 	{
-		mdContext->digest[ii]   = (unsigned char)( mdContext->buf[i]        & 0xFF);
-		mdContext->digest[ii+1] = (unsigned char)((mdContext->buf[i] >>  8) & 0xFF);
-		mdContext->digest[ii+2] = (unsigned char)((mdContext->buf[i] >> 16) & 0xFF);
-		mdContext->digest[ii+3] = (unsigned char)((mdContext->buf[i] >> 24) & 0xFF);
+		mdContext->digest[ii]   = (uint8_t)( mdContext->buf[i]        & 0xFF);
+		mdContext->digest[ii+1] = (uint8_t)((mdContext->buf[i] >>  8) & 0xFF);
+		mdContext->digest[ii+2] = (uint8_t)((mdContext->buf[i] >> 16) & 0xFF);
+		mdContext->digest[ii+3] = (uint8_t)((mdContext->buf[i] >> 24) & 0xFF);
 	}
 }

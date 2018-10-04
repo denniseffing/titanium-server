@@ -90,7 +90,7 @@ public:
 #endif //YUR_CVS_MODS
 
   bool removeThing(Thing *thing);
-  bool hasItem(unsigned long id) const;
+  bool hasItem(uint32_t id) const;
   void addThing(Thing *thing);
 	bool insertThing(Thing *thing, int stackpos);
 	MagicEffectItem* getFieldItem();

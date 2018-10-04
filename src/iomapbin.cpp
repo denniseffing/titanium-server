@@ -181,7 +181,7 @@ void IOMapBin::loadOTM(Map* map)
 										{
 											case 0x10: // Count
 												fgetc(fh); //len
-									   			item->setItemCountOrSubtype((unsigned char)fgetc(fh));
+									   			item->setItemCountOrSubtype((uint8_t)fgetc(fh));
 												break;                 
 											case 0x20: // Action Id
 												fgetc(fh); //len
@@ -217,7 +217,7 @@ void IOMapBin::loadOTM(Map* map)
 											case 0x80: // Fluids
 												fgetc(fh);
 												if (item->isFluidContainer())
-													item->setItemCountOrSubtype((unsigned char)fgetc(fh));
+													item->setItemCountOrSubtype((uint8_t)fgetc(fh));
 												else
 													fgetc(fh);
 											break;                      

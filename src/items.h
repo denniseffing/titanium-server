@@ -67,10 +67,10 @@ public:
 	bool isSplash() const;
 	bool isFluidContainer() const;
 
-	unsigned short id;
-	unsigned short clientId;
+	uint16_t id;
+	uint16_t clientId;
 
-  unsigned short maxItems;   // maximum size if this is a container
+  uint16_t maxItems;   // maximum size if this is a container
 	double weight;						 // weight of the item, e.g. throwing distance depends on it
 	std::string			name;			 // the name of the item
 	std::string			description;	 // additional description... as in "The blade is a magic flame." for fireswords
@@ -80,9 +80,9 @@ public:
   int							attack;
   int							defence;
   int							armor;
-	unsigned short	slot_position;
-  unsigned short	decayTo;
-  unsigned short	decayTime;
+	uint16_t	slot_position;
+  uint16_t	decayTo;
+  uint16_t	decayTime;
   bool						canDecay;
 
 	uint16_t speed;
@@ -90,7 +90,7 @@ public:
 	// other bools
 	int             magicfieldtype;
 	int             RWInfo;
-	unsigned short  readOnlyId;
+	uint16_t  readOnlyId;
 	bool            stackable;
 	bool            useable;
 	bool            moveable;
@@ -131,7 +131,7 @@ public:
 	//bool            issplash;
 	//bool            iskey;
 
-	//unsigned short	damage;
+	//uint16_t	damage;
 	//bool isteleport;
 	//bool            fluidcontainer;
 	//bool            multitype;
@@ -148,9 +148,9 @@ public:
 };
 
 #ifdef __GNUC__
-typedef __gnu_cxx::hash_map<unsigned long, unsigned long> ReverseItemMap;
+typedef __gnu_cxx::hash_map<uint32_t, uint32_t> ReverseItemMap;
 #else
-typedef stdext::hash_map<unsigned long, unsigned long> ReverseItemMap;
+typedef stdext::hash_map<uint32_t, uint32_t> ReverseItemMap;
 #endif
 
 class Items {
@@ -163,7 +163,7 @@ public:
 
 	const ItemType& operator[](int id);
 	
-	static unsigned long reverseLookUp(unsigned long id);
+	static uint32_t reverseLookUp(uint32_t id);
 	
 	static long dwMajorVersion;
 	static long dwMinorVersion;
@@ -171,9 +171,9 @@ public:
 	
 protected:
 	#ifdef __GNUC__
-	typedef __gnu_cxx::hash_map<unsigned short, ItemType*> ItemMap;
+	typedef __gnu_cxx::hash_map<uint16_t, ItemType*> ItemMap;
 	#else
-	typedef stdext::hash_map<unsigned short, ItemType*> ItemMap;
+	typedef stdext::hash_map<uint16_t, ItemType*> ItemMap;
 	#endif
 	
 	ItemMap items;

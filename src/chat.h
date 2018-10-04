@@ -32,21 +32,21 @@ class Player;
 class ChatChannel
 {
 public:
-	ChatChannel(unsigned short channelId, std::string channelName);
+	ChatChannel(uint16_t channelId, std::string channelName);
 	~ChatChannel(){};
 	
 	bool addUser(Player *player);
 	bool removeUser(Player *player);
 	
-	bool talk(Player *fromPlayer, SpeakClasses type, std::string &text, unsigned short channelId);
+	bool talk(Player *fromPlayer, SpeakClasses type, std::string &text, uint16_t channelId);
 	
 	const std::string& getName(){ return m_name; };
-	const unsigned short getId(){ return m_id; };
+	const uint16_t getId(){ return m_id; };
 private:
 	typedef std::map<long, Player*> UsersMap;
 	UsersMap m_users;
 	std::string m_name;
-	unsigned short m_id;
+	uint16_t m_id;
 };
 
 typedef std::list<ChatChannel*> ChannelList;
@@ -56,23 +56,23 @@ class Chat
 public:
 	Chat();
 	~Chat(){};
-	ChatChannel *createChannel(Player *player, unsigned short channelId);
-	bool deleteChannel(Player *player, unsigned short channelId);
+	ChatChannel *createChannel(Player *player, uint16_t channelId);
+	bool deleteChannel(Player *player, uint16_t channelId);
 	
-	bool addUserToChannel(Player *player, unsigned short channelId);
-	bool removeUserFromChannel(Player *player, unsigned short channelId);
+	bool addUserToChannel(Player *player, uint16_t channelId);
+	bool removeUserFromChannel(Player *player, uint16_t channelId);
 	void removeUserFromAllChannels(Player *player);
 	
-	bool talkToChannel(Player *player, SpeakClasses type, std::string &text, unsigned short channelId);	
+	bool talkToChannel(Player *player, SpeakClasses type, std::string &text, uint16_t channelId);	
 	
-	std::string getChannelName(Player *player, unsigned short channelId);	
+	std::string getChannelName(Player *player, uint16_t channelId);	
 	ChannelList getChannelList(Player *player);
 	
 private:
-	ChatChannel *getChannel(Player *player, unsigned short channelId);
+	ChatChannel *getChannel(Player *player, uint16_t channelId);
 	
-	typedef std::map<unsigned short, ChatChannel*> NormalChannelMap;
-	typedef std::map<unsigned long, ChatChannel*> GuildChannelMap;
+	typedef std::map<uint16_t, ChatChannel*> NormalChannelMap;
+	typedef std::map<uint32_t, ChatChannel*> GuildChannelMap;
 	NormalChannelMap m_normalChannels;
 	GuildChannelMap m_guildChannels;
 };

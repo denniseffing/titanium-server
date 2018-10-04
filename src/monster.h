@@ -52,7 +52,7 @@ public:
 
 	virtual ~Monster();
 	//const Monster& operator=(const Monster& rhs);
-	virtual unsigned long idRange(){ return 0x40000000;}
+	virtual uint32_t idRange(){ return 0x40000000;}
 	static AutoList<Monster> listMonster;
 	void removeList() {listMonster.removeList(getID());}
 	void addList() {listMonster.addList(this);}
@@ -76,7 +76,7 @@ public:
 	virtual void setMaster(Creature* creature);
 	bool isSummon() {return (getMaster() != NULL);}
 	virtual void onAttack();
-	static unsigned long getRandom();
+	static uint32_t getRandom();
 	
 private:
 	Game* game;
@@ -99,7 +99,7 @@ private:
 	bool getRandomPosition(const Position &target, Position &dest);
 	bool getDistancePosition(const Position &target, const int& maxTryDist, bool fullPathSearch, Position &dest);
 	bool getCloseCombatPosition(const Position &target, Position &dest);
-	bool canMoveTo(unsigned short x, unsigned short y, unsigned char z);
+	bool canMoveTo(uint16_t x, uint16_t y, uint8_t z);
 	bool isInRange(const Position &pos);
 	bool isCreatureReachable(const  Creature* creature);
 	Creature* findTarget(long range, bool &canReach, const Creature *ignoreCreature = NULL);
@@ -133,13 +133,13 @@ protected:
 	virtual void dropLoot(Container *corpse);
 
 	virtual void onThingMove(const Creature *creature, const Thing *thing, const Position *oldPos,
-		unsigned char oldstackpos, unsigned char oldcount, unsigned char count);
+		uint8_t oldstackpos, uint8_t oldcount, uint8_t count);
 
 	virtual void onCreatureAppear(const Creature *creature);
-	virtual void onCreatureDisappear(const Creature *creature, unsigned char stackPos, bool tele);
-	virtual void onThingDisappear(const Thing* thing, unsigned char stackPos);
+	virtual void onCreatureDisappear(const Creature *creature, uint8_t stackPos, bool tele);
+	virtual void onThingDisappear(const Thing* thing, uint8_t stackPos);
 	virtual void onThingTransform(const Thing* thing,int stackpos);
-	virtual void onTeleport(const Creature *creature, const Position *oldPos, unsigned char oldstackpos);
+	virtual void onTeleport(const Creature *creature, const Position *oldPos, uint8_t oldstackpos);
 
 	virtual bool isAttackable() const { return true; };
 	virtual bool isPushable() const;

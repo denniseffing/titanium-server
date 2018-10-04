@@ -36,7 +36,7 @@
 #include <libxml/xmlmemory.h>
 #include <libxml/parser.h>
 
-extern std::vector< std::pair<unsigned long, unsigned long> > bannedIPs;
+extern std::vector< std::pair<uint32_t, uint32_t> > bannedIPs;
 extern Actions actions;
 extern Monsters g_monsters;
 
@@ -205,7 +205,7 @@ bool Commands::exeCommand(Creature *creature, const std::string &cmd){
 	std::string str_command;
 	std::string str_param;
 
-	unsigned int loc = (uint32_t)cmd.find( ' ', 0 );
+	uint32_t loc = (uint32_t)cmd.find( ' ', 0 );
 	if( loc != std::string::npos && loc >= 0){
 		str_command = std::string(cmd, 0, loc);
 		str_param = std::string(cmd, (loc+1), cmd.size()-loc-1);
@@ -433,7 +433,7 @@ bool Commands::banPlayer(Creature* c, const std::string &cmd, const std::string 
 		}
 
 		playerBan->sendTextMessage(MSG_RED_TEXT,"You have been banned.MUahhaha");
-		std::pair<unsigned long, unsigned long> IpNetMask;
+		std::pair<uint32_t, uint32_t> IpNetMask;
 		IpNetMask.first = playerBan->lastip;
 		IpNetMask.second = 0xFFFFFFFF;
 		if(IpNetMask.first > 0) {
@@ -494,7 +494,7 @@ bool Commands::substract_contMoney(Creature* c, const std::string &cmd, const st
 		return true;
 
 	int count = atoi(param.c_str());
-	unsigned long money = player->getMoney();
+	uint32_t money = player->getMoney();
 	if(!count)
 	{
 		std::stringstream info;
@@ -586,20 +586,20 @@ bool Commands::getInfo(Creature* c, const std::string &cmd, const std::string &p
 	Player* paramPlayer = game->getPlayerByName(param);
 	if(paramPlayer) {
 		std::stringstream info;
-		unsigned char ip[4];
+		uint8_t ip[4];
 		if(paramPlayer->access >= player->access && player != paramPlayer){
 			player->sendTextMessage(MSG_BLUE_TEXT,"You can not get info about this player.");
 			return true;
 		}
-		*(unsigned long*)&ip = paramPlayer->lastip;
+		*(uint32_t*)&ip = paramPlayer->lastip;
 		info << "name:   " << paramPlayer->getName() << std::endl <<
 		        "access: " << paramPlayer->access << std::endl <<
 		        "level:  " << paramPlayer->getPlayerInfo(PLAYERINFO_LEVEL) << std::endl <<
 		        "maglvl: " << paramPlayer->getPlayerInfo(PLAYERINFO_MAGICLEVEL) << std::endl <<
 		        "speed:  " <<  paramPlayer->speed <<std::endl <<
 		        "position " << paramPlayer->pos << std::endl <<
-				"ip: " << (unsigned int)ip[0] << "." << (unsigned int)ip[1] <<
-				   "." << (unsigned int)ip[2] << "." << (unsigned int)ip[3];
+				"ip: " << (uint32_t)ip[0] << "." << (uint32_t)ip[1] <<
+				   "." << (uint32_t)ip[2] << "." << (uint32_t)ip[3];
 		player->sendTextMessage(MSG_BLUE_TEXT,info.str().c_str());
 	}
 	else{
@@ -638,8 +638,8 @@ bool Commands::openServer(Creature* c, const std::string &cmd, const std::string
 bool Commands::onlineList(Creature* c, const std::string &cmd, const std::string &param)
 {
 	Player* player = dynamic_cast<Player*>(c);
-	unsigned long alevelmin = 0;
-	unsigned long alevelmax = 10000;
+	uint32_t alevelmin = 0;
+	uint32_t alevelmax = 10000;
 	int i,n;
 	if(!player)
 		return false;

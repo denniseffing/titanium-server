@@ -422,9 +422,9 @@ int Player::getDefense() const
 	//return defense;
 }
 
-unsigned long Player::getMoney()
+uint32_t Player::getMoney()
 {
-	unsigned long money = 0;
+	uint32_t money = 0;
 	std::list<const Container*> stack;
 	ContainerList::const_iterator cit;
 	for(int i=0; i< 11;i++){
@@ -452,7 +452,7 @@ unsigned long Player::getMoney()
 	return money;
 }
 
-bool Player::substractMoney(unsigned long money)
+bool Player::substractMoney(uint32_t money)
 {
 	if(getMoney() < money)
 		return false;
@@ -509,12 +509,12 @@ bool Player::substractMoney(unsigned long money)
 		}
 		else if(it2->second->location == SLOT_TYPE_CONTAINER){
 			Container *container = it2->second->parent;
-			unsigned char slot = container->getSlotNumberByItem(item);
+			uint8_t slot = container->getSlotNumberByItem(item);
 			onItemRemoveContainer(container,slot);
 			container->removeItem(item);
 		}
 
-		if((unsigned long)it2->first <= money){
+		if((uint32_t)it2->first <= money){
 			money = money - it2->first;
 		}
 		else{
@@ -539,9 +539,9 @@ bool Player::substractMoney(unsigned long money)
 	return true;
 }
 
-bool Player::substractMoneyItem(Item *item, unsigned long money)
+bool Player::substractMoneyItem(Item *item, uint32_t money)
 {
-	if(money >= (unsigned long)item->getWorth())
+	if(money >= (uint32_t)item->getWorth())
 		return false;
 
 	int remaind = item->getWorth() - money;
@@ -572,7 +572,7 @@ bool Player::substractMoneyItem(Item *item, unsigned long money)
 	return true;
 }
 
-bool Player::removeItem(unsigned short id,long count)
+bool Player::removeItem(uint16_t id,long count)
 {
 	if(getItemCount(id) < count)
 		return false;
@@ -585,7 +585,7 @@ bool Player::removeItem(unsigned short id,long count)
 			if(items[i]->getID() == id){
 				if(items[i]->isStackable()){
 					if(items[i]->getItemCountOrSubtype() > count){
-						items[i]->setItemCountOrSubtype((unsigned char)(items[i]->getItemCountOrSubtype() - count));
+						items[i]->setItemCountOrSubtype((uint8_t)(items[i]->getItemCountOrSubtype() - count));
 						sendInventory(i);
 						count = 0;
 					}
@@ -615,7 +615,7 @@ bool Player::removeItem(unsigned short id,long count)
 			if(item->getID() == id){
 				if(item->isStackable()){
 					if(item->getItemCountOrSubtype() > count){
-						item->setItemCountOrSubtype((unsigned char)(item->getItemCountOrSubtype() - count));
+						item->setItemCountOrSubtype((uint8_t)(item->getItemCountOrSubtype() - count));
 						onItemUpdateContainer(container,item, i);
 						count = 0;
 					}
@@ -644,9 +644,9 @@ bool Player::removeItem(unsigned short id,long count)
 		return false;
 }
 
-int Player::getItemCount(unsigned short id)
+int Player::getItemCount(uint16_t id)
 {
-	unsigned long counter = 0;
+	uint32_t counter = 0;
 	std::list<const Container*> stack;
 	ContainerList::const_iterator cit;
 	for(int i=0; i< 11;i++){
@@ -726,7 +726,7 @@ void Player::updateInventoryWeigth()
 	}
 }
 
-int Player::sendInventory(unsigned char sl_id){
+int Player::sendInventory(uint8_t sl_id){
 	client->sendInventory(sl_id);
 	return true;
 }
@@ -768,7 +768,7 @@ bool Player::addItem(Item *item, bool test /*=false*/){
 	}
 
 	Container *container;
-	unsigned char slot;
+	uint8_t slot;
 
 	switch(getFreeSlot(&container,slot, item)){
 	case SLOT_TYPE_NONE:
@@ -799,7 +799,7 @@ bool Player::addItem(Item *item, bool test /*=false*/){
 	return false;
 }
 
-freeslot_t Player::getFreeSlot(Container **container,unsigned char &slot, const Item* item)
+freeslot_t Player::getFreeSlot(Container **container,uint8_t &slot, const Item* item)
 {
 	*container = NULL;
 	if(!(item->getSlotPosition() & SLOTP_TWO_HAND) || (!items[SLOT_RIGHT] && !items[SLOT_LEFT])) {
@@ -884,7 +884,7 @@ bool Player::internalRemoveItemContainer(Container *parent, Item* item, bool tes
 	for(ContainerList::const_iterator cit = parent->getItems();
 		cit != parent->getEnd(); ++cit){
 		if(*cit == item){
-			unsigned char slot =  parent->getSlotNumberByItem(item);
+			uint8_t slot =  parent->getSlotNumberByItem(item);
 			if(slot != 0xFF){
 				if(!test){
 					parent->removeItem(item);
@@ -927,7 +927,7 @@ int Player::removeItemInventory(int pos, bool internal /*= false*/)
 	return true;
 }
 
-unsigned int Player::getReqSkillTries (int skill, int level, playervoc_t voc) {
+uint32_t Player::getReqSkillTries (int skill, int level, playervoc_t voc) {
 	//first find on cache
 	for(int i=0;i<2;i++){
 		if(SkillAdvanceCache[skill][i].level == level && SkillAdvanceCache[skill][i].vocation == voc){
@@ -938,7 +938,7 @@ unsigned int Player::getReqSkillTries (int skill, int level, playervoc_t voc) {
 		}
 	}
 	// follows the order of enum skills_t
-	unsigned short int SkillBases[7] = { 50, 50, 50, 50, 30, 100, 20 };
+	uint16_t SkillBases[7] = { 50, 50, 50, 50, 30, 100, 20 };
 	float SkillMultipliers[7][5] = {
                                    {1.5f, 1.5f, 1.5f, 1.2f, 1.1f},     // Fist
                                    {2.0f, 2.0f, 1.8f, 1.2f, 1.1f},     // Club
@@ -962,7 +962,7 @@ unsigned int Player::getReqSkillTries (int skill, int level, playervoc_t voc) {
 	}
 	SkillAdvanceCache[skill][j].level = level;
 	SkillAdvanceCache[skill][j].vocation = voc;
-	SkillAdvanceCache[skill][j].tries = (unsigned int) ( SkillBases[skill] * pow((float) SkillMultipliers[skill][voc], (float) ( level - 11) ) );
+	SkillAdvanceCache[skill][j].tries = (uint32_t) ( SkillBases[skill] * pow((float) SkillMultipliers[skill][voc], (float) ( level - 11) ) );
     return SkillAdvanceCache[skill][j].tries;
 }
 
@@ -1120,7 +1120,7 @@ void Player::addSkillTryInternal(int skilltry,int skill){
 	}
 	else{
 	 //update percent
-	 int new_percent = (unsigned int)(100*(skills[skill][SKILL_TRIES])/(1.*getReqSkillTries(skill, (skills[skill][SKILL_LEVEL]+1), vocation)));
+	 int new_percent = (uint32_t)(100*(skills[skill][SKILL_TRIES])/(1.*getReqSkillTries(skill, (skills[skill][SKILL_LEVEL]+1), vocation)));
 
 	 	if(skills[skill][SKILL_PERCENT] != new_percent){
 			skills[skill][SKILL_PERCENT] = new_percent;
@@ -1130,12 +1130,12 @@ void Player::addSkillTryInternal(int skilltry,int skill){
 }
 
 
-unsigned int Player::getReqMana(int maglevel, playervoc_t voc) {
+uint32_t Player::getReqMana(int maglevel, playervoc_t voc) {
   //ATTENTION: MAKE SURE THAT CHARS HAVE REASONABLE MAGIC LEVELS. ESPECIALY KNIGHTS!!!!!!!!!!!
   float ManaMultiplier[5] = { 1.0f, 1.1f, 1.1f, 1.4f, 3};
 
 	//will calculate required mana for a magic level
-  unsigned int reqMana = (unsigned int) ( 400 * pow(ManaMultiplier[(int)voc], maglevel-1) );
+  uint32_t reqMana = (uint32_t) ( 400 * pow(ManaMultiplier[(int)voc], maglevel-1) );
 
 	if (reqMana % 20 < 10) //CIP must have been bored when they invented this odd rounding
     reqMana = reqMana - (reqMana % 20);
@@ -1145,7 +1145,7 @@ unsigned int Player::getReqMana(int maglevel, playervoc_t voc) {
   return reqMana;
 }
 
-Container* Player::getContainer(unsigned char containerid)
+Container* Player::getContainer(uint8_t containerid)
 {
   for(containerLayout::iterator cl = vcontainers.begin(); cl != vcontainers.end(); ++cl)
   {
@@ -1170,7 +1170,7 @@ bool Player::isHoldingContainer(const Container* container) const
 	return false;
 }
 
-unsigned char Player::getContainerID(const Container* container) const
+uint8_t Player::getContainerID(const Container* container) const
 {
   for(containerLayout::const_iterator cl = vcontainers.begin(); cl != vcontainers.end(); ++cl)
   {
@@ -1181,7 +1181,7 @@ unsigned char Player::getContainerID(const Container* container) const
 	return 0xFF;
 }
 
-void Player::addContainer(unsigned char containerid, Container *container)
+void Player::addContainer(uint8_t containerid, Container *container)
 {
 #ifdef __DEBUG__
 	cout << Creature::getName() << ", addContainer: " << (int)containerid << std::endl;
@@ -1204,7 +1204,7 @@ void Player::addContainer(unsigned char containerid, Container *container)
 	vcontainers.push_back(vItem);
 }
 
-void Player::closeContainer(unsigned char containerid)
+void Player::closeContainer(uint8_t containerid)
 {
   for(containerLayout::iterator cl = vcontainers.begin(); cl != vcontainers.end(); ++cl)
   {
@@ -1305,7 +1305,7 @@ fight_t Player::getFightType()
 
 void Player::removeDistItem(){
 	Item *DistItem = GetDistWeapon();
-	unsigned char sl_id;
+	uint8_t sl_id;
 	if(DistItem){
 		if(DistItem->isStackable() == false)
 			return;
@@ -1314,7 +1314,7 @@ void Player::removeDistItem(){
 			g_game.playerCloseTrade(this);
 
 		//remove one dist item
-		unsigned char n = (unsigned char)DistItem->getItemCountOrSubtype();
+		uint8_t n = (uint8_t)DistItem->getItemCountOrSubtype();
 		if(DistItem == items[SLOT_RIGHT]){
 			sl_id = SLOT_RIGHT;
 		}
@@ -1399,11 +1399,11 @@ Item * Player::GetDistWeapon() const{
   	return NULL;
 }
 
-void Player::addStorageValue(const unsigned long key, const long value){
+void Player::addStorageValue(const uint32_t key, const long value){
 	storageMap[key] = value;
 }
 
-bool Player::getStorageValue(unsigned long key, long &value) const{
+bool Player::getStorageValue(uint32_t key, long &value) const{
 	StorageMap::const_iterator it;
 	it = storageMap.find(key);
 	if(it != storageMap.end()){
@@ -1435,7 +1435,7 @@ void Player::setAcceptTrade(bool b)
 	}
 }
 
-Container* Player::getDepot(unsigned long depotId){
+Container* Player::getDepot(uint32_t depotId){
 	DepotMap::iterator it = depots.find(depotId);
 	if (it != depots.end()){
       return it->second;
@@ -1443,7 +1443,7 @@ Container* Player::getDepot(unsigned long depotId){
 	return NULL;
 }
 
-bool Player::addDepot(Container* depot,unsigned long depotId){
+bool Player::addDepot(Container* depot,uint32_t depotId){
 	Container *bdep = getDepot(depotId);
 	if(bdep)
 		return false;
@@ -1463,7 +1463,7 @@ void Player::sendChangeSpeed(Creature* creature){
      client->sendChangeSpeed(creature);
 }
 
-void Player::sendToChannel(Creature *creature,SpeakClasses type, const std::string &text, unsigned short channelId){
+void Player::sendToChannel(Creature *creature,SpeakClasses type, const std::string &text, uint16_t channelId){
      client->sendToChannel(creature, type, text, channelId);
 }
 
@@ -1481,10 +1481,10 @@ void Player::sendCancelWalk() const
 void Player::sendStats(){
 	//update level and maglevel percents
 	if(lastSentStats.experience != this->experience || lastSentStats.level != this->level)
-		level_percent  = (unsigned char)(100*(experience-getExpForLv(level))/(1.*getExpForLv(level+1)-getExpForLv(level)));
+		level_percent  = (uint8_t)(100*(experience-getExpForLv(level))/(1.*getExpForLv(level+1)-getExpForLv(level)));
 
 	if(lastSentStats.manaspent != this->manaspent || lastSentStats.maglevel != this->maglevel)
-		maglevel_percent  = (unsigned char)(100*(manaspent/(1.*getReqMana(maglevel+1,vocation))));
+		maglevel_percent  = (uint8_t)(100*(manaspent/(1.*getReqMana(maglevel+1,vocation))));
 
 	//save current stats
 	lastSentStats.health = this->health;
@@ -1510,7 +1510,7 @@ void Player::sendTextMessage(MessageClasses mclass, const char* message) const
 void Player::flushMsg(){
 	client->flushOutputBuffer();
 }
-void Player::sendTextMessage(MessageClasses mclass, const char* message,const Position &pos, unsigned char type) const
+void Player::sendTextMessage(MessageClasses mclass, const char* message,const Position &pos, uint8_t type) const
 {
 	client->sendTextMessage(mclass,message,pos,type);
 }
@@ -1539,14 +1539,14 @@ void Player::receivePing(){
 		npings--;
 }
 
-void Player::sendDistanceShoot(const Position &from, const Position &to, unsigned char type){
+void Player::sendDistanceShoot(const Position &from, const Position &to, uint8_t type){
 	client->sendDistanceShoot(from, to,type);
 }
 
-void Player::sendMagicEffect(const Position &pos, unsigned char type){
+void Player::sendMagicEffect(const Position &pos, uint8_t type){
 	client->sendMagicEffect(pos,type);
 }
-void Player::sendAnimatedText(const Position &pos, unsigned char color, std::string text){
+void Player::sendAnimatedText(const Position &pos, uint8_t color, std::string text){
 	client->sendAnimatedText(pos,color,text);
 }
 
@@ -1564,15 +1564,15 @@ void Player::sendCloseTrade()
 	client->sendCloseTrade();
 }
 
-void Player::sendTextWindow(Item* item,const unsigned short maxlen, const bool canWrite){
+void Player::sendTextWindow(Item* item,const uint16_t maxlen, const bool canWrite){
 	client->sendTextWindow(item,maxlen,canWrite);
 }
 
-void Player::sendCloseContainer(unsigned char containerid){
+void Player::sendCloseContainer(uint8_t containerid){
 	client->sendCloseContainer(containerid);
 }
 
-void Player::sendContainer(unsigned char index, Container *container){
+void Player::sendContainer(uint8_t index, Container *container){
 	client->sendContainer(index,container);
 }
 
@@ -1596,14 +1596,14 @@ bool Player::NeedUpdateStats(){
 }
 
 void Player::onThingMove(const Creature *creature, const Thing *thing, const Position *oldPos,
-	unsigned char oldstackpos, unsigned char oldcount, unsigned char count)
+	uint8_t oldstackpos, uint8_t oldcount, uint8_t count)
 {
   client->sendThingMove(creature, thing, oldPos, oldstackpos, oldcount, count);
 }
 
  //container to container
-void Player::onThingMove(const Creature *creature, const Container *fromContainer, unsigned char from_slotid,
-	const Item* fromItem, int oldFromCount, Container *toContainer, unsigned char to_slotid,
+void Player::onThingMove(const Creature *creature, const Container *fromContainer, uint8_t from_slotid,
+	const Item* fromItem, int oldFromCount, Container *toContainer, uint8_t to_slotid,
 	const Item *toItem, int oldToCount, int count)
 {
 	client->sendThingMove(creature, fromContainer, from_slotid, fromItem, oldFromCount, toContainer, to_slotid, toItem, oldToCount, count);
@@ -1611,7 +1611,7 @@ void Player::onThingMove(const Creature *creature, const Container *fromContaine
 
 //inventory to container
 void Player::onThingMove(const Creature *creature, slots_t fromSlot, const Item* fromItem,
-	int oldFromCount, const Container *toContainer, unsigned char to_slotid, const Item *toItem, int oldToCount, int count)
+	int oldFromCount, const Container *toContainer, uint8_t to_slotid, const Item *toItem, int oldToCount, int count)
 {
 #ifdef YUR_RINGS_AMULETS
 	if (fromSlot == SLOT_RING)
@@ -1651,7 +1651,7 @@ void Player::onThingMove(const Creature *creature, slots_t fromSlot, const Item*
 }
 
 //container to inventory
-void Player::onThingMove(const Creature *creature, const Container *fromContainer, unsigned char from_slotid,
+void Player::onThingMove(const Creature *creature, const Container *fromContainer, uint8_t from_slotid,
 	const Item* fromItem, int oldFromCount, slots_t toSlot, const Item *toItem, int oldToCount, int count)
 {
 #ifdef YUR_RINGS_AMULETS
@@ -1669,7 +1669,7 @@ void Player::onThingMove(const Creature *creature, const Container *fromContaine
 }
 
 //container to ground
-void Player::onThingMove(const Creature *creature, const Container *fromContainer, unsigned char from_slotid,
+void Player::onThingMove(const Creature *creature, const Container *fromContainer, uint8_t from_slotid,
 	const Item* fromItem, int oldFromCount, const Position &toPos, const Item *toItem, int oldToCount, int count)
 {
 	client->sendThingMove(creature, fromContainer, from_slotid, fromItem, oldFromCount, toPos, toItem, oldToCount, count);
@@ -1695,7 +1695,7 @@ void Player::onThingMove(const Creature *creature, slots_t fromSlot,
 
 //ground to container
 void Player::onThingMove(const Creature *creature, const Position &fromPos, int stackpos, const Item* fromItem,
-	int oldFromCount, const Container *toContainer, unsigned char to_slotid, const Item *toItem, int oldToCount, int count)
+	int oldFromCount, const Container *toContainer, uint8_t to_slotid, const Item *toItem, int oldToCount, int count)
 {
 	client->sendThingMove(creature, fromPos, stackpos, fromItem, oldFromCount, toContainer, to_slotid, toItem, oldToCount, count);
 }
@@ -1719,7 +1719,7 @@ void Player::onThingMove(const Creature *creature, const Position &fromPos, int 
 }
 
 /*
-void Player::setAttackedCreature(unsigned long id)
+void Player::setAttackedCreature(uint32_t id)
 {
   attackedCreature = id;
 }
@@ -1730,7 +1730,7 @@ void Player::onCreatureAppear(const Creature *creature)
  	client->sendThingAppear(creature);
 }
 
-void Player::onCreatureDisappear(const Creature *creature, unsigned char stackPos, bool tele /*= false*/)
+void Player::onCreatureDisappear(const Creature *creature, uint8_t stackPos, bool tele /*= false*/)
 {
   client->sendThingDisappear(creature, stackPos, tele);
 }
@@ -1743,7 +1743,7 @@ void Player::onThingTransform(const Thing* thing,int stackpos){
 	client->sendThingTransform(thing,stackpos);
 }
 
-void Player::onThingDisappear(const Thing* thing, unsigned char stackPos){
+void Player::onThingDisappear(const Thing* thing, uint8_t stackPos){
 	client->sendThingDisappear(thing, stackPos, false);
 }
 //auto-close containers
@@ -1755,15 +1755,15 @@ void Player::onItemAddContainer(const Container* container,const Item* item){
 	client->sendItemAddContainer(container,item);
 }
 
-void Player::onItemRemoveContainer(const Container* container,const unsigned char slot){
+void Player::onItemRemoveContainer(const Container* container,const uint8_t slot){
 	client->sendItemRemoveContainer(container,slot);
 }
 
-void Player::onItemUpdateContainer(const Container* container,const Item* item,const unsigned char slot){
+void Player::onItemUpdateContainer(const Container* container,const Item* item,const uint8_t slot){
 	client->sendItemUpdateContainer(container,item,slot);
 }
 
-void Player::onCreatureTurn(const Creature *creature, unsigned char stackPos)
+void Player::onCreatureTurn(const Creature *creature, uint8_t stackPos)
 {
   client->sendCreatureTurn(creature, stackPos);
 }
@@ -1788,11 +1788,11 @@ void Player::onTileUpdated(const Position &pos)
   client->sendTileUpdated(pos);
 }
 
-void Player::onTeleport(const Creature *creature, const Position *oldPos, unsigned char oldstackpos) {
+void Player::onTeleport(const Creature *creature, const Position *oldPos, uint8_t oldstackpos) {
   client->sendThingMove(creature, creature,oldPos, oldstackpos, true, 1, 1);
 }
 
-void Player::addManaSpent(unsigned long spent){
+void Player::addManaSpent(uint32_t spent){
 	if(spent == 0)
 		return;
 
@@ -1837,7 +1837,7 @@ void Player::addExp(exp_t exp)
 	}
 }
 
-unsigned long Player::getIP() const
+uint32_t Player::getIP() const
 {
 	return client->getIP();
 }
@@ -1845,7 +1845,7 @@ unsigned long Player::getIP() const
 void Player::die()
 {
 	//Magic Level downgrade
-	unsigned long sumMana = 0;
+	uint32_t sumMana = 0;
 	long lostMana = 0;
 	for (int i = 1; i <= maglevel; i++) {              //sum up all the mana
 		sumMana += getReqMana(i, vocation);
@@ -1865,7 +1865,7 @@ void Player::die()
 
 	//Skill loss
 	long lostSkillTries;
-	unsigned long sumSkillTries;
+	uint32_t sumSkillTries;
 	for (int i = 0; i <= 6; i++) {  //for each skill
 		lostSkillTries = 0;         //reset to 0
 		sumSkillTries = 0;
@@ -2076,7 +2076,7 @@ void Player::notifyLogOut(Player* logout_player)
 	}
 }
 
-bool Player::removeVIP(unsigned long _guid)
+bool Player::removeVIP(uint32_t _guid)
 {
 	VIPListSet::iterator it = VIPList.find(_guid);
 	if(it != VIPList.end()){
@@ -2086,7 +2086,7 @@ bool Player::removeVIP(unsigned long _guid)
 	return false;
 }
 
-bool Player::addVIP(unsigned long _guid, std::string &name, bool isOnline, bool internal /*=false*/)
+bool Player::addVIP(uint32_t _guid, std::string &name, bool isOnline, bool internal /*=false*/)
 {
 	if(guid == _guid){
 		if(!internal)
@@ -2117,9 +2117,9 @@ bool Player::addVIP(unsigned long _guid, std::string &name, bool isOnline, bool 
 
 
 #ifdef TLM_BUY_SELL
-bool Player::getCoins(unsigned long requiredcoins)
+bool Player::getCoins(uint32_t requiredcoins)
 {
-   unsigned long coins = 0;
+   uint32_t coins = 0;
    for(int slot = 1; slot <= 10; slot++){
        Item *item = items[slot];
        if (item){
@@ -2146,7 +2146,7 @@ bool Player::getCoins(unsigned long requiredcoins)
    }
 }
 
-unsigned long Player::getContainerCoins(Container* container, unsigned long coins)
+uint32_t Player::getContainerCoins(Container* container, uint32_t coins)
 {
    for(int number = container->size()-1; number >= 0; number--){
        Container *subcontainer = dynamic_cast<Container*>(container->getItem(number));
@@ -2389,7 +2389,7 @@ signed long Player::removeContainerItem(Container* container, int itemid, int co
    return count;
 }
 
-void Player::payBack(unsigned long cost)
+void Player::payBack(uint32_t cost)
 {
 	if (cost/10000 > 100)
 	{
@@ -2398,19 +2398,19 @@ void Player::payBack(unsigned long cost)
 	}
 
    if (cost/10000 > 0){
-       TLMaddItem(ITEM_COINS_CRYSTAL, (unsigned char)(cost/10000));
+       TLMaddItem(ITEM_COINS_CRYSTAL, (uint8_t)(cost/10000));
        cost -= 10000*(cost/10000);
    }
    if (cost/100 > 0){
-       TLMaddItem(ITEM_COINS_PLATINUM, (unsigned char)(cost/100));
+       TLMaddItem(ITEM_COINS_PLATINUM, (uint8_t)(cost/100));
        cost -= 100*(cost/100);
    }
    if (cost > 0 && cost < 100){
-       TLMaddItem(ITEM_COINS_GOLD, (unsigned char)cost);
+       TLMaddItem(ITEM_COINS_GOLD, (uint8_t)cost);
    }
 }
 
-void Player::TLMaddItem(int itemid, unsigned char count)
+void Player::TLMaddItem(int itemid, uint8_t count)
 {
 	Item *item = Item::CreateItem(itemid, count);
 	if(!items[1] && item->getSlotPosition() & SLOTP_HEAD)
@@ -2567,7 +2567,7 @@ void Player::checkBoh()
 
 
 #ifdef YUR_GUILD_SYSTEM
-void Player::setGuildInfo(gstat_t gstat, unsigned long gid, std::string gname, std::string rank, std::string nick)
+void Player::setGuildInfo(gstat_t gstat, uint32_t gid, std::string gname, std::string rank, std::string nick)
 {
 	guildStatus = gstat;
 	guildId = gid;
@@ -2641,7 +2641,7 @@ exp_t Player::getExpForNextLevel()
 	return getExpForLv(level + 1) - experience;
 }
 
-unsigned long Player::getManaForNextMLevel()
+uint32_t Player::getManaForNextMLevel()
 {
 	return getReqMana(maglevel+1, vocation) - manaspent;
 }
@@ -2857,7 +2857,7 @@ void Player::addDeath(const std::string& killer, int level, time_t time)
 
 
 #ifdef CVS_DAY_CYCLE
-void Player::sendWorldLightLevel(unsigned char lightlevel, unsigned char color)
+void Player::sendWorldLightLevel(uint8_t lightlevel, uint8_t color)
 {
 	if(last_worldlightlevel != lightlevel){
 		client->sendWorldLightLevel(lightlevel, color);

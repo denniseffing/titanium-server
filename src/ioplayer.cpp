@@ -56,12 +56,12 @@ bool IOPlayer::savePlayer(Player* player){
 	return false;
 }
 
-bool IOPlayer::getGuidByName(unsigned long &guid, unsigned long &alvl, std::string &name)
+bool IOPlayer::getGuidByName(uint32_t &guid, uint32_t &alvl, std::string &name)
 {
 	return false;
 }
 
-bool IOPlayer::getNameByGuid(unsigned long guid, std::string &name)
+bool IOPlayer::getNameByGuid(uint32_t guid, std::string &name)
 {
 	return false;
 }

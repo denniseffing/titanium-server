@@ -659,7 +659,7 @@ long Tile::getItemHoldingCount() const
 }
 #endif //YUR_CVS_MODS
 
-bool Tile::hasItem(unsigned long id) const
+bool Tile::hasItem(uint32_t id) const
 {  
 ItemVector::const_iterator iit;
 for(iit = topItems.begin(); iit != topItems.end(); ++iit)

@@ -100,7 +100,7 @@ bool IOMapXML::loadMap(Map* map, std::string identifier){
 */
 
 		tmp = (char*)xmlGetProp(tile, (const xmlChar *) "ground");
-		unsigned short ground = 0;
+		uint16_t ground = 0;
 		if(tmp){
 			ground = atoi(tmp);
 			xmlFreeOTSERV(tmp);
@@ -119,7 +119,7 @@ bool IOMapXML::loadMap(Map* map, std::string identifier){
       	while(p){  
         	if(xmlStrcmp(p->name,(const xmlChar*) "item")==0){          
 				tmp = (char*)xmlGetProp(p, (const xmlChar *) "id");
-				unsigned int id;
+				uint32_t id;
 				if(tmp){
 					id = atoi(tmp);
 					xmlFreeOTSERV(tmp);
@@ -146,7 +146,7 @@ bool IOMapXML::loadMap(Map* map, std::string identifier){
 						tmpNode = p->children->children;
 						while(tmpNode){
 							tmp = (char*)xmlGetProp(tmpNode, (const xmlChar *) "id");
-							unsigned int id;
+							uint32_t id;
 							if(tmp){
 								id = atoi(tmp);
 								xmlFreeOTSERV(tmp);
@@ -203,7 +203,7 @@ bool IOMapXML::LoadContainer(xmlNodePtr nodeitem,Container* ccontainer)
 		p = tmp->children;
 		while(p){			
 			tmpc = (char*)xmlGetProp(p, (const xmlChar *) "id");
-			unsigned int id;
+			uint32_t id;
 			if(tmpc){
 				id = atoi(tmpc);
 				xmlFreeOTSERV(tmp);
