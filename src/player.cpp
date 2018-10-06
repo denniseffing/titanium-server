@@ -2571,13 +2571,13 @@ void Player::checkRing(int thinkTics) {
 
     // LIFE RING
     if (items[SLOT_RING] && items[SLOT_RING]->getID() == ITEM_LIFE_RING_IN_USE) {
-        mana += min(g_config.getGlobalNumber("LifeRingMana", 1), manamax - mana);
-        health += min(g_config.getGlobalNumber("LifeRingHealth", 1), healthmax - health);
+        mana += min((int) g_config.getGlobalNumber("LifeRingMana", 1), manamax - mana);
+        health += min((int) g_config.getGlobalNumber("LifeRingHealth", 1), healthmax - health);
     }
 // ROH
     if (items[SLOT_RING] && items[SLOT_RING]->getID() == ITEM_RING_OF_HEALING_IN_USE) {
-        mana += min(g_config.getGlobalNumber("RoHMana", 1), manamax - mana);
-        health += min(g_config.getGlobalNumber("RoHHealth", 1), healthmax - health);
+        mana += min((int) g_config.getGlobalNumber("RoHMana", 1), manamax - mana);
+        health += min((int) g_config.getGlobalNumber("RoHHealth", 1), healthmax - health);
     }
 
     bool energyRingNow = (items[SLOT_RING] && items[SLOT_RING]->getID() == ITEM_ENERGY_RING_IN_USE);

@@ -423,7 +423,7 @@ ActionScript::ActionScript(Game *igame, const std::string &datadir, const std::s
     } else
         fclose(in);
     luaL_dofile(luaState, scriptname.c_str());
-    this->setGlobalNumber("addressOfActionScript", (int) this);
+    this->setGlobalNumber("addressOfActionScript", (uint64_t) this);
     this->loaded = true;
     this->registerFunctions();
 }

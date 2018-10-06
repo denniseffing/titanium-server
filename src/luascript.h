@@ -181,14 +181,14 @@ public:
     // get a global string
     std::string getGlobalString(std::string var, const std::string &defString = "");
 
-    int getGlobalNumber(std::string var, const int defNum = 0);
+    uint64_t getGlobalNumber(std::string var, uint64_t defNum = 0);
 
     std::string getGlobalStringField(std::string var, const int key, const std::string &defString = "");
 
     // set a var to a val
     int setGlobalString(std::string var, std::string val);
 
-    int setGlobalNumber(std::string var, int val);
+    int setGlobalNumber(std::string var, uint64_t val);
 
 protected:
     std::string luaFile;   // the file we represent
