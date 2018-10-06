@@ -131,9 +131,7 @@ public:
 	
 	virtual const std::string& getName() const = 0;
 	
-	void setID(){
-		this->id = auto_id;
-	}
+	void setID(){this->id = auto_id | this->idRange();}
 	virtual uint32_t idRange() = 0;
 	uint32_t getID() const { return id; }
 	virtual void removeList() = 0;
