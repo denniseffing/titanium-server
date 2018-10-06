@@ -263,7 +263,7 @@ SpellScript::SpellScript(const std::string &datadir, std::string scriptname, Spe
 	luaL_dofile(luaState, scriptname.c_str());
 	this->loaded = true;
 	this->spell = spell;
-	this->setGlobalNumber("addressOfSpell", (int) spell);
+    this->setGlobalNumber("addressOfSpell", (uint64_t) spell);
 	this->registerFunctions();
 }
 

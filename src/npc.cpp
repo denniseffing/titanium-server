@@ -349,7 +349,7 @@ NpcScript::NpcScript(std::string scriptname, Npc *npc) {
     luaL_dofile(luaState, std::string(datadir + scriptname).c_str());
     this->loaded = true;
     this->npc = npc;
-    this->setGlobalNumber("addressOfNpc", (int) npc);
+    this->setGlobalNumber("addressOfNpc", (uint64_t) npc);
     this->registerFunctions();
 }
 
@@ -481,7 +481,7 @@ int NpcScript::registerFunctions() {
 
 Npc *NpcScript::getNpc(lua_State *L) {
     lua_getglobal(L, "addressOfNpc");
-    int val = (int) lua_tonumber(L, -1);
+    uint64_t val = (uint64_t) lua_tonumber(L, -1);
     lua_pop(L, 1);
     Npc *mynpc = (Npc *) val;
 
