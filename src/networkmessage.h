@@ -27,73 +27,90 @@
 #include "const76.h"
 
 class Creature;
+
 class Player;
+
 class Item;
+
 class Position;
 
 
-class NetworkMessage
-{
+class NetworkMessage {
 public:
-  // constructor/destructor
-  NetworkMessage();
-  virtual ~NetworkMessage();
+    // constructor/destructor
+    NetworkMessage();
+
+    virtual ~NetworkMessage();
 
 
-  // resets the internal buffer to an empty message
-  void Reset();
+    // resets the internal buffer to an empty message
+    void Reset();
 
 
-  // socket functions
-  bool ReadFromSocket(SOCKET socket);
-  bool WriteToSocket(SOCKET socket);
+    // socket functions
+    bool ReadFromSocket(SOCKET socket);
+
+    bool WriteToSocket(SOCKET socket);
 
 
-  // simply read functions for incoming message
-  uint8_t  GetByte();
-  uint16_t GetU16();
-  uint16_t GetItemId();
-  uint32_t   GetU32();
-  std::string    GetString();
-  std::string	 GetRaw();
-  Position       GetPosition();
+    // simply read functions for incoming message
+    uint8_t GetByte();
+
+    uint16_t GetU16();
+
+    uint16_t GetItemId();
+
+    uint32_t GetU32();
+
+    std::string GetString();
+
+    std::string GetRaw();
+
+    Position GetPosition();
 
 
-  // skips count unknown/unused bytes in an incoming message
-  void SkipBytes(int count);
+    // skips count unknown/unused bytes in an incoming message
+    void SkipBytes(int count);
 
 
-  // simply write functions for outgoing message
-  void AddByte(uint8_t  value);
-  void AddU16 (uint16_t value);
-  void AddU32 (uint32_t   value);
+    // simply write functions for outgoing message
+    void AddByte(uint8_t value);
 
-  void AddString(const std::string &value);
-  void AddString(const char* value);
+    void AddU16(uint16_t value);
+
+    void AddU32(uint32_t value);
+
+    void AddString(const std::string &value);
+
+    void AddString(const char *value);
 
 
-  // write functions for complex types
-  void AddPosition(const Position &pos);
-	void AddItem(uint16_t id, uint8_t count);
-	void AddItem(const Item *item);
-	void AddItemId(const Item *item);
-  void AddCreature(const Creature *creature, bool known, uint32_t remove);
+    // write functions for complex types
+    void AddPosition(const Position &pos);
 
-  int getMessageLength(){
-      return m_MsgSize;
-      }
+    void AddItem(uint16_t id, uint8_t count);
 
-	void JoinMessages(NetworkMessage &add);
+    void AddItem(const Item *item);
 
-	
+    void AddItemId(const Item *item);
+
+    void AddCreature(const Creature *creature, bool known, uint32_t remove);
+
+    int getMessageLength() {
+        return m_MsgSize;
+    }
+
+    void JoinMessages(NetworkMessage &add);
+
+
 protected:
-  inline bool canAdd(int size){
-    return (size + m_ReadPos < NETWORKMESSAGE_MAXSIZE - 16);
-  };
-  int m_MsgSize;
-  int m_ReadPos;
+    inline bool canAdd(int size) {
+        return (size + m_ReadPos < NETWORKMESSAGE_MAXSIZE - 16);
+    };
+    int m_MsgSize;
+    int m_ReadPos;
 
-  uint8_t m_MsgBuf[NETWORKMESSAGE_MAXSIZE];
+    uint8_t m_MsgBuf[NETWORKMESSAGE_MAXSIZE];
 };
 
 

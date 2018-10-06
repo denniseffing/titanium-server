@@ -31,13 +31,16 @@
 
 /** Baseclass for all Player-Loaders */
 class IOMap {
-  public:
-	IOMap(){};
-	virtual ~IOMap(){};
-	virtual char* getSourceDescription()=0;
-	/** Get a textual description of what source is used
-	  * \returns Name of the source*/
-	virtual bool loadMap(Map* map, std::string identifier)=0;
+public:
+    IOMap() {};
+
+    virtual ~IOMap() {};
+
+    virtual char *getSourceDescription() = 0;
+
+    /** Get a textual description of what source is used
+      * \returns Name of the source*/
+    virtual bool loadMap(Map *map, std::string identifier) = 0;
 };
 
 #endif

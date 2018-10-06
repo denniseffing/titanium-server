@@ -29,52 +29,59 @@
 
 class Player;
 
-class ChatChannel
-{
+class ChatChannel {
 public:
-	ChatChannel(uint16_t channelId, std::string channelName);
-	~ChatChannel(){};
-	
-	bool addUser(Player *player);
-	bool removeUser(Player *player);
-	
-	bool talk(Player *fromPlayer, SpeakClasses type, std::string &text, uint16_t channelId);
-	
-	const std::string& getName(){ return m_name; };
-	const uint16_t getId(){ return m_id; };
+    ChatChannel(uint16_t channelId, std::string channelName);
+
+    ~ChatChannel() {};
+
+    bool addUser(Player *player);
+
+    bool removeUser(Player *player);
+
+    bool talk(Player *fromPlayer, SpeakClasses type, std::string &text, uint16_t channelId);
+
+    const std::string &getName() { return m_name; };
+
+    const uint16_t getId() { return m_id; };
 private:
-	typedef std::map<long, Player*> UsersMap;
-	UsersMap m_users;
-	std::string m_name;
-	uint16_t m_id;
+    typedef std::map<long, Player *> UsersMap;
+    UsersMap m_users;
+    std::string m_name;
+    uint16_t m_id;
 };
 
-typedef std::list<ChatChannel*> ChannelList;
+typedef std::list<ChatChannel *> ChannelList;
 
-class Chat
-{
+class Chat {
 public:
-	Chat();
-	~Chat(){};
-	ChatChannel *createChannel(Player *player, uint16_t channelId);
-	bool deleteChannel(Player *player, uint16_t channelId);
-	
-	bool addUserToChannel(Player *player, uint16_t channelId);
-	bool removeUserFromChannel(Player *player, uint16_t channelId);
-	void removeUserFromAllChannels(Player *player);
-	
-	bool talkToChannel(Player *player, SpeakClasses type, std::string &text, uint16_t channelId);	
-	
-	std::string getChannelName(Player *player, uint16_t channelId);	
-	ChannelList getChannelList(Player *player);
-	
+    Chat();
+
+    ~Chat() {};
+
+    ChatChannel *createChannel(Player *player, uint16_t channelId);
+
+    bool deleteChannel(Player *player, uint16_t channelId);
+
+    bool addUserToChannel(Player *player, uint16_t channelId);
+
+    bool removeUserFromChannel(Player *player, uint16_t channelId);
+
+    void removeUserFromAllChannels(Player *player);
+
+    bool talkToChannel(Player *player, SpeakClasses type, std::string &text, uint16_t channelId);
+
+    std::string getChannelName(Player *player, uint16_t channelId);
+
+    ChannelList getChannelList(Player *player);
+
 private:
-	ChatChannel *getChannel(Player *player, uint16_t channelId);
-	
-	typedef std::map<uint16_t, ChatChannel*> NormalChannelMap;
-	typedef std::map<uint32_t, ChatChannel*> GuildChannelMap;
-	NormalChannelMap m_normalChannels;
-	GuildChannelMap m_guildChannels;
+    ChatChannel *getChannel(Player *player, uint16_t channelId);
+
+    typedef std::map<uint16_t, ChatChannel *> NormalChannelMap;
+    typedef std::map<uint32_t, ChatChannel *> GuildChannelMap;
+    NormalChannelMap m_normalChannels;
+    GuildChannelMap m_guildChannels;
 };
 
 #endif

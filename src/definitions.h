@@ -23,12 +23,10 @@
 #define __definitions_h
 
 
-
-
 #ifdef XML_GCC_FREE
 #define xmlFreeOTSERV(s)	free(s)
 #else
-#define xmlFreeOTSERV(s)	xmlFree(s)
+#define xmlFreeOTSERV(s)    xmlFree(s)
 #endif
 
 #if defined __WINDOWS__ || defined WIN32
@@ -60,6 +58,7 @@ typedef unsigned char uint8_t;
 #define OTSYS_THREAD_RETURN void*
 
 #include <stdint.h>
+
 typedef int64_t __int64;
 
 #endif

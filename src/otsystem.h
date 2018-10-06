@@ -44,78 +44,78 @@
 #define OTSYS_CREATE_THREAD(a, b) _beginthread(a, 0, b)
 
 #ifndef __DEBUG_CRITICALSECTION__
-	#define OTSYS_THREAD_LOCKVAR CRITICAL_SECTION
+#define OTSYS_THREAD_LOCKVAR CRITICAL_SECTION
 
-	#define OTSYS_THREAD_LOCKVARINIT(a) InitializeCriticalSection(&a);
-	#define OTSYS_THREAD_LOCKVARRELEASE(a) DeleteCriticalSection(&a);
-	#define OTSYS_THREAD_LOCK(a, b)        EnterCriticalSection(&a);
-	#define OTSYS_THREAD_UNLOCK(a, b)      LeaveCriticalSection(&a);
-	#define OTSYS_THREAD_UNLOCK_PTR(a, b)  LeaveCriticalSection(a);
+#define OTSYS_THREAD_LOCKVARINIT(a) InitializeCriticalSection(&a);
+#define OTSYS_THREAD_LOCKVARRELEASE(a) DeleteCriticalSection(&a);
+#define OTSYS_THREAD_LOCK(a, b)        EnterCriticalSection(&a);
+#define OTSYS_THREAD_UNLOCK(a, b)      LeaveCriticalSection(&a);
+#define OTSYS_THREAD_UNLOCK_PTR(a, b)  LeaveCriticalSection(a);
 #else
-	#define OTSYS_THREAD_LOCKVAR HANDLE
-	
-	static void addLockLog(OTSYS_THREAD_LOCKVAR* a, const char* s, bool lock);
+#define OTSYS_THREAD_LOCKVAR HANDLE
 
-	struct logBlock {
-		bool lock;
-		uint32_t mutexaddr;
-		std::string str;
-		uint64_t time;
-		int threadid;
-	};
+static void addLockLog(OTSYS_THREAD_LOCKVAR* a, const char* s, bool lock);
 
-	#define OTSYS_THREAD_LOCKVARINIT(a)    a = CreateMutex(NULL, FALSE, NULL);
-	#define OTSYS_THREAD_LOCKVARRELEASE(a) CloseHandle(a);
-	#define OTSYS_THREAD_LOCK(a, b) { WaitForSingleObject(a,INFINITE); addLockLog(&a, b, true);}
-	inline int OTSYS_THREAD_LOCKEX(HANDLE a, int b)   {return WaitForSingleObject(a, b);}
-	#define OTSYS_THREAD_UNLOCK(a, b)         {addLockLog(&a, b, false); ReleaseMutex(a);}
-	#define OTSYS_THREAD_UNLOCK_PTR(a, b)     {addLockLog(a, b, false); ReleaseMutex(*a);}
+struct logBlock {
+    bool lock;
+    uint32_t mutexaddr;
+    std::string str;
+    uint64_t time;
+    int threadid;
+};
+
+#define OTSYS_THREAD_LOCKVARINIT(a)    a = CreateMutex(NULL, FALSE, NULL);
+#define OTSYS_THREAD_LOCKVARRELEASE(a) CloseHandle(a);
+#define OTSYS_THREAD_LOCK(a, b) { WaitForSingleObject(a,INFINITE); addLockLog(&a, b, true);}
+inline int OTSYS_THREAD_LOCKEX(HANDLE a, int b)   {return WaitForSingleObject(a, b);}
+#define OTSYS_THREAD_UNLOCK(a, b)         {addLockLog(&a, b, false); ReleaseMutex(a);}
+#define OTSYS_THREAD_UNLOCK_PTR(a, b)     {addLockLog(a, b, false); ReleaseMutex(*a);}
 #endif
 
-	#define OTSYS_THREAD_TIMEOUT			  WAIT_TIMEOUT
-	#define OTSYS_THREAD_SIGNALVARINIT(a) a = CreateEvent(NULL, FALSE, FALSE, NULL)
-	#define OTSYS_THREAD_SIGNAL_SEND(a)   SetEvent(a);
+#define OTSYS_THREAD_TIMEOUT			  WAIT_TIMEOUT
+#define OTSYS_THREAD_SIGNALVARINIT(a) a = CreateEvent(NULL, FALSE, FALSE, NULL)
+#define OTSYS_THREAD_SIGNAL_SEND(a)   SetEvent(a);
 
 typedef HANDLE OTSYS_THREAD_SIGNALVAR;
 
 inline __int64 OTSYS_TIME()
 {
-  timeb t;
-  ftime(&t);
-  return ((__int64)t.millitm) + ((__int64)t.time) * 1000;
+timeb t;
+ftime(&t);
+return ((__int64)t.millitm) + ((__int64)t.time) * 1000;
 }
 
 inline int OTSYS_THREAD_WAITSIGNAL(OTSYS_THREAD_SIGNALVAR& signal, OTSYS_THREAD_LOCKVAR& lock)
 {
-  //LeaveCriticalSection(&lock);
-	OTSYS_THREAD_UNLOCK(lock, "OTSYS_THREAD_WAITSIGNAL");
-  WaitForSingleObject(signal, INFINITE);
-  //EnterCriticalSection(&lock);
-	OTSYS_THREAD_LOCK(lock, "OTSYS_THREAD_WAITSIGNAL");
+//LeaveCriticalSection(&lock);
+OTSYS_THREAD_UNLOCK(lock, "OTSYS_THREAD_WAITSIGNAL");
+WaitForSingleObject(signal, INFINITE);
+//EnterCriticalSection(&lock);
+OTSYS_THREAD_LOCK(lock, "OTSYS_THREAD_WAITSIGNAL");
 
-  return -0x4711;
+return -0x4711;
 }
 
 inline void OTSYS_SLEEP(uint32_t t){
-	Sleep(t);
+Sleep(t);
 }
 
 
 inline int OTSYS_THREAD_WAITSIGNAL_TIMED(OTSYS_THREAD_SIGNALVAR& signal, OTSYS_THREAD_LOCKVAR& lock, __int64 cycle)
 {
-  __int64 tout64 = (cycle - OTSYS_TIME());
-  
-  DWORD tout = 0;
-  if (tout64 > 0)
-    tout = (DWORD)(tout64);
+__int64 tout64 = (cycle - OTSYS_TIME());
 
-  //LeaveCriticalSection(&lock);
-	OTSYS_THREAD_UNLOCK(lock, "OTSYS_THREAD_WAITSIGNAL_TIMED");
-  int ret = WaitForSingleObject(signal, tout);
-  //EnterCriticalSection(&lock);
-	OTSYS_THREAD_LOCK(lock, "OTSYS_THREAD_WAITSIGNAL_TIMED");
+DWORD tout = 0;
+if (tout64 > 0)
+tout = (DWORD)(tout64);
 
-  return ret;
+//LeaveCriticalSection(&lock);
+OTSYS_THREAD_UNLOCK(lock, "OTSYS_THREAD_WAITSIGNAL_TIMED");
+int ret = WaitForSingleObject(signal, tout);
+//EnterCriticalSection(&lock);
+OTSYS_THREAD_LOCK(lock, "OTSYS_THREAD_WAITSIGNAL_TIMED");
+
+return ret;
 }
 
 typedef int socklen_t;
@@ -137,22 +137,21 @@ typedef int socklen_t;
 #define PTHREAD_MUTEX_RECURSIVE_NP PTHREAD_MUTEX_RECURSIVE
 
 
-inline void OTSYS_CREATE_THREAD(void *(*a)(void*), void *b)
-{
-  pthread_attr_t attr;
-  pthread_t id;
-  pthread_attr_init(&attr);
-  pthread_attr_setdetachstate(&attr,PTHREAD_CREATE_DETACHED);
-  pthread_create(&id, &attr, a, b);
+inline void OTSYS_CREATE_THREAD(void *(*a)(void *), void *b) {
+    pthread_attr_t attr;
+    pthread_t id;
+    pthread_attr_init(&attr);
+    pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
+    pthread_create(&id, &attr, a, b);
 }
 
 typedef pthread_mutex_t OTSYS_THREAD_LOCKVAR;
 
-inline void OTSYS_THREAD_LOCKVARINIT(OTSYS_THREAD_LOCKVAR& l) {
-		  pthread_mutexattr_t attr;
-		  pthread_mutexattr_init(&attr);
-		  pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE_NP);
-		  pthread_mutex_init(&l, &attr);
+inline void OTSYS_THREAD_LOCKVARINIT(OTSYS_THREAD_LOCKVAR &l) {
+    pthread_mutexattr_t attr;
+    pthread_mutexattr_init(&attr);
+    pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE_NP);
+    pthread_mutex_init(&l, &attr);
 }
 
 #define OTSYS_THREAD_LOCKVARRELEASE(a)  //todo: working macro
@@ -160,35 +159,33 @@ inline void OTSYS_THREAD_LOCKVARINIT(OTSYS_THREAD_LOCKVAR& l) {
 #define OTSYS_THREAD_LOCK(a, b)          pthread_mutex_lock(&a);
 #define OTSYS_THREAD_UNLOCK(a, b)        pthread_mutex_unlock(&a);
 #define OTSYS_THREAD_UNLOCK_PTR(a, b)    pthread_mutex_unlock(a);
-#define OTSYS_THREAD_TIMEOUT			  ETIMEDOUT
+#define OTSYS_THREAD_TIMEOUT              ETIMEDOUT
 #define OTSYS_THREAD_SIGNALVARINIT(a) pthread_cond_init(&a, NULL);
 #define OTSYS_THREAD_SIGNAL_SEND(a)   pthread_cond_signal(&a);
 
 typedef pthread_cond_t OTSYS_THREAD_SIGNALVAR;
 
-inline void OTSYS_SLEEP(int t)
-{
-  timespec tv;
-  tv.tv_sec  = t / 1000;
-  tv.tv_nsec = (t % 1000)*1000000;
-  nanosleep(&tv, NULL);
+inline void OTSYS_SLEEP(int t) {
+    timespec tv;
+    tv.tv_sec = t / 1000;
+    tv.tv_nsec = (t % 1000) * 1000000;
+    nanosleep(&tv, NULL);
 }
 
-inline __int64 OTSYS_TIME()
-{
-  timeb t;
-  ftime(&t);
-  return ((__int64)t.millitm) + ((__int64)t.time) * 1000;
+inline __int64 OTSYS_TIME() {
+    timeb t;
+    ftime(&t);
+    return ((__int64) t.millitm) + ((__int64) t.time) * 1000;
 }
 
-#define OTSYS_THREAD_WAITSIGNAL(a,b) pthread_cond_wait(&a, &b)
+#define OTSYS_THREAD_WAITSIGNAL(a, b) pthread_cond_wait(&a, &b)
 
-inline int OTSYS_THREAD_WAITSIGNAL_TIMED(OTSYS_THREAD_SIGNALVAR& signal, OTSYS_THREAD_LOCKVAR& lock, __int64 cycle) {
-		  timespec tv;
-		  tv.tv_sec = (__int64)(cycle / 1000);
-		  // tv_nsec is in nanoseconds while we only store microseconds...
-		  tv.tv_nsec = (__int64)(cycle % 1000) * 1000000;
-		  return pthread_cond_timedwait(&signal, &lock, &tv);
+inline int OTSYS_THREAD_WAITSIGNAL_TIMED(OTSYS_THREAD_SIGNALVAR &signal, OTSYS_THREAD_LOCKVAR &lock, __int64 cycle) {
+    timespec tv;
+    tv.tv_sec = (__int64) (cycle / 1000);
+    // tv_nsec is in nanoseconds while we only store microseconds...
+    tv.tv_nsec = (__int64) (cycle % 1000) * 1000000;
+    return pthread_cond_timedwait(&signal, &lock, &tv);
 }
 
 
@@ -208,74 +205,74 @@ inline int OTSYS_THREAD_WAITSIGNAL_TIMED(OTSYS_THREAD_SIGNALVAR& signal, OTSYS_T
 
 class OTSYS_THREAD_LOCK_CLASS{
 public:
-	inline OTSYS_THREAD_LOCK_CLASS(OTSYS_THREAD_LOCKVAR &a){
-		logmsg = NULL;
-		mutex = &a;
-		OTSYS_THREAD_LOCK(a, NULL)
-	};
+    inline OTSYS_THREAD_LOCK_CLASS(OTSYS_THREAD_LOCKVAR &a){
+        logmsg = NULL;
+        mutex = &a;
+        OTSYS_THREAD_LOCK(a, NULL)
+    };
 
-	inline OTSYS_THREAD_LOCK_CLASS(OTSYS_THREAD_LOCKVAR &a, const char* s){
-		mutex = &a;
-		OTSYS_THREAD_LOCK(a, NULL)
+    inline OTSYS_THREAD_LOCK_CLASS(OTSYS_THREAD_LOCKVAR &a, const char* s){
+        mutex = &a;
+        OTSYS_THREAD_LOCK(a, NULL)
 
-		logmsg = s;
+        logmsg = s;
 
-		OTSYS_THREAD_LOCK_CLASS::addLog(mutex, s, true);
-	}
+        OTSYS_THREAD_LOCK_CLASS::addLog(mutex, s, true);
+    }
 
-	static void addLog(OTSYS_THREAD_LOCKVAR* a, const char *s, bool lock) {
-		if(s == NULL)
-			return;
+    static void addLog(OTSYS_THREAD_LOCKVAR* a, const char *s, bool lock) {
+        if(s == NULL)
+            return;
 
     logBlock lb;
-		lb.mutexaddr = (uint32_t)(a);
-		lb.lock = lock;
-		lb.str = s;
-		lb.time = OTSYS_TIME();
-		lb.threadid = GetCurrentThreadId();
+        lb.mutexaddr = (uint32_t)(a);
+        lb.lock = lock;
+        lb.str = s;
+        lb.time = OTSYS_TIME();
+        lb.threadid = GetCurrentThreadId();
 
-		OTSYS_THREAD_LOCK_CLASS::loglist.push_back(lb);
+        OTSYS_THREAD_LOCK_CLASS::loglist.push_back(lb);
 
-		if(OTSYS_THREAD_LOCK_CLASS::loglist.size() > 1000) {
-			OTSYS_THREAD_LOCK_CLASS::loglist.pop_front();
-		}
-	}
+        if(OTSYS_THREAD_LOCK_CLASS::loglist.size() > 1000) {
+            OTSYS_THREAD_LOCK_CLASS::loglist.pop_front();
+        }
+    }
 
-	inline ~OTSYS_THREAD_LOCK_CLASS(){
-		OTSYS_THREAD_LOCK_CLASS::addLog(mutex, logmsg, false);
-		OTSYS_THREAD_UNLOCK_PTR(mutex, NULL)
-	};
-		
-	OTSYS_THREAD_LOCKVAR *mutex;
-	const char* logmsg;
-	typedef std::list< logBlock > LogList;
-	static LogList loglist;
+    inline ~OTSYS_THREAD_LOCK_CLASS(){
+        OTSYS_THREAD_LOCK_CLASS::addLog(mutex, logmsg, false);
+        OTSYS_THREAD_UNLOCK_PTR(mutex, NULL)
+    };
+
+    OTSYS_THREAD_LOCKVAR *mutex;
+    const char* logmsg;
+    typedef std::list< logBlock > LogList;
+    static LogList loglist;
 };
 
 static void addLockLog(OTSYS_THREAD_LOCKVAR* a, const char* s, bool lock)
 {
-	OTSYS_THREAD_LOCK_CLASS::addLog(a, s, lock);
+    OTSYS_THREAD_LOCK_CLASS::addLog(a, s, lock);
 }
 
 #else
 
-class OTSYS_THREAD_LOCK_CLASS{
+class OTSYS_THREAD_LOCK_CLASS {
 public:
-	inline OTSYS_THREAD_LOCK_CLASS(OTSYS_THREAD_LOCKVAR &a){
-		mutex = &a;
-		OTSYS_THREAD_LOCK(a, NULL)
-	};
+    inline OTSYS_THREAD_LOCK_CLASS(OTSYS_THREAD_LOCKVAR &a) {
+        mutex = &a;
+        OTSYS_THREAD_LOCK(a, NULL)
+    };
 
-	inline OTSYS_THREAD_LOCK_CLASS(OTSYS_THREAD_LOCKVAR &a, const char* s){
-		mutex = &a;
-		OTSYS_THREAD_LOCK(a, NULL)
-	}
+    inline OTSYS_THREAD_LOCK_CLASS(OTSYS_THREAD_LOCKVAR &a, const char *s) {
+        mutex = &a;
+        OTSYS_THREAD_LOCK(a, NULL)
+    }
 
-	inline ~OTSYS_THREAD_LOCK_CLASS(){
-		OTSYS_THREAD_UNLOCK_PTR(mutex, NULL)
-	};
-		
-	OTSYS_THREAD_LOCKVAR *mutex;
+    inline ~OTSYS_THREAD_LOCK_CLASS() {
+        OTSYS_THREAD_UNLOCK_PTR(mutex, NULL)
+    };
+
+    OTSYS_THREAD_LOCKVAR *mutex;
 };
 
 #endif //__DEBUG_CRITICALSECTION__

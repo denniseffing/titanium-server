@@ -21,6 +21,7 @@
 
 #ifndef LOGINQUEUE_H
 #define LOGINQUEUE_H
+
 #include <time.h>
 #include <list>
 #include <iterator>
@@ -31,35 +32,42 @@ typedef std::list<LoginTry> LoginTryList;
 typedef LoginTryList::iterator LoginTryListIterator;
 
 enum qstate_t {
-	LOGGED = 0,
-	ACTIVE = 1,
-	DEAD = 2
+    LOGGED = 0,
+    ACTIVE = 1,
+    DEAD = 2
 };
 
-struct LoginTry
-{
-	int accountNumber;
-	time_t tryTime;		///< time of last login try
-	qstate_t state;
-	LoginTry(int acc, qstate_t stat = ACTIVE): accountNumber(acc), tryTime(time(0)), state(stat) {}
+struct LoginTry {
+    int accountNumber;
+    time_t tryTime;        ///< time of last login try
+    qstate_t state;
+
+    LoginTry(int acc, qstate_t stat = ACTIVE) : accountNumber(acc), tryTime(time(0)), state(stat) {}
 };
 
-class LoginQueue
-{
+class LoginQueue {
 private:
-	static const int LOGGED_TIMEOUT = 30, ACTIVE_TIMEOUT = 60, DEAD_TIMEOUT = 15*60;
-	LoginTryList lq;
-	LoginTryListIterator findAccount(int account, int* realPos, int* effectivePos);
-	void push(int account);
-	void removeDeadEntries();
+    static const int LOGGED_TIMEOUT = 30, ACTIVE_TIMEOUT = 60, DEAD_TIMEOUT = 15 * 60;
+    LoginTryList lq;
+
+    LoginTryListIterator findAccount(int account, int *realPos, int *effectivePos);
+
+    void push(int account);
+
+    void removeDeadEntries();
 
 public:
-	LoginQueue() {}
-	bool load();
-	bool save();
-	bool login(int account, int playersOnline, int maxPlayers, int* placeInQueue);
-	size_t size() const { return lq.size(); }
-	void show();
+    LoginQueue() {}
+
+    bool load();
+
+    bool save();
+
+    bool login(int account, int playersOnline, int maxPlayers, int *placeInQueue);
+
+    size_t size() const { return lq.size(); }
+
+    void show();
 };
 
 #endif //LOGINQUEUE_H

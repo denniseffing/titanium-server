@@ -23,6 +23,7 @@
 #ifdef __USE_MYSQL__
 #include "ioaccountsql.h"
 #endif
+
 #include "ioaccountxml.h"
 
 #ifdef __USE_MYSQL__
@@ -30,30 +31,29 @@
 extern LuaScript g_config;
 #endif
 
-IOAccount* IOAccount::_instance = NULL;
+IOAccount *IOAccount::_instance = NULL;
 
-IOAccount* IOAccount::instance(){
-	if(!_instance){
+IOAccount *IOAccount::instance() {
+    if (!_instance) {
 #ifdef __USE_MYSQL__
-    if(g_config.getGlobalString("sourcedata") == "SQL")   
-	_instance = (IOAccount*)new IOAccountSQL;
-	else //if(g_config.getGlobalString("sourcedata") == "XML") //fallback to xml
+        if(g_config.getGlobalString("sourcedata") == "SQL")
+        _instance = (IOAccount*)new IOAccountSQL;
+        else //if(g_config.getGlobalString("sourcedata") == "XML") //fallback to xml
 #endif
-	_instance = (IOAccount*)new IOAccountXML;
-	}
-	#ifdef __DEBUG__
-	printf("%s \n", _instance->getSourceDescription());
-	#endif
-	return _instance;
+        _instance = (IOAccount *) new IOAccountXML;
+    }
+#ifdef __DEBUG__
+    printf("%s \n", _instance->getSourceDescription());
+#endif
+    return _instance;
 }
 
-Account IOAccount::loadAccount(uint32_t accno){
-	Account acc;
-	return acc;
+Account IOAccount::loadAccount(uint32_t accno) {
+    Account acc;
+    return acc;
 }
 
-bool IOAccount::getPassword(uint32_t accno, const std::string &name, std::string &password)
-{
-	return false;
+bool IOAccount::getPassword(uint32_t accno, const std::string &name, std::string &password) {
+    return false;
 }
 

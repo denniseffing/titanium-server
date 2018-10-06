@@ -28,30 +28,35 @@
 
 /** Baseclass for all Player-Loaders */
 class IOPlayer {
-  public:
-	static IOPlayer* instance();
-	/** Get a textual description of what source is used
-	  * \returns Name of the source*/
-	virtual char* getSourceDescription(){return "Player source: NULL";};
-	/** Load a player
-	  * \returns Wheter the player was successfully loaded
-	  * \param player Player structure to load to
-	  * \param name Name of the player
-	  */
-	virtual bool loadPlayer(Player* player, std::string name);
-	/** Save a player
-	  * \returns Wheter the player was successfully saved
-	  * \param player the player to save
-	  */
-	virtual bool savePlayer(Player* player);
-	
-	virtual bool getGuidByName(uint32_t &guid, uint32_t &alvl, std::string &name);
-	virtual bool getNameByGuid(uint32_t guid, std::string &name);
-	
-  protected:
-	IOPlayer(){};
-	virtual ~IOPlayer(){};
-	static IOPlayer* _instance;
+public:
+    static IOPlayer *instance();
+
+    /** Get a textual description of what source is used
+      * \returns Name of the source*/
+    virtual char *getSourceDescription() { return "Player source: NULL"; };
+
+    /** Load a player
+      * \returns Wheter the player was successfully loaded
+      * \param player Player structure to load to
+      * \param name Name of the player
+      */
+    virtual bool loadPlayer(Player *player, std::string name);
+
+    /** Save a player
+      * \returns Wheter the player was successfully saved
+      * \param player the player to save
+      */
+    virtual bool savePlayer(Player *player);
+
+    virtual bool getGuidByName(uint32_t &guid, uint32_t &alvl, std::string &name);
+
+    virtual bool getNameByGuid(uint32_t guid, std::string &name);
+
+protected:
+    IOPlayer() {};
+
+    virtual ~IOPlayer() {};
+    static IOPlayer *_instance;
 };
 
 #endif
