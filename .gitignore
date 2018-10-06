@@ -50,6 +50,8 @@ otserv_CXX_cotire.cmake
 *.s3db*
 /otserv
 build
+cmake-build-debug
 
 # IDE files
 .vscode
+.idea
