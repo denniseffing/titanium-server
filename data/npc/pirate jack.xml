@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
            
-           <npc name="Pirate Jack" script="data/npc/scripts/jack.lua" access="5" lookdir="3">
+           <npc name="Pirate Jack" script="npc/scripts/jack.lua" access="5" lookdir="3">
            	<mana now="800" max="800"/>
            	<health now="200" max="200"/>
            	<look type="134" head="2" body="95" legs="60" feet="132"/>

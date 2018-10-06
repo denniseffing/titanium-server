@@ -1,4 +1,4 @@
 <?xml version="1.0"?>
-           <npc name="Captain Ruffy D Monkey" script="data/npc/scripts/ruffy.lua" access="5">
+           <npc name="Captain Ruffy D Monkey" script="npc/scripts/ruffy.lua" access="5">
             	<look type="134" head="2" body="95" legs="60" feet="132"/>
            </npc>

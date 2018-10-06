@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
            
-           <npc name="Abrahachi" script="data/npc/scripts/loot.lua" access="5" lookdir="2">
+           <npc name="Abrahachi" script="npc/scripts/loot.lua" access="5" lookdir="2">
            	<mana now="800" max="800"/>
            	<health now="200" max="200"/>
            	<look type="129" head="76" body="114" legs="124" feet="86"/>

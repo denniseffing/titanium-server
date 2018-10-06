@@ -1,4 +1,4 @@
 <?xml version="1.0"?>
-           <npc name="The Oracle" script="data/npc/scripts/oracle.lua" access="5">
+           <npc name="The Oracle" script="npc/scripts/oracle.lua" access="5">
            	<look type="1448" head="57" body="59" legs="40" feet="76"/>
            </npc>

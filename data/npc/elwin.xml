@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
            
-           <npc name="Elwin" script="data/npc/scripts/allequips.lua" access="5" lookdir="2">
+           <npc name="Elwin" script="npc/scripts/allequips.lua" access="5" lookdir="2">
            	<mana now="800" max="800"/>
            	<health now="200" max="200"/>
            	<look type="133" head="79" body="76" legs="114" feet="76"/>

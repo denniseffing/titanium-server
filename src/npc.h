@@ -41,7 +41,7 @@ extern "C"
 class Npc;
 class NpcScript : protected LuaScript{
 public:
-	NpcScript(std::string name, Npc* npc);
+	NpcScript(std::string scriptname, Npc* npc);
 	virtual ~NpcScript(){}
 	//	virtual void onThingMove(const Player *player, const Thing *thing, const Position *oldPos,
 	//	uint8_t oldstackpos, uint8_t oldcount, uint8_t count);
