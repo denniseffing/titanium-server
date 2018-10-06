@@ -63,7 +63,7 @@ Npc::Npc(const std::string& name, Game* game) :
 		
 		tmp = (char*)xmlGetProp(root, (const xmlChar *)"script");
 		if(tmp){
-			this->scriptname = tmp;
+			this->scriptname = std::string(tmp);
 			xmlFreeOTSERV(tmp);
 		}
 		else{
@@ -361,12 +361,12 @@ NpcScript::NpcScript(std::string scriptname, Npc* npc){
 	std::string datadir = g_config.getGlobalString("datadir");
     luaL_dofile(luaState, std::string(datadir + "npc/scripts/lib/npc.lua").c_str());
 	
-	FILE* in=fopen(scriptname.c_str(), "r");
+	FILE* in=fopen(std::string(datadir + scriptname).c_str(), "r");
 	if(!in)
 		return;
 	else
 		fclose(in);
-	luaL_dofile(luaState, scriptname.c_str());
+	luaL_dofile(luaState, std::string(datadir + scriptname).c_str());
 	this->loaded=true;
 	this->npc=npc;
 	this->setGlobalNumber("addressOfNpc", (int)npc);
