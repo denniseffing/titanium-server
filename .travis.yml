@@ -1,0 +1,43 @@
+language: cpp
+sudo: false
+dist: trusty
+matrix:
+  fast_finish: true
+  include:
+  - os: linux
+    addons:
+      apt:
+        sources:
+        - ubuntu-toolchain-r-test
+        packages:
+        - libgmp3-dev
+        - libboost-thread-dev
+        - libboost-regex-dev
+        - libboost-system-dev
+        - libboost-filesystem-dev
+        - liblua5.1-dev
+        - libxml2-dev
+        - liblzma-dev
+        - zlib1g-dev
+        - libticonv-dev
+    compiler:
+    - gcc
+    env:
+    - CMAKE_VERSION="3.12.1"
+    services:
+    - docker
+
+install:
+- ./travis/install_cmake.sh
+- export PATH=$HOME/Deps/cmake/$CMAKE_VERSION/bin${PATH:+:$PATH}
+
+script: |
+  cmake -DCMAKE_BUILD_TYPE=Performance -DUSE_MYSQL=Off .
+  make -j 2
+
+after_success:
+- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+- export REPO=denniseffing/titanium-world
+- export TAG=`if [ -n "$TRAVIS_TAG" ]; then echo $TRAVIS_TAG; else echo "latest" ; fi`
+- docker build -t $REPO:$TAG .
+- docker push $REPO
