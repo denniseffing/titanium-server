@@ -349,7 +349,7 @@ bool Houses::Save(Game *game) {
 
 bool Houses::LoadHouseItems(Game *game) {
     xmlDocPtr doc;
-    doc = xmlParseFile((g_config.DATA_DIR + "houseitems.xml").c_str());
+    doc = xmlReadFile((g_config.DATA_DIR + "houseitems.xml").c_str(), "UTF-8", XML_PARSE_HUGE);
 
     if (doc) {
         xmlNodePtr root, tileNode, itemNode;
