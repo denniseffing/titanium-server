@@ -38,140 +38,175 @@ extern "C"
 //////////////////////////////////////////////////////////////////////
 // Defines a Spell...
 class Spell;
+
 class SpellScript;
 
-class Spells
-{
+class Spells {
 public:
-  Spells(Game* game);
-  bool loadFromXml(const std::string&);
-  virtual ~Spells();
+    Spells(Game *game);
 
-	Game* game;
+    bool loadFromXml(const std::string &);
 
-  bool isLoaded(){return loaded;}
-  std::map<std::string, Spell*>* getVocSpells(playervoc_t voc){
-		if((int)voc > maxVoc || voc < 0){
-			return 0;
-		}
-		
-		return &(vocationSpells.at(voc));
-	}
-  
-	std::map<std::string, Spell*>* getAllSpells(){
-		return &allSpells;
-	}
-	
-	//////////////////
-  std::map<uint16_t, Spell*>* getVocRuneSpells(int voc){
-		if(voc>maxVoc || voc<0){
-			return 0;
-		}
-		
-		return &(vocationRuneSpells.at(voc));
-	}
-  
-	std::map<uint16_t, Spell*>* getAllRuneSpells(){
-		return &allRuneSpells;
-	}
-	//////////////////
+    virtual ~Spells();
+
+    Game *game;
+
+    bool isLoaded() { return loaded; }
+
+    std::map<std::string, Spell *> *getVocSpells(playervoc_t voc) {
+        if ((int) voc > maxVoc || voc < 0) {
+            return 0;
+        }
+
+        return &(vocationSpells.at(voc));
+    }
+
+    std::map<std::string, Spell *> *getAllSpells() {
+        return &allSpells;
+    }
+
+    //////////////////
+    std::map<uint16_t, Spell *> *getVocRuneSpells(int voc) {
+        if (voc > maxVoc || voc < 0) {
+            return 0;
+        }
+
+        return &(vocationRuneSpells.at(voc));
+    }
+
+    std::map<uint16_t, Spell *> *getAllRuneSpells() {
+        return &allRuneSpells;
+    }
+    //////////////////
 
 protected:
-  std::map<std::string, Spell*> allSpells;
-  std::vector<std::map<std::string, Spell*> > vocationSpells;
+    std::map<std::string, Spell *> allSpells;
+    std::vector<std::map<std::string, Spell *> > vocationSpells;
 
-	std::map<uint16_t, Spell*> allRuneSpells;
-	std::vector<std::map<uint16_t, Spell*> > vocationRuneSpells;
-  bool loaded;
-  int maxVoc;
+    std::map<uint16_t, Spell *> allRuneSpells;
+    std::vector<std::map<uint16_t, Spell *> > vocationRuneSpells;
+    bool loaded;
+    int maxVoc;
 };
 
 
-class Spell
-{
+class Spell {
 public:
-  Spell(std::string name, int magLv, int mana, Game* game);
-  virtual ~Spell();
+    Spell(std::string name, int magLv, int mana, Game *game);
 
-	Game* game;
+    virtual ~Spell();
 
-	bool isLoaded(){return loaded;}
-	SpellScript* getSpellScript(){return script;};
-	std::string getName() const {return name;};
-	int getMana(){return mana;};
-	int getMagLv(){
-  return magLv;};
+    Game *game;
+
+    bool isLoaded() { return loaded; }
+
+    SpellScript *getSpellScript() { return script; };
+
+    std::string getName() const { return name; };
+
+    int getMana() { return mana; };
+
+    int getMagLv() {
+        return magLv;
+    };
 
 protected:
-	std::string name;
-  int magLv, mana;
-  bool loaded;
-	SpellScript* script;
+    std::string name;
+    int magLv, mana;
+    bool loaded;
+    SpellScript *script;
 };
 
-class InstantSpell : public Spell
-{
+class InstantSpell : public Spell {
 public:
-	InstantSpell(const std::string &, std::string name, std::string words, int magLv, int mana, Game* game);
-	std::string getWords(){return words;};
+    InstantSpell(const std::string &, std::string name, std::string words, int magLv, int mana, Game *game);
+
+    std::string getWords() { return words; };
 
 protected:
-	std::string words;
+    std::string words;
 };
 
-class RuneSpell : public Spell
-{
+class RuneSpell : public Spell {
 public:
-	RuneSpell(const std::string& ,std::string name, uint16_t id, uint16_t charges, int magLv, int mana, Game* game);
+    RuneSpell(const std::string &, std::string name, uint16_t id, uint16_t charges, int magLv, int mana, Game *game);
 
 protected:
-  uint16_t id;
-	uint16_t charges;
+    uint16_t id;
+    uint16_t charges;
 };
 
-class SpellScript : protected LuaScript{
+class SpellScript : protected LuaScript {
 public:
-	SpellScript(const std::string&, std::string scriptname, Spell* spell);
-	virtual ~SpellScript(){}
-  bool castSpell(Creature* creature, const Position& pos, std::string var);
-  bool isLoaded(){return loaded;}
-  static Spell* SpellScript::getSpell(lua_State *L);
+    SpellScript(const std::string &, std::string scriptname, Spell *spell);
 
-	static int luaActionDoTargetSpell(lua_State *L);
-	static int luaActionDoTargetExSpell(lua_State *L);
-	static int luaActionDoTargetGroundSpell(lua_State *L);
-	static int luaActionDoAreaSpell(lua_State *L);
-	static int luaActionDoAreaExSpell(lua_State *L);
-	static int luaActionDoAreaGroundSpell(lua_State *L);
+    virtual ~SpellScript() {}
 
-	//static int luaActionDoSpell(lua_State *L);
-  static int luaActionGetPos(lua_State *L);
-  static int luaActionChangeOutfit(lua_State *L);
-  static int luaActionManaShield(lua_State *L);
-  static int luaActionChangeSpeed(lua_State *L);
-  static int luaActionChangeSpeedMonster(lua_State *L);
-  static int luaActionParalyze(lua_State *L);
-  static int luaActionGetSpeed(lua_State *L);
-  static int luaActionMakeRune(lua_State *L);
-  static int luaActionMakeArrows(lua_State *L);
-  static int luaActionMakeFood(lua_State *L);
+    bool castSpell(Creature *creature, const Position &pos, std::string var);
+
+    bool isLoaded() { return loaded; }
+
+    static Spell *SpellScript::getSpell(lua_State *L);
+
+    static int luaActionDoTargetSpell(lua_State *L);
+
+    static int luaActionDoTargetExSpell(lua_State *L);
+
+    static int luaActionDoTargetGroundSpell(lua_State *L);
+
+    static int luaActionDoAreaSpell(lua_State *L);
+
+    static int luaActionDoAreaExSpell(lua_State *L);
+
+    static int luaActionDoAreaGroundSpell(lua_State *L);
+
+    //static int luaActionDoSpell(lua_State *L);
+    static int luaActionGetPos(lua_State *L);
+
+    static int luaActionChangeOutfit(lua_State *L);
+
+    static int luaActionManaShield(lua_State *L);
+
+    static int luaActionChangeSpeed(lua_State *L);
+
+    static int luaActionChangeSpeedMonster(lua_State *L);
+
+    static int luaActionParalyze(lua_State *L);
+
+    static int luaActionGetSpeed(lua_State *L);
+
+    static int luaActionMakeRune(lua_State *L);
+
+    static int luaActionMakeArrows(lua_State *L);
+
+    static int luaActionMakeFood(lua_State *L);
 
 #ifdef BDB_UTEVO_LUX
-	static int luaSetPlayerLightLevel(lua_State *L);
+
+    static int luaSetPlayerLightLevel(lua_State *L);
+
 #endif //BDB_UTEVO_LUX
 #ifdef YUR_INVISIBLE
-	static int luaActionInvisible(lua_State *L);
+    static int luaActionInvisible(lua_State *L);
 #endif //YUR_INVISIBLE
 
 protected:
-	static void internalGetArea(lua_State *L, MagicEffectAreaClass &magicArea);
-	static void internalGetPosition(lua_State *L, Position& pos);
-	static void internalGetMagicEffect(lua_State *L, MagicEffectClass &me);
-	static void internalLoadDamageVec(lua_State *L, ConditionVec& condvec);
-	static void internalLoadTransformVec(lua_State *L, TransformMap& transformMap);
-	static int  internalMakeRune(Player *p,uint16_t sl_id,Spell *S,uint16_t id, uint8_t charges);
-	int registerFunctions();
-	Spell* spell;
-	bool loaded;      
+    static void internalGetArea(lua_State *L, MagicEffectAreaClass &magicArea);
+
+    static void internalGetPosition(lua_State *L, Position &pos);
+
+    static void internalGetMagicEffect(lua_State *L, MagicEffectClass &me);
+
+    static void internalLoadDamageVec(lua_State *L, ConditionVec &condvec);
+
+    static void internalLoadTransformVec(lua_State *L, TransformMap &transformMap);
+
+    static int internalMakeRune(Player *p, uint16_t sl_id, Spell *S, uint16_t id, uint8_t charges);
+
+    int registerFunctions();
+
+    Spell *spell;
+    bool loaded;
 };
+
 #endif // __spells_h_

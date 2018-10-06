@@ -27,23 +27,27 @@
 
 typedef std::map<uint32_t, std::string> FunctionMap;
 
-struct SEHChain{
-	SEHChain *prev;
-	void *SEHfunction;
+struct SEHChain {
+    SEHChain *prev;
+    void *SEHfunction;
 };
 
-class ExceptionHandler
-{
+class ExceptionHandler {
 public:
-	ExceptionHandler();
-	~ExceptionHandler();
-	bool InstallHandler();
-	bool RemoveHandler();
+    ExceptionHandler();
+
+    ~ExceptionHandler();
+
+    bool InstallHandler();
+
+    bool RemoveHandler();
+
 private:
-	bool LoadMap();
-	bool installed;
-	SEHChain chain;
-	
+    bool LoadMap();
+
+    bool installed;
+    SEHChain chain;
+
 };
 
 #endif  // #ifndef __EXCEPTION_H__

@@ -32,18 +32,21 @@ class Map;
 
 /** Map-Loader implementation based on XML-Files */
 class IOMapXML : public IOMap {
-  public:
-	IOMapXML(){};
-	~IOMapXML(){};
-	virtual char* getSourceDescription(){ return "OTX (XML2-based)"; };
-	/** Load the map from an XML file
-	  * \param map Pointer to the Map
-	  * \param identifier Name of the XML-File to load
-	  * \returns Whether map load was successful*/
-	bool loadMap(Map* map, std::string identifier);
+public:
+    IOMapXML() {};
+
+    ~IOMapXML() {};
+
+    virtual char *getSourceDescription() { return "OTX (XML2-based)"; };
+
+    /** Load the map from an XML file
+      * \param map Pointer to the Map
+      * \param identifier Name of the XML-File to load
+      * \returns Whether map load was successful*/
+    bool loadMap(Map *map, std::string identifier);
 
 private:
-	bool LoadContainer(xmlNodePtr nodeitem,Container* ccontainer);
+    bool LoadContainer(xmlNodePtr nodeitem, Container *ccontainer);
 };
 
 #endif

@@ -25,28 +25,26 @@
 #include <cmath>
 #include <sstream>
 
-bool fileExists(char* filename)
-{
-	FILE *f = fopen(filename, "rb");
-	bool exists = (f != NULL);
-	if (f != NULL)
-		fclose(f);
+bool fileExists(char *filename) {
+    FILE *f = fopen(filename, "rb");
+    bool exists = (f != NULL);
+    if (f != NULL)
+        fclose(f);
 
-	return exists;
+    return exists;
 }
 
 //////////////////////////////////////////////////
 // get a random value between lowest_number and highest_number
-int random_range(int lowest_number, int highest_number)
-{
-	if(lowest_number > highest_number){
-		int nTmp = highest_number;
-		highest_number = lowest_number;
-		lowest_number = nTmp;
+int random_range(int lowest_number, int highest_number) {
+    if (lowest_number > highest_number) {
+        int nTmp = highest_number;
+        highest_number = lowest_number;
+        lowest_number = nTmp;
     }
 
     double range = highest_number - lowest_number + 1;
-    return lowest_number + int(range * rand()/(RAND_MAX + 1.0));
+    return lowest_number + int(range * rand() / (RAND_MAX + 1.0));
 }
 
 //////////////////////////////////////////////////
@@ -169,57 +167,49 @@ void upper(char *upstr, char *str, int n) {
     if (n) *upstr = '\0';
 }
 
-int safe_atoi(const char* str)
-{
-	if (str)
-		return atoi(str);
-	else
-		return 0;
+int safe_atoi(const char *str) {
+    if (str)
+        return atoi(str);
+    else
+        return 0;
 }
 
-double timer()
-{
-	static bool running = false;
-	static timeb start, end;
+double timer() {
+    static bool running = false;
+    static timeb start, end;
 
-	if (!running)
-	{
-		ftime(&start);
-		running = true;
-		return 0.0;
-	}
-	else
-	{
-		ftime(&end);
-		running = false;
-		return (end.time-start.time)+(end.millitm-start.millitm)/1000.0;
-	}
+    if (!running) {
+        ftime(&start);
+        running = true;
+        return 0.0;
+    } else {
+        ftime(&end);
+        running = false;
+        return (end.time - start.time) + (end.millitm - start.millitm) / 1000.0;
+    }
 }
 
-std::string article(const std::string& name)
-{
-	if (name.empty())
-		return name;
+std::string article(const std::string &name) {
+    if (name.empty())
+        return name;
 
-	switch (upchar(name[0]))
-	{
-	case 'A':
-	case 'E':
-	case 'I':
-	case 'O':
-	case 'U':
-		return std::string("an ") + name;
-	default:
-		return std::string("a ") + name;
-	}
+    switch (upchar(name[0])) {
+        case 'A':
+        case 'E':
+        case 'I':
+        case 'O':
+        case 'U':
+            return std::string("an ") + name;
+        default:
+            return std::string("a ") + name;
+    }
 }
 
-std::string str(int ticks)
-{
-	int hours = (int)floor(double(ticks)/(3600000.0));
-	int minutes = (int)ceil((double(ticks) - double(hours)*3600000.0)/(60000.0));
+std::string str(int ticks) {
+    int hours = (int) floor(double(ticks) / (3600000.0));
+    int minutes = (int) ceil((double(ticks) - double(hours) * 3600000.0) / (60000.0));
 
-	std::ostringstream info;
-	info << hours << (hours==1? " hour " : " hours ") << minutes << (minutes==1? " minute" :" minutes");
-	return info.str();
+    std::ostringstream info;
+    info << hours << (hours == 1 ? " hour " : " hours ") << minutes << (minutes == 1 ? " minute" : " minutes");
+    return info.str();
 }

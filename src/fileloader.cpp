@@ -23,334 +23,306 @@
 #include "fileloader.h"
 
 #ifndef min
-#define min(a,b) ( a < b ? a : b)
+#define min(a, b) ( a < b ? a : b)
 #endif
 #ifndef max
-#define max(a,b) ( a > b ? a : b)
+#define max(a, b) ( a > b ? a : b)
 #endif
 
-FileLoader::FileLoader()
-{
-	m_file = NULL;
-	m_buffer = new uint8_t[1024];
-	m_buffer_size = 1024;
-	m_lastError = ERROR_NONE;
-	//cache
-	m_use_cache = false;
-	m_cache_size = 0;
-	m_cache_index = -1;
-	m_cache_offset = -1;
-	memset(m_cached_data, 0, sizeof(m_cached_data));
+FileLoader::FileLoader() {
+    m_file = NULL;
+    m_buffer = new uint8_t[1024];
+    m_buffer_size = 1024;
+    m_lastError = ERROR_NONE;
+    //cache
+    m_use_cache = false;
+    m_cache_size = 0;
+    m_cache_index = -1;
+    m_cache_offset = -1;
+    memset(m_cached_data, 0, sizeof(m_cached_data));
 }
 
 
-FileLoader::~FileLoader()
-{
-	if(m_file){
-		fclose(m_file);
-		m_file = NULL;
-	}
+FileLoader::~FileLoader() {
+    if (m_file) {
+        fclose(m_file);
+        m_file = NULL;
+    }
 
-	delete[] m_buffer;
+    delete[] m_buffer;
 
-	for(int i = 0; i < CACHE_BLOCKS; i++){
-		if(m_cached_data[i].data)
-			delete m_cached_data[i].data;
-	}
+    for (int i = 0; i < CACHE_BLOCKS; i++) {
+        if (m_cached_data[i].data)
+            delete m_cached_data[i].data;
+    }
 }
 
 
-bool FileLoader::openFile(const char* filename, bool write, bool caching /*= false*/)
-{
-	if(write) {
-		m_file = fopen(filename, "wb");
-		if(m_file) {
-				uint32_t version = 0;
-				writeData(&version, sizeof(version), false);
-				return true;
-		}
-		else{
-			m_lastError = ERROR_CAN_NOT_CREATE;
-			return false;
-		}
-	}
-	else {
-		uint32_t version;
-		m_file = fopen(filename, "rb");
-		if(m_file){
-			fread(&version, sizeof(uint32_t), 1, m_file);
-			if(version > 0){
-				fclose(m_file);
-				m_lastError = ERROR_INVALID_FILE_VERSION;
-				return false;
-			}
-			else{
-				if(caching){
-					m_use_cache = true;
-					fseek(m_file, 0, SEEK_END);
-					int file_size = ftell(m_file);
-					m_cache_size = min(32768, max(file_size/20, 8192)) & ~0x1FFF;
-				}
-				return true;
-			}
-		}
-		else{
-			m_lastError = ERROR_CAN_NOT_OPEN;
-			return false;
-		}
-	}
+bool FileLoader::openFile(const char *filename, bool write, bool caching /*= false*/) {
+    if (write) {
+        m_file = fopen(filename, "wb");
+        if (m_file) {
+            uint32_t version = 0;
+            writeData(&version, sizeof(version), false);
+            return true;
+        } else {
+            m_lastError = ERROR_CAN_NOT_CREATE;
+            return false;
+        }
+    } else {
+        uint32_t version;
+        m_file = fopen(filename, "rb");
+        if (m_file) {
+            fread(&version, sizeof(uint32_t), 1, m_file);
+            if (version > 0) {
+                fclose(m_file);
+                m_lastError = ERROR_INVALID_FILE_VERSION;
+                return false;
+            } else {
+                if (caching) {
+                    m_use_cache = true;
+                    fseek(m_file, 0, SEEK_END);
+                    int file_size = ftell(m_file);
+                    m_cache_size = min(32768, max(file_size / 20, 8192)) & ~0x1FFF;
+                }
+                return true;
+            }
+        } else {
+            m_lastError = ERROR_CAN_NOT_OPEN;
+            return false;
+        }
+    }
 }
 
-const uint8_t* FileLoader::getProps(const NODE node, uint32_t &size)
-{
-	if(!checks(node))
-		return NULL;
-	
-	if(!safeSeek(node)){
-		return NULL;
-	}
-	
-	int byte, position;
-	if(!readByte(byte))
-		return NULL;
+const uint8_t *FileLoader::getProps(const NODE node, uint32_t &size) {
+    if (!checks(node))
+        return NULL;
 
-	if(byte != NODE_START){
-		m_lastError = ERROR_INVALID_FORMAT;
-		return NULL;
-	}
-	//read node type
-	if(!readByte(byte))
-		return NO_NODE;
-	
-	position = 0;
-	while(1){
-		if(!readByte(byte))
-			return NULL;
-		
-		if(byte == NODE_END || byte ==NODE_START)
-			break;
-		else if(byte == ESCAPE_CHAR){
-			if(!readByte(byte))
-				return NULL;
-		}
-		if(position >= (int)m_buffer_size){
-			uint8_t *tmp = new uint8_t[m_buffer_size+1024];
-			memcpy(tmp, m_buffer, m_buffer_size);
-			m_buffer_size = m_buffer_size + 1024;
-			delete m_buffer;
-			m_buffer = tmp;
-		}
-		m_buffer[position] = byte;
-		position++;
-	}
+    if (!safeSeek(node)) {
+        return NULL;
+    }
 
-	size = position;
-	return m_buffer;
+    int byte, position;
+    if (!readByte(byte))
+        return NULL;
+
+    if (byte != NODE_START) {
+        m_lastError = ERROR_INVALID_FORMAT;
+        return NULL;
+    }
+    //read node type
+    if (!readByte(byte))
+        return NO_NODE;
+
+    position = 0;
+    while (1) {
+        if (!readByte(byte))
+            return NULL;
+
+        if (byte == NODE_END || byte == NODE_START)
+            break;
+        else if (byte == ESCAPE_CHAR) {
+            if (!readByte(byte))
+                return NULL;
+        }
+        if (position >= (int) m_buffer_size) {
+            uint8_t *tmp = new uint8_t[m_buffer_size + 1024];
+            memcpy(tmp, m_buffer, m_buffer_size);
+            m_buffer_size = m_buffer_size + 1024;
+            delete m_buffer;
+            m_buffer = tmp;
+        }
+        m_buffer[position] = byte;
+        position++;
+    }
+
+    size = position;
+    return m_buffer;
 }
 
-bool FileLoader::getProps(const NODE node, PropStream &props)
-{
-	uint32_t size;
-	const uint8_t* a = getProps(node, size);
-	if(!a){
-		props.init(NULL, 0);
-		return false;
-	}
-	else{
-		props.init((char*)a, size);
-		return true;
-	}
+bool FileLoader::getProps(const NODE node, PropStream &props) {
+    uint32_t size;
+    const uint8_t *a = getProps(node, size);
+    if (!a) {
+        props.init(NULL, 0);
+        return false;
+    } else {
+        props.init((char *) a, size);
+        return true;
+    }
 }
 
-int FileLoader::setProps(void* data, uint16_t size)
-{
-	//data
-	if(!writeData(data, size, true))
-		return getError();
+int FileLoader::setProps(void *data, uint16_t size) {
+    //data
+    if (!writeData(data, size, true))
+        return getError();
 
-	return ERROR_NONE;
+    return ERROR_NONE;
 }
 
-void FileLoader::startNode(uint8_t type)
-{
-	uint8_t nodeBegin = NODE_START;
-	writeData(&nodeBegin, sizeof(nodeBegin), false);
-	writeData(&type, sizeof(type), true);
+void FileLoader::startNode(uint8_t type) {
+    uint8_t nodeBegin = NODE_START;
+    writeData(&nodeBegin, sizeof(nodeBegin), false);
+    writeData(&type, sizeof(type), true);
 }
 
-void FileLoader::endNode()
-{
-	uint8_t nodeEnd = NODE_END;
-	writeData(&nodeEnd, sizeof(nodeEnd), false);
+void FileLoader::endNode() {
+    uint8_t nodeEnd = NODE_END;
+    writeData(&nodeEnd, sizeof(nodeEnd), false);
 }
 
-const NODE FileLoader::getChildNode(const NODE parent, uint32_t &type)
-{
-	if(!checks(1))
-		return NO_NODE;
+const NODE FileLoader::getChildNode(const NODE parent, uint32_t &type) {
+    if (!checks(1))
+        return NO_NODE;
 
-	int seek_pos, byte;
-	long tmp;
-	if(!parent){
-		seek_pos = 4;
-	}
-	else{
-		seek_pos = parent;
-	}
+    int seek_pos, byte;
+    long tmp;
+    if (!parent) {
+        seek_pos = 4;
+    } else {
+        seek_pos = parent;
+    }
 
-	if(!safeSeek(seek_pos)){
-		return NO_NODE;
-	}
+    if (!safeSeek(seek_pos)) {
+        return NO_NODE;
+    }
 
-	if(!readByte(byte))
-		return NO_NODE;
+    if (!readByte(byte))
+        return NO_NODE;
 
-	if(byte != NODE_START){
-		m_lastError = ERROR_INVALID_FORMAT;
-		return NO_NODE;
-	}
+    if (byte != NODE_START) {
+        m_lastError = ERROR_INVALID_FORMAT;
+        return NO_NODE;
+    }
 
-	if(!parent){
-		if(safeTell(tmp)){
-			if(!readByte(byte))
-				return NO_NODE;
-					
-			type = byte;
-			return (NODE)tmp;
-		}
-		else{
-			return NO_NODE;
-		}
-	}
-	else{
-		if(!readByte(byte))
-			return NO_NODE;
-		
-		while(1){
-			if(!readByte(byte))
-				return NO_NODE;
-		
-			if(byte == NODE_END){
-				return NO_NODE;
-			}
-			else if(byte == NODE_START){
-				if(safeTell(tmp)){
-					if(!readByte(byte))
-						return NO_NODE;
-					
-					type = byte;
-					return (NODE)tmp;
-				}
-				else{
-					return NO_NODE;
-				}
-			}
-			else if(byte == ESCAPE_CHAR){
-				if(!readByte(byte))
-					return NO_NODE;
-			}
-		}
-	}
-	return NO_NODE;
+    if (!parent) {
+        if (safeTell(tmp)) {
+            if (!readByte(byte))
+                return NO_NODE;
+
+            type = byte;
+            return (NODE) tmp;
+        } else {
+            return NO_NODE;
+        }
+    } else {
+        if (!readByte(byte))
+            return NO_NODE;
+
+        while (1) {
+            if (!readByte(byte))
+                return NO_NODE;
+
+            if (byte == NODE_END) {
+                return NO_NODE;
+            } else if (byte == NODE_START) {
+                if (safeTell(tmp)) {
+                    if (!readByte(byte))
+                        return NO_NODE;
+
+                    type = byte;
+                    return (NODE) tmp;
+                } else {
+                    return NO_NODE;
+                }
+            } else if (byte == ESCAPE_CHAR) {
+                if (!readByte(byte))
+                    return NO_NODE;
+            }
+        }
+    }
+    return NO_NODE;
 
 }
 
-const NODE FileLoader::getNextNode(const NODE prev, uint32_t &type)
-{
-	if(!checks(prev))
-		return NO_NODE;
+const NODE FileLoader::getNextNode(const NODE prev, uint32_t &type) {
+    if (!checks(prev))
+        return NO_NODE;
 
-	if(!safeSeek(prev)){
-		return NO_NODE;
-	}
+    if (!safeSeek(prev)) {
+        return NO_NODE;
+    }
 
-	int byte;
-	long tmp;
-	if(!readByte(byte))
-		return NO_NODE;
+    int byte;
+    long tmp;
+    if (!readByte(byte))
+        return NO_NODE;
 
-	if(byte != NODE_START){
-		m_lastError = ERROR_INVALID_FORMAT;
-		return NO_NODE;
-	}
-	if(!readByte(byte))
-		return NO_NODE;
+    if (byte != NODE_START) {
+        m_lastError = ERROR_INVALID_FORMAT;
+        return NO_NODE;
+    }
+    if (!readByte(byte))
+        return NO_NODE;
 
-	int level;
-	level = 1;
-	while(1){
-		if(!readByte(byte))
-			return NO_NODE;
-		
-		if(byte == NODE_END){
-			level--;
-			if(level == 0){
-				if(!readByte(byte))
-					return NO_NODE;
-				
-				if(byte == NODE_END){
-					return NO_NODE;
-				}
-				else if(byte != NODE_START){
-					m_lastError = ERROR_INVALID_FORMAT;
-					return NO_NODE;
-				}
-				else{
-					if(safeTell(tmp)){
-						if(!readByte(byte))
-							return NO_NODE;
+    int level;
+    level = 1;
+    while (1) {
+        if (!readByte(byte))
+            return NO_NODE;
 
-						type = byte;
-						return (NODE)tmp;
-					}
-					else{
-						return NO_NODE;
-					}
-				}
-			}
-		}
-		else if(byte == NODE_START){
-			level++;
-		}
-		else if(byte == ESCAPE_CHAR){
-			if(!readByte(byte))
-				return NO_NODE;
-		}
-	}
-	return NO_NODE;
+        if (byte == NODE_END) {
+            level--;
+            if (level == 0) {
+                if (!readByte(byte))
+                    return NO_NODE;
+
+                if (byte == NODE_END) {
+                    return NO_NODE;
+                } else if (byte != NODE_START) {
+                    m_lastError = ERROR_INVALID_FORMAT;
+                    return NO_NODE;
+                } else {
+                    if (safeTell(tmp)) {
+                        if (!readByte(byte))
+                            return NO_NODE;
+
+                        type = byte;
+                        return (NODE) tmp;
+                    } else {
+                        return NO_NODE;
+                    }
+                }
+            }
+        } else if (byte == NODE_START) {
+            level++;
+        } else if (byte == ESCAPE_CHAR) {
+            if (!readByte(byte))
+                return NO_NODE;
+        }
+    }
+    return NO_NODE;
 }
 
 
-inline bool FileLoader::readByte(int &value)
-{
-	if(m_use_cache){
-		if(m_cache_index < 0){
-			m_lastError = ERROR_CACHE_ERROR;
-			return false;
-		}
-		if((uint32_t)m_cache_offset >= m_cached_data[m_cache_index].size){
-			long pos = m_cache_offset + m_cached_data[m_cache_index].base;
-			long tmp = getCacheBlock(pos);
-			if(tmp < 0)
-				return false;
+inline bool FileLoader::readByte(int &value) {
+    if (m_use_cache) {
+        if (m_cache_index < 0) {
+            m_lastError = ERROR_CACHE_ERROR;
+            return false;
+        }
+        if ((uint32_t) m_cache_offset >= m_cached_data[m_cache_index].size) {
+            long pos = m_cache_offset + m_cached_data[m_cache_index].base;
+            long tmp = getCacheBlock(pos);
+            if (tmp < 0)
+                return false;
 
-			m_cache_index = tmp;
-			m_cache_offset = pos - m_cached_data[m_cache_index].base;
-		}
-		value = m_cached_data[m_cache_index].data[m_cache_offset];
-		m_cache_offset++;
-		return true;
-	}
-	else{
-		value = fgetc(m_file);
-		if(value == EOF){
-			m_lastError = ERROR_EOF;
-			return false;
-		}
-		else
-			return true;
-	}
+            m_cache_index = tmp;
+            m_cache_offset = pos - m_cached_data[m_cache_index].base;
+        }
+        value = m_cached_data[m_cache_index].data[m_cache_offset];
+        m_cache_offset++;
+        return true;
+    } else {
+        value = fgetc(m_file);
+        if (value == EOF) {
+            m_lastError = ERROR_EOF;
+            return false;
+        } else
+            return true;
+    }
 }
+
 /*
 inline bool FileLoader::writeData(void* data, int size, bool unescape)
 {
@@ -376,127 +348,118 @@ inline bool FileLoader::writeData(void* data, int size, bool unescape)
 	return true;
 }
 */
-inline bool FileLoader::checks(const NODE node)
-{
-	if(!m_file){
-		m_lastError = ERROR_NOT_OPEN;
-		return false;
-	}
-	if(!node){
-		m_lastError = ERROR_INVALID_NODE;
-		return false;
-	}
+inline bool FileLoader::checks(const NODE node) {
+    if (!m_file) {
+        m_lastError = ERROR_NOT_OPEN;
+        return false;
+    }
+    if (!node) {
+        m_lastError = ERROR_INVALID_NODE;
+        return false;
+    }
 
-	return true;
+    return true;
 }
 
-inline bool FileLoader::safeSeek(uint32_t pos)
-{
-	if(m_use_cache){
-		long i = getCacheBlock(pos);
-		if(i < 0)
-			return false;
+inline bool FileLoader::safeSeek(uint32_t pos) {
+    if (m_use_cache) {
+        long i = getCacheBlock(pos);
+        if (i < 0)
+            return false;
 
-		m_cache_index = i;
-		m_cache_offset = pos - m_cached_data[i].base;
-	}
-	else{
-		if(fseek(m_file, pos, SEEK_SET)){
-			m_lastError = ERROR_SEEK_ERROR;
-			return false;
-		}
-	}
-	return true;
+        m_cache_index = i;
+        m_cache_offset = pos - m_cached_data[i].base;
+    } else {
+        if (fseek(m_file, pos, SEEK_SET)) {
+            m_lastError = ERROR_SEEK_ERROR;
+            return false;
+        }
+    }
+    return true;
 }
 
 
+inline bool FileLoader::safeTell(long &pos) {
+    if (m_use_cache) {
+        if (m_cache_index < 0) {
+            m_lastError = ERROR_CACHE_ERROR;
+            return false;
+        }
 
-inline bool FileLoader::safeTell(long &pos)
-{
-	if(m_use_cache){
-		if(m_cache_index < 0){
-			m_lastError = ERROR_CACHE_ERROR;
-			return false;
-		}
-
-		pos = m_cached_data[m_cache_index].base + m_cache_offset - 1;
-		return true;
-	}
-	else{
-		pos = ftell(m_file);
-		if(pos == -1){
-			m_lastError = ERROR_TELL_ERROR;
-			return false;
-		}
-		else{
-			pos = pos - 1;
-			return true;
-		}
-	}
+        pos = m_cached_data[m_cache_index].base + m_cache_offset - 1;
+        return true;
+    } else {
+        pos = ftell(m_file);
+        if (pos == -1) {
+            m_lastError = ERROR_TELL_ERROR;
+            return false;
+        } else {
+            pos = pos - 1;
+            return true;
+        }
+    }
 }
 
-inline long FileLoader::getCacheBlock(uint32_t pos)
-{
-	bool found = false;
-	long i;
-	long base_pos = pos & ~(m_cache_size - 1);
-	for(i = 0; i < CACHE_BLOCKS; i++){
-		if(m_cached_data[i].loaded){
-			if(m_cached_data[i].base == base_pos){
-				found = true;
-				break;
-			}
-		}
-	}
-	if(!found){
-		i = loadCacheBlock(pos);
-	}
-	return i;
+inline long FileLoader::getCacheBlock(uint32_t pos) {
+    bool found = false;
+    long i;
+    long base_pos = pos & ~(m_cache_size - 1);
+    for (i = 0; i < CACHE_BLOCKS; i++) {
+        if (m_cached_data[i].loaded) {
+            if (m_cached_data[i].base == base_pos) {
+                found = true;
+                break;
+            }
+        }
+    }
+    if (!found) {
+        i = loadCacheBlock(pos);
+    }
+    return i;
 }
 
-long FileLoader::loadCacheBlock(uint32_t pos)
-{
-	long i;
-	long loading_cache = -1;
-	long base_pos = pos & ~(m_cache_size - 1);
-	for(i = 0; i < CACHE_BLOCKS; i++){
-		if(!m_cached_data[i].loaded){
-			loading_cache = i;
-			break;
-		}
-	}
-	if(loading_cache == -1){
-		for(i = 0; i < CACHE_BLOCKS; i++){
-			if((uint32_t)fabs(m_cached_data[i].base - base_pos) > 2*m_cache_size){
-				loading_cache = i;
-				break;
-			}
-		}
-		if(loading_cache == -1){
-			loading_cache = 0;
-		}
-	}
-			
-	if(m_cached_data[loading_cache].data == NULL){
-		m_cached_data[loading_cache].data = new uint8_t[m_cache_size];
-	}
+long FileLoader::loadCacheBlock(uint32_t pos) {
+    long i;
+    long loading_cache = -1;
+    long base_pos = pos & ~(m_cache_size - 1);
+    for (i = 0; i < CACHE_BLOCKS; i++) {
+        if (!m_cached_data[i].loaded) {
+            loading_cache = i;
+            break;
+        }
+    }
+    if (loading_cache == -1) {
+        for (i = 0; i < CACHE_BLOCKS; i++) {
+            if ((uint32_t) fabs(m_cached_data[i].base - base_pos) > 2 * m_cache_size) {
+                loading_cache = i;
+                break;
+            }
+        }
+        if (loading_cache == -1) {
+            loading_cache = 0;
+        }
+    }
 
-	m_cached_data[loading_cache].base = base_pos;
+    if (m_cached_data[loading_cache].data == NULL) {
+        m_cached_data[loading_cache].data = new uint8_t[m_cache_size];
+    }
 
-	if(fseek(m_file, m_cached_data[loading_cache].base, SEEK_SET)){
-		m_lastError = ERROR_SEEK_ERROR;
-		return -1;
-	}
+    m_cached_data[loading_cache].base = base_pos;
 
-	long size = (long)fread(m_cached_data[loading_cache].data, 1, m_cache_size, m_file);
-	m_cached_data[loading_cache].size = size;
+    if (fseek(m_file, m_cached_data[loading_cache].base, SEEK_SET)) {
+        m_lastError = ERROR_SEEK_ERROR;
+        return -1;
+    }
 
-	if(size < long(pos - m_cached_data[loading_cache].base)){
-		m_lastError = ERROR_SEEK_ERROR;
-		return -1;
-	}
+    long size = (long) fread(m_cached_data[loading_cache].data, 1, m_cache_size, m_file);
+    m_cached_data[loading_cache].size = size;
 
-	m_cached_data[loading_cache].loaded = 1;
+    if (size < long(pos - m_cached_data[loading_cache].base)) {
+        m_lastError = ERROR_SEEK_ERROR;
+        return -1;
+    }
 
-	return loading_cache;
+    m_cached_data[loading_cache].loaded = 1;
+
+    return loading_cache;
 }

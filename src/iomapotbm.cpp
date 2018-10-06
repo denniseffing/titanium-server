@@ -29,392 +29,381 @@
 typedef uint8_t attribute_t;
 typedef uint32_t flags_t;
 
-enum tile_flags_t{
-	TILE_PZ = 1,
+enum tile_flags_t {
+    TILE_PZ = 1,
 };
 
-enum OTBM_NodeTypes_t{
-	OTBM_ROOTV1 = 1,
-	OTBM_MAP_DATA = 2,
-	OTBM_ITEM_DEF = 3,
-	OTBM_TILE_AREA = 4,
-	OTBM_TILE = 5,
-	OTBM_ITEM = 6,
-	OTBM_TILE_SQUARE = 7,
-	OTBM_TILE_REF = 8,
-	OTBM_SPAWNS = 9,
-	OTBM_SPAWN_AREA = 10,
-	OTBM_MONSTER = 11,
+enum OTBM_NodeTypes_t {
+    OTBM_ROOTV1 = 1,
+    OTBM_MAP_DATA = 2,
+    OTBM_ITEM_DEF = 3,
+    OTBM_TILE_AREA = 4,
+    OTBM_TILE = 5,
+    OTBM_ITEM = 6,
+    OTBM_TILE_SQUARE = 7,
+    OTBM_TILE_REF = 8,
+    OTBM_SPAWNS = 9,
+    OTBM_SPAWN_AREA = 10,
+    OTBM_MONSTER = 11,
 };
 
-enum OTBM_AttrTypes_t{
-	OTBM_ATTR_DESCRIPTION = 1,
-	OTBM_ATTR_EXT_FILE = 2,
-	OTBM_ATTR_TILE_FLAGS = 3,
-	OTBM_ATTR_ACTION_ID = 4,
-	OTBM_ATTR_UNIQUE_ID = 5,
-	OTBM_ATTR_TEXT = 6,
-	OTBM_ATTR_DESC = 7,
-	OTBM_ATTR_TELE_DEST = 8,
-	OTBM_ATTR_ITEM = 9,
-	OTBM_ATTR_DEPOT_ID = 10,
-	OTBM_ATTR_EXT_SPAWN_FILE = 11,
-	OTBM_ATTR_RUNE_CHARGES = 12
+enum OTBM_AttrTypes_t {
+    OTBM_ATTR_DESCRIPTION = 1,
+    OTBM_ATTR_EXT_FILE = 2,
+    OTBM_ATTR_TILE_FLAGS = 3,
+    OTBM_ATTR_ACTION_ID = 4,
+    OTBM_ATTR_UNIQUE_ID = 5,
+    OTBM_ATTR_TEXT = 6,
+    OTBM_ATTR_DESC = 7,
+    OTBM_ATTR_TELE_DEST = 8,
+    OTBM_ATTR_ITEM = 9,
+    OTBM_ATTR_DEPOT_ID = 10,
+    OTBM_ATTR_EXT_SPAWN_FILE = 11,
+    OTBM_ATTR_RUNE_CHARGES = 12
 };
 
 #pragma pack(1)
 
-struct OTBM_root_header{
-	uint32_t version;
-	uint16_t width;
-	uint16_t height;
-	uint32_t majorVersionItems;
-	uint32_t minorVersionItems;
+struct OTBM_root_header {
+    uint32_t version;
+    uint16_t width;
+    uint16_t height;
+    uint32_t majorVersionItems;
+    uint32_t minorVersionItems;
 };
 
-struct OTBM_TeleportDest{
-	uint16_t _x;
-	uint16_t _y;
-	uint8_t	_z;
+struct OTBM_TeleportDest {
+    uint16_t _x;
+    uint16_t _y;
+    uint8_t _z;
 };
 
-struct OTBM_Tile_area_coords{
-	uint16_t _x;
-	uint16_t _y;
-	uint8_t _z;
+struct OTBM_Tile_area_coords {
+    uint16_t _x;
+    uint16_t _y;
+    uint8_t _z;
 };
 
 
-struct OTBM_Tile_coords{
-	uint8_t _x;
-	uint8_t _y;
+struct OTBM_Tile_coords {
+    uint8_t _x;
+    uint8_t _y;
 };
 
 #pragma pack()
 
 
-bool IOMapOTBM::loadMap(Map* map, std::string identifier)
-{
-	FileLoader f;
-	if(!f.openFile(identifier.c_str(), false, true)){
-		return false;
-	}
-	
-	uint32_t type;
-	PropStream propStream;
+bool IOMapOTBM::loadMap(Map *map, std::string identifier) {
+    FileLoader f;
+    if (!f.openFile(identifier.c_str(), false, true)) {
+        return false;
+    }
 
-	NODE root = f.getChildNode((NODE)NULL, type);
+    uint32_t type;
+    PropStream propStream;
 
-	if(!f.getProps(root, propStream)){
-		return false;
-	}
+    NODE root = f.getChildNode((NODE) NULL, type);
 
-	OTBM_root_header* root_header;
-	if(!propStream.GET_STRUCT(root_header)){
-		return false;
-	}
-	
-	if(root_header->version != 0){
-		return false;
-	}
-	
-	if(root_header->majorVersionItems > (uint32_t)Items::dwMajorVersion){
-		return false;
-	}
+    if (!f.getProps(root, propStream)) {
+        return false;
+    }
 
-	if(root_header->minorVersionItems > (uint32_t)Items::dwMinorVersion){
-		std::cout << "Warning: This map needs an updated items OTB file." <<std::endl;
-	}
+    OTBM_root_header *root_header;
+    if (!propStream.GET_STRUCT(root_header)) {
+        return false;
+    }
 
-	std::cout << "Map size: " << root_header->width << "x" << root_header->height << std::endl;
+    if (root_header->version != 0) {
+        return false;
+    }
 
-	NODE map_data = f.getChildNode(root, type);
+    if (root_header->majorVersionItems > (uint32_t) Items::dwMajorVersion) {
+        return false;
+    }
 
-	if(!f.getProps(map_data, propStream)){
-		return false;
-	}
+    if (root_header->minorVersionItems > (uint32_t) Items::dwMinorVersion) {
+        std::cout << "Warning: This map needs an updated items OTB file." << std::endl;
+    }
 
-	uint8_t attribute;
-	std::string tmp;
-	std::string map_description;
-	while(propStream.GET_UCHAR(attribute)){
-		switch(attribute){
-		case OTBM_ATTR_DESCRIPTION:
-			if(!propStream.GET_STRING(map_description)){
-				return false;
-			}
-			break;
-		case OTBM_ATTR_EXT_SPAWN_FILE:
-			if(!propStream.GET_STRING(tmp)){
-				return false;
-			}
-			map->spawnfile = identifier.substr(0, identifier.rfind('/') + 1);
-			map->spawnfile += tmp;
-			break;
-		default:
-			return false;
-			break;
-		}
-	}
-		
-	std::cout << "Map description: " << map_description << std::endl;
-	
-	NODE tile_area = f.getChildNode(map_data, type);
-	while(tile_area != NO_NODE){
-		if(f.getError() != ERROR_NONE){
-			return false;
-		}
+    std::cout << "Map size: " << root_header->width << "x" << root_header->height << std::endl;
 
-		if(type == OTBM_TILE_AREA){
-			if(!f.getProps(tile_area, propStream)){
-				return false;
-			}
-			
-			OTBM_Tile_area_coords* area_coord;
-			if(!propStream.GET_STRUCT(area_coord)){
-				return false;
-			}
-			
-			int base_x, base_y, base_z;
-			base_x = area_coord->_x;
-			base_y = area_coord->_y;
-			base_z = area_coord->_z;
-			
-			NODE tile_node = f.getChildNode(tile_area, type);
-			while(tile_node != NO_NODE){
-				if(f.getError() != ERROR_NONE){
-					return false;
-				}
-				
-				if(type == OTBM_TILE){
-					if(!f.getProps(tile_node, propStream)){
-						return false;
-					}
-					
-					OTBM_Tile_coords* tile_coord;
-					if(!propStream.GET_STRUCT(tile_coord)){
-						return false;
-					}
-					uint16_t px, py, pz;
-					px = base_x + tile_coord->_x;
-					py = base_y + tile_coord->_y;
-					pz = base_z;
-					Tile* tile = map->setTile(px, py, (uint8_t)pz);
-					if(tile){
-						//read tile attributes
-						uint8_t attribute;
-						while(propStream.GET_UCHAR(attribute)){
-							switch(attribute){
-							case OTBM_ATTR_TILE_FLAGS:
-								uint32_t flags;
-								if(!propStream.GET_ULONG(flags)){
-									return false;
-								}
-								
-								if(flags & TILE_PZ)
-									tile->setPz();;
-								
-								break;
-							case OTBM_ATTR_ITEM:
-								Item* item;
-								
-								item  = unserializaItemAttr(propStream);
-								if(item){
-									item->pos.x = px;
-									item->pos.y = py;
-									item->pos.z = pz;
-									tile->addThing(item);
-								}
-								else{
-									return false;
-								}
-								break;
-							default:
-								return false;
-								break;
-							}
-						}
-					}
-					NODE item_node = f.getChildNode(tile_node, type);
-					while(item_node){
-						if(type == OTBM_ITEM)
-						{
-							Item* item = unserializaItemNode(&f, item_node);
-							if(item){
-								item->pos.x = px;
-								item->pos.y = py;
-								item->pos.z = pz;
+    NODE map_data = f.getChildNode(root, type);
+
+    if (!f.getProps(map_data, propStream)) {
+        return false;
+    }
+
+    uint8_t attribute;
+    std::string tmp;
+    std::string map_description;
+    while (propStream.GET_UCHAR(attribute)) {
+        switch (attribute) {
+            case OTBM_ATTR_DESCRIPTION:
+                if (!propStream.GET_STRING(map_description)) {
+                    return false;
+                }
+                break;
+            case OTBM_ATTR_EXT_SPAWN_FILE:
+                if (!propStream.GET_STRING(tmp)) {
+                    return false;
+                }
+                map->spawnfile = identifier.substr(0, identifier.rfind('/') + 1);
+                map->spawnfile += tmp;
+                break;
+            default:
+                return false;
+                break;
+        }
+    }
+
+    std::cout << "Map description: " << map_description << std::endl;
+
+    NODE tile_area = f.getChildNode(map_data, type);
+    while (tile_area != NO_NODE) {
+        if (f.getError() != ERROR_NONE) {
+            return false;
+        }
+
+        if (type == OTBM_TILE_AREA) {
+            if (!f.getProps(tile_area, propStream)) {
+                return false;
+            }
+
+            OTBM_Tile_area_coords *area_coord;
+            if (!propStream.GET_STRUCT(area_coord)) {
+                return false;
+            }
+
+            int base_x, base_y, base_z;
+            base_x = area_coord->_x;
+            base_y = area_coord->_y;
+            base_z = area_coord->_z;
+
+            NODE tile_node = f.getChildNode(tile_area, type);
+            while (tile_node != NO_NODE) {
+                if (f.getError() != ERROR_NONE) {
+                    return false;
+                }
+
+                if (type == OTBM_TILE) {
+                    if (!f.getProps(tile_node, propStream)) {
+                        return false;
+                    }
+
+                    OTBM_Tile_coords *tile_coord;
+                    if (!propStream.GET_STRUCT(tile_coord)) {
+                        return false;
+                    }
+                    uint16_t px, py, pz;
+                    px = base_x + tile_coord->_x;
+                    py = base_y + tile_coord->_y;
+                    pz = base_z;
+                    Tile *tile = map->setTile(px, py, (uint8_t) pz);
+                    if (tile) {
+                        //read tile attributes
+                        uint8_t attribute;
+                        while (propStream.GET_UCHAR(attribute)) {
+                            switch (attribute) {
+                                case OTBM_ATTR_TILE_FLAGS:
+                                    uint32_t flags;
+                                    if (!propStream.GET_ULONG(flags)) {
+                                        return false;
+                                    }
+
+                                    if (flags & TILE_PZ)
+                                        tile->setPz();;
+
+                                    break;
+                                case OTBM_ATTR_ITEM:
+                                    Item *item;
+
+                                    item = unserializaItemAttr(propStream);
+                                    if (item) {
+                                        item->pos.x = px;
+                                        item->pos.y = py;
+                                        item->pos.z = pz;
+                                        tile->addThing(item);
+                                    } else {
+                                        return false;
+                                    }
+                                    break;
+                                default:
+                                    return false;
+                                    break;
+                            }
+                        }
+                    }
+                    NODE item_node = f.getChildNode(tile_node, type);
+                    while (item_node) {
+                        if (type == OTBM_ITEM) {
+                            Item *item = unserializaItemNode(&f, item_node);
+                            if (item) {
+                                item->pos.x = px;
+                                item->pos.y = py;
+                                item->pos.z = pz;
 #ifdef YUR_CLEAN_MAP
-								item->decoration = true;
+                                item->decoration = true;
 #endif //YUR_CLEAN_MAP
-								tile->addThing(item);
-							}
-							else{
-								return false;
-							}
-						}
-						item_node = f.getNextNode(item_node, type);
-					}
-				}
-				tile_node = f.getNextNode(tile_node, type);
-			}
-		}
-		tile_area = f.getNextNode(tile_area, type);
-	}
-	
-	if(f.getError() != ERROR_NONE){
-		return false;
-	}
+                                tile->addThing(item);
+                            } else {
+                                return false;
+                            }
+                        }
+                        item_node = f.getNextNode(item_node, type);
+                    }
+                }
+                tile_node = f.getNextNode(tile_node, type);
+            }
+        }
+        tile_area = f.getNextNode(tile_area, type);
+    }
 
-	return true;
+    if (f.getError() != ERROR_NONE) {
+        return false;
+    }
+
+    return true;
 }
 
-Item* IOMapOTBM::unserializaItemAttr(PropStream &propStream)
-{
-	uint16_t _id;
-	uint8_t _count;
-	
-	if(!propStream.GET_USHORT(_id)){
-		return NULL;
-	}
-	Item* item = Item::CreateItem(_id);
+Item *IOMapOTBM::unserializaItemAttr(PropStream &propStream) {
+    uint16_t _id;
+    uint8_t _count;
 
-	if(item->isSplash() || item->isStackable() || item->isFluidContainer()){
-		if(!propStream.GET_UCHAR(_count)){
-			delete item;
-			return NULL;
-		}
-	}
-	return item;
+    if (!propStream.GET_USHORT(_id)) {
+        return NULL;
+    }
+    Item *item = Item::CreateItem(_id);
+
+    if (item->isSplash() || item->isStackable() || item->isFluidContainer()) {
+        if (!propStream.GET_UCHAR(_count)) {
+            delete item;
+            return NULL;
+        }
+    }
+    return item;
 }
 
-Item* IOMapOTBM::unserializaItemNode(FileLoader* f, NODE node)
-{
-	PropStream propStream;
-	f->getProps(node, propStream);
+Item *IOMapOTBM::unserializaItemNode(FileLoader *f, NODE node) {
+    PropStream propStream;
+    f->getProps(node, propStream);
 
-	uint16_t _id;
-	if(!propStream.GET_USHORT(_id)){
-		return NULL;
-	}
+    uint16_t _id;
+    if (!propStream.GET_USHORT(_id)) {
+        return NULL;
+    }
 
-	ItemType iType = Item::items[_id];
-	Item* item;
-	if(iType.id != 0){
-		uint8_t _count = 0;
+    ItemType iType = Item::items[_id];
+    Item *item;
+    if (iType.id != 0) {
+        uint8_t _count = 0;
 
-		if(iType.stackable || iType.isSplash() || iType.isFluidContainer()){
-			if(!propStream.GET_UCHAR(_count)){
-				return NULL;
-			}
-		}
+        if (iType.stackable || iType.isSplash() || iType.isFluidContainer()) {
+            if (!propStream.GET_UCHAR(_count)) {
+                return NULL;
+            }
+        }
 
-		item = Item::CreateItem(_id, _count);
+        item = Item::CreateItem(_id, _count);
 
-		uint8_t attr_type;
-		while(propStream.GET_UCHAR(attr_type)){
-			
-			uint16_t tmp_short;
-			std::string a;
-			
-			switch(attr_type){
-			case OTBM_ATTR_ACTION_ID:
-				if(!propStream.GET_USHORT(tmp_short)){
-					delete item;
-					return NULL;
-				}
-				item->setActionId(tmp_short);
-				break;
-			case OTBM_ATTR_UNIQUE_ID:
-				if(!propStream.GET_USHORT(tmp_short)){
-					delete item;
-					return NULL;
-				}
-				item->setUniqueId(tmp_short);
-				break;
-			case OTBM_ATTR_TEXT:
-				if(!propStream.GET_STRING(a)){
-					delete item;
-					return NULL;
-				}
-				item->setText(a);
-				break;
-			case OTBM_ATTR_DESC:
-				if(!propStream.GET_STRING(a)){
-					delete item;
-					return NULL;
-				}
-				item->setSpecialDescription(a);
-				break;
-			case OTBM_ATTR_TELE_DEST:
-				OTBM_TeleportDest* tele_dest;
-				if(!propStream.GET_STRUCT(tele_dest)){
-					delete item;
-					return NULL;
-				}
+        uint8_t attr_type;
+        while (propStream.GET_UCHAR(attr_type)) {
 
-				if(Teleport* tele = dynamic_cast<Teleport*>(item)){
-					tele->setDestPos(Position(tele_dest->_x, tele_dest->_y, tele_dest->_z));
-				}
-				else{
-					delete item;
-					return NULL;
-				}
+            uint16_t tmp_short;
+            std::string a;
 
-				break;
-			case OTBM_ATTR_DEPOT_ID:
-				if(!propStream.GET_USHORT(tmp_short)){
-					delete item;
-					return NULL;
-				}
-				if(Container* container = dynamic_cast<Container*>(item)){
-					container->depot = tmp_short;
-				}
-				else{
-					delete item;
-					return NULL;
-				}
-				break;
+            switch (attr_type) {
+                case OTBM_ATTR_ACTION_ID:
+                    if (!propStream.GET_USHORT(tmp_short)) {
+                        delete item;
+                        return NULL;
+                    }
+                    item->setActionId(tmp_short);
+                    break;
+                case OTBM_ATTR_UNIQUE_ID:
+                    if (!propStream.GET_USHORT(tmp_short)) {
+                        delete item;
+                        return NULL;
+                    }
+                    item->setUniqueId(tmp_short);
+                    break;
+                case OTBM_ATTR_TEXT:
+                    if (!propStream.GET_STRING(a)) {
+                        delete item;
+                        return NULL;
+                    }
+                    item->setText(a);
+                    break;
+                case OTBM_ATTR_DESC:
+                    if (!propStream.GET_STRING(a)) {
+                        delete item;
+                        return NULL;
+                    }
+                    item->setSpecialDescription(a);
+                    break;
+                case OTBM_ATTR_TELE_DEST:
+                    OTBM_TeleportDest *tele_dest;
+                    if (!propStream.GET_STRUCT(tele_dest)) {
+                        delete item;
+                        return NULL;
+                    }
 
-			case OTBM_ATTR_RUNE_CHARGES:
-			{
-				uint8_t _charges = 1;
-				if(!propStream.GET_UCHAR(_charges)){
-					delete item;
-					return NULL;
-				}
+                    if (Teleport *tele = dynamic_cast<Teleport *>(item)) {
+                        tele->setDestPos(Position(tele_dest->_x, tele_dest->_y, tele_dest->_z));
+                    } else {
+                        delete item;
+                        return NULL;
+                    }
 
-				item->setItemCharge(_charges);
-				break;
-			}
+                    break;
+                case OTBM_ATTR_DEPOT_ID:
+                    if (!propStream.GET_USHORT(tmp_short)) {
+                        delete item;
+                        return NULL;
+                    }
+                    if (Container *container = dynamic_cast<Container *>(item)) {
+                        container->depot = tmp_short;
+                    } else {
+                        delete item;
+                        return NULL;
+                    }
+                    break;
 
-			default:
-				delete item;
-				return NULL;
-				break;
-			}
-		}
-		
-		Container* container;
-		if(container = dynamic_cast<Container*>(item)){
-			uint32_t type;
-			NODE item_node = f->getChildNode(node, type);
-			while(item_node){
-				if(type == OTBM_ITEM){
-					Item* item = unserializaItemNode(f, item_node);
-					if(item){
-						container->addItem(item);
-					}
-					else{
-						return NULL; // FIXME: Test this
-					}
-				}
-				item_node = f->getNextNode(item_node, type);
-			}
-		}		
-	}
-	else{
-		return NULL;
-	}
-	return item;
+                case OTBM_ATTR_RUNE_CHARGES: {
+                    uint8_t _charges = 1;
+                    if (!propStream.GET_UCHAR(_charges)) {
+                        delete item;
+                        return NULL;
+                    }
+
+                    item->setItemCharge(_charges);
+                    break;
+                }
+
+                default:
+                    delete item;
+                    return NULL;
+                    break;
+            }
+        }
+
+        Container *container;
+        if (container = dynamic_cast<Container *>(item)) {
+            uint32_t type;
+            NODE item_node = f->getChildNode(node, type);
+            while (item_node) {
+                if (type == OTBM_ITEM) {
+                    Item *item = unserializaItemNode(f, item_node);
+                    if (item) {
+                        container->addItem(item);
+                    } else {
+                        return NULL; // FIXME: Test this
+                    }
+                }
+                item_node = f->getNextNode(item_node, type);
+            }
+        }
+    } else {
+        return NULL;
+    }
+    return item;
 }

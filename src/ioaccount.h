@@ -28,19 +28,22 @@
 
 /** Baseclass for all Player-Loaders */
 class IOAccount {
-  public:
-	static IOAccount* instance();
-	/** Get a textual description of what source is used
-	  * \returns Name of the source*/
-	virtual char* getSourceDescription(){return "Account source: NULL";};
-	virtual Account loadAccount(uint32_t accno);
-	
-	virtual bool getPassword(uint32_t accno, const std::string &name, std::string &password);
+public:
+    static IOAccount *instance();
 
-  protected:
-	IOAccount(){};
-	virtual ~IOAccount(){};
-	static IOAccount* _instance;
+    /** Get a textual description of what source is used
+      * \returns Name of the source*/
+    virtual char *getSourceDescription() { return "Account source: NULL"; };
+
+    virtual Account loadAccount(uint32_t accno);
+
+    virtual bool getPassword(uint32_t accno, const std::string &name, std::string &password);
+
+protected:
+    IOAccount() {};
+
+    virtual ~IOAccount() {};
+    static IOAccount *_instance;
 };
 
 #endif

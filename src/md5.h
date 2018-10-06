@@ -61,16 +61,18 @@ typedef uint32_t UINT4;
 
 /* Data structure for MD5 (Message Digest) computation */
 typedef struct {
-	UINT4 i[2];                   /* Number of _bits_ handled mod 2^64 */
-	UINT4 buf[4];                                    /* Scratch buffer */
-	uint8_t in[64];                              /* Input buffer */
-	uint8_t digest[16];     /* Actual digest after MD5Final call */
+    UINT4 i[2];                   /* Number of _bits_ handled mod 2^64 */
+    UINT4 buf[4];                                    /* Scratch buffer */
+    uint8_t in[64];                              /* Input buffer */
+    uint8_t digest[16];     /* Actual digest after MD5Final call */
 } MD5_CTX;
 
-static void MD5_Transform (UINT4 *buf, UINT4 *in);
+static void MD5_Transform(UINT4 *buf, UINT4 *in);
 
 void MD5Init(MD5_CTX *mdContext, uint32_t pseudoRandomNumber = 0);
+
 void MD5Update(MD5_CTX *mdContext, const uint8_t *inBuf, uint32_t inLen);
+
 void MD5Final(MD5_CTX *mdContext);
 
 #endif /* ___MD5_H___ included */

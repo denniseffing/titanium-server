@@ -28,546 +28,506 @@
 extern Game g_game;
 extern LuaScript g_config;
 
-MagicEffectClass::MagicEffectClass()
-{
-	animationColor = 0;
-	animationEffect = 0;
-	hitEffect = 0xFF;
-	damageEffect = 0xFF;
-	minDamage = 0;
-	maxDamage = 0;
-	offensive = false;
-	drawblood = false;
-	manaCost = 0;
-	attackType = ATTACK_NONE;
-}
- 
-bool MagicEffectClass::isIndirect() const
-{
-	return false;
+MagicEffectClass::MagicEffectClass() {
+    animationColor = 0;
+    animationEffect = 0;
+    hitEffect = 0xFF;
+    damageEffect = 0xFF;
+    minDamage = 0;
+    maxDamage = 0;
+    offensive = false;
+    drawblood = false;
+    manaCost = 0;
+    attackType = ATTACK_NONE;
 }
 
-bool MagicEffectClass::causeExhaustion(bool hasTarget) const
-{
-	return hasTarget;
+bool MagicEffectClass::isIndirect() const {
+    return false;
 }
 
-int MagicEffectClass::getDamage(Creature *target, const Creature *attacker /*= NULL*/) const
-{
-	if((attackType != ATTACK_NONE) && (target->getImmunities() & attackType) == attackType)
-		return 0;
+bool MagicEffectClass::causeExhaustion(bool hasTarget) const {
+    return hasTarget;
+}
 
-	if((!offensive || (target != attacker)) && target->access < g_config.ACCESS_PROTECT) {
-		int damage = (int)random_range(minDamage, maxDamage);
+int MagicEffectClass::getDamage(Creature *target, const Creature *attacker /*= NULL*/) const {
+    if ((attackType != ATTACK_NONE) && (target->getImmunities() & attackType) == attackType)
+        return 0;
 
-		if(!offensive)
+    if ((!offensive || (target != attacker)) && target->access < g_config.ACCESS_PROTECT) {
+        int damage = (int) random_range(minDamage, maxDamage);
+
+        if (!offensive)
 #ifdef YUR_NO_MONSTER_HEAL
-		{
-			const Monster* targetMonster = dynamic_cast<const Monster*>(target);
+        {
+            const Monster *targetMonster = dynamic_cast<const Monster *>(target);
 
-			if (target != attacker && targetMonster
-	#ifdef TR_SUMMONS 
-				&& !targetMonster->isPlayersSummon()
-	#endif //TR_SUMMONS
-				)
-				damage = 0;
-			else
-				damage = -damage;		
-		}
+            if (target != attacker && targetMonster
+                #ifdef TR_SUMMONS
+                && !targetMonster->isPlayersSummon()
+#endif //TR_SUMMONS
+                    )
+                damage = 0;
+            else
+                damage = -damage;
+        }
 #else
-			damage = -damage;
+            damage = -damage;
 #endif //YUR_NO_MONSTER_HEAL
-		else {
-			if(attacker && attacker->access >= g_config.ACCESS_PROTECT)
-				return damage;
+        else {
+            if (attacker && attacker->access >= g_config.ACCESS_PROTECT)
+                return damage;
 
-			const Monster *monster = dynamic_cast<const Monster*>(attacker);
-			if(monster) {
-				//no reduction of damage if attack came from a monster
-				return damage;
-			}
+            const Monster *monster = dynamic_cast<const Monster *>(attacker);
+            if (monster) {
+                //no reduction of damage if attack came from a monster
+                return damage;
+            }
 
-			const Player *targetPlayer = dynamic_cast<const Player*>(target);
+            const Player *targetPlayer = dynamic_cast<const Player *>(target);
 
-			if(targetPlayer) {
-				damage = (int)floor(damage / 2.0);
-			}
-		}
+            if (targetPlayer) {
+                damage = (int) floor(damage / 2.0);
+            }
+        }
 
-		return damage;
-	}
+        return damage;
+    }
 
-	return 0;
+    return 0;
 }
 
-void MagicEffectClass::getMagicEffect(Player* spectator, const Creature* attacker, const Creature* target,
-	const Position& pos, /*bool hasTarget,*/ int damage, bool isPz, bool isBlocking) const
-{
-	if(!isBlocking && target != NULL /*hasTarget*/) {
-		if(spectator->CanSee(pos.x, pos.y, pos.z)) {
-			if(damageEffect != 0xFF) {
-				if(!offensive || !(g_game.getWorldType() == WORLD_TYPE_NO_PVP && dynamic_cast<const Player*>(attacker) &&
-					dynamic_cast<const Player*>(target) && target->access < g_config.ACCESS_PROTECT && attacker->access < g_config.ACCESS_PROTECT) || target->access != 0) {
-						if(offensive && (target->getImmunities() & attackType) == attackType) {
+void MagicEffectClass::getMagicEffect(Player *spectator, const Creature *attacker, const Creature *target,
+                                      const Position &pos, /*bool hasTarget,*/ int damage, bool isPz,
+                                      bool isBlocking) const {
+    if (!isBlocking && target != NULL /*hasTarget*/) {
+        if (spectator->CanSee(pos.x, pos.y, pos.z)) {
+            if (damageEffect != 0xFF) {
+                if (!offensive ||
+                    !(g_game.getWorldType() == WORLD_TYPE_NO_PVP && dynamic_cast<const Player *>(attacker) &&
+                      dynamic_cast<const Player *>(target) && target->access < g_config.ACCESS_PROTECT &&
+                      attacker->access < g_config.ACCESS_PROTECT) || target->access != 0) {
+                    if (offensive && (target->getImmunities() & attackType) == attackType) {
 #ifdef TJ_MONSTER_BLOOD
-							spectator->sendMagicEffect(pos, target->bloodeffect); 
+                        spectator->sendMagicEffect(pos, target->bloodeffect);
 #else
-							spectator->sendMagicEffect(pos, NM_ME_BLOCKHIT);
+                        spectator->sendMagicEffect(pos, NM_ME_BLOCKHIT);
 #endif //TJ_MONSTER_BLOOD
-						}
-						else {
-							spectator->sendMagicEffect(pos, damageEffect);
-						}
-					}
-			}
+                    } else {
+                        spectator->sendMagicEffect(pos, damageEffect);
+                    }
+                }
+            }
 
-			if(hitEffect != 0xFF)
-				spectator->sendMagicEffect(pos, hitEffect);
-		}
-	}
+            if (hitEffect != 0xFF)
+                spectator->sendMagicEffect(pos, hitEffect);
+        }
+    }
 }
 
-void MagicEffectClass::getDistanceShoot(Player* spectator, const Creature* attacker, const Position& to,
-			bool hasTarget) const
-{
-	if(animationEffect > 0) {
-		if(spectator->CanSee(attacker->pos.x, attacker->pos.y, attacker->pos.z) || spectator->CanSee(to.x, to.y, to.z)) {
-			spectator->sendDistanceShoot(attacker->pos, to, animationEffect);
-		}
-	}
+void MagicEffectClass::getDistanceShoot(Player *spectator, const Creature *attacker, const Position &to,
+                                        bool hasTarget) const {
+    if (animationEffect > 0) {
+        if (spectator->CanSee(attacker->pos.x, attacker->pos.y, attacker->pos.z) ||
+            spectator->CanSee(to.x, to.y, to.z)) {
+            spectator->sendDistanceShoot(attacker->pos, to, animationEffect);
+        }
+    }
 }
 
-void MagicEffectClass::getArea(const Position& rcenterpos, MagicAreaVec& list) const
-{
-	list.push_back(rcenterpos);
+void MagicEffectClass::getArea(const Position &rcenterpos, MagicAreaVec &list) const {
+    list.push_back(rcenterpos);
 }
 
-MagicEffectItem* MagicEffectClass::getMagicItem(const Creature* attacker, bool isPz, bool isBlocking) const
-{
-	return NULL;
+MagicEffectItem *MagicEffectClass::getMagicItem(const Creature *attacker, bool isPz, bool isBlocking) const {
+    return NULL;
 }
 
-bool MagicEffectClass::canCast(bool isBlocking, bool hasCreature) const
-{
-	return !isBlocking;
+bool MagicEffectClass::canCast(bool isBlocking, bool hasCreature) const {
+    return !isBlocking;
 }
 
-void MagicEffectClass::FailedToCast(Player* spectator, const Creature* attacker,
-		bool isBlocking, bool hasTarget) const
-{
-	if(!hasTarget && attacker) {
-		if(attacker == spectator) {
-			spectator->sendTextMessage(MSG_SMALLINFO, "You can only use this rune on creatures.");
-		}
-		spectator->sendMagicEffect(attacker->pos, NM_ME_PUFF);
-	}
+void MagicEffectClass::FailedToCast(Player *spectator, const Creature *attacker,
+                                    bool isBlocking, bool hasTarget) const {
+    if (!hasTarget && attacker) {
+        if (attacker == spectator) {
+            spectator->sendTextMessage(MSG_SMALLINFO, "You can only use this rune on creatures.");
+        }
+        spectator->sendMagicEffect(attacker->pos, NM_ME_PUFF);
+    }
 }
 
 //Need a target
-MagicEffectTargetClass::MagicEffectTargetClass()
-{
-	//
-}
-void MagicEffectTargetClass::getMagicEffect(Player* spectator, const Creature* attacker, const Creature* target,
-	const Position& pos, int damage, bool isPz, bool isBlocking) const
-{
-	if(target != NULL) {
-		//default
-		MagicEffectClass::getMagicEffect(spectator, attacker, target, pos, /*hasTarget,*/ damage, isPz, isBlocking);
-	}
-	else {
-		if(attacker) {
-			if(spectator->CanSee(attacker->pos.x, attacker->pos.y, attacker->pos.z)) {
-				spectator->sendMagicEffect(attacker->pos, NM_ME_PUFF);
-			}
-		}
-	}
+MagicEffectTargetClass::MagicEffectTargetClass() {
+    //
 }
 
-void MagicEffectTargetClass::getDistanceShoot(Player* spectator, const Creature* attacker, const Position& to,
-			bool hasTarget) const
-{
-	if(animationEffect > 0 && hasTarget) {
-		if(spectator->CanSee(attacker->pos.x, attacker->pos.y, attacker->pos.z) || spectator->CanSee(to.x, to.y, to.z)) {
-			spectator->sendDistanceShoot(attacker->pos, to, animationEffect);
-		}
-	}
+void MagicEffectTargetClass::getMagicEffect(Player *spectator, const Creature *attacker, const Creature *target,
+                                            const Position &pos, int damage, bool isPz, bool isBlocking) const {
+    if (target != NULL) {
+        //default
+        MagicEffectClass::getMagicEffect(spectator, attacker, target, pos, /*hasTarget,*/ damage, isPz, isBlocking);
+    } else {
+        if (attacker) {
+            if (spectator->CanSee(attacker->pos.x, attacker->pos.y, attacker->pos.z)) {
+                spectator->sendMagicEffect(attacker->pos, NM_ME_PUFF);
+            }
+        }
+    }
 }
 
-MagicEffectTargetExClass::MagicEffectTargetExClass(const ConditionVec& dmglist) :
-condition(dmglist)
-{
+void MagicEffectTargetClass::getDistanceShoot(Player *spectator, const Creature *attacker, const Position &to,
+                                              bool hasTarget) const {
+    if (animationEffect > 0 && hasTarget) {
+        if (spectator->CanSee(attacker->pos.x, attacker->pos.y, attacker->pos.z) ||
+            spectator->CanSee(to.x, to.y, to.z)) {
+            spectator->sendDistanceShoot(attacker->pos, to, animationEffect);
+        }
+    }
+}
+
+MagicEffectTargetExClass::MagicEffectTargetExClass(const ConditionVec &dmglist) :
+        condition(dmglist) {
 
 }
 
-int MagicEffectTargetExClass::getDamage(Creature *target, const Creature *attacker /*= NULL*/) const
-{
-	if((attackType != ATTACK_NONE) && (target->getImmunities() & attackType) == attackType)
-		return 0;
+int MagicEffectTargetExClass::getDamage(Creature *target, const Creature *attacker /*= NULL*/) const {
+    if ((attackType != ATTACK_NONE) && (target->getImmunities() & attackType) == attackType)
+        return 0;
 
-	if((!offensive || (target != attacker)) && target->access < g_config.ACCESS_PROTECT) {
-		
-		//target->addMagicDamage(dmgContainer, true);
+    if ((!offensive || (target != attacker)) && target->access < g_config.ACCESS_PROTECT) {
 
-		bool refresh = true;
-		for(ConditionVec::const_iterator condIt = condition.begin(); condIt != condition.end(); ++condIt) {
-			/*if(condIt == condition.begin()) //skip first
-				continue;*/
-			
-			if((condIt->getCondition()->attackType != ATTACK_NONE) &&
-				(target->getImmunities() & condIt->getCondition()->attackType) != condIt->getCondition()->attackType) {
-				target->addCondition(*condIt, refresh);
-				refresh = false; //only set refresh flag on first "new event"
-			}
-		}
+        //target->addMagicDamage(dmgContainer, true);
 
-		int damage = (int)random_range(minDamage, maxDamage);
+        bool refresh = true;
+        for (ConditionVec::const_iterator condIt = condition.begin(); condIt != condition.end(); ++condIt) {
+            /*if(condIt == condition.begin()) //skip first
+                continue;*/
 
-		if(!offensive)
-			damage = -damage;
+            if ((condIt->getCondition()->attackType != ATTACK_NONE) &&
+                (target->getImmunities() & condIt->getCondition()->attackType) != condIt->getCondition()->attackType) {
+                target->addCondition(*condIt, refresh);
+                refresh = false; //only set refresh flag on first "new event"
+            }
+        }
 
-		return damage;
-	}
+        int damage = (int) random_range(minDamage, maxDamage);
 
-	return 0;
+        if (!offensive)
+            damage = -damage;
+
+        return damage;
+    }
+
+    return 0;
 }
 
 //Burning/poisoned/energized
 MagicEffectTargetCreatureCondition::MagicEffectTargetCreatureCondition(const uint32_t creatureid)
-: ownerid(creatureid)
-{
-	//
+        : ownerid(creatureid) {
+    //
 }
 
-int MagicEffectTargetCreatureCondition::getDamage(Creature *target, const Creature *attacker /*= NULL*/) const
-{
-	if((attackType != ATTACK_NONE) && (target->getImmunities() & attackType) == attackType)
-		return 0;
+int MagicEffectTargetCreatureCondition::getDamage(Creature *target, const Creature *attacker /*= NULL*/) const {
+    if ((attackType != ATTACK_NONE) && (target->getImmunities() & attackType) == attackType)
+        return 0;
 
-	if(target->access < g_config.ACCESS_PROTECT) {
-		int damage = (int)random_range(minDamage, maxDamage);
+    if (target->access < g_config.ACCESS_PROTECT) {
+        int damage = (int) random_range(minDamage, maxDamage);
 
-		if(!offensive)
-			damage = -damage;
+        if (!offensive)
+            damage = -damage;
 
-		return damage;
-	}
+        return damage;
+    }
 
-	return 0;
+    return 0;
 }
 
-void MagicEffectTargetCreatureCondition::getMagicEffect(Player* spectator, const Creature* attacker, const Creature* target,
-	const Position& pos, int damage, bool isPz, bool isBlocking) const
-{
-	if(target != NULL) {
-		//default
-		MagicEffectClass::getMagicEffect(spectator, attacker, target, pos, /*hasTarget,*/ damage, isPz, isBlocking);
-	}
-	else {
-		if(spectator->CanSee(pos.x, pos.y, pos.z)) {
-			spectator->sendMagicEffect(pos, NM_ME_PUFF);
-		}
-	}
+void
+MagicEffectTargetCreatureCondition::getMagicEffect(Player *spectator, const Creature *attacker, const Creature *target,
+                                                   const Position &pos, int damage, bool isPz, bool isBlocking) const {
+    if (target != NULL) {
+        //default
+        MagicEffectClass::getMagicEffect(spectator, attacker, target, pos, /*hasTarget,*/ damage, isPz, isBlocking);
+    } else {
+        if (spectator->CanSee(pos.x, pos.y, pos.z)) {
+            spectator->sendMagicEffect(pos, NM_ME_PUFF);
+        }
+    }
 
-	//MagicEffectTargetClass::getMagicEffect(spectator, attacker, pos, hasTarget, damage, isPz, isBlocking, msg);
+    //MagicEffectTargetClass::getMagicEffect(spectator, attacker, pos, hasTarget, damage, isPz, isBlocking, msg);
 }
 
 
 //magic wall, wild growth
-MagicEffectTargetGroundClass::MagicEffectTargetGroundClass(MagicEffectItem* item)
-{
-	magicItem = item;
+MagicEffectTargetGroundClass::MagicEffectTargetGroundClass(MagicEffectItem *item) {
+    magicItem = item;
 }
 
-MagicEffectTargetGroundClass::~MagicEffectTargetGroundClass()
-{
-	if(magicItem) {
-		magicItem->releaseThing();
-		magicItem = NULL;
-	}
+MagicEffectTargetGroundClass::~MagicEffectTargetGroundClass() {
+    if (magicItem) {
+        magicItem->releaseThing();
+        magicItem = NULL;
+    }
 }
 
-MagicEffectItem* MagicEffectTargetGroundClass::getMagicItem(const Creature* attacker, bool isPz, bool isBlocking) const
-{
-	if(!isBlocking && (!isPz || attacker->access >= g_config.ACCESS_PROTECT)) {
-		return magicItem;
-	}
-	else
-		return NULL;
+MagicEffectItem *
+MagicEffectTargetGroundClass::getMagicItem(const Creature *attacker, bool isPz, bool isBlocking) const {
+    if (!isBlocking && (!isPz || attacker->access >= g_config.ACCESS_PROTECT)) {
+        return magicItem;
+    } else
+        return NULL;
 }
 
-bool MagicEffectTargetGroundClass::canCast(bool isBlocking, bool hasCreature) const
-{
-	if(magicItem) {
-		if(magicItem->isBlocking() && (isBlocking || hasCreature)) {
-			return false;
-		}
-	}
+bool MagicEffectTargetGroundClass::canCast(bool isBlocking, bool hasCreature) const {
+    if (magicItem) {
+        if (magicItem->isBlocking() && (isBlocking || hasCreature)) {
+            return false;
+        }
+    }
 
-	return true;
+    return true;
 }
 
-void MagicEffectTargetGroundClass::FailedToCast(Player* spectator, const Creature* attacker,
-		bool isBlocking, bool hasTarget) const
-{
-	const Player* player = dynamic_cast<const Player*>(attacker);
+void MagicEffectTargetGroundClass::FailedToCast(Player *spectator, const Creature *attacker,
+                                                bool isBlocking, bool hasTarget) const {
+    const Player *player = dynamic_cast<const Player *>(attacker);
 
-	if(isBlocking || hasTarget) {
-		if(hasTarget) {
-			if(player && player == spectator) {
-				spectator->sendTextMessage(MSG_SMALLINFO, "There is not enough room.");
-			}
-			spectator->sendMagicEffect(player->pos, NM_ME_PUFF);
-		}
-		else if(player && player == spectator) {
-			spectator->sendTextMessage(MSG_SMALLINFO, "You cannot throw there.");
-		}
-	}
+    if (isBlocking || hasTarget) {
+        if (hasTarget) {
+            if (player && player == spectator) {
+                spectator->sendTextMessage(MSG_SMALLINFO, "There is not enough room.");
+            }
+            spectator->sendMagicEffect(player->pos, NM_ME_PUFF);
+        } else if (player && player == spectator) {
+            spectator->sendTextMessage(MSG_SMALLINFO, "You cannot throw there.");
+        }
+    }
 }
 
-void MagicEffectTargetGroundClass::getMagicEffect(Player* spectator, const Creature* attacker, const Creature* target,
-		const Position& pos, int damage, bool isPz, bool isBlocking) const
-{
-	//Default: nothing
+void MagicEffectTargetGroundClass::getMagicEffect(Player *spectator, const Creature *attacker, const Creature *target,
+                                                  const Position &pos, int damage, bool isPz, bool isBlocking) const {
+    //Default: nothing
 }
 
-void MagicEffectTargetGroundClass::getDistanceShoot(Player* spectator, const Creature* attacker, const Position& to,
-			bool hasTarget) const
-{
-	if(!hasTarget && animationEffect > 0) {
-		if(spectator->CanSee(attacker->pos.x, attacker->pos.y, attacker->pos.z) || spectator->CanSee(to.x, to.y, to.z)) {
-			spectator->sendDistanceShoot(attacker->pos, to, animationEffect);
-		}
-	}
+void MagicEffectTargetGroundClass::getDistanceShoot(Player *spectator, const Creature *attacker, const Position &to,
+                                                    bool hasTarget) const {
+    if (!hasTarget && animationEffect > 0) {
+        if (spectator->CanSee(attacker->pos.x, attacker->pos.y, attacker->pos.z) ||
+            spectator->CanSee(to.x, to.y, to.z)) {
+            spectator->sendDistanceShoot(attacker->pos, to, animationEffect);
+        }
+    }
 }
 
-MagicEffectAreaClass::MagicEffectAreaClass()
-{
-	direction = 0;
-	areaEffect = 0xFF;
+MagicEffectAreaClass::MagicEffectAreaClass() {
+    direction = 0;
+    areaEffect = 0xFF;
 }
 
-void MagicEffectAreaClass::getMagicEffect(Player* spectator, const Creature* attacker, const Creature* target,
-	const Position& pos, int damage, bool isPz, bool isBlocking) const
-{
-	if(target != NULL) {
-		//default
-		MagicEffectClass::getMagicEffect(spectator, attacker, target, pos, /*hasTarget,*/ damage, isPz, isBlocking);
-	}
-	else {
-		if(!isBlocking && areaEffect != 0xFF && (attacker->access >= g_config.ACCESS_PROTECT || !isPz)) {
-			if(spectator->CanSee(pos.x, pos.y, pos.z)) {
-				spectator->sendMagicEffect(pos, areaEffect);
-			}
-		}
-	}
+void MagicEffectAreaClass::getMagicEffect(Player *spectator, const Creature *attacker, const Creature *target,
+                                          const Position &pos, int damage, bool isPz, bool isBlocking) const {
+    if (target != NULL) {
+        //default
+        MagicEffectClass::getMagicEffect(spectator, attacker, target, pos, /*hasTarget,*/ damage, isPz, isBlocking);
+    } else {
+        if (!isBlocking && areaEffect != 0xFF && (attacker->access >= g_config.ACCESS_PROTECT || !isPz)) {
+            if (spectator->CanSee(pos.x, pos.y, pos.z)) {
+                spectator->sendMagicEffect(pos, areaEffect);
+            }
+        }
+    }
 }
 
-void MagicEffectAreaClass::getArea(const Position& rcenterpos, MagicAreaVec& list) const
-{
-	int rows = (int)areaVec.size();
-	int cols = (int)(rows > 0 ? areaVec[0].size() : 0);
+void MagicEffectAreaClass::getArea(const Position &rcenterpos, MagicAreaVec &list) const {
+    int rows = (int) areaVec.size();
+    int cols = (int) (rows > 0 ? areaVec[0].size() : 0);
 
-	if(rows < 3 || cols < 3)
-		return;
+    if (rows < 3 || cols < 3)
+        return;
 
-	Position tpos = rcenterpos;
-	tpos.x -= (cols - 1) / 2; //8;
-	tpos.y -= (rows - 1) / 2; //6;
+    Position tpos = rcenterpos;
+    tpos.x -= (cols - 1) / 2; //8;
+    tpos.y -= (rows - 1) / 2; //6;
 
-	for(int y = 0; y < rows /*14*/; y++) {
-		for(int x = 0; x < cols /*18*/; x++) {
-			//if(area[y][x] == direction) {
-			if(areaVec[y][x] == direction) {
+    for (int y = 0; y < rows /*14*/; y++) {
+        for (int x = 0; x < cols /*18*/; x++) {
+            //if(area[y][x] == direction) {
+            if (areaVec[y][x] == direction) {
 
-				list.push_back(tpos);
-			}
-			tpos.x += 1;
-		}
-		
-		tpos.x -= cols /*18*/;
-		tpos.y += 1;
-	}
+                list.push_back(tpos);
+            }
+            tpos.x += 1;
+        }
+
+        tpos.x -= cols /*18*/;
+        tpos.y += 1;
+    }
 }
 
-MagicEffectAreaExClass::MagicEffectAreaExClass(const ConditionVec& dmglist) :
-condition(dmglist)
-{
-	//
+MagicEffectAreaExClass::MagicEffectAreaExClass(const ConditionVec &dmglist) :
+        condition(dmglist) {
+    //
 }
 
-int MagicEffectAreaExClass::getDamage(Creature *target, const Creature *attacker /*= NULL*/) const
-{
-	if((attackType != ATTACK_NONE) && (target->getImmunities() & attackType) == attackType)
-		return 0;
+int MagicEffectAreaExClass::getDamage(Creature *target, const Creature *attacker /*= NULL*/) const {
+    if ((attackType != ATTACK_NONE) && (target->getImmunities() & attackType) == attackType)
+        return 0;
 
-	if(target->access < g_config.ACCESS_PROTECT) {
-		//target->addMagicDamage(dmgContainer, true);
+    if (target->access < g_config.ACCESS_PROTECT) {
+        //target->addMagicDamage(dmgContainer, true);
 
-		bool refresh = true;
-		for(ConditionVec::const_iterator condIt = condition.begin(); condIt != condition.end(); ++condIt) {
-			if(condIt == condition.begin()) //skip first
-				continue;
+        bool refresh = true;
+        for (ConditionVec::const_iterator condIt = condition.begin(); condIt != condition.end(); ++condIt) {
+            if (condIt == condition.begin()) //skip first
+                continue;
 
-			if((condIt->getCondition()->attackType != ATTACK_NONE) &&
-				(target->getImmunities() & condIt->getCondition()->attackType) != condIt->getCondition()->attackType) {
-				target->addCondition(*condIt, refresh);
-				refresh = false; //only set refresh flag on first "new event"
-			}
-		}
+            if ((condIt->getCondition()->attackType != ATTACK_NONE) &&
+                (target->getImmunities() & condIt->getCondition()->attackType) != condIt->getCondition()->attackType) {
+                target->addCondition(*condIt, refresh);
+                refresh = false; //only set refresh flag on first "new event"
+            }
+        }
 
-		int damage = (int)random_range(minDamage, maxDamage);
+        int damage = (int) random_range(minDamage, maxDamage);
 
-		if(!offensive)
-			damage = -damage;
+        if (!offensive)
+            damage = -damage;
 
-		return damage;
-	}
+        return damage;
+    }
 
-	return 0;
+    return 0;
 }
 
-MagicEffectAreaGroundClass::MagicEffectAreaGroundClass(MagicEffectItem* item)
-{
-	magicItem = item;
+MagicEffectAreaGroundClass::MagicEffectAreaGroundClass(MagicEffectItem *item) {
+    magicItem = item;
 }
 
-MagicEffectAreaGroundClass::~MagicEffectAreaGroundClass()
-{
-	if(magicItem) {
-		//delete magicItem;
-		magicItem->releaseThing();
-		magicItem = NULL;
-	}
+MagicEffectAreaGroundClass::~MagicEffectAreaGroundClass() {
+    if (magicItem) {
+        //delete magicItem;
+        magicItem->releaseThing();
+        magicItem = NULL;
+    }
 }
 
-int MagicEffectAreaGroundClass::getDamage(Creature *target, const Creature *attacker /*= NULL*/) const
-{
-	if((attackType != ATTACK_NONE) && (target->getImmunities() & attackType) == attackType)
-		return 0;
+int MagicEffectAreaGroundClass::getDamage(Creature *target, const Creature *attacker /*= NULL*/) const {
+    if ((attackType != ATTACK_NONE) && (target->getImmunities() & attackType) == attackType)
+        return 0;
 
-	if(target->access < g_config.ACCESS_PROTECT) {
-		if(magicItem) {
-			return magicItem->getDamage(target, attacker);
-		}
-		else
-			return 0;
-	}
+    if (target->access < g_config.ACCESS_PROTECT) {
+        if (magicItem) {
+            return magicItem->getDamage(target, attacker);
+        } else
+            return 0;
+    }
 
-	return 0;
+    return 0;
 }
 
-MagicEffectItem* MagicEffectAreaGroundClass::getMagicItem(const Creature* attacker, bool isPz, bool isBlocking) const
-{
-	if(!isBlocking && (!isPz || attacker->access >= g_config.ACCESS_PROTECT)) {
-		return magicItem;
-	}
-	else
-		return NULL;
+MagicEffectItem *MagicEffectAreaGroundClass::getMagicItem(const Creature *attacker, bool isPz, bool isBlocking) const {
+    if (!isBlocking && (!isPz || attacker->access >= g_config.ACCESS_PROTECT)) {
+        return magicItem;
+    } else
+        return NULL;
 }
 
 //Constructor for solid objects.
-MagicEffectItem::MagicEffectItem(const TransformMap& transformMap)
-{
-	this->transformMap = transformMap;
-	useCount = 0;
-	uint16_t type = 0;
-	TransformMap::const_iterator dm = transformMap.begin();
-	if(dm != transformMap.end()) {
-		type = dm->first;		
-	}	
-	setID(type);
-	buildCondition();
+MagicEffectItem::MagicEffectItem(const TransformMap &transformMap) {
+    this->transformMap = transformMap;
+    useCount = 0;
+    uint16_t type = 0;
+    TransformMap::const_iterator dm = transformMap.begin();
+    if (dm != transformMap.end()) {
+        type = dm->first;
+    }
+    setID(type);
+    buildCondition();
 }
 
-bool MagicEffectItem::transform(const MagicEffectItem *rhs)
-{
-	this->transformMap = rhs->transformMap;
-	setID(rhs->getID());
-	buildCondition();
-	return true;
+bool MagicEffectItem::transform(const MagicEffectItem *rhs) {
+    this->transformMap = rhs->transformMap;
+    setID(rhs->getID());
+    buildCondition();
+    return true;
 }
 
-long MagicEffectItem::getDecayTime()
-{
-	TransformMap::iterator dm = transformMap.find(getID());
-	
-	if(dm != transformMap.end()) {
-		return dm->second.first;
-	}
-	
-	return 0;
+long MagicEffectItem::getDecayTime() {
+    TransformMap::iterator dm = transformMap.find(getID());
+
+    if (dm != transformMap.end()) {
+        return dm->second.first;
+    }
+
+    return 0;
 }
 
-Item* MagicEffectItem::decay()
-{
-	TransformMap::iterator dm = transformMap.find(getID());
-	if(dm != transformMap.end()) {
+Item *MagicEffectItem::decay() {
+    TransformMap::iterator dm = transformMap.find(getID());
+    if (dm != transformMap.end()) {
 
-		//get next id to transform to
-		dm++;
+        //get next id to transform to
+        dm++;
 
-		if(dm != transformMap.end()) {
-			setID(dm->first);
-			buildCondition();
-			return this;
-		}
-	}
+        if (dm != transformMap.end()) {
+            setID(dm->first);
+            buildCondition();
+            return this;
+        }
+    }
 
-	return NULL;
+    return NULL;
 }
 
-void MagicEffectItem::buildCondition()
-{
-	condition.clear();
+void MagicEffectItem::buildCondition() {
+    condition.clear();
 
-	TransformMap::iterator dm = transformMap.find(getID());
-	if(dm != transformMap.end()) {
-		while(dm != transformMap.end()) {
-			for(ConditionVec::iterator di = dm->second.second.begin(); di != dm->second.second.end(); di++) {
+    TransformMap::iterator dm = transformMap.find(getID());
+    if (dm != transformMap.end()) {
+        while (dm != transformMap.end()) {
+            for (ConditionVec::iterator di = dm->second.second.begin(); di != dm->second.second.end(); di++) {
 
-				condition.push_back(*di);
-			}
+                condition.push_back(*di);
+            }
 
-			dm++;
-		}
-	}
+            dm++;
+        }
+    }
 }
 
-int MagicEffectItem::getDamage(Creature *target, const Creature *attacker /*= NULL*/) const
-{
+int MagicEffectItem::getDamage(Creature *target, const Creature *attacker /*= NULL*/) const {
 
-	if(target->access < g_config.ACCESS_PROTECT) {
+    if (target->access < g_config.ACCESS_PROTECT) {
 
-		bool refresh = true;
-		for(ConditionVec::const_iterator condIt = condition.begin(); condIt != condition.end(); ++condIt) {
-			if(condIt == condition.begin()) //skip first
-				continue;
+        bool refresh = true;
+        for (ConditionVec::const_iterator condIt = condition.begin(); condIt != condition.end(); ++condIt) {
+            if (condIt == condition.begin()) //skip first
+                continue;
 
-			if((condIt->getCondition()->attackType != ATTACK_NONE) &&
-				(target->getImmunities() & condIt->getCondition()->attackType) != condIt->getCondition()->attackType) {
-				target->addCondition(*condIt, refresh);
-				refresh = false; //only set refresh flag on first "new event"
-			}
-		}
+            if ((condIt->getCondition()->attackType != ATTACK_NONE) &&
+                (target->getImmunities() & condIt->getCondition()->attackType) != condIt->getCondition()->attackType) {
+                target->addCondition(*condIt, refresh);
+                refresh = false; //only set refresh flag on first "new event"
+            }
+        }
 
-		const MagicEffectTargetCreatureCondition *magicTargetCondition = getCondition();
-		
-		if(magicTargetCondition)
-			return magicTargetCondition->getDamage(target, attacker);
-		else
-			return 0;
-	}
+        const MagicEffectTargetCreatureCondition *magicTargetCondition = getCondition();
 
-	return 0;
+        if (magicTargetCondition)
+            return magicTargetCondition->getDamage(target, attacker);
+        else
+            return 0;
+    }
+
+    return 0;
 }
 
-const MagicEffectTargetCreatureCondition* MagicEffectItem::getCondition() const
-{
-	if(condition.size() > 0) {
-		return condition[0].getCondition();
-	}
+const MagicEffectTargetCreatureCondition *MagicEffectItem::getCondition() const {
+    if (condition.size() > 0) {
+        return condition[0].getCondition();
+    }
 
-	return NULL;
+    return NULL;
 }
 

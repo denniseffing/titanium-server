@@ -32,14 +32,18 @@
 
 /** Player-Loaders implemented with XML */
 class IOAccountXML : protected IOAccount {
-  public:
-	/** Get a textual description of what source is used
-	  * \returns Name of the source*/
-	virtual char* getSourceDescription(){return "XML";};
-	virtual Account loadAccount(uint32_t accno);
-		virtual bool getPassword(uint32_t accno, const std::string &name, std::string &password);
-	IOAccountXML();
-	virtual ~IOAccountXML(){};
+public:
+    /** Get a textual description of what source is used
+      * \returns Name of the source*/
+    virtual char *getSourceDescription() { return "XML"; };
+
+    virtual Account loadAccount(uint32_t accno);
+
+    virtual bool getPassword(uint32_t accno, const std::string &name, std::string &password);
+
+    IOAccountXML();
+
+    virtual ~IOAccountXML() {};
 };
 
 #endif

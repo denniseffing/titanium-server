@@ -18,6 +18,7 @@
 // Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 //////////////////////////////////////////////////////////////////////
 #ifdef YUR_LOGIN_QUEUE
+
 #include "loginqueue.h"
 #include "luascript.h"
 #include "player.h"
@@ -32,193 +33,170 @@ extern xmlMutexPtr xmlmutex;
  * Method looks for given account number in the login queue.
  * @return position in queue (counting from 0), or -1 if not found
  */
-LoginTryListIterator LoginQueue::findAccount(int account, int* realPos, int *effectivePos)
-{
-	int pos = 1, dead = 0;
-	LoginTryListIterator iter = lq.begin();
+LoginTryListIterator LoginQueue::findAccount(int account, int *realPos, int *effectivePos) {
+    int pos = 1, dead = 0;
+    LoginTryListIterator iter = lq.begin();
 
-	while (iter != lq.end())
-	{
-		if (iter->state == DEAD)
-			dead++;
+    while (iter != lq.end()) {
+        if (iter->state == DEAD)
+            dead++;
 
-		if (iter->accountNumber == account)
-		{
-			if (realPos) *realPos = pos;
-			if (effectivePos) *effectivePos = pos - dead;
-			return iter;
-		}
+        if (iter->accountNumber == account) {
+            if (realPos) *realPos = pos;
+            if (effectivePos) *effectivePos = pos - dead;
+            return iter;
+        }
 
-		++pos;
-		++iter;
-	}
+        ++pos;
+        ++iter;
+    }
 
-	if (realPos) *realPos = -1;
-	if (effectivePos) *effectivePos = -1;
-	return iter;
+    if (realPos) *realPos = -1;
+    if (effectivePos) *effectivePos = -1;
+    return iter;
 }
 
 /**
  * Method puts account number at the end of queue, or refreshes it's state if it already exists.
  */
-void LoginQueue::push(int account)
-{
-	LoginTryListIterator iter = findAccount(account, NULL, NULL);	// look for this account number in queue
+void LoginQueue::push(int account) {
+    LoginTryListIterator iter = findAccount(account, NULL, NULL);    // look for this account number in queue
 
-	if (iter != lq.end())
-	{
-		iter->tryTime = time(0);	// if it exists, refresh try time and state
-		iter->state = ACTIVE;
-	}
-	else
-		lq.push_back(LoginTry(account));	// if it doesn't exist, place it at the end of queue
+    if (iter != lq.end()) {
+        iter->tryTime = time(0);    // if it exists, refresh try time and state
+        iter->state = ACTIVE;
+    } else
+        lq.push_back(LoginTry(account));    // if it doesn't exist, place it at the end of queue
 
 }
 
 /**
  * Method freezes inactive entries and cleans logged/dead ones.
  */
-void LoginQueue::removeDeadEntries()
-{
-	time_t currentTime = time(0), queuedTime;
-	LoginTryListIterator iter = lq.begin();
+void LoginQueue::removeDeadEntries() {
+    time_t currentTime = time(0), queuedTime;
+    LoginTryListIterator iter = lq.begin();
 
-	while (iter != lq.end())
-	{
-		queuedTime = currentTime - iter->tryTime;
+    while (iter != lq.end()) {
+        queuedTime = currentTime - iter->tryTime;
 
-		if (iter->state == ACTIVE)
-		{
-			if (queuedTime > ACTIVE_TIMEOUT)
-				iter->state = DEAD;
-		}
-		else if ((iter->state == LOGGED && queuedTime > LOGGED_TIMEOUT) ||
-			(iter->state == DEAD && queuedTime > DEAD_TIMEOUT))
-		{
-			iter = lq.erase(iter);
-			continue;	// this avoids ++iter
-		}
-		
-		++iter;
-	}
+        if (iter->state == ACTIVE) {
+            if (queuedTime > ACTIVE_TIMEOUT)
+                iter->state = DEAD;
+        } else if ((iter->state == LOGGED && queuedTime > LOGGED_TIMEOUT) ||
+                   (iter->state == DEAD && queuedTime > DEAD_TIMEOUT)) {
+            iter = lq.erase(iter);
+            continue;    // this avoids ++iter
+        }
+
+        ++iter;
+    }
 }
 
-bool LoginQueue::login(int account, int playersOnline, int maxPlayers, int* placeInQueue)
-{
-	removeDeadEntries();
-	push(account);
+bool LoginQueue::login(int account, int playersOnline, int maxPlayers, int *placeInQueue) {
+    removeDeadEntries();
+    push(account);
 
-	int realPos, effectivePos;
-	LoginTryListIterator iter = findAccount(account, &realPos, &effectivePos);
+    int realPos, effectivePos;
+    LoginTryListIterator iter = findAccount(account, &realPos, &effectivePos);
 
-	if (placeInQueue)
-		*placeInQueue = realPos;
+    if (placeInQueue)
+        *placeInQueue = realPos;
 
-	if (playersOnline + effectivePos <= maxPlayers)
-	{
-		iter->state = LOGGED;
-		return true;
-	}
-	else
-		return false;
+    if (playersOnline + effectivePos <= maxPlayers) {
+        iter->state = LOGGED;
+        return true;
+    } else
+        return false;
 }
 
-bool LoginQueue::load()
-{
-	std::string file = g_config.getGlobalString("datadir") + "queue.xml";
-	xmlDocPtr doc;
-	xmlMutexLock(xmlmutex);
+bool LoginQueue::load() {
+    std::string file = g_config.getGlobalString("datadir") + "queue.xml";
+    xmlDocPtr doc;
+    xmlMutexLock(xmlmutex);
 
-	doc = xmlParseFile(file.c_str());
-	if (!doc)
-		return false;
+    doc = xmlParseFile(file.c_str());
+    if (!doc)
+        return false;
 
-	xmlNodePtr root, entryNode;
-	root = xmlDocGetRootElement(doc);
-	if (xmlStrcmp(root->name, (const xmlChar*)"queue")) 
-	{
-		xmlFreeDoc(doc);
-		xmlMutexUnlock(xmlmutex);
-		return false;
-	}
+    xmlNodePtr root, entryNode;
+    root = xmlDocGetRootElement(doc);
+    if (xmlStrcmp(root->name, (const xmlChar *) "queue")) {
+        xmlFreeDoc(doc);
+        xmlMutexUnlock(xmlmutex);
+        return false;
+    }
 
-	entryNode = root->children;
-	while (entryNode)
-	{
-		if (strcmp((char*) entryNode->name, "entry") == 0)
-		{
-			int account = atoi((const char*)xmlGetProp(entryNode, (const xmlChar *) "account"));
-			qstate_t state = (qstate_t)atoi((const char*)xmlGetProp(entryNode, (const xmlChar *) "state"));
-			lq.push_back(LoginTry(account, state));
-		}
-		entryNode = entryNode->next;
-	}
+    entryNode = root->children;
+    while (entryNode) {
+        if (strcmp((char *) entryNode->name, "entry") == 0) {
+            int account = atoi((const char *) xmlGetProp(entryNode, (const xmlChar *) "account"));
+            qstate_t state = (qstate_t) atoi((const char *) xmlGetProp(entryNode, (const xmlChar *) "state"));
+            lq.push_back(LoginTry(account, state));
+        }
+        entryNode = entryNode->next;
+    }
 
-	xmlFreeDoc(doc);
-	xmlMutexUnlock(xmlmutex);
-	return true;
+    xmlFreeDoc(doc);
+    xmlMutexUnlock(xmlmutex);
+    return true;
 }
 
-bool LoginQueue::save()
-{
-	std::string file = g_config.getGlobalString("datadir") + "queue.xml";
-	xmlDocPtr doc;
-	xmlMutexLock(xmlmutex);
+bool LoginQueue::save() {
+    std::string file = g_config.getGlobalString("datadir") + "queue.xml";
+    xmlDocPtr doc;
+    xmlMutexLock(xmlmutex);
 
-	xmlNodePtr root, entryNode;
-	doc = xmlNewDoc((const xmlChar*)"1.0");
+    xmlNodePtr root, entryNode;
+    doc = xmlNewDoc((const xmlChar *) "1.0");
 
-	doc->children = xmlNewDocNode(doc, NULL, (const xmlChar*)"queue", NULL);
+    doc->children = xmlNewDocNode(doc, NULL, (const xmlChar *) "queue", NULL);
     root = doc->children;
-	char buf[64];
+    char buf[64];
 
-	removeDeadEntries();	// clean before saving
+    removeDeadEntries();    // clean before saving
 
-		// first save players that are online
-	for (AutoList<Player>::listiterator iter = Player::listPlayer.list.begin();
-		iter != Player::listPlayer.list.end(); ++iter)
-	{
-		entryNode = xmlNewNode(NULL, (const xmlChar*)"entry");
-		xmlSetProp(entryNode, (const xmlChar*)"account", (const xmlChar*)sprintf(buf, "%d", iter->second->getAccount()));
-		xmlSetProp(entryNode, (const xmlChar*)"state", (const xmlChar*)sprintf(buf, "%d", LOGGED));
-		xmlAddChild(root, entryNode);
-	}
+    // first save players that are online
+    for (AutoList<Player>::listiterator iter = Player::listPlayer.list.begin();
+         iter != Player::listPlayer.list.end(); ++iter) {
+        entryNode = xmlNewNode(NULL, (const xmlChar *) "entry");
+        xmlSetProp(entryNode, (const xmlChar *) "account",
+                   (const xmlChar *) sprintf(buf, "%d", iter->second->getAccount()));
+        xmlSetProp(entryNode, (const xmlChar *) "state", (const xmlChar *) sprintf(buf, "%d", LOGGED));
+        xmlAddChild(root, entryNode);
+    }
 
-		// then players waiting in queue
-	for (LoginTryList::iterator iter = lq.begin(); iter != lq.end(); ++iter)
-	{
-		entryNode = xmlNewNode(NULL, (const xmlChar*)"entry");
-		xmlSetProp(entryNode, (const xmlChar*)"account", (const xmlChar*)sprintf(buf, "%d", iter->accountNumber));
-		xmlSetProp(entryNode, (const xmlChar*)"state", (const xmlChar*)sprintf(buf, "%d",iter->state));
-		xmlAddChild(root, entryNode);
-	}
+    // then players waiting in queue
+    for (LoginTryList::iterator iter = lq.begin(); iter != lq.end(); ++iter) {
+        entryNode = xmlNewNode(NULL, (const xmlChar *) "entry");
+        xmlSetProp(entryNode, (const xmlChar *) "account", (const xmlChar *) sprintf(buf, "%d", iter->accountNumber));
+        xmlSetProp(entryNode, (const xmlChar *) "state", (const xmlChar *) sprintf(buf, "%d", iter->state));
+        xmlAddChild(root, entryNode);
+    }
 
-	if (xmlSaveFile(file.c_str(), doc))
-	{
-		xmlFreeDoc(doc);
-		xmlMutexUnlock(xmlmutex);
-		return true;
-	}
-	else
-	{
-		xmlFreeDoc(doc);
-		xmlMutexUnlock(xmlmutex);
-		std::cout << "Failed to save " << file << std::endl;
-		return false;
-	}
+    if (xmlSaveFile(file.c_str(), doc)) {
+        xmlFreeDoc(doc);
+        xmlMutexUnlock(xmlmutex);
+        return true;
+    } else {
+        xmlFreeDoc(doc);
+        xmlMutexUnlock(xmlmutex);
+        std::cout << "Failed to save " << file << std::endl;
+        return false;
+    }
 }
 
-void LoginQueue::show()		// for testing purposes only
+void LoginQueue::show()        // for testing purposes only
 {
-	std::cout << " --- QUEUE --- (size: " << (int)lq.size() << ")\n";
-	LoginTryListIterator iter = lq.begin();
-	while (iter != lq.end())
-	{
-		std::cout << "account: " << iter->accountNumber << ", try: " << (long)iter->tryTime << ", state:";
-		if (iter->state == ACTIVE) std::cout << "active\n";
-		else if (iter->state == LOGGED) std::cout << "logged\n";
-		else std::cout << "dead\n";
-		++iter;
-	}
+    std::cout << " --- QUEUE --- (size: " << (int) lq.size() << ")\n";
+    LoginTryListIterator iter = lq.begin();
+    while (iter != lq.end()) {
+        std::cout << "account: " << iter->accountNumber << ", try: " << (long) iter->tryTime << ", state:";
+        if (iter->state == ACTIVE) std::cout << "active\n";
+        else if (iter->state == LOGGED) std::cout << "logged\n";
+        else std::cout << "dead\n";
+        ++iter;
+    }
 }
+
 #endif //YUR_LOGIN_QUEUE

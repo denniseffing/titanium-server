@@ -33,105 +33,131 @@
 #include "scheduler.h"
 
 class Creature;
+
 class House;
 
-typedef std::vector<Item*> ItemVector;
-typedef std::vector<Creature*> CreatureVector;
+typedef std::vector<Item *> ItemVector;
+typedef std::vector<Creature *> CreatureVector;
 
-class Tile
-{
+class Tile {
 public:
-  Creature* getCreature() const{
-		if(creatures.size())
-			return creatures[0];
-		else
-			return NULL;
-  }
+    Creature *getCreature() const {
+        if (creatures.size())
+            return creatures[0];
+        else
+            return NULL;
+    }
 
-  Tile()
-  {
-    pz     = false;
-    splash = NULL;
-		ground = NULL;
+    Tile() {
+        pz = false;
+        splash = NULL;
+        ground = NULL;
 
 #ifdef TLM_HOUSE_SYSTEM
-	house = NULL;
+        house = NULL;
 #endif //TLM_HOUSE_SYSTEM
 
 #ifdef YUR_PVP_ARENA
-	pvpArena = false;
+        pvpArena = false;
 #endif //YUR_PVP_ARENA
-  }
+    }
 
-  Item*          ground;
-  Item*          splash;
-  ItemVector     topItems;
-  CreatureVector creatures;
-  ItemVector     downItems;
+    Item *ground;
+    Item *splash;
+    ItemVector topItems;
+    CreatureVector creatures;
+    ItemVector downItems;
 
 #ifdef TLM_HOUSE_SYSTEM
-	bool isHouse() const;
-	House* getHouse() const;
-	bool setHouse(House* newHouse);
+
+    bool isHouse() const;
+
+    House *getHouse() const;
+
+    bool setHouse(House *newHouse);
+
 #endif //TLM_HOUSE_SYSTEM
 
 #ifdef YUR_PVP_ARENA
-	bool isPvpArena() const;
-	void setPvpArena(const Position& exit);
-	Position getPvpArenaExit() const;
+
+    bool isPvpArena() const;
+
+    void setPvpArena(const Position &exit);
+
+    Position getPvpArenaExit() const;
+
 #endif //YUR_PVP_ARENA
 
 #ifdef YUR_CLEAN_MAP
-	long clean();
+
+    long clean();
+
 #endif //YUR_CLEAN_MAP
 
 #ifdef YUR_CVS_MODS
-	long getItemHoldingCount() const;
+
+    long getItemHoldingCount() const;
+
 #endif //YUR_CVS_MODS
 
-  bool removeThing(Thing *thing);
-  bool hasItem(uint32_t id) const;
-  void addThing(Thing *thing);
-	bool insertThing(Thing *thing, int stackpos);
-	MagicEffectItem* getFieldItem();
-	Teleport* getTeleportItem() const;
+    bool removeThing(Thing *thing);
 
-	Thing* getTopMoveableThing();
-	Creature* getTopCreature();
-	Item* getTopTopItem();
-	Item* getTopDownItem();
-	Item* getMoveableBlockingItem();
-	
-  int getCreatureStackPos(Creature *c) const;
-  int getThingStackPos(const Thing *thing) const;
-	int getThingCount() const;
+    bool hasItem(uint32_t id) const;
 
-  Thing* getTopThing();
-	Thing* getThingByStackPos(int pos);
+    void addThing(Thing *thing);
 
-  //bool isBlockingProjectile() const;
-	//bool isBlocking(bool ispickupable = false, bool ignoreMoveableBlocking = false) const;
-	ReturnValue isBlocking(int objectstate, bool ignoreCreature = false, bool ignoreMoveableBlocking = false) const;
+    bool insertThing(Thing *thing, int stackpos);
 
-  bool isPz() const;
-  void setPz();
-  
-  bool floorChange() const;
-  bool floorChangeDown() const;
-  bool floorChange(Direction direction) const;
-  
-  std::string getDescription() const;
+    MagicEffectItem *getFieldItem();
+
+    Teleport *getTeleportItem() const;
+
+    Thing *getTopMoveableThing();
+
+    Creature *getTopCreature();
+
+    Item *getTopTopItem();
+
+    Item *getTopDownItem();
+
+    Item *getMoveableBlockingItem();
+
+    int getCreatureStackPos(Creature *c) const;
+
+    int getThingStackPos(const Thing *thing) const;
+
+    int getThingCount() const;
+
+    Thing *getTopThing();
+
+    Thing *getThingByStackPos(int pos);
+
+    //bool isBlockingProjectile() const;
+    //bool isBlocking(bool ispickupable = false, bool ignoreMoveableBlocking = false) const;
+    ReturnValue isBlocking(int objectstate, bool ignoreCreature = false, bool ignoreMoveableBlocking = false) const;
+
+    bool isPz() const;
+
+    void setPz();
+
+    bool floorChange() const;
+
+    bool floorChangeDown() const;
+
+    bool floorChange(Direction direction) const;
+
+    std::string getDescription() const;
 
 protected:
-  bool pz;
+    bool pz;
 
 #ifdef TLM_HOUSE_SYSTEM
-	House* house;
+    House *house;
 #endif //TLM_HOUSE_SYSTEM
 
 #ifdef YUR_PVP_ARENA
-	bool pvpArena;
-	Position arenaExit;
+    bool pvpArena;
+    Position arenaExit;
 #endif //YUR_PVP_ARENA
 };
 

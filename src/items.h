@@ -24,10 +24,13 @@
 
 
 #ifdef __GNUC__
+
 #include <ext/hash_map>
+
 #else
 #include <hash_map>
 #endif
+
 #include <string>
 #include "const76.h"
 #include "itemloader.h"
@@ -35,116 +38,123 @@
 
 #define SLOTP_WHEREEVER 0xFFFFFFFF
 #define SLOTP_HEAD 1
-#define	SLOTP_NECKLACE 2
-#define	SLOTP_BACKPACK 4
-#define	SLOTP_ARMOR 8
-#define	SLOTP_RIGHT 16
-#define	SLOTP_LEFT 32
-#define	SLOTP_LEGS 64
-#define	SLOTP_FEET 128
-#define	SLOTP_RING 256
-#define	SLOTP_AMMO 512
-#define	SLOTP_DEPOT 1024
-#define	SLOTP_TWO_HAND 2048
+#define    SLOTP_NECKLACE 2
+#define    SLOTP_BACKPACK 4
+#define    SLOTP_ARMOR 8
+#define    SLOTP_RIGHT 16
+#define    SLOTP_LEFT 32
+#define    SLOTP_LEGS 64
+#define    SLOTP_FEET 128
+#define    SLOTP_RING 256
+#define    SLOTP_AMMO 512
+#define    SLOTP_DEPOT 1024
+#define    SLOTP_TWO_HAND 2048
 
-enum eRWInfo{
-	CAN_BE_READ = 1,
-	CAN_BE_WRITTEN = 2
+enum eRWInfo {
+    CAN_BE_READ = 1,
+    CAN_BE_WRITTEN = 2
 };
 
 class ItemType {
 public:
-	ItemType();
-	~ItemType();
+    ItemType();
 
-	itemgroup_t group;
+    ~ItemType();
 
-	bool isGroundTile() const;
-	bool isContainer() const;
-	bool isTeleport() const;
-	bool isMagicField() const;
-	bool isKey() const;
-	bool isSplash() const;
-	bool isFluidContainer() const;
+    itemgroup_t group;
 
-	uint16_t id;
-	uint16_t clientId;
+    bool isGroundTile() const;
 
-  uint16_t maxItems;   // maximum size if this is a container
-	double weight;						 // weight of the item, e.g. throwing distance depends on it
-	std::string			name;			 // the name of the item
-	std::string			description;	 // additional description... as in "The blade is a magic flame." for fireswords
-  WeaponType			weaponType;
-  amu_t						amuType;
-  subfight_t			shootType;
-  int							attack;
-  int							defence;
-  int							armor;
-	uint16_t	slot_position;
-  uint16_t	decayTo;
-  uint16_t	decayTime;
-  bool						canDecay;
+    bool isContainer() const;
 
-	uint16_t speed;
+    bool isTeleport() const;
 
-	// other bools
-	int             magicfieldtype;
-	int             RWInfo;
-	uint16_t  readOnlyId;
-	bool            stackable;
-	bool            useable;
-	bool            moveable;
-	bool            alwaysOnTop;
-	int             runeMagLevel;
-	bool            pickupable;
-	bool            rotable;
-	int 			rotateTo;
+    bool isMagicField() const;
+
+    bool isKey() const;
+
+    bool isSplash() const;
+
+    bool isFluidContainer() const;
+
+    uint16_t id;
+    uint16_t clientId;
+
+    uint16_t maxItems;   // maximum size if this is a container
+    double weight;                         // weight of the item, e.g. throwing distance depends on it
+    std::string name;             // the name of the item
+    std::string description;     // additional description... as in "The blade is a magic flame." for fireswords
+    WeaponType weaponType;
+    amu_t amuType;
+    subfight_t shootType;
+    int attack;
+    int defence;
+    int armor;
+    uint16_t slot_position;
+    uint16_t decayTo;
+    uint16_t decayTime;
+    bool canDecay;
+
+    uint16_t speed;
+
+    // other bools
+    int magicfieldtype;
+    int RWInfo;
+    uint16_t readOnlyId;
+    bool stackable;
+    bool useable;
+    bool moveable;
+    bool alwaysOnTop;
+    int runeMagLevel;
+    bool pickupable;
+    bool rotable;
+    int rotateTo;
 
 #ifdef TLM_HOUSE_SYSTEM
-	bool isDoor;
+    bool isDoor;
 #endif //TLM_HOUSE_SYSTEM
 #ifdef YUR_RINGS_AMULETS
-	int newCharges;
-	int newTime;
+    int newCharges;
+    int newTime;
 #endif //YUR_RINGS_AMULETS
 #ifdef TP_TRASH_BINS
-	bool isDeleter;
+    bool isDeleter;
 #endif //TP_TRASH_BINS
 
-	int             lightLevel;
-	int             lightColor;
+    int lightLevel;
+    int lightColor;
 
-	bool						floorChangeDown;
-	bool						floorChangeNorth;
-	bool						floorChangeSouth;
-	bool						floorChangeEast;
-	bool						floorChangeWest;
-	bool            hasHeight; //blockpickupable
+    bool floorChangeDown;
+    bool floorChangeNorth;
+    bool floorChangeSouth;
+    bool floorChangeEast;
+    bool floorChangeWest;
+    bool hasHeight; //blockpickupable
 
-	bool blockSolid;
-	bool blockPickupable;
-	bool blockProjectile;
-	bool blockPathFind;
+    bool blockSolid;
+    bool blockPickupable;
+    bool blockProjectile;
+    bool blockPathFind;
 
-	//bool            readable;
-	//bool            ismagicfield;
-	//bool            issplash;
-	//bool            iskey;
+    //bool            readable;
+    //bool            ismagicfield;
+    //bool            issplash;
+    //bool            iskey;
 
-	//uint16_t	damage;
-	//bool isteleport;
-	//bool            fluidcontainer;
-	//bool            multitype;
-	//bool            iscontainer;
-	//bool            groundtile;
-	//bool						blockpickupable;
-	//bool						canWalkThrough;
-	//bool						notMoveable;
-	//bool						blocking;						// people can walk on it
-	//bool						blockingProjectile;
-	//bool						noFloorChange;
-	//bool						isDoor;
-	//bool						isDoorWithLock;
+    //uint16_t	damage;
+    //bool isteleport;
+    //bool            fluidcontainer;
+    //bool            multitype;
+    //bool            iscontainer;
+    //bool            groundtile;
+    //bool						blockpickupable;
+    //bool						canWalkThrough;
+    //bool						notMoveable;
+    //bool						blocking;						// people can walk on it
+    //bool						blockingProjectile;
+    //bool						noFloorChange;
+    //bool						isDoor;
+    //bool						isDoorWithLock;
 };
 
 #ifdef __GNUC__
@@ -155,31 +165,33 @@ typedef stdext::hash_map<uint32_t, uint32_t> ReverseItemMap;
 
 class Items {
 public:
-	Items();
-	~Items();
-	
-	int loadFromOtb(std::string);
-	bool loadXMLInfos(std::string);
+    Items();
 
-	const ItemType& operator[](int id);
-	
-	static uint32_t reverseLookUp(uint32_t id);
-	
-	static long dwMajorVersion;
-	static long dwMinorVersion;
-	static long dwBuildNumber;
-	
+    ~Items();
+
+    int loadFromOtb(std::string);
+
+    bool loadXMLInfos(std::string);
+
+    const ItemType &operator[](int id);
+
+    static uint32_t reverseLookUp(uint32_t id);
+
+    static long dwMajorVersion;
+    static long dwMinorVersion;
+    static long dwBuildNumber;
+
 protected:
-	#ifdef __GNUC__
-	typedef __gnu_cxx::hash_map<uint16_t, ItemType*> ItemMap;
-	#else
-	typedef stdext::hash_map<uint16_t, ItemType*> ItemMap;
-	#endif
-	
-	ItemMap items;
-	static ReverseItemMap revItems;
+#ifdef __GNUC__
+    typedef __gnu_cxx::hash_map<uint16_t, ItemType *> ItemMap;
+#else
+    typedef stdext::hash_map<uint16_t, ItemType*> ItemMap;
+#endif
 
-	ItemType dummyItemType; // use this for invalid ids
+    ItemMap items;
+    static ReverseItemMap revItems;
+
+    ItemType dummyItemType; // use this for invalid ids
 };
 
 #endif
