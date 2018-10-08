@@ -20,29 +20,27 @@
 
 #include "itemloader.h"
 
-int ItemLoader::setProps(attribute_t attr, void* data, datasize_t size)
-{
-	//attribute
-	if(!writeData(&attr, sizeof(attribute_t), true))
-		return getError();
+int ItemLoader::setProps(attribute_t attr, void *data, datasize_t size) {
+    //attribute
+    if (!writeData(&attr, sizeof(attribute_t), true))
+        return getError();
 
-	//size
-	if(!writeData(&size, sizeof(datasize_t), true))
-		return getError();
+    //size
+    if (!writeData(&size, sizeof(datasize_t), true))
+        return getError();
 
-	//data
-	if(!writeData(data, size, true))
-		return getError();
-	
-	return ERROR_NONE;
+    //data
+    if (!writeData(data, size, true))
+        return getError();
+
+    return ERROR_NONE;
 }
 
-int ItemLoader::setFlags(flags_t flags)
-{
-	//data
-	if(!writeData(&flags, sizeof(flags_t), true))
-		return getError();
+int ItemLoader::setFlags(flags_t flags) {
+    //data
+    if (!writeData(&flags, sizeof(flags_t), true))
+        return getError();
 
-	return ERROR_NONE;
+    return ERROR_NONE;
 }
 

@@ -32,26 +32,34 @@
 
 
 /** Baseclass for all Player-Loaders */
-class IOPlayerXML : protected IOPlayer{
-  public:
-	/** Get a textual description of what source is used
-	  * \returns Name of the source*/
-	virtual char* getSourceDescription(){return "Player source: XML";};
-	virtual bool loadPlayer(Player* player, std::string name);
-	/** Save a player
-	  * \returns Wheter the player was successfully saved
-	  * \param player the player to save
-	  */
-	bool savePlayer(Player* player);
-	IOPlayerXML();
-	virtual ~IOPlayerXML(){};
-  private:
-	  bool LoadContainer(xmlNodePtr item,Container* container);
-  	  bool SaveContainer(xmlNodePtr item,Container* container);  
+class IOPlayerXML : protected IOPlayer {
+public:
+    /** Get a textual description of what source is used
+      * \returns Name of the source*/
+    virtual char *getSourceDescription() { return "Player source: XML"; };
+
+    virtual bool loadPlayer(Player *player, std::string name);
+
+    /** Save a player
+      * \returns Wheter the player was successfully saved
+      * \param player the player to save
+      */
+    bool savePlayer(Player *player);
+
+    IOPlayerXML();
+
+    virtual ~IOPlayerXML() {};
+private:
+    bool LoadContainer(xmlNodePtr item, Container *container);
+
+    bool SaveContainer(xmlNodePtr item, Container *container);
 
 #ifdef ELEM_VIP_LIST
-	bool LoadVIP(Player* player);
-	bool SaveVIP(Player* player);
+
+    bool LoadVIP(Player *player);
+
+    bool SaveVIP(Player *player);
+
 #endif //ELEM_VIP_LIST
 };
 

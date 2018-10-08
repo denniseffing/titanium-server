@@ -25,33 +25,31 @@
 #include <cmath>
 #include <sstream>
 
-bool fileExists(char* filename)
-{
-	FILE *f = fopen(filename, "rb");
-	bool exists = (f != NULL);
-	if (f != NULL)
-		fclose(f);
+bool fileExists(char *filename) {
+    FILE *f = fopen(filename, "rb");
+    bool exists = (f != NULL);
+    if (f != NULL)
+        fclose(f);
 
-	return exists;
+    return exists;
 }
 
 //////////////////////////////////////////////////
 // get a random value between lowest_number and highest_number
-int random_range(int lowest_number, int highest_number)
-{
-	if(lowest_number > highest_number){
-		int nTmp = highest_number;
-		highest_number = lowest_number;
-		lowest_number = nTmp;
+int random_range(int lowest_number, int highest_number) {
+    if (lowest_number > highest_number) {
+        int nTmp = highest_number;
+        highest_number = lowest_number;
+        lowest_number = nTmp;
     }
 
     double range = highest_number - lowest_number + 1;
-    return lowest_number + int(range * rand()/(RAND_MAX + 1.0));
+    return lowest_number + int(range * rand() / (RAND_MAX + 1.0));
 }
 
 //////////////////////////////////////////////////
 // dump a part of the memory to stderr.
-void hexdump(unsigned char *_data, int _len) {
+void hexdump(uint8_t *_data, int _len) {
     int i;
     for (; _len > 0; _data += 16, _len -= 16) {
         for (i = 0; i < 16 && i < _len; i++)
@@ -60,7 +58,7 @@ void hexdump(unsigned char *_data, int _len) {
             fprintf(stderr, "   ");
         fprintf(stderr, " ");
         for (i = 0; i < 16 && i < _len; i++)
-            fprintf(stderr, "%c", (_data[i] & 0x70) < 32 ? '·' : _data[i]);
+            fprintf(stderr, "%c", (_data[i] & 0x70) < 32 ? 'ï¿½' : _data[i]);
         fprintf(stderr, "\n");
     }
 }
@@ -86,68 +84,68 @@ pthread_t *detach(void *(*_fn)(void *), void *_arg) {
 char upchar(char c) {
     if (c >= 'a' && c <= 'z')
         return c - 'a' + 'A';
-    else if (c == 'à')
-        return 'À';
-    else if (c == 'á')
-        return 'Á';
-    else if (c == 'â')
-        return 'Â';
-    else if (c == 'ã')
-        return 'Ã';
-    else if (c == 'ä')
-        return 'Ä';
-    else if (c == 'å')
-        return 'Å';
-    else if (c == 'æ')
-        return 'Æ';
-    else if (c == 'ç')
-        return 'Ç';
-    else if (c == 'è')
-        return 'È';
-    else if (c == 'é')
-        return 'É';
-    else if (c == 'ê')
-        return 'Ê';
-    else if (c == 'ë')
-        return 'Ë';
-    else if (c == 'ì')
-        return 'Ì';
-    else if (c == 'í')
-        return 'Í';
-    else if (c == 'î')
-        return 'Î';
-    else if (c == 'ï')
-        return 'Ï';
-    else if (c == 'ð')
-        return 'Ð';
-    else if (c == 'ñ')
-        return 'Ñ';
-    else if (c == 'ò')
-        return 'Ò';
-    else if (c == 'ó')
-        return 'Ó';
-    else if (c == 'ô')
-        return 'Ô';
-    else if (c == 'õ')
-        return 'Õ';
-    else if (c == 'ö')
-        return 'Ö';
-    else if (c == 'ø')
-        return 'Ø';
-    else if (c == 'ù')
-        return 'Ù';
-    else if (c == 'ú')
-        return 'Ú';
-    else if (c == 'û')
-        return 'Û';
-    else if (c == 'ü')
-        return 'Ü';
-    else if (c == 'ý')
-        return 'Ý';
-    else if (c == 'þ')
-        return 'Þ';
-    else if (c == 'ÿ')
-        return 'ß';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
+    else if (c == 'ï¿½')
+        return 'ï¿½';
     else
         return c;
 }
@@ -169,57 +167,49 @@ void upper(char *upstr, char *str, int n) {
     if (n) *upstr = '\0';
 }
 
-int safe_atoi(const char* str)
-{
-	if (str)
-		return atoi(str);
-	else
-		return 0;
+int safe_atoi(const char *str) {
+    if (str)
+        return atoi(str);
+    else
+        return 0;
 }
 
-double timer()
-{
-	static bool running = false;
-	static _timeb start, end;
+double timer() {
+    static bool running = false;
+    static timeb start, end;
 
-	if (!running)
-	{
-		_ftime(&start);
-		running = true;
-		return 0.0;
-	}
-	else
-	{
-		_ftime(&end);
-		running = false;
-		return (end.time-start.time)+(end.millitm-start.millitm)/1000.0;
-	}
+    if (!running) {
+        ftime(&start);
+        running = true;
+        return 0.0;
+    } else {
+        ftime(&end);
+        running = false;
+        return (end.time - start.time) + (end.millitm - start.millitm) / 1000.0;
+    }
 }
 
-std::string article(const std::string& name)
-{
-	if (name.empty())
-		return name;
+std::string article(const std::string &name) {
+    if (name.empty())
+        return name;
 
-	switch (upchar(name[0]))
-	{
-	case 'A':
-	case 'E':
-	case 'I':
-	case 'O':
-	case 'U':
-		return std::string("an ") + name;
-	default:
-		return std::string("a ") + name;
-	}
+    switch (upchar(name[0])) {
+        case 'A':
+        case 'E':
+        case 'I':
+        case 'O':
+        case 'U':
+            return std::string("an ") + name;
+        default:
+            return std::string("a ") + name;
+    }
 }
 
-std::string str(int ticks)
-{
-	int hours = (int)floor(double(ticks)/(3600000.0));
-	int minutes = (int)ceil((double(ticks) - double(hours)*3600000.0)/(60000.0));
+std::string str(int ticks) {
+    int hours = (int) floor(double(ticks) / (3600000.0));
+    int minutes = (int) ceil((double(ticks) - double(hours) * 3600000.0) / (60000.0));
 
-	std::ostringstream info;
-	info << hours << (hours==1? " hour " : " hours ") << minutes << (minutes==1? " minute" :" minutes");
-	return info.str();
+    std::ostringstream info;
+    info << hours << (hours == 1 ? " hour " : " hours ") << minutes << (minutes == 1 ? " minute" : " minutes");
+    return info.str();
 }

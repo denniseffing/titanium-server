@@ -29,22 +29,23 @@
 //class Player;
 
 
-class Account
-{
-	//superflous
-	friend class IOAccount;
+class Account {
+    //superflous
+    friend class IOAccount;
+
 public:
-  Account();
-  ~Account();
+    Account();
 
-  unsigned long accnumber;
-  int accType;     // ?
-  int premDays;    // Premium days
+    ~Account();
 
-  std::string name;
-  std::string password;
+    uint32_t accnumber;
+    int accType;     // ?
+    int premDays;    // Premium days
 
-  std::list<std::string> charList;
+    std::string name;
+    std::string password;
+
+    std::list<std::string> charList;
 
 };
 

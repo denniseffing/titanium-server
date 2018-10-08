@@ -27,35 +27,41 @@
 #include "networkmessage.h"
 
 
-class Status{
-  public:
-  // procs       
-	void addPlayer();
-	void removePlayer();
-	static Status* instance();
-	std::string getStatusString();
-	void getInfo(NetworkMessage &nm);
-	bool hasSlot();
-	
-	// vars
-	int playersonline, playersmax, playerspeak;
-	std::string ownername, owneremail;
-	std::string motd;
-	std::string mapname, mapauthor;
-	int mapsizex, mapsizey;
-	std::string servername, location, url;
-	std::string version;
-	uint64_t start;
+class Status {
+public:
+    // procs
+    void addPlayer();
+
+    void removePlayer();
+
+    static Status *instance();
+
+    std::string getStatusString();
+
+    void getInfo(NetworkMessage &nm);
+
+    bool hasSlot();
+
+    // vars
+    int playersonline, playersmax, playerspeak;
+    std::string ownername, owneremail;
+    std::string motd;
+    std::string mapname, mapauthor;
+    int mapsizex, mapsizey;
+    std::string servername, location, url;
+    std::string version;
+    uint64_t start;
 
 #ifdef YUR_LOGIN_QUEUE
-	int playerswaiting;
+    int playerswaiting;
 #endif //YUR_LOGIN_QUEUE
 
-  private:
-	Status();
-	static Status* _Status;
+private:
+    Status();
 
-	// the stats of our server
+    static Status *_Status;
+
+    // the stats of our server
 };
 
 #endif

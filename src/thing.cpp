@@ -3,21 +3,18 @@
 #include "tile.h"
 
 
-Thing::Thing()
-{
-  throwRange = 1;
-  isRemoved = true;
+Thing::Thing() {
+    throwRange = 1;
+    isRemoved = true;
 }
 
 
-Thing::~Thing()
-{
+Thing::~Thing() {
 }
 
-bool Thing::canMovedTo(const Tile *tile) const
-{
-	return false;
-  //return !tile->isBlocking();
+bool Thing::canMovedTo(const Tile *tile) const {
+    return false;
+    //return !tile->isBlocking();
 }
 
 

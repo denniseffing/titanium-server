@@ -23,15 +23,24 @@
 #define __OTSERV_TOOLS_H
 
 
-bool fileExists(char* filename);
+bool fileExists(char *filename);
+
 int random_range(int lowest_number, int highest_number);
-void hexdump(unsigned char *_data, int _len);
+
+void hexdump(uint8_t *_data, int _len);
+
 char upchar(char c);
+
 void upper(char *upstr, char *str);
+
 void upper(char *upstr, char *str, int n);
-int safe_atoi(const char* str);
+
+int safe_atoi(const char *str);
+
 double timer();
-std::string article(const std::string& name);
+
+std::string article(const std::string &name);
+
 std::string str(int ticks);
 
 #endif

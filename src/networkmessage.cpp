@@ -32,285 +32,263 @@
 #include "position.h"
 
 
-
 /******************************************************************************/
 
-NetworkMessage::NetworkMessage()
-{
-  Reset();
+NetworkMessage::NetworkMessage() {
+    Reset();
 }
 
-NetworkMessage::~NetworkMessage()
-{
+NetworkMessage::~NetworkMessage() {
 }
 
 
 /******************************************************************************/
 
-void NetworkMessage::Reset()
-{
-  m_MsgSize = 0;
-  m_ReadPos = 2;  
+void NetworkMessage::Reset() {
+    m_MsgSize = 0;
+    m_ReadPos = 2;
 }
 
 
 /******************************************************************************/
 
-bool NetworkMessage::ReadFromSocket(SOCKET socket)
-{
-	// just read the size to avoid reading 2 messages at once
-	m_MsgSize = recv(socket, (char*)m_MsgBuf, 2, 0);
-	
-	// for now we expect 2 bytes at once, it should not be splitted
-	int datasize = m_MsgBuf[0] | m_MsgBuf[1] << 8;
-	if((m_MsgSize != 2) || (datasize > NETWORKMESSAGE_MAXSIZE-2)){
-		int errnum;
+bool NetworkMessage::ReadFromSocket(SOCKET socket) {
+    // just read the size to avoid reading 2 messages at once
+    m_MsgSize = recv(socket, (char *) m_MsgBuf, 2, 0);
+
+    // for now we expect 2 bytes at once, it should not be splitted
+    int datasize = m_MsgBuf[0] | m_MsgBuf[1] << 8;
+    if ((m_MsgSize != 2) || (datasize > NETWORKMESSAGE_MAXSIZE - 2)) {
+        int errnum;
 #if defined WIN32 || defined __WINDOWS__
-		errnum = ::WSAGetLastError();
-		if(errnum == EWOULDBLOCK){
-			m_MsgSize = 0;
-			return true;
-		}
+        errnum = ::WSAGetLastError();
+        if(errnum == EWOULDBLOCK){
+            m_MsgSize = 0;
+            return true;
+        }
 #else
-		errnum = errno;
+        errnum = errno;
 #endif
 
-		Reset();
-		return false;
-	}
+        Reset();
+        return false;
+    }
 
-	// read the real data
-	m_MsgSize += recv(socket, (char*)m_MsgBuf+2, datasize, 0);
+    // read the real data
+    m_MsgSize += recv(socket, (char *) m_MsgBuf + 2, datasize, 0);
 
-	// we got something unexpected/incomplete
-	if ((m_MsgSize <= 2) || ((m_MsgBuf[0] | m_MsgBuf[1] << 8) != m_MsgSize-2))
-	{
-		Reset();
-		return false;
-	}
+    // we got something unexpected/incomplete
+    if ((m_MsgSize <= 2) || ((m_MsgBuf[0] | m_MsgBuf[1] << 8) != m_MsgSize - 2)) {
+        Reset();
+        return false;
+    }
 
-	// ok, ...reading starts after the size
-	m_ReadPos = 2;
+    // ok, ...reading starts after the size
+    m_ReadPos = 2;
 
-	return true;
+    return true;
 }
 
 
-bool NetworkMessage::WriteToSocket(SOCKET socket)
-{
-	if (m_MsgSize == 0)
-		return true;
+bool NetworkMessage::WriteToSocket(SOCKET socket) {
+    if (m_MsgSize == 0)
+        return true;
 
-	m_MsgBuf[0] = (unsigned char)(m_MsgSize);
-	m_MsgBuf[1] = (unsigned char)(m_MsgSize >> 8);
-  
-	bool ret = true;
-	int sendBytes = 0;
-	int flags;
+    m_MsgBuf[0] = (uint8_t) (m_MsgSize);
+    m_MsgBuf[1] = (uint8_t) (m_MsgSize >> 8);
+
+    bool ret = true;
+    int sendBytes = 0;
+    int flags;
 
 #if defined WIN32 || defined __WINDOWS__
-	// Set the socket I/O mode; iMode = 0 for blocking; iMode != 0 for non-blocking
-	unsigned long mode = 1;
-	ioctlsocket(socket, FIONBIO, &mode);
-	flags = 0;
+    // Set the socket I/O mode; iMode = 0 for blocking; iMode != 0 for non-blocking
+    uint32_t mode = 1;
+    ioctlsocket(socket, FIONBIO, &mode);
+    flags = 0;
 #else
-	flags = MSG_DONTWAIT;
+    flags = MSG_DONTWAIT;
 #endif
-	int retry = 0;
-  	do{
-    	int b = send(socket, (char*)m_MsgBuf+sendBytes, std::min(m_MsgSize-sendBytes+2, 1000), flags);
-		if(b <= 0){
+    int retry = 0;
+    do {
+        int b = send(socket, (char *) m_MsgBuf + sendBytes, std::min(m_MsgSize - sendBytes + 2, 1000), flags);
+        if (b <= 0) {
 #if defined WIN32 || defined __WINDOWS__
-			int errnum = ::WSAGetLastError();
-			if(errnum == EWOULDBLOCK){
-				b = 0;
-				OTSYS_SLEEP(10);
-				retry++;
-				if(retry == 10){
-					ret = false;
-					break;
-				}
-			}
-			else
+            int errnum = ::WSAGetLastError();
+            if(errnum == EWOULDBLOCK){
+                b = 0;
+                OTSYS_SLEEP(10);
+                retry++;
+                if(retry == 10){
+                    ret = false;
+                    break;
+                }
+            }
+            else
 #endif
-			{
-				ret = false;
-				break;
-			}
-		}
-    	sendBytes += b;
-	}while(sendBytes < m_MsgSize+2);
+            {
+                ret = false;
+                break;
+            }
+        }
+        sendBytes += b;
+    } while (sendBytes < m_MsgSize + 2);
 
 #if defined WIN32 || defined __WINDOWS__
-	mode = 0;
-	ioctlsocket(socket, FIONBIO, &mode);
+    mode = 0;
+    ioctlsocket(socket, FIONBIO, &mode);
 #endif
 
-  return ret;
+    return ret;
 }
 
 
 /******************************************************************************/
 
 
-unsigned char NetworkMessage::GetByte()
-{
-  return m_MsgBuf[m_ReadPos++];
+uint8_t NetworkMessage::GetByte() {
+    return m_MsgBuf[m_ReadPos++];
 }
 
 
-unsigned short NetworkMessage::GetU16()
-{
-  unsigned short v = ((m_MsgBuf[m_ReadPos]) | (m_MsgBuf[m_ReadPos+1] << 8));
-  m_ReadPos += 2;
-  return v;
+uint16_t NetworkMessage::GetU16() {
+    uint16_t v = ((m_MsgBuf[m_ReadPos]) | (m_MsgBuf[m_ReadPos + 1] << 8));
+    m_ReadPos += 2;
+    return v;
 }
 
-unsigned short NetworkMessage::GetItemId()
-{
-	unsigned short v = this->GetU16();
-	return (unsigned short)Item::items.reverseLookUp(v);
+uint16_t NetworkMessage::GetItemId() {
+    uint16_t v = this->GetU16();
+    return (uint16_t) Item::items.reverseLookUp(v);
 }
 
-unsigned int NetworkMessage::GetU32()
-{
-  unsigned int v = ((m_MsgBuf[m_ReadPos  ]      ) | (m_MsgBuf[m_ReadPos+1] <<  8) |
-                    (m_MsgBuf[m_ReadPos+2] << 16) | (m_MsgBuf[m_ReadPos+3] << 24));
-  m_ReadPos += 4;
-  return v;
+uint32_t NetworkMessage::GetU32() {
+    uint32_t v = ((m_MsgBuf[m_ReadPos]) | (m_MsgBuf[m_ReadPos + 1] << 8) |
+                  (m_MsgBuf[m_ReadPos + 2] << 16) | (m_MsgBuf[m_ReadPos + 3] << 24));
+    m_ReadPos += 4;
+    return v;
 }
 
 
-std::string NetworkMessage::GetString()
-{
-  int stringlen = GetU16();
-  if (stringlen >= (16384 - m_ReadPos))
-	  return std::string();
+std::string NetworkMessage::GetString() {
+    int stringlen = GetU16();
+    if (stringlen >= (16384 - m_ReadPos))
+        return std::string();
 
-  char* v = (char*)(m_MsgBuf+m_ReadPos);
-  m_ReadPos += stringlen;
-  return std::string(v, stringlen);
+    char *v = (char *) (m_MsgBuf + m_ReadPos);
+    m_ReadPos += stringlen;
+    return std::string(v, stringlen);
 }
 
-std::string NetworkMessage::GetRaw(){
-  int stringlen = m_MsgSize- m_ReadPos;
-  if (stringlen >= (16384 - m_ReadPos))
-	  return std::string();
+std::string NetworkMessage::GetRaw() {
+    int stringlen = m_MsgSize - m_ReadPos;
+    if (stringlen >= (16384 - m_ReadPos))
+        return std::string();
 
-  char* v = (char*)(m_MsgBuf+m_ReadPos);
-  m_ReadPos += stringlen;
-  return std::string(v, stringlen);
+    char *v = (char *) (m_MsgBuf + m_ReadPos);
+    m_ReadPos += stringlen;
+    return std::string(v, stringlen);
 }
 
 Position NetworkMessage::GetPosition() {
-  Position pos;
-  pos.x = GetU16();
-  pos.y = GetU16();
-  pos.z = GetByte();
-  return pos;
+    Position pos;
+    pos.x = GetU16();
+    pos.y = GetU16();
+    pos.z = GetByte();
+    return pos;
 }
 
 
-void NetworkMessage::SkipBytes(int count)
-{
-  m_ReadPos += count;
-}
-
-
-/******************************************************************************/
-
-
-void NetworkMessage::AddByte(unsigned char value)
-{
-  if(!canAdd(1))
-    return;
-  m_MsgBuf[m_ReadPos++] = value;
-  m_MsgSize++;
-}
-
-
-void NetworkMessage::AddU16(unsigned short value)
-{
-  if(!canAdd(2))
-    return;
-  m_MsgBuf[m_ReadPos++] = (unsigned char)(value);
-  m_MsgBuf[m_ReadPos++] = (unsigned char)(value >> 8);
-  m_MsgSize += 2;
-}
-
-
-void NetworkMessage::AddU32(unsigned int value)
-{
-  if(!canAdd(4))
-    return;
-  m_MsgBuf[m_ReadPos++] = (unsigned char)(value);
-  m_MsgBuf[m_ReadPos++] = (unsigned char)(value >>  8);
-  m_MsgBuf[m_ReadPos++] = (unsigned char)(value >> 16);
-  m_MsgBuf[m_ReadPos++] = (unsigned char)(value >> 24);
-  m_MsgSize += 4;
-}
-
-
-void NetworkMessage::AddString(const std::string &value)
-{
-  AddString(value.c_str());
-}
-
-
-void NetworkMessage::AddString(const char* value)
-{
-  unsigned long stringlen = (unsigned long) strlen(value);
-  if(!canAdd(stringlen+2) || stringlen > 8192)
-    return;
-  AddU16((unsigned short)stringlen);
-  strcpy((char*)m_MsgBuf + m_ReadPos, value);
-  m_ReadPos += stringlen;
-  m_MsgSize += stringlen;
+void NetworkMessage::SkipBytes(int count) {
+    m_ReadPos += count;
 }
 
 
 /******************************************************************************/
 
 
-void NetworkMessage::AddPosition(const Position &pos)
-{
-  AddU16(pos.x);
-  AddU16(pos.y);
-  AddByte(pos.z);
+void NetworkMessage::AddByte(uint8_t value) {
+    if (!canAdd(1))
+        return;
+    m_MsgBuf[m_ReadPos++] = value;
+    m_MsgSize++;
 }
 
 
-void NetworkMessage::AddItem(unsigned short id, unsigned char count)
-{
-	const ItemType &it = Item::items[id];
-
-	AddU16(it.clientId);
-
-	if(it.stackable || it.isSplash() || it.isFluidContainer())
-		AddByte(count);
+void NetworkMessage::AddU16(uint16_t value) {
+    if (!canAdd(2))
+        return;
+    m_MsgBuf[m_ReadPos++] = (uint8_t) (value);
+    m_MsgBuf[m_ReadPos++] = (uint8_t) (value >> 8);
+    m_MsgSize += 2;
 }
 
-void NetworkMessage::AddItem(const Item *item)
-{
-	const ItemType &it = Item::items[item->getID()];
 
-	AddU16(it.clientId);
-
-	if(it.stackable || it.isSplash() || it.isFluidContainer())
-    AddByte((unsigned char)item->getItemCountOrSubtype());
+void NetworkMessage::AddU32(uint32_t value) {
+    if (!canAdd(4))
+        return;
+    m_MsgBuf[m_ReadPos++] = (uint8_t) (value);
+    m_MsgBuf[m_ReadPos++] = (uint8_t) (value >> 8);
+    m_MsgBuf[m_ReadPos++] = (uint8_t) (value >> 16);
+    m_MsgBuf[m_ReadPos++] = (uint8_t) (value >> 24);
+    m_MsgSize += 4;
 }
 
-void NetworkMessage::AddItemId(const Item *item)
-{
-	const ItemType &it = Item::items[item->getID()];
 
-	AddU16(it.clientId);
+void NetworkMessage::AddString(const std::string &value) {
+    AddString(value.c_str());
 }
 
-void NetworkMessage::JoinMessages(NetworkMessage &add){
-	if(!canAdd(add.m_MsgSize))
-      return;
-	memcpy(&m_MsgBuf[m_ReadPos],&(add.m_MsgBuf[2]),add.m_MsgSize);
-	m_ReadPos += add.m_MsgSize;
-  	m_MsgSize += add.m_MsgSize;
+
+void NetworkMessage::AddString(const char *value) {
+    uint32_t stringlen = (uint32_t) strlen(value);
+    if (!canAdd(stringlen + 2) || stringlen > 8192)
+        return;
+    AddU16((uint16_t) stringlen);
+    strcpy((char *) m_MsgBuf + m_ReadPos, value);
+    m_ReadPos += stringlen;
+    m_MsgSize += stringlen;
+}
+
+
+/******************************************************************************/
+
+
+void NetworkMessage::AddPosition(const Position &pos) {
+    AddU16(pos.x);
+    AddU16(pos.y);
+    AddByte(pos.z);
+}
+
+
+void NetworkMessage::AddItem(uint16_t id, uint8_t count) {
+    const ItemType &it = Item::items[id];
+
+    AddU16(it.clientId);
+
+    if (it.stackable || it.isSplash() || it.isFluidContainer())
+        AddByte(count);
+}
+
+void NetworkMessage::AddItem(const Item *item) {
+    const ItemType &it = Item::items[item->getID()];
+
+    AddU16(it.clientId);
+
+    if (it.stackable || it.isSplash() || it.isFluidContainer())
+        AddByte((uint8_t) item->getItemCountOrSubtype());
+}
+
+void NetworkMessage::AddItemId(const Item *item) {
+    const ItemType &it = Item::items[item->getID()];
+
+    AddU16(it.clientId);
+}
+
+void NetworkMessage::JoinMessages(NetworkMessage &add) {
+    if (!canAdd(add.m_MsgSize))
+        return;
+    memcpy(&m_MsgBuf[m_ReadPos], &(add.m_MsgBuf[2]), add.m_MsgSize);
+    m_ReadPos += add.m_MsgSize;
+    m_MsgSize += add.m_MsgSize;
 }
