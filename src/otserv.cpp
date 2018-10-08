@@ -70,8 +70,8 @@
 #define ERROR_EINTR EINTR
 
 /* Comment below line if you want to execute otserv with root user (NOT RECOMMENDED) */
-#define _NO_ROOT_PERMISSION_
-#define _HOMEDIR_CONF_
+/* UPDATE: We execute the server in a docker container, so this is absolutely fine */
+//#define _NO_ROOT_PERMISSION_
 
 extern int errno;
 
@@ -493,8 +493,12 @@ int main(int argc, char *argv[]) {
     configpath = getenv("HOME");
     configpath += "/.otserv/config.lua";
     if (!g_config.OpenFile(configpath.c_str()))
+#elif defined(__DOCKER_ENV__)
+    std::string configpath;
+    configpath = "/otserv/config.lua";
+    if (!g_config.OpenFile(configpath.c_str()))
 #else
-        if (!g_config.OpenFile("config.lua"))
+    if (!g_config.OpenFile("config.lua"))
 #endif
     {
         ErrorMessage("Unable to load config.lua!");
