@@ -122,6 +122,10 @@ if (USE_PGSQL)
     target_link_libraries(${PROJECT_NAME} ${POSTGRESQL_LIBRARIES})
 endif ()
 
+if (DOCKER_ENV)
+    add_definitions(-D__DOCKER_ENV__)
+endif ()
+
 # link pthread and dl
 if (UNIX)
     find_package(Threads)
