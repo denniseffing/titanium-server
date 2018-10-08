@@ -1,4 +1,4 @@
-# Titanium World 
+# Titanium World  [![Build Status](https://travis-ci.com/denniseffing/titanium-server.svg?token=wyiKY4rhF1c7MzJUGPNV&branch=master)](https://travis-ci.com/denniseffing/titanium-server)
 Titanium world is a private Tibia server.  
 The server is based on an earlier version of [opentibia/server](https://github.com/opentibia/server) and targets Tibia 7.6.
 
