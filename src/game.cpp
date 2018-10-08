@@ -1070,6 +1070,7 @@ bool Game::removeCreature(Creature *c) {
 #ifdef ELEM_VIP_LIST
         vipLogout(c->getName());
 #endif //ELEM_VIP_LIST
+        return true;
     }
 }
 
