@@ -43,19 +43,23 @@ enum monstermode_t {
 	MODE_AGGRESSIVE
 };
 
-class Monster : public Creature
-{
+class Monster : public Creature {
 private:
-	Monster(MonsterType *mtype, Game* game);
+	Monster(MonsterType *mtype, Game *game);
+
 public:
-	static Monster* createMonster(const std::string& name, Game* game);
+	static Monster *createMonster(const std::string &name, Game *game);
 
 	virtual ~Monster();
+
 	//const Monster& operator=(const Monster& rhs);
-	virtual unsigned long idRange(){ return 0x40000000;}
+	virtual uint32_t idRange() { return 0x40000000; }
+
 	static AutoList<Monster> listMonster;
-	void removeList() {listMonster.removeList(getID());}
-	void addList() {listMonster.addList(this);}
+
+	void removeList() { listMonster.removeList(getID()); }
+
+	void addList() { listMonster.addList(this); }
 
 	virtual void useThing() {
 		//std::cout << "Monster: useThing() " << this << std::endl;
@@ -70,16 +74,21 @@ public:
 	};
 
 	virtual int getArmor() const;
+
 	virtual int getDefense() const;
-	virtual const std::string& getName() const;
-	
-	virtual void setMaster(Creature* creature);
-	bool isSummon() {return (getMaster() != NULL);}
+
+	virtual const std::string &getName() const;
+
+	virtual void setMaster(Creature *creature);
+
+	bool isSummon() { return (getMaster() != NULL); }
+
 	virtual void onAttack();
-	static unsigned long getRandom();
-	
+
+	static uint32_t getRandom();
+
 private:
-	Game* game;
+	Game *game;
 	std::list<Position> route;
 	monsterstate_t state;
 	bool updateMovePos;
@@ -88,73 +97,103 @@ private:
 	Position moveToPos;
 	bool hasLostMaster;
 	MonsterType *mType;
-	
+
 	void doMoveTo(int dx, int dy);
+
 	int getCurrentDistanceToTarget(const Position &target);
+
 	int getTargetDistance();
+
 	void setUpdateMovePos();
+
 	bool calcMovePosition();
+
 	void updateLookDirection();
 
 	bool getRandomPosition(const Position &target, Position &dest);
-	bool getDistancePosition(const Position &target, const int& maxTryDist, bool fullPathSearch, Position &dest);
+
+	bool getDistancePosition(const Position &target, const int &maxTryDist, bool fullPathSearch, Position &dest);
+
 	bool getCloseCombatPosition(const Position &target, Position &dest);
-	bool canMoveTo(unsigned short x, unsigned short y, unsigned char z);
+
+	bool canMoveTo(uint16_t x, uint16_t y, uint8_t z);
+
 	bool isInRange(const Position &pos);
-	bool isCreatureReachable(const  Creature* creature);
-	Creature* findTarget(long range, bool &canReach, const Creature *ignoreCreature = NULL);
+
+	bool isCreatureReachable(const Creature *creature);
+
+	Creature *findTarget(long range, bool &canReach, const Creature *ignoreCreature = NULL);
+
 	void stopAttack();
+
 	void startThink();
+
 	void stopThink();
+
 	void reThink(bool updateOnlyState = true);
-	void selectTarget(const Creature* creature, bool canReach /* = true*/);
+
+	void selectTarget(const Creature *creature, bool canReach /* = true*/);
 
 protected:
 	int useCount;
-	PhysicalAttackClass	*curPhysicalAttack;
+	PhysicalAttackClass *curPhysicalAttack;
 
-	bool doAttacks(Creature* attackedCreature, monstermode_t mode = MODE_NORMAL);
+	bool doAttacks(Creature *attackedCreature, monstermode_t mode = MODE_NORMAL);
 
-	virtual fight_t getFightType() {return curPhysicalAttack->fighttype;};
-	virtual subfight_t getSubFightType()  {return curPhysicalAttack->disttype;}
+	virtual fight_t getFightType() { return curPhysicalAttack->fighttype; };
+
+	virtual subfight_t getSubFightType() { return curPhysicalAttack->disttype; }
+
 	virtual int getWeaponDamage() const;
 
 	void onCreatureEnter(const Creature *creature, bool canReach = true);
+
 	void onCreatureLeave(const Creature *creature);
+
 	void onCreatureMove(const Creature *creature, const Position *oldPos);
 
 	bool validateDistanceAttack(const Creature *creature);
+
 	bool validateDistanceAttack(const Position &pos);
-	bool monsterMoveItem(Item* item, int radius);
-	bool isCreatureAttackable(const Creature* creature);
-	
+
+	bool monsterMoveItem(Item *item, int radius);
+
+	bool isCreatureAttackable(const Creature *creature);
+
 	virtual exp_t getLostExperience();
 
 	virtual void dropLoot(Container *corpse);
 
 	virtual void onThingMove(const Creature *creature, const Thing *thing, const Position *oldPos,
-		unsigned char oldstackpos, unsigned char oldcount, unsigned char count);
+							 uint8_t oldstackpos, uint8_t oldcount, uint8_t count);
 
 	virtual void onCreatureAppear(const Creature *creature);
-	virtual void onCreatureDisappear(const Creature *creature, unsigned char stackPos, bool tele);
-	virtual void onThingDisappear(const Thing* thing, unsigned char stackPos);
-	virtual void onThingTransform(const Thing* thing,int stackpos);
-	virtual void onTeleport(const Creature *creature, const Position *oldPos, unsigned char oldstackpos);
+
+	virtual void onCreatureDisappear(const Creature *creature, uint8_t stackPos, bool tele);
+
+	virtual void onThingDisappear(const Thing *thing, uint8_t stackPos);
+
+	virtual void onThingTransform(const Thing *thing, int stackpos);
+
+	virtual void onTeleport(const Creature *creature, const Position *oldPos, uint8_t oldstackpos);
 
 	virtual bool isAttackable() const { return true; };
+
 	virtual bool isPushable() const;
-	
-	virtual int onThink(int& newThinkTicks);
-	virtual void setAttackedCreature(const Creature* creature);
+
+	virtual int onThink(int &newThinkTicks);
+
+	virtual void setAttackedCreature(const Creature *creature);
 
 	std::string getDescription(bool self) const;
 
 #ifdef SM_SUMMON_ATTACK
 	public:
 #else
-	protected:
+protected:
 #endif //SM_SUMMON_ATTACK
-	virtual void onThingAppear(const Thing* thing);
+
+	virtual void onThingAppear(const Thing *thing);
 };
 
 #endif // __monster_h_

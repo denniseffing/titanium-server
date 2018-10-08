@@ -31,68 +31,80 @@
 #include <map>
 
 class Game;
+
 class Spawn;
-typedef std::list<Spawn*> spawnsList;
+
+typedef std::list<Spawn *> spawnsList;
 
 class Spawn /*: public Event*/ {
 public:
-	Spawn(Game *igame, Position pos, int _radius);
-	void idle(int t);
-	bool addMonster(std::string name, Direction dir, int x, int y, int spawntime);
+    Spawn(Game *igame, Position pos, int _radius);
+
+    void idle(int t);
+
+    bool addMonster(std::string name, Direction dir, int x, int y, int spawntime);
 
 public:
-	bool startup();
+    bool startup();
 
-	/*
-	virtual void onCreatureEnter(const Creature *creature, const Position &pos);
-	virtual void onCreatureLeave(const Creature *creature, const Position &pos);
-	*/
+    /*
+    virtual void onCreatureEnter(const Creature *creature, const Position &pos);
+    virtual void onCreatureLeave(const Creature *creature, const Position &pos);
+    */
 
 private:
-	Game *game;
-	Position centerPos;
-	int radius;
+    Game *game;
+    Position centerPos;
+    int radius;
 
-	bool isInSpawnRange(const Position &pos);
-	Monster* respawn(unsigned long spawnid, Position &pos, std::string &name, Direction dir);
+    bool isInSpawnRange(const Position &pos);
 
-	struct spawninfo {
-		Position pos;
-		std::string name;
-		Direction dir;
-		int spawntime;
-		uint64_t lastspawn;
-	};
+    Monster *respawn(uint32_t spawnid, Position &pos, std::string &name, Direction dir);
 
-	//List of monsters in the spawn
-	typedef std::map<unsigned long, struct spawninfo> SpawnMap;
-	SpawnMap spawnmap;
+    struct spawninfo {
+        Position pos;
+        std::string name;
+        Direction dir;
+        int spawntime;
+        uint64_t lastspawn;
+    };
 
-	//For spawned monsters
-	typedef std::multimap<unsigned long, Monster*, std::less<unsigned long> > SpawnedMap;
-	typedef SpawnedMap::value_type spawned_pair;
-	SpawnedMap spawnedmap;
+    //List of monsters in the spawn
+    typedef std::map<uint32_t, struct spawninfo> SpawnMap;
+    SpawnMap spawnmap;
+
+    //For spawned monsters
+    typedef std::multimap<uint32_t, Monster *, std::less<uint32_t> > SpawnedMap;
+    typedef SpawnedMap::value_type spawned_pair;
+    SpawnedMap spawnedmap;
 };
 
 class SpawnManager {
 public:
-	SpawnManager();
-	~SpawnManager();
-	
-	static SpawnManager* instance();
-	static bool initialize(Game *igame);
-	static bool addSpawn(Spawn* spawn);
-	static bool loadSpawnsXML(std::string filename);
-#ifdef __USE_MYSQL__
-	static bool loadSpawnsSQL(std::string identifier);
-#endif
-	static bool startup();
+    SpawnManager();
 
-	void checkSpawns(int t);
+    ~SpawnManager();
+
+    static SpawnManager *instance();
+
+    static bool initialize(Game *igame);
+
+    static bool addSpawn(Spawn *spawn);
+
+    static bool loadSpawnsXML(std::string filename);
+
+#ifdef __USE_MYSQL__
+    static bool loadSpawnsSQL(std::string identifier);
+#endif
+
+    static bool startup();
+
+    void checkSpawns(int t);
+
 protected:
-	static SpawnManager* _instance;
-	static spawnsList spawns;
-	static Game *game;
+    static SpawnManager *_instance;
+    static spawnsList spawns;
+    static Game *game;
 };
 
 #endif

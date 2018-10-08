@@ -1,4 +1,0 @@
-<?xml version="1.0"?>
-           <npc name="ghost of losst miner" script="data/npc/scripts/ghost.lua" access="5">
-            	<look type="160" head="0" body="0" legs="0" feet="0"/> 
-           </npc>

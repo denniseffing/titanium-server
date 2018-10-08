@@ -6,12 +6,10 @@
 
 #include "account.h"
 
-Account::Account()
-{
-	accnumber = 0;
+Account::Account() {
+    accnumber = 0;
 }
 
-Account::~Account()
-{
-	charList.clear();
+Account::~Account() {
+    charList.clear();
 }

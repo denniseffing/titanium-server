@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+            <monster name="Chopper" level="80" maglevel="60" experience="32000" pushable="0" armor="60" defense="65" canpushitems="1" staticattack="40" changetarget="200" speed="940">
+               	<health now="40200" max="40200"/>
+               	    	<look type="31" head="20" body="30" legs="40" feet="50" corpse="2835"/>
+               	<combat targetdistance="1" runonhealth="0"/>
+          
+            <attacks>
+               	<attack type="melee" mindamage="200" maxdamage="1250" />
+               	<attack type="instant" name="exori hellio" cycleticks="50" probability="70"/>
+               	<attack type="instant" name="exura vita" cycleticks="1400" probability="50"/>
+               	<attack type="instant" name="domina hellio" exhaustion="500" cycleticks="16000" probability="40"/>
+               	<attack type="instant" name="exori mon" exhaustion="10" cycleticks="16000" probability="40"/>
+          
+            </attacks>
+          
+            <defenses>
+               	<defense immunity="energy"/>
+               	<defense immunity="fire"/>
+               	 <!-- <defense immunity="poison"/> --> 
+               	<defense immunity="paralyze"/>
+               	<defense immunity="drunk"/>
+        	<defense immunity="invisible"/>
+            </defenses>
+          
+            <voices>
+               	<voice sentence="The One Piece is mine!"/>
+               	<voice sentence="Im one of the 7 Samurais, And best Swordfighter of the world!"/>
+            </voices>
+          
+            <loot>
+               	<item id="2152" countmax="100" chance1="100000" chancemax="0"/>
+               	<item id="2148" countmax="25" chance1="100000" chancemax="0"/>
+               	<item id="2508" chance="1000"/>
+               	<item id="2446" chance="500"/>
+               	<item id="2522" chance="1538"/>
+               	<item id="2408" chance="333"/>
+          
+            </loot>
+          
+          
+            </monster>

@@ -21,66 +21,84 @@
 
 #ifndef GUILDS_H
 #define GUILDS_H
+
 #include <libxml/xmlmemory.h>
 #include <libxml/parser.h>
 #include <string>
 #include <vector>
 #include <map>
+
 class Player;
 
 enum gstat_t {
-	GUILD_NONE,
-	GUILD_INVITED,
-	GUILD_MEMBER,
-	GUILD_VICE,
-	GUILD_LEADER
+    GUILD_NONE,
+    GUILD_INVITED,
+    GUILD_MEMBER,
+    GUILD_VICE,
+    GUILD_LEADER
 };
 
-class Guilds
-{
+class Guilds {
 private:
-	class Guild
-	{
-	private:
-		struct Member
-		{
-			gstat_t status;
-			std::string name;
-			std::string rank;
-			std::string nick;
-		};
-		unsigned long gid;
-		static unsigned long counter;
-		std::string gname;
-		std::vector<Member> members;
+    class Guild {
+    private:
+        struct Member {
+            gstat_t status;
+            std::string name;
+            std::string rank;
+            std::string nick;
+        };
+        uint32_t gid;
+        static uint32_t counter;
+        std::string gname;
+        std::vector<Member> members;
 
-	public:
-		Guild(std::string name);
-		void save(xmlNodePtr guildNode);
-		std::string getName() const;
-		void addMember(std::string name, gstat_t status, std::string rank, std::string nick);
-		gstat_t getGuildStatus(std::string name) const;
-		bool setGuildStatus(std::string name, gstat_t status);
-		void setGuildInfo(std::string name, gstat_t status, std::string rank);
-		bool clearGuildInfo(std::string name);
-		bool setGuildNick(std::string name, std::string nick);
-		bool reloadGuildInfo(Player* player);
-	};
+    public:
+        Guild(std::string name);
 
-	static std::vector<Guild*> guilds;
+        void save(xmlNodePtr guildNode);
+
+        std::string getName() const;
+
+        void addMember(std::string name, gstat_t status, std::string rank, std::string nick);
+
+        gstat_t getGuildStatus(std::string name) const;
+
+        bool setGuildStatus(std::string name, gstat_t status);
+
+        void setGuildInfo(std::string name, gstat_t status, std::string rank);
+
+        bool clearGuildInfo(std::string name);
+
+        bool setGuildNick(std::string name, std::string nick);
+
+        bool reloadGuildInfo(Player *player);
+    };
+
+    static std::vector<Guild *> guilds;
 
 public:
-	static bool Load();
-	static bool Save();
-	static bool AddNewGuild(std::string gname);
-	static void DeleteGuild(std::string gname);
-	static std::string GetGuildName(std::string name);
-	static gstat_t GetGuildStatus(std::string name);
-	static void SetGuildStatus(std::string name, gstat_t status);
-	static void SetGuildInfo(std::string name, gstat_t status, std::string rank, std::string gname);
-	static void ClearGuildInfo(std::string name);
-	static void SetGuildNick(std::string name, std::string nick);
-	static void ReloadGuildInfo(Player* player);
+    static bool Load();
+
+    static bool Save();
+
+    static bool AddNewGuild(std::string gname);
+
+    static void DeleteGuild(std::string gname);
+
+    static std::string GetGuildName(std::string name);
+
+    static gstat_t GetGuildStatus(std::string name);
+
+    static void SetGuildStatus(std::string name, gstat_t status);
+
+    static void SetGuildInfo(std::string name, gstat_t status, std::string rank, std::string gname);
+
+    static void ClearGuildInfo(std::string name);
+
+    static void SetGuildNick(std::string name, std::string nick);
+
+    static void ReloadGuildInfo(Player *player);
 };
 
 #endif //GUILDS_H

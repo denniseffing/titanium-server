@@ -25,51 +25,65 @@
 
 typedef std::list<Item *> ContainerList;
 
-class Container : public Item
-{
-	private:
-		int useCount;
-		Container *parent;
-		unsigned short maxitems; //number of max items in container  
-		unsigned short actualitems; // number of items in container
-		ContainerList lcontained;
+class Container : public Item {
+private:
+    int useCount;
+    Container *parent;
+    uint16_t maxitems; //number of max items in container
+    uint16_t actualitems; // number of items in container
+    ContainerList lcontained;
 
-	public:
-		Container(const unsigned short _type);
-		virtual ~Container();
-		virtual void useThing() {
-			//std::cout << "Container: useThing() " << this << std::endl;
-			useCount++;
-		};
-	
-		virtual void releaseThing() {
-			useCount--;
-			//std::cout << "Container: releaseThing() " << this << std::endl;
-			//if (useCount == 0)
-			if (useCount <= 0)
-				delete this;
-		};
+public:
+    Container(const uint16_t _type);
 
-		unsigned long depot;
-		int size() const {return actualitems;};
-		int capacity() const {return maxitems;};
-		void setParent(Container* container) {parent = container;};
-		Container *getParent() {return parent;}
-		Container *getParent() const {return parent;}
-		Container *getTopParent();
-		const Container *getTopParent() const;
+    virtual ~Container();
 
-		ContainerList::const_iterator getItems() const;     // begin();
-		ContainerList::const_iterator getEnd() const;       // iterator beyond the last element
-		bool addItem(Item* newitem);     // add an item to the container
-		bool removeItem(Item* item); //remove an item from the container
-		void moveItem(unsigned char from_slot, unsigned char to_slot);
-		Item* getItem(unsigned long slot_num);
-		const Item* getItem(unsigned long slot_num) const;
-		unsigned char getSlotNumberByItem(const Item* item) const;
-		bool isHoldingItem(const Item* item) const;
-		long getItemHoldingCount() const;
-		virtual double getWeight() const;
+    virtual void useThing() {
+        //std::cout << "Container: useThing() " << this << std::endl;
+        useCount++;
+    };
+
+    virtual void releaseThing() {
+        useCount--;
+        //std::cout << "Container: releaseThing() " << this << std::endl;
+        //if (useCount == 0)
+        if (useCount <= 0)
+            delete this;
+    };
+
+    uint32_t depot;
+
+    int size() const { return actualitems; };
+
+    int capacity() const { return maxitems; };
+
+    void setParent(Container *container) { parent = container; };
+
+    Container *getParent() { return parent; }
+
+    Container *getParent() const { return parent; }
+
+    Container *getTopParent();
+
+    const Container *getTopParent() const;
+
+    ContainerList::const_iterator getItems() const;     // begin();
+    ContainerList::const_iterator getEnd() const;       // iterator beyond the last element
+    bool addItem(Item *newitem);     // add an item to the container
+    bool removeItem(Item *item); //remove an item from the container
+    void moveItem(uint8_t from_slot, uint8_t to_slot);
+
+    Item *getItem(uint32_t slot_num);
+
+    const Item *getItem(uint32_t slot_num) const;
+
+    uint8_t getSlotNumberByItem(const Item *item) const;
+
+    bool isHoldingItem(const Item *item) const;
+
+    long getItemHoldingCount() const;
+
+    virtual double getWeight() const;
 };
 
 #endif //__OTSERV_CONTAINER_H

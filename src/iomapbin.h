@@ -29,21 +29,26 @@ class Map;
 
 /** Map-Loader implementation based on binary formats */
 class IOMapBin : public IOMap {
-  public:
-	IOMapBin(){};
-	~IOMapBin(){};
-	virtual char* getSourceDescription(){ return "Binary file (OpenTibia Map, revision 1.1.2)"; };
-	/** Load the map from an binary file
-	  * \param map Pointer to the Map
-	  * \param identifier Name of the binary file to load
-	  * \returns Whether map load was successful */
-	bool loadMap(Map* map, std::string identifier);
+public:
+    IOMapBin() {};
+
+    ~IOMapBin() {};
+
+    virtual char *getSourceDescription() { return "Binary file (OpenTibia Map, revision 1.1.2)"; };
+
+    /** Load the map from an binary file
+      * \param map Pointer to the Map
+      * \param identifier Name of the binary file to load
+      * \returns Whether map load was successful */
+    bool loadMap(Map *map, std::string identifier);
+
 private:
-    FILE* fh;
-	/** Load the OTM data (revision 1.1.2)
-	  * no params for this function
-	  * \returns void */
-    void loadOTM(Map* map);
+    FILE *fh;
+
+    /** Load the OTM data (revision 1.1.2)
+      * no params for this function
+      * \returns void */
+    void loadOTM(Map *map);
 };
 
 #endif

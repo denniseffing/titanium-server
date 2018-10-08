@@ -25,33 +25,33 @@
 #include <string>
 
 class texception {
-    public:
-        texception(std::string description, bool critical)
+public:
+    texception(std::string description, bool critical)
             : desc(description), crit(critical) {
-            } // texception(string description, boolean critical) 
+    } // texception(string description, boolean critical)
 
-        texception(bool critical) : crit(critical) {
-        } // texception(bool critical) 
+    texception(bool critical) : crit(critical) {
+    } // texception(bool critical)
 
-        bool isCritical() { return crit; }
+    bool isCritical() { return crit; }
 
-        std::string toString() { return desc; }
+    std::string toString() { return desc; }
 
-    protected:
-        std::string desc;
-        bool crit;
+protected:
+    std::string desc;
+    bool crit;
 }; // class texception 
 
 class nospace : public texception {
-    public:
-        nospace() : texception("no space on map!",false) {
-        } // nospace() : crit(false), desc("no space on map!") 
+public:
+    nospace() : texception("no space on map!", false) {
+    } // nospace() : crit(false), desc("no space on map!")
 }; // class nospace : public texception 
 
 class wrong_creature : public texception {
-    public:
-        wrong_creature() : texception("wrong creature index!", false) {
-        } // wrong_creature() : texception("wrong creature index!", false) 
+public:
+    wrong_creature() : texception("wrong creature index!", false) {
+    } // wrong_creature() : texception("wrong creature index!", false)
 }; // class wrong_creature : public texception 
 
 #endif

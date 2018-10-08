@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+          <monster name="Lizard blade dancer" level="80" maglevel="60" experience="3285" speed="490" monster="1" pushable="0" armor="3" defense="5" canpushitems="0" staticattack="50" changetarget="200">
+          <health now="9025" max="9025"/>
+          <look type="113" corpse="4256"/>
+          <combat targetdistance="1" runonhealth="0"/>
+          
+          <attacks>
+            	<attack type="melee" maxdamage="230"/>
+            	<attack type="instant" name="exura gran" cycleticks="2800" probability="100"/>
+            	<attack type="rune" name="envenom" cycleticks="5000" probability="40"/>
+            	<attack type="instant" name="exori" cycleticks="3000" probability="100"/>
+            	<attack type="instant" name="lizard rain" cycleticks="8000" probability="100"/>
+          </attacks>
+          
+          <defenses>
+            	 <!-- <defense immunity="poison"/> --> 
+            	<defense immunity="paralyze"/>
+            	<defense immunity="drunk"/>
+          </defenses>
+          
+          <voices>
+          	<voice sentence="For the Gaia"/>
+          	<voice sentence="You can run but u cant hide! Wichser! Penner! Nute!"/>
+          </voices>
+          <loot>
+             	<item id="2148" countmax="200" chance1="100000" chancemax="0"/>
+             	<item id="2182" chance="16660"/>
+             	<item id="2392" chance="166600"/>
+          </loot>
+          
+          <voices/>
+          
+          <summons maxSummons="3">
+            	   <summon name="lizard Bladedancer" chance="8000"/>
+          </summons>
+          
+          </monster>

@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-           
-           <npc name="Jamela" script="data/npc/scripts/Hellrunes.lua" access="5" lookdir="1">
-           	<health now="1000" max="1000"/>
-           	<look type="137" head="114" body="57" legs="95" feet="38" corpse="2744"/>
-           </npc>

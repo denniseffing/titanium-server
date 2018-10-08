@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-           
-           <npc name="Templar" script="data/npc/scripts/tempelold.lua" access="5" lookdir="1">
-           	<health now="1000" max="1000"/>
-           	<look type="57" head="78" body="71" legs="82" feet="114" corpse="2744"/>
-           </npc>

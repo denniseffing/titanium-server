@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-           
-           <npc name="Mythos Archbishop" script="data/npc/scripts/summon.lua" access="5" lookdir="2">
-           	<mana now="800000" max="800000"/>
-           	<health now="20000000" max="20000000"/>
-           	<look type="103" head="57" body="57" legs="57" feet="57"/>
-           </npc>

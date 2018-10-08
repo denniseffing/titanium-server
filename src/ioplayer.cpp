@@ -21,8 +21,9 @@
 #include "ioplayer.h"
 
 #ifdef __USE_MYSQL__
-	#include "ioplayersql.h"
+#include "ioplayersql.h"
 #endif
+
 #include "ioplayerxml.h"
 
 #ifdef __USE_MYSQL__
@@ -30,38 +31,36 @@
 extern LuaScript g_config;
 #endif
 
-IOPlayer* IOPlayer::_instance = NULL;
+IOPlayer *IOPlayer::_instance = NULL;
 
-IOPlayer* IOPlayer::instance(){
-	if(!_instance){
+IOPlayer *IOPlayer::instance() {
+    if (!_instance) {
 #ifdef __USE_MYSQL__
-        if(g_config.getGlobalString("sourcedata") == "SQL") 
-		_instance = (IOPlayer*)new IOPlayerSQL;
-		else // if(g_config.getGlobalString("sourcedata") == "XML") //fallback to xml
+        if(g_config.getGlobalString("sourcedata") == "SQL")
+        _instance = (IOPlayer*)new IOPlayerSQL;
+        else // if(g_config.getGlobalString("sourcedata") == "XML") //fallback to xml
 #endif
-		_instance = (IOPlayer*)new IOPlayerXML;
+        _instance = (IOPlayer *) new IOPlayerXML;
 
-	}
-    #ifdef __DEBUG__
-	printf("%s \n", _instance->getSourceDescription());
-	#endif 
-	return _instance;
+    }
+#ifdef __DEBUG__
+    printf("%s \n", _instance->getSourceDescription());
+#endif
+    return _instance;
 }
 
-bool IOPlayer::loadPlayer(Player* player, std::string name){
-	return false;
+bool IOPlayer::loadPlayer(Player *player, std::string name) {
+    return false;
 }
 
-bool IOPlayer::savePlayer(Player* player){
-	return false;
+bool IOPlayer::savePlayer(Player *player) {
+    return false;
 }
 
-bool IOPlayer::getGuidByName(unsigned long &guid, unsigned long &alvl, std::string &name)
-{
-	return false;
+bool IOPlayer::getGuidByName(uint32_t &guid, uint32_t &alvl, std::string &name) {
+    return false;
 }
 
-bool IOPlayer::getNameByGuid(unsigned long guid, std::string &name)
-{
-	return false;
+bool IOPlayer::getNameByGuid(uint32_t guid, std::string &name) {
+    return false;
 }

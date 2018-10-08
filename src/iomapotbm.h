@@ -23,20 +23,24 @@
 
 #include "iomap.h"
 
-class IOMapOTBM : public IOMap{
+class IOMapOTBM : public IOMap {
 public:
-	IOMapOTBM(){};
-	~IOMapOTBM(){};
-	virtual char* getSourceDescription(){ return "OTBM"; };
-	/** Load the map from an OTBM file
-	  * \param map Pointer to the Map
-	  * \param identifier Name of the OTBM-File to load
-	  * \returns Whether map load was successful*/
-	bool loadMap(Map* map, std::string identifier);
+    IOMapOTBM() {};
+
+    ~IOMapOTBM() {};
+
+    virtual char *getSourceDescription() { return "OTBM"; };
+
+    /** Load the map from an OTBM file
+      * \param map Pointer to the Map
+      * \param identifier Name of the OTBM-File to load
+      * \returns Whether map load was successful*/
+    bool loadMap(Map *map, std::string identifier);
 
 private:
-	Item* unserializaItemAttr(PropStream &propStream);
-	Item* unserializaItemNode(FileLoader* f, NODE node);
+    Item *unserializaItemAttr(PropStream &propStream);
+
+    Item *unserializaItemNode(FileLoader *f, NODE node);
 };
 
 

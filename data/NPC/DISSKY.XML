@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-           
-           <npc name="Demon Hunter Crowhead " script="data/npc/scripts/spells_pally2.lua" access="5" lookdir="2">
-           	<mana now="800" max="800"/>
-           	<health now="200" max="200"/>
-           	<look type="132" head="115" body="115" legs="114" feet="115"/>
-           </npc>

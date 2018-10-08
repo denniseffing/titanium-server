@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+         <monster name="Water Elemental" level="40" maglevel="40" experience="280" pushable="0" armor="15" defense="20" canpushitems="0" staticattack="50" changetarget="200" speed="280">
+         	<health now="255" max="255"/>
+         	<look type="1505" head="20" body="30" legs="40" feet="50" corpse="1397"/>
+         	<combat targetdistance="1" runonhealth="0"/>
+                <blood color="199" effect="1" splash="255"/>
+         <attacks>
+         	<attack type="rune" name="energy field" cycleticks="7000" probability="40"/>
+         	<attack type="melee" mindamage="97" maxdamage="260" probability="100"/>
+         </attacks>
+        
+         <defenses>
+         	<defense immunity="energy"/>
+         	<!-- <defense immunity="poison"/> -->
+         	<defense immunity="invisible"/>
+         </defenses>
+         
+         <defenses>
+         
+         </defenses>
+         
+         <voices>
+         	<voice sentence="Blub"/>
+         </voices>
+         
+        
+         </monster>

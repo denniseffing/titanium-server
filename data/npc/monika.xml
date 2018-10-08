@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+           
+           <npc name="Monika" script="npc/scripts/roockeq.lua" access="5" lookdir="1">
+           	<health now="1000" max="1000"/>
+           	<look type="137" head="3" body="95" legs="114" feet="85" corpse="2744"/>
+           </npc>

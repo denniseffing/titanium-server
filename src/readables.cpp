@@ -18,6 +18,7 @@
 // Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 //////////////////////////////////////////////////////////////////////
 #ifdef YUR_READABLES
+
 #include "readables.h"
 #include "game.h"
 #include "luascript.h"
@@ -27,67 +28,59 @@
 extern LuaScript g_config;
 extern xmlMutexPtr xmlmutex;
 
-bool Readables::Load(Game *game)
-{
-	std::string file = g_config.getGlobalString("datadir") + "readables.xml";
-	xmlDocPtr doc;
-	xmlMutexLock(xmlmutex);
+bool Readables::Load(Game *game) {
+    std::string file = g_config.getGlobalString("datadir") + "readables.xml";
+    xmlDocPtr doc;
+    xmlMutexLock(xmlmutex);
 
-	doc = xmlParseFile(file.c_str());
-	if (!doc)
-		return false;
+    doc = xmlParseFile(file.c_str());
+    if (!doc)
+        return false;
 
-	xmlNodePtr root, readableNode;
-	root = xmlDocGetRootElement(doc);
-	if (xmlStrcmp(root->name, (const xmlChar*)"readables"))
-	{
-		xmlFreeDoc(doc);
-		xmlMutexUnlock(xmlmutex);
-		return false;
-	}
+    xmlNodePtr root, readableNode;
+    root = xmlDocGetRootElement(doc);
+    if (xmlStrcmp(root->name, (const xmlChar *) "readables")) {
+        xmlFreeDoc(doc);
+        xmlMutexUnlock(xmlmutex);
+        return false;
+    }
 
-	readableNode = root->children;
-	while (readableNode)
-	{
-		if (strcmp((char*) readableNode->name, "readable") == 0)
-		{
-			int x = atoi((const char*)xmlGetProp(readableNode, (const xmlChar *) "x"));
-			int y = atoi((const char*)xmlGetProp(readableNode, (const xmlChar *) "y"));
-			int z = atoi((const char*)xmlGetProp(readableNode, (const xmlChar *) "z"));
-			std::string text = (const char*)xmlGetProp(readableNode, (const xmlChar *) "text");
+    readableNode = root->children;
+    while (readableNode) {
+        if (strcmp((char *) readableNode->name, "readable") == 0) {
+            int x = atoi((const char *) xmlGetProp(readableNode, (const xmlChar *) "x"));
+            int y = atoi((const char *) xmlGetProp(readableNode, (const xmlChar *) "y"));
+            int z = atoi((const char *) xmlGetProp(readableNode, (const xmlChar *) "z"));
+            std::string text = (const char *) xmlGetProp(readableNode, (const xmlChar *) "text");
 
-			for (size_t i = 0; i < text.length()-1; i++)	// make real newlines
-				if (text.at(i) == '\\' && text.at(i+1) == 'n')
-				{
-					text[i] = ' ';
-					text[i+1] = '\n';
-				}
+            for (size_t i = 0; i < text.length() - 1; i++)    // make real newlines
+                if (text.at(i) == '\\' && text.at(i + 1) == 'n') {
+                    text[i] = ' ';
+                    text[i + 1] = '\n';
+                }
 
-			Tile* tile = game->getTile(x, y, z);
-			if (tile)
-			{
-				Thing* thing = tile->getTopThing();
-				Item* item = thing? dynamic_cast<Item*>(thing) : NULL;
+            Tile *tile = game->getTile(x, y, z);
+            if (tile) {
+                Thing *thing = tile->getTopThing();
+                Item *item = thing ? dynamic_cast<Item *>(thing) : NULL;
 
-				if (item)
-					item->setReadable(text);
-				else
-				{
-					std::cout << "\nTop thing at " << Position(x,y,z) << " is not an item!";
-					return false;
-				}
-			}
-			else
-			{
-				std::cout << "\nTile " << Position(x,y,z) << " is not valid!";
-				return false;
-			}
-		}
-		readableNode = readableNode->next;
-	}
+                if (item)
+                    item->setReadable(text);
+                else {
+                    std::cout << "\nTop thing at " << Position(x, y, z) << " is not an item!";
+                    return false;
+                }
+            } else {
+                std::cout << "\nTile " << Position(x, y, z) << " is not valid!";
+                return false;
+            }
+        }
+        readableNode = readableNode->next;
+    }
 
-	xmlFreeDoc(doc);
-	xmlMutexUnlock(xmlmutex);
-	return true;
+    xmlFreeDoc(doc);
+    xmlMutexUnlock(xmlmutex);
+    return true;
 }
+
 #endif //YUR_READABLES

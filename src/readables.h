@@ -21,12 +21,12 @@
 
 #ifndef READABLES_H
 #define READABLES_H
+
 class Game;
 
-class Readables
-{
+class Readables {
 public:
-	static bool Load(Game* game);
+    static bool Load(Game *game);
 };
 
 #endif //READABLES_H

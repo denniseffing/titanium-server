@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+          <monster name="Pickachu Mutant" level="3" maglevel="3" experience="500000" pushable="0" armor="80" defense="90" canpushitems="1" staticattack="40" changetarget="200" speed="340">
+          <health now="40000" max="40000"/>
+          <look type="35" head="20" body="30" legs="40" feet="50" corpse="2916"/>
+          <combat targetdistance="1" runonhealth="10500"/>
+          
+          <attacks>
+          	<attack type="melee" mindamage="10" maxdamage="20" />
+          	<attack type="instant" name="exevo gran mas vis" cycleticks="10" probability="20"/>
+          	<attack type="instant" name="orshabaal_deathstar" cycleticks="10" probability="20"/>
+          	<attack type="instant" name="exura" cycleticks="10" probability="20"/>
+          <attack type="instant" name="exura vita" cycleticks="100" probability="20"/>
+          <attack type="instant" name="exura vita" cycleticks="100" probability="20"/>
+          <attack type="instant" name="exura vita" cycleticks="100" probability="20"/>
+          <attack type="instant" name="exura vita" cycleticks="100" probability="20"/>
+          <attack type="instant" name="exura vita" cycleticks="100" probability="20"/>
+          <attack type="instant" name="exura vita" cycleticks="10" probability="20"/>
+          <attack type="instant" name="exura vita" cycleticks="10" probability="20"/>
+          <attack type="instant" name="exura vita" cycleticks="10" probability="20"/>
+          <attack type="instant" name="exura vita" cycleticks="10" probability="20"/>
+          <attack type="instant" name="exura vita" cycleticks="10" probability="20"/>
+          <attack type="instant" name="exura vita" cycleticks="10" probability="20"/>
+          <attack type="instant" name="exura vita" cycleticks="10" probability="20"/>
+          <attack type="instant" name="exura vita" cycleticks="10" probability="20"/>
+          <attack type="instant" name="exura vita" cycleticks="10" probability="20"/>
+          <attack type="instant" name="exura vita" cycleticks="10" probability="20"/>
+          
+          <attack type="instant" name="exura gran" cycleticks="10" probability="20"/>
+          <attack type="instant" name="exura vita" cycleticks="10" probability="20"/>
+          <attack type="instant" name="exura vita" cycleticks="10" probability="20"/>
+          <attack type="instant" name="evolution hur" cycleticks="10" probability="20"/>
+          <attack type="instant" name="evolution apocalypse" cycleticks="10" probability="20"/>
+          	<attack type="instant" name="orshabaal_exori" cycleticks="10" probability="20"/>
+          	<attack type="instant" name="exevo gran vis lux" exhaustion="500" cycleticks="10" probability="20"/>
+          	<attack type="instant" name="exori nova" cycleticks="10" probability="20"/>
+          	<attack type="instant" name="domino nova" cycleticks="10" probability="20"/>
+          	<attack type="instant" name="lizard rain" cycleticks="20" probability="20"/>
+          </attacks>
+          
+          <defenses>
+          	<defense immunity="energy"/>
+          	<defense immunity="fire"/>
+          	<!-- <defense immunity="poison"/> -->
+          	<defense immunity="paralyze"/>
+          	<defense immunity="drunk"/>
+          </defenses>
+          
+          <voices>	<voice sentence="Pickafuckuchuuuuu"/>
+          </voices>
+          
+          <loot>
+          	<item id="2152" countmax="1" chance1="100000" chancemax="0"/>
+          	<item id="2416" chance="10000"/>
+          	<item id="2449" chance="5000"/>
+          	<item id="2450" chance="15387"/>
+          	<item id="2482" chance="3333"/>
+          
+          	<item id="2483" chance="100000">
+          	<inside>
+          	<item id="2678" countmax="3" chance1="10000" chancemax="0"/>
+          	<item id="2151" countmax="4" chance1="40000" chancemax="0"/>
+          	<item id="2460" chance="5555"/>
+          	<item id="2149" countmax="3" chance1="14287" chancemax="0"/>
+          	<item id="2171" chance="13333"/>
+          	<item id="2387" chance="66666"/>
+          	<item id="2467" chance="4000"/>
+          	<item id="2524" chance="6666"/>
+          	<item id="2418" chance="8333"/>
+          	<item id="2377" chance="33333"/>
+          	<item id="2490" chance="2000"/>
+          	<item id="2464" chance="2000"/>
+          	<item id="2468" chance="2000"/>
+          	<item id="2173" countmax="5" chance1="10000" chancemax="0"/>
+          	</inside>
+          	</item>
+          </loot>
+          
+          <summons maxSummons="2">
+           	<summon name="Demon Noob" chance="5000"/>
+          </summons>
+          
+          </monster>

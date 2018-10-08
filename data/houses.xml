@@ -1,0 +1,1004 @@
+<?xml version="1.0"?>
+  <!-- remember to include doors in house tiles -->
+  <houses>
+    <house name="great street i">
+  <tiles fromx="137" fromy="29" fromz="7" tox="143" toy="32" toz="6"/>
+  </house>
+    <house name="great street ii">
+  <tiles fromx="145" fromy="29" fromz="7" tox="151" toy="32" toz="7"/>
+  </house>
+    <house name="great street iii">
+  <tiles fromx="155" fromy="29" fromz="7" tox="159" toy="33" toz="7"/>
+  </house>
+    <house name="great street iv">
+  <tiles fromx="164" fromy="34" fromz="7" tox="169" toy="39" toz="7"/>
+  </house>
+    <house name="upper street i">
+  <tiles fromx="155" fromy="29" fromz="6" tox="164" toy="33" toz="6"/>
+  </house>
+    <house name="upper street ii">
+  <tiles fromx="165" fromy="36" fromz="6" tox="169" toy="39" toz="6"/>
+  </house>
+    <house name="upper street iii">
+  <tiles fromx="166" fromy="32" fromz="6" tox="169" toy="35" toz="6"/>
+  </house>
+    <house name="upper street iv">
+  <tiles fromx="161" fromy="29" fromz="5" tox="167" toy="33" toz="5"/>
+  </house>
+    <house name="upper street v">
+  <tiles fromx="165" fromy="34" fromz="5" tox="169" toy="39" toz="5"/>
+  </house>
+    <house name="green street i">
+  <tiles fromx="172" fromy="35" fromz="7" tox="177" toy="37" toz="7"/>
+  </house>
+    <house name="green street ii">
+  <tiles fromx="179" fromy="29" fromz="7" tox="183" toy="32" toz="7"/>
+  </house>
+    <house name="green street iii">
+  <tiles fromx="172" fromy="29" fromz="7" tox="176" toy="32" toz="7"/>
+  </house>
+    <house name="pirate street">
+  <tiles fromx="173" fromy="52" fromz="7" tox="178" toy="56" toz="6"/>
+  </house>
+    <house name="river street i">
+  <tiles fromx="128" fromy="61" fromz="7" tox="130" toy="65" toz="7"/>
+  </house>
+    <house name="river street ii">
+  <tiles fromx="133" fromy="61" fromz="7" tox="137" toy="65" toz="6"/>
+  </house>
+    <house name="river street iii">
+  <tiles fromx="147" fromy="59" fromz="7" tox="149" toy="64" toz="7"/>
+  </house>
+    <house name="river street iv">
+  <tiles fromx="152" fromy="59" fromz="7" tox="154" toy="64" toz="7"/>
+  </house>
+    <house name="river street v">
+  <tiles fromx="157" fromy="59" fromz="7" tox="159" toy="64" toz="7"/>
+  </house>
+    <house name="desert street i">
+  <tiles fromx="213" fromy="76" fromz="7" tox="218" toy="78" toz="7"/>
+  </house>
+    <house name="desert street ii">
+  <tiles fromx="213" fromy="72" fromz="7" tox="218" toy="74" toz="7"/>
+  </house>
+    <house name="desert street iii">
+  <tiles fromx="213" fromy="72" fromz="6" tox="218" toy="74" toz="6"/>
+  </house>
+    <house name="desert street iv">
+  <tiles fromx="211" fromy="75" fromz="6" tox="218" toy="78" toz="6"/>
+  <tiles fromx="211" fromy="79" fromz="6" tox="213" toy="82" toz="6"/>
+  </house>
+    <house name="desert street v">
+  <tiles fromx="204" fromy="70" fromz="6" tox="208" toy="72" toz="6"/>
+  <tiles fromx="206" fromy="73" fromz="6" tox="208" toy="75" toz="6"/>
+  </house>
+    <house name="desert street vi">
+  <tiles fromx="204" fromy="76" fromz="6" tox="209" toy="82" toz="6"/>
+  </house>
+    <house name="the tibianic">
+  <tiles fromx="201" fromy="43" fromz="7" tox="210" toy="58" toz="7"/>
+  <tiles fromx="202" fromy="40" fromz="7" tox="209" toy="42" toz="7"/>
+  <tiles fromx="205" fromy="39" fromz="7" tox="207" toy="39" toz="7"/>
+  <tiles fromx="202" fromy="59" fromz="7" tox="209" toy="63" toz="7"/>
+  <tile x="206" y="38" z="6"/>
+  <tiles fromx="201" fromy="43" fromz="6" tox="211" toy="58" toz="6"/>
+  <tiles fromx="202" fromy="40" fromz="6" tox="210" toy="42" toz="6"/>
+  <tiles fromx="205" fromy="39" fromz="6" tox="207" toy="39" toz="6"/>
+  <tiles fromx="202" fromy="59" fromz="6" tox="209" toy="62" toz="6"/>
+  <tiles fromx="202" fromy="55" fromz="5" tox="210" toy="57" toz="5"/>
+  <tiles fromx="203" fromy="58" fromz="5" tox="209" toy="62" toz="5"/>
+  </house>
+    <house name="castle of the snakes">
+  <tiles fromx="92" fromy="26" fromz="7" tox="98" toy="33" toz="6"/>
+  <tiles fromx="96" fromy="34" fromz="7" tox="100" toy="38" toz="6"/>
+  <tiles fromx="99" fromy="26" fromz="7" tox="107" toy="29" toz="6"/>
+  <tiles fromx="108" fromy="26" fromz="7" tox="115" toy="33" toz="6"/>
+  <tiles fromx="106" fromy="34" fromz="7" tox="111" toy="38" toz="6"/>
+  </house>
+    <house name="sand mansion">
+  <tiles fromx="213" fromy="101" fromz="7" tox="223" toy="110" toz="7"/>
+  </house>
+    <house name="bamboo camp i">
+  <tiles fromx="178" fromy="99" fromz="7" tox="183" toy="104" toz="7"/>
+  </house>
+    <house name="bamboo camp ii">
+  <tiles fromx="169" fromy="98" fromz="7" tox="173" toy="101" toz="7"/>
+  </house>
+    <house name="bamboo camp iii">
+  <tiles fromx="174" fromy="93" fromz="7" tox="178" toy="96" toz="7"/>
+  </house>
+    <house name="bamboo camp iv">
+  <tiles fromx="183" fromy="93" fromz="7" tox="186" toy="96" toz="7"/>
+  </house>
+    <house name="bamboo camp v">
+  <tiles fromx="186" fromy="99" fromz="7" tox="189" toy="102" toz="7"/>
+  </house>
+    <house name="bamboo camp vi">
+  <tiles fromx="183" fromy="106" fromz="7" tox="187" toy="109" toz="7"/>
+  </house>
+    <house name="small street i">
+  <tiles fromx="143" fromy="42" fromz="7" tox="144" toy="45" toz="7"/>
+  </house>
+    <house name="small street ii">
+  <tiles fromx="146" fromy="42" fromz="7" tox="146" toy="45" toz="7"/>
+  </house>
+    <house name="small street iii">
+  <tiles fromx="143" fromy="42" fromz="6" tox="144" toy="45" toz="6"/>
+  </house>
+    <house name="small street iv">
+  <tiles fromx="146" fromy="42" fromz="6" tox="146" toy="45" toz="6"/>
+  </house>
+    <house name="small street v">
+  <tiles fromx="143" fromy="42" fromz="5" tox="144" toy="45" toz="5"/>
+  </house>
+    <house name="small street vi">
+  <tiles fromx="146" fromy="42" fromz="5" tox="146" toy="45" toz="5"/>
+  </house>
+    <house name="black tower i">
+  <tiles fromx="326" fromy="400" fromz="3" tox="330" toy="405" toz="1"/>
+  </house>
+    <house name="black tower ii">
+  <tiles fromx="326" fromy="409" fromz="3" tox="330" toy="414" toz="1"/>
+  </house>
+    <house name="black tower iii">
+  <tiles fromx="331" fromy="424" fromz="3" tox="336" toy="429" toz="1"/>
+  </house>
+    <house name="gothic i">
+  <tiles fromx="361" fromy="435" fromz="3" tox="367" toy="441" toz="3"/>
+  </house>
+    <house name="gothic ii">
+  <tiles fromx="368" fromy="435" fromz="3" tox="374" toy="441" toz="3"/>
+  </house>
+    <house name="gothic iii">
+  <tiles fromx="361" fromy="435" fromz="2" tox="373" toy="441" toz="2"/>
+  </house>
+    <house name="gothic iv">
+  <tiles fromx="363" fromy="437" fromz="1" tox="367" toy="441" toz="1"/>
+  </house>
+    <house name="gothic v">
+  <tiles fromx="368" fromy="437" fromz="1" tox="373" toy="441" toz="1"/>
+  </house>
+    <house name="sun flat i">
+  <tiles fromx="361" fromy="411" fromz="3" tox="366" toy="416" toz="3"/>
+  </house>
+    <house name="sun flat ii">
+  <tiles fromx="361" fromy="411" fromz="2" tox="364" toy="416" toz="2"/>
+  </house>
+    <house name="sun flat iii">
+  <tiles fromx="365" fromy="408" fromz="2" tox="369" toy="416" toz="2"/>
+  </house>
+    <house name="sun flat iv">
+  <tiles fromx="361" fromy="411" fromz="1" tox="364" toy="416" toz="1"/>
+  </house>
+    <house name="sun flat v">
+  <tiles fromx="365" fromy="408" fromz="1" tox="369" toy="416" toz="1"/>
+  </house>
+    <house name="angel apartment i">
+  <tiles fromx="386" fromy="402" fromz="3" tox="391" toy="405" toz="3"/>
+  </house>
+    <house name="angel apartment ii">
+  <tiles fromx="386" fromy="406" fromz="3" tox="391" toy="412" toz="3"/>
+  </house>
+    <house name="angel apartment iii">
+  <tiles fromx="386" fromy="402" fromz="2" tox="391" toy="412" toz="2"/>
+  </house>
+    <house name="angel apartment iv">
+  <tiles fromx="386" fromy="403" fromz="1" tox="391" toy="407" toz="1"/>
+  </house>
+    <house name="angel apartment v">
+  <tiles fromx="386" fromy="408" fromz="1" tox="391" toy="412" toz="1"/>
+  </house>
+    <house name="nirvana apartment i">
+  <tiles fromx="382" fromy="389" fromz="3" tox="387" toy="395" toz="3"/>
+  </house>
+    <house name="nirvana apartment ii">
+  <tiles fromx="382" fromy="389" fromz="2" tox="387" toy="395" toz="2"/>
+  </house>
+    <house name="nirvana apartment iii">
+  <tiles fromx="382" fromy="389" fromz="1" tox="387" toy="395" toz="1"/>
+  </house>
+    <house name="lunara street i">
+  <tiles fromx="422" fromy="424" fromz="3" tox="428" toy="432" toz="2"/>
+  </house>
+
+
+    <house name="ground kerker i">
+  <tiles fromx="440" fromy="387" fromz="7" tox="448" toy="389" toz="7"/>
+  </house>
+    <house name="ground kerker ii">
+  <tiles fromx="440" fromy="383" fromz="7" tox="448" toy="385" toz="7"/>
+  </house>
+    <house name="ground kerker iii">
+  <tiles fromx="440" fromy="379" fromz="7" tox="448" toy="381" toz="7"/>
+  </house>
+    <house name="ground kerker iv">
+  <tiles fromx="440" fromy="372" fromz="7" tox="448" toy="377" toz="7"/>
+  </house>
+    <house name="ground kerker v">
+  <tiles fromx="440" fromy="367" fromz="7" tox="448" toy="370" toz="7"/>
+  </house>
+    <house name="ground kerker vi">
+  <tiles fromx="432" fromy="366" fromz="7" tox="438" toy="377" toz="7"/>
+  </house>
+    <house name="ground kerker vii">
+  <tiles fromx="427" fromy="359" fromz="7" tox="431" toy="367" toz="7"/>
+  </house>
+    <house name="ground kerker viii">
+  <tiles fromx="432" fromy="353" fromz="7" tox="438" toy="358" toz="7"/>
+  </house>
+    <house name="ground kerker ix">
+  <tiles fromx="440" fromy="350" fromz="7" tox="445" toy="356" toz="7"/>
+  </house>
+    <house name="ground kerker x">
+  <tiles fromx="447" fromy="350" fromz="7" tox="456" toy="355" toz="7"/>
+  </house>
+
+    <house name="ground kerker xii">
+  <tiles fromx="462" fromy="350" fromz="7" tox="467" toy="353" toz="7"/>
+  </house>
+    <house name="ground kerker xiii">
+  <tiles fromx="469" fromy="355" fromz="7" tox="472" toy="358" toz="7"/>
+  </house>
+    <house name="ground kerker xiv">
+  <tiles fromx="473" fromy="359" fromz="7" tox="477" toy="367" toz="7"/>
+  </house>
+    <house name="ground kerker xv">
+  <tiles fromx="465" fromy="368" fromz="7" tox="472" toy="377" toz="7"/>
+  </house>
+    <house name="ground kerker xvi">
+  <tiles fromx="457" fromy="366" fromz="7" tox="463" toy="379" toz="7"/>
+  </house>
+    <house name="ground kerker xvii">
+  <tiles fromx="457" fromy="381" fromz="7" tox="463" toy="384" toz="7"/>
+  </house>
+    <house name="ground kerker xviii">
+  <tiles fromx="457" fromy="386" fromz="7" tox="463" toy="389" toz="7"/>
+  </house>
+    <house name="a kerker i">
+  <tiles fromx="440" fromy="387" fromz="6" tox="448" toy="389" toz="6"/>
+  </house>
+    <house name="a kerker ii">
+  <tiles fromx="440" fromy="383" fromz="6" tox="448" toy="385" toz="6"/>
+  </house>
+    <house name="a kerker iii">
+  <tiles fromx="440" fromy="379" fromz="6" tox="448" toy="381" toz="6"/>
+  </house>
+    <house name="a kerker iv">
+  <tiles fromx="440" fromy="372" fromz="6" tox="448" toy="377" toz="6"/>
+  </house>
+    <house name="a kerker v">
+  <tiles fromx="440" fromy="367" fromz="6" tox="448" toy="370" toz="6"/>
+  </house>
+    <house name="a kerker vi">
+  <tiles fromx="432" fromy="366" fromz="6" tox="438" toy="377" toz="6"/>
+  </house>
+    <house name="a kerker vii">
+  <tiles fromx="427" fromy="359" fromz="6" tox="431" toy="367" toz="6"/>
+  </house>
+    <house name="a kerker viii">
+  <tiles fromx="432" fromy="353" fromz="6" tox="438" toy="358" toz="6"/>
+  </house>
+    <house name="a kerker ix">
+  <tiles fromx="440" fromy="350" fromz="6" tox="445" toy="356" toz="6"/>
+  </house>
+    <house name="a kerker x">
+  <tiles fromx="447" fromy="350" fromz="6" tox="456" toy="355" toz="6"/>
+  </house>
+    <house name="a kerker xi">
+  <tiles fromx="447" fromy="345" fromz="6" tox="461" toy="349" toz="6"/>
+  </house>
+    <house name="a kerker xii">
+  <tiles fromx="462" fromy="350" fromz="6" tox="467" toy="353" toz="6"/>
+  </house>
+    <house name="a kerker xiii">
+  <tiles fromx="469" fromy="355" fromz="6" tox="472" toy="358" toz="6"/>
+  </house>
+    <house name="a kerker xiv">
+  <tiles fromx="473" fromy="359" fromz="6" tox="477" toy="367" toz="6"/>
+  </house>
+    <house name="a kerker xv">
+  <tiles fromx="465" fromy="368" fromz="6" tox="472" toy="377" toz="6"/>
+  </house>
+    <house name="a kerker xvi">
+  <tiles fromx="457" fromy="366" fromz="6" tox="463" toy="379" toz="6"/>
+  </house>
+    <house name="a kerker xvii">
+  <tiles fromx="457" fromy="381" fromz="6" tox="463" toy="384" toz="6"/>
+  </house>
+    <house name="a kerker xviii">
+  <tiles fromx="457" fromy="386" fromz="6" tox="463" toy="389" toz="6"/>
+  </house>
+    <house name="b kerker i">
+  <tiles fromx="440" fromy="387" fromz="5" tox="448" toy="389" toz="5"/>
+  </house>
+    <house name="b kerker ii">
+  <tiles fromx="440" fromy="383" fromz="5" tox="448" toy="385" toz="5"/>
+  </house>
+    <house name="b kerker iii">
+  <tiles fromx="440" fromy="379" fromz="5" tox="448" toy="381" toz="5"/>
+  </house>
+    <house name="b kerker iv">
+  <tiles fromx="440" fromy="372" fromz="5" tox="448" toy="377" toz="5"/>
+  </house>
+    <house name="b kerker v">
+  <tiles fromx="440" fromy="367" fromz="5" tox="448" toy="370" toz="5"/>
+  </house>
+    <house name="b kerker vi">
+  <tiles fromx="432" fromy="366" fromz="5" tox="438" toy="377" toz="5"/>
+  </house>
+    <house name="b kerker vii">
+  <tiles fromx="427" fromy="359" fromz="5" tox="431" toy="367" toz="5"/>
+  </house>
+    <house name="b kerker viii">
+  <tiles fromx="432" fromy="353" fromz="5" tox="438" toy="358" toz="5"/>
+  </house>
+    <house name="b kerker ix">
+  <tiles fromx="440" fromy="350" fromz="5" tox="445" toy="356" toz="5"/>
+  </house>
+    <house name="b kerker x">
+  <tiles fromx="447" fromy="350" fromz="5" tox="456" toy="355" toz="5"/>
+  </house>
+    <house name="b kerker xi">
+  <tiles fromx="447" fromy="345" fromz="5" tox="461" toy="349" toz="5"/>
+  </house>
+    <house name="b kerker xii">
+  <tiles fromx="462" fromy="350" fromz="5" tox="467" toy="353" toz="5"/>
+  </house>
+    <house name="b kerker xiii">
+  <tiles fromx="469" fromy="355" fromz="5" tox="472" toy="358" toz="5"/>
+  </house>
+    <house name="b kerker xiv">
+  <tiles fromx="473" fromy="359" fromz="5" tox="477" toy="367" toz="5"/>
+  </house>
+    <house name="b kerker xv">
+  <tiles fromx="465" fromy="368" fromz="5" tox="472" toy="377" toz="5"/>
+  </house>
+    <house name="b kerker xvi">
+  <tiles fromx="457" fromy="366" fromz="5" tox="463" toy="379" toz="5"/>
+  </house>
+    <house name="b kerker xvii">
+  <tiles fromx="457" fromy="381" fromz="5" tox="463" toy="384" toz="5"/>
+  </house>
+    <house name="b kerker xviii">
+  <tiles fromx="457" fromy="386" fromz="5" tox="463" toy="389" toz="5"/>
+  </house>
+    <house name="c kerker i">
+  <tiles fromx="440" fromy="387" fromz="4" tox="448" toy="389" toz="4"/>
+  </house>
+    <house name="c kerker ii">
+  <tiles fromx="440" fromy="383" fromz="4" tox="448" toy="385" toz="4"/>
+  </house>
+    <house name="c kerker iii">
+  <tiles fromx="440" fromy="379" fromz="4" tox="448" toy="381" toz="4"/>
+  </house>
+    <house name="c kerker iv">
+  <tiles fromx="440" fromy="372" fromz="4" tox="448" toy="377" toz="4"/>
+  </house>
+    <house name="c kerker v">
+  <tiles fromx="440" fromy="367" fromz="4" tox="448" toy="370" toz="4"/>
+  </house>
+    <house name="c kerker vi">
+  <tiles fromx="432" fromy="366" fromz="4" tox="438" toy="377" toz="4"/>
+  </house>
+    <house name="c kerker vii">
+  <tiles fromx="427" fromy="359" fromz="4" tox="431" toy="367" toz="4"/>
+  </house>
+    <house name="c kerker viii">
+  <tiles fromx="432" fromy="353" fromz="4" tox="438" toy="358" toz="4"/>
+  </house>
+    <house name="c kerker ix">
+  <tiles fromx="440" fromy="350" fromz="4" tox="445" toy="356" toz="4"/>
+  </house>
+    <house name="c kerker x">
+  <tiles fromx="447" fromy="350" fromz="4" tox="456" toy="355" toz="4"/>
+  </house>
+    <house name="c kerker xi">
+  <tiles fromx="447" fromy="345" fromz="4" tox="461" toy="349" toz="4"/>
+  </house>
+    <house name="c kerker xii">
+  <tiles fromx="462" fromy="350" fromz="4" tox="467" toy="353" toz="4"/>
+  </house>
+    <house name="c kerker xiii">
+  <tiles fromx="469" fromy="355" fromz="4" tox="472" toy="358" toz="4"/>
+  </house>
+    <house name="c kerker xiv">
+  <tiles fromx="473" fromy="359" fromz="4" tox="477" toy="367" toz="4"/>
+  </house>
+    <house name="c kerker xv">
+  <tiles fromx="465" fromy="368" fromz="4" tox="472" toy="377" toz="4"/>
+  </house>
+    <house name="c kerker xvi">
+  <tiles fromx="457" fromy="366" fromz="4" tox="463" toy="379" toz="4"/>
+  </house>
+    <house name="c kerker xvii">
+  <tiles fromx="457" fromy="381" fromz="4" tox="463" toy="384" toz="4"/>
+  </house>
+    <house name="c kerker xviii">
+  <tiles fromx="457" fromy="386" fromz="4" tox="463" toy="389" toz="4"/>
+  </house>
+
+
+    <house name="d kerker i">
+  <tiles fromx="440" fromy="387" fromz="3" tox="448" toy="389" toz="3"/>
+  </house>
+    <house name="d kerker ii">
+  <tiles fromx="440" fromy="383" fromz="3" tox="448" toy="385" toz="3"/>
+  </house>
+    <house name="d kerker iii">
+  <tiles fromx="440" fromy="379" fromz="3" tox="448" toy="381" toz="3"/>
+  </house>
+    <house name="d kerker iv">
+  <tiles fromx="440" fromy="372" fromz="3" tox="448" toy="377" toz="3"/>
+  </house>
+    <house name="d kerker v">
+  <tiles fromx="440" fromy="367" fromz="3" tox="448" toy="370" toz="3"/>
+  </house>
+    <house name="d kerker vi">
+  <tiles fromx="432" fromy="366" fromz="3" tox="438" toy="377" toz="3"/>
+  </house>
+    <house name="d kerker vii">
+  <tiles fromx="427" fromy="359" fromz="3" tox="431" toy="367" toz="3"/>
+  </house>
+    <house name="d kerker viii">
+  <tiles fromx="432" fromy="353" fromz="3" tox="438" toy="358" toz="3"/>
+  </house>
+    <house name="d kerker ix">
+  <tiles fromx="440" fromy="350" fromz="3" tox="445" toy="356" toz="3"/>
+  </house>
+    <house name="d kerker x">
+  <tiles fromx="447" fromy="350" fromz="3" tox="456" toy="355" toz="3"/>
+  </house>
+    <house name="d kerker xi">
+  <tiles fromx="447" fromy="345" fromz="3" tox="461" toy="349" toz="3"/>
+  </house>
+    <house name="d kerker xii">
+  <tiles fromx="462" fromy="350" fromz="3" tox="467" toy="353" toz="3"/>
+  </house>
+    <house name="d kerker xiii">
+  <tiles fromx="469" fromy="355" fromz="3" tox="472" toy="358" toz="3"/>
+  </house>
+    <house name="d kerker xiv">
+  <tiles fromx="473" fromy="359" fromz="3" tox="477" toy="367" toz="3"/>
+  </house>
+    <house name="d kerker xv">
+  <tiles fromx="465" fromy="368" fromz="3" tox="472" toy="377" toz="3"/>
+  </house>
+    <house name="d kerker xvi">
+  <tiles fromx="457" fromy="366" fromz="3" tox="463" toy="379" toz="3"/>
+  </house>
+    <house name="d kerker xvii">
+  <tiles fromx="457" fromy="381" fromz="3" tox="463" toy="384" toz="3"/>
+  </house>
+    <house name="d kerker xviii">
+  <tiles fromx="457" fromy="386" fromz="3" tox="463" toy="389" toz="3"/>
+  </house>
+    <house name="e kerker i">
+  <tiles fromx="440" fromy="387" fromz="2" tox="448" toy="389" toz="2"/>
+  </house>
+    <house name="e kerker ii">
+  <tiles fromx="440" fromy="383" fromz="2" tox="448" toy="385" toz="2"/>
+  </house>
+    <house name="e kerker iii">
+  <tiles fromx="440" fromy="379" fromz="2" tox="448" toy="381" toz="2"/>
+  </house>
+    <house name="e kerker iv">
+  <tiles fromx="440" fromy="372" fromz="2" tox="448" toy="377" toz="2"/>
+  </house>
+    <house name="e kerker v">
+  <tiles fromx="440" fromy="367" fromz="2" tox="448" toy="370" toz="2"/>
+  </house>
+    <house name="e kerker vi">
+  <tiles fromx="432" fromy="366" fromz="2" tox="438" toy="377" toz="2"/>
+  </house>
+    <house name="e kerker vii">
+  <tiles fromx="427" fromy="359" fromz="2" tox="431" toy="367" toz="2"/>
+  </house>
+    <house name="e kerker viii">
+  <tiles fromx="432" fromy="353" fromz="2" tox="438" toy="358" toz="2"/>
+  </house>
+    <house name="e kerker ix">
+  <tiles fromx="440" fromy="350" fromz="2" tox="445" toy="356" toz="2"/>
+  </house>
+    <house name="e kerker x">
+  <tiles fromx="447" fromy="350" fromz="2" tox="456" toy="355" toz="2"/>
+  </house>
+    <house name="e kerker xi">
+  <tiles fromx="447" fromy="345" fromz="2" tox="461" toy="349" toz="2"/>
+  </house>
+    <house name="e kerker xii">
+  <tiles fromx="462" fromy="350" fromz="2" tox="467" toy="353" toz="2"/>
+  </house>
+    <house name="e kerker xiii">
+  <tiles fromx="469" fromy="355" fromz="2" tox="472" toy="358" toz="2"/>
+  </house>
+    <house name="e kerker xiv">
+  <tiles fromx="473" fromy="359" fromz="2" tox="477" toy="367" toz="2"/>
+  </house>
+    <house name="e kerker xv">
+  <tiles fromx="465" fromy="368" fromz="2" tox="472" toy="377" toz="2"/>
+  </house>
+    <house name="e kerker xvi">
+  <tiles fromx="457" fromy="366" fromz="2" tox="463" toy="379" toz="2"/>
+  </house>
+    <house name="e kerker xvii">
+  <tiles fromx="457" fromy="381" fromz="2" tox="463" toy="384" toz="2"/>
+  </house>
+    <house name="e kerker xviii">
+  <tiles fromx="457" fromy="386" fromz="2" tox="463" toy="389" toz="2"/>
+  </house>
+    <house name="f kerker i">
+  <tiles fromx="440" fromy="387" fromz="1" tox="448" toy="389" toz="1"/>
+  </house>
+    <house name="f kerker ii">
+  <tiles fromx="440" fromy="383" fromz="1" tox="448" toy="385" toz="1"/>
+  </house>
+    <house name="f kerker iii">
+  <tiles fromx="440" fromy="379" fromz="1" tox="448" toy="381" toz="1"/>
+  </house>
+    <house name="f kerker iv">
+  <tiles fromx="440" fromy="372" fromz="1" tox="448" toy="377" toz="1"/>
+  </house>
+    <house name="f kerker v">
+  <tiles fromx="440" fromy="367" fromz="1" tox="448" toy="370" toz="1"/>
+  </house>
+    <house name="f kerker vi">
+  <tiles fromx="432" fromy="366" fromz="1" tox="438" toy="377" toz="1"/>
+  </house>
+    <house name="f kerker vii">
+  <tiles fromx="427" fromy="359" fromz="1" tox="431" toy="367" toz="1"/>
+  </house>
+    <house name="f kerker viii">
+  <tiles fromx="432" fromy="353" fromz="1" tox="438" toy="358" toz="1"/>
+  </house>
+    <house name="f kerker ix">
+  <tiles fromx="440" fromy="350" fromz="1" tox="445" toy="356" toz="1"/>
+  </house>
+    <house name="f kerker x">
+  <tiles fromx="447" fromy="350" fromz="1" tox="456" toy="355" toz="1"/>
+  </house>
+    <house name="f kerker xi">
+  <tiles fromx="447" fromy="345" fromz="1" tox="461" toy="349" toz="1"/>
+  </house>
+    <house name="f kerker xii">
+  <tiles fromx="462" fromy="350" fromz="1" tox="467" toy="353" toz="1"/>
+  </house>
+    <house name="f kerker xiii">
+  <tiles fromx="469" fromy="355" fromz="1" tox="472" toy="358" toz="1"/>
+  </house>
+    <house name="f kerker xiv">
+  <tiles fromx="473" fromy="359" fromz="1" tox="477" toy="367" toz="1"/>
+  </house>
+    <house name="f kerker xv">
+  <tiles fromx="465" fromy="368" fromz="1" tox="472" toy="377" toz="1"/>
+  </house>
+    <house name="f kerker xvi">
+  <tiles fromx="457" fromy="366" fromz="1" tox="463" toy="379" toz="1"/>
+  </house>
+    <house name="f kerker xvii">
+  <tiles fromx="457" fromy="381" fromz="1" tox="463" toy="384" toz="1"/>
+  </house>
+    <house name="f kerker xviii">
+  <tiles fromx="457" fromy="386" fromz="1" tox="463" toy="389" toz="1"/>
+  </house>
+    <house name="lunara street i a">
+  <tiles fromx="402" fromy="425" fromz="3" tox="407" toy="431" toz="2"/>
+  </house>
+    <house name="lunara street ii">
+  <tiles fromx="402" fromy="437" fromz="3" tox="407" toy="443" toz="2"/>
+  </house>
+    <house name="lunara street iv">
+  <tiles fromx="402" fromy="450" fromz="3" tox="407" toy="456" toz="2"/>
+  </house>
+    <house name="lunara street iii">
+  <tiles fromx="422" fromy="437" fromz="3" tox="427" toy="443" toz="2"/>
+  </house>
+    <house name="lunara street v">
+  <tiles fromx="422" fromy="450" fromz="3" tox="427" toy="456" toz="2"/>
+  </house>
+    <house name="lunara villa i">
+  <tiles fromx="404" fromy="495" fromz="3" tox="417" toy="502" toz="3"/>
+  </house>
+    <house name="lunara villa ii">
+  <tiles fromx="423" fromy="495" fromz="3" tox="436" toy="502" toz="3"/>
+  </house>
+    <house name="dark villa">
+  <tiles fromx="160" fromy="136" fromz="7" tox="173" toy="143" toz="5"/>
+  </house>
+
+    <house name="island department i">
+<tiles fromx="425" fromy="776" fromz="13" tox="429" toy="780" toz="13"/>
+</house>
+    <house name="island department ii">
+<tiles fromx="435" fromy="776" fromz="13" tox="439" toy="780" toz="13"/>
+</house>
+    <house name="island department iii">
+<tiles fromx="435" fromy="781" fromz="13" tox="439" toy="786" toz="13"/>
+</house>
+    <house name="island department iv">
+<tiles fromx="425" fromy="781" fromz="13" tox="429" toy="786" toz="13"/>
+</house>
+    <house name="island house i">
+<tiles fromx="440" fromy="801" fromz="13" tox="449" toy="809" toz="13"/>
+</house>
+    <house name="island house ii">
+<tiles fromx="426" fromy="812" fromz="13" tox="434" toy="817" toz="13"/>
+<tiles fromx="426" fromy="812" fromz="12" tox="434" toy="817" toz="12"/>
+</house>
+    <house name="island house iii">
+<tiles fromx="435" fromy="824" fromz="13" tox="446" toy="831" toz="13"/>
+</house>
+    <house name="island house iv">
+<tiles fromx="422" fromy="832" fromz="13" tox="428" toy="836" toz="13"/>
+</house>
+    <house name="island house v">
+<tiles fromx="402" fromy="831" fromz="13" tox="410" toy="836" toz="13"/>
+</house>
+    <house name="island razora villa">
+<tiles fromx="410" fromy="851" fromz="13" tox="424" toy="859" toz="13"/>
+<tiles fromx="410" fromy="846" fromz="12" tox="424" toy="859" toz="12"/>
+<tiles fromx="408" fromy="846" fromz="14" tox="416" toy="855" toz="14"/>
+</house>
+    <house name="island kerker i">
+<tiles fromx="395" fromy="815" fromz="14" tox="402" toy="823" toz="14"/>
+</house>
+    <house name="island kerker ii">
+<tiles fromx="403" fromy="815" fromz="14" tox="408" toy="823" toz="14"/>
+</house>
+    <house name="island kerker iii">
+<tiles fromx="409" fromy="815" fromz="14" tox="414" toy="823" toz="14"/>
+</house>
+    <house name="island kerker iv">
+<tiles fromx="395" fromy="802" fromz="14" tox="402" toy="809" toz="14"/>
+</house>
+    <house name="island kerker v">
+<tiles fromx="403" fromy="802" fromz="14" tox="409" toy="809" toz="14"/>
+</house>
+    <house name="island kerker vi">
+<tiles fromx="410" fromy="802" fromz="14" tox="414" toy="809" toz="14"/>
+</house>
+    <house name="island kerker last">
+<tiles fromx="412" fromy="791" fromz="14" tox="421" toy="798" toz="14"/>
+</house>
+
+
+    <house name="radoka guildhall ii">
+<tiles fromx="1407" fromy="35" fromz="7" tox="1421" toy="45" toz="7"/>
+<tiles fromx="1407" fromy="35" fromz="6" tox="1421" toy="45" toz="6"/>
+</house>
+    <house name="radoka depotstreet i">
+<tiles fromx="1427" fromy="35" fromz="7" tox="1434" toy="41" toz="7"/>
+<tiles fromx="1427" fromy="35" fromz="6" tox="1434" toy="41" toz="6"/>
+</house>
+    <house name="radoka depotstreet ii">
+<tiles fromx="1437" fromy="35" fromz="7" tox="1444" toy="41" toz="7"/>
+<tiles fromx="1437" fromy="35" fromz="6" tox="1444" toy="41" toz="6"/>
+</house>
+    <house name="radoka depotstreet iii">
+<tiles fromx="1427" fromy="48" fromz="7" tox="1434" toy="54" toz="7"/>
+<tiles fromx="1427" fromy="48" fromz="6" tox="1434" toy="54" toz="6"/>
+</house>
+    <house name="radoka depotstreet iv">
+<tiles fromx="1437" fromy="48" fromz="7" tox="1444" toy="54" toz="7"/>
+<tiles fromx="1437" fromy="48" fromz="6" tox="1444" toy="54" toz="6"/>
+</house>
+    <house name="radoka department i">
+<tiles fromx="1401" fromy="64" fromz="7" tox="1404" toy="67" toz="7"/>
+</house>
+    <house name="radoka department ii">
+<tiles fromx="1410" fromy="64" fromz="7" tox="1413" toy="67" toz="7"/>
+</house>
+    <house name="radoka department iii">
+<tiles fromx="1401" fromy="68" fromz="7" tox="1404" toy="71" toz="7"/>
+</house>
+    <house name="radoka department iv">
+<tiles fromx="1410" fromy="68" fromz="7" tox="1413" toy="71" toz="7"/>
+</house>
+    <house name="radoka department v">
+<tiles fromx="1401" fromy="72" fromz="7" tox="1404" toy="75" toz="7"/>
+</house>
+    <house name="radoka department vi">
+<tiles fromx="1410" fromy="72" fromz="7" tox="1413" toy="75" toz="7"/>
+</house>
+    <house name="radoka department vii">
+<tiles fromx="1401" fromy="76" fromz="7" tox="1404" toy="79" toz="7"/>
+</house>
+    <house name="radoka department viii">
+<tiles fromx="1410" fromy="76" fromz="7" tox="1413" toy="79" toz="7"/>
+</house>
+    <house name="radoka department ix">
+<tiles fromx="1401" fromy="80" fromz="7" tox="1404" toy="83" toz="7"/>
+</house>
+    <house name="radoka department x">
+<tiles fromx="1410" fromy="80" fromz="7" tox="1413" toy="83" toz="7"/>
+</house>
+    <house name="radoka department xi">
+<tiles fromx="1401" fromy="84" fromz="7" tox="1404" toy="87" toz="7"/>
+</house>
+    <house name="radoka department xii">
+<tiles fromx="1410" fromy="84" fromz="7" tox="1413" toy="87" toz="7"/>
+</house>
+    <house name="radoka department xiii">
+<tiles fromx="1401" fromy="76" fromz="6" tox="1404" toy="83" toz="6"/>
+</house>
+    <house name="radoka department xiv">
+<tiles fromx="1410" fromy="76" fromz="6" tox="1413" toy="83" toz="6"/>
+</house>
+    <house name="radoka department xv">
+<tiles fromx="1401" fromy="68" fromz="6" tox="1404" toy="75" toz="6"/>
+</house>
+    <house name="radoka department xvi">
+<tiles fromx="1410" fromy="68" fromz="6" tox="1413" toy="75" toz="6"/>
+</house>
+    <house name="radoka department xvii">
+<tiles fromx="1401" fromy="64" fromz="6" tox="1404" toy="67" toz="6"/>
+<tiles fromx="1401" fromy="64" fromz="5" tox="1404" toy="67" toz="5"/>
+</house>
+    <house name="radoka department xviii">
+<tiles fromx="1410" fromy="64" fromz="6" tox="1413" toy="67" toz="6"/>
+<tiles fromx="1410" fromy="64" fromz="5" tox="1413" toy="67" toz="5"/>
+</house>
+    <house name="radoka shophouse i">
+<tiles fromx="1444" fromy="84" fromz="7" tox="1450" toy="87" toz="7"/>
+</house>
+    <house name="radoka shophouse ii">
+<tiles fromx="1451" fromy="84" fromz="7" tox="1456" toy="87" toz="7"/>
+</house>
+    <house name="radoka shophouse iii">
+<tiles fromx="1457" fromy="78" fromz="7" tox="1460" toy="87" toz="7"/>
+</house>
+    <house name="radoka quietstreet i">
+<tiles fromx="1446" fromy="85" fromz="6" tox="1451" toy="90" toz="6"/>
+</house>
+    <house name="radoka quietstreet ii">
+<tiles fromx="1452" fromy="85" fromz="6" tox="1457" toy="90" toz="6"/>
+</house>
+    <house name="radoka quietstreet iii">
+<tiles fromx="1458" fromy="85" fromz="6" tox="1463" toy="90" toz="6"/>
+</house>
+    <house name="radoka village i">
+<tiles fromx="1399" fromy="96" fromz="7" tox="1403" toy="99" toz="7"/>
+<tiles fromx="1399" fromy="96" fromz="6" tox="1403" toy="99" toz="6"/>
+</house>
+    <house name="radoka village ii">
+<tiles fromx="1399" fromy="102" fromz="7" tox="1403" toy="105" toz="7"/>
+<tiles fromx="1399" fromy="102" fromz="6" tox="1403" toy="105" toz="6"/>
+</house>
+    <house name="radoka village iii">
+<tiles fromx="1399" fromy="108" fromz="7" tox="1403" toy="111" toz="7"/>
+<tiles fromx="1399" fromy="108" fromz="6" tox="1403" toy="111" toz="6"/>
+</house>
+    <house name="radoka village iv">
+<tiles fromx="1399" fromy="114" fromz="7" tox="1403" toy="117" toz="7"/>
+<tiles fromx="1399" fromy="114" fromz="6" tox="1403" toy="117" toz="6"/>
+</house>
+    <house name="radoka villa iii">
+<tiles fromx="1423" fromy="105" fromz="7" tox="1434" toy="113" toz="7"/>
+<tiles fromx="1423" fromy="105" fromz="6" tox="1434" toy="113" toz="6"/>
+</house>
+    <house name="radoka villa ii">
+<tiles fromx="1457" fromy="110" fromz="7" tox="1466" toy="122" toz="7"/>
+<tiles fromx="1457" fromy="110" fromz="6" tox="1466" toy="122" toz="6"/>
+<tiles fromx="1460" fromy="110" fromz="5" tox="1466" toy="122" toz="5"/>
+<tiles fromx="1440" fromy="110" fromz="8" tox="1465" toy="112" toz="8"/>
+<tiles fromx="1440" fromy="110" fromz="7" tox="1447" toy="113" toz="7"/>
+</house>
+    <house name="radoka villa i">
+<tiles fromx="1457" fromy="95" fromz="7" tox="1466" toy="107" toz="7"/>
+<tiles fromx="1457" fromy="95" fromz="6" tox="1466" toy="107" toz="6"/>
+<tiles fromx="1460" fromy="95" fromz="5" tox="1466" toy="107" toz="5"/>
+<tiles fromx="1440" fromy="95" fromz="8" tox="1465" toy="97" toz="8"/>
+<tiles fromx="1440" fromy="95" fromz="7" tox="1447" toy="98" toz="7"/>
+</house>
+    <house name="silent village villa">
+<tiles fromx="811" fromy="49" fromz="7" tox="820" toy="62" toz="7"/>
+<tiles fromx="811" fromy="49" fromz="6" tox="820" toy="57" toz="6"/>
+</house>
+    <house name="silent village huette i">
+<tiles fromx="802" fromy="31" fromz="7" tox="809" toy="35" toz="7"/>
+<tiles fromx="802" fromy="31" fromz="6" tox="809" toy="35" toz="6"/>
+</house>
+    <house name="silent village huette ii">
+<tiles fromx="822" fromy="31" fromz="7" tox="828" toy="35" toz="7"/>
+<tiles fromx="822" fromy="31" fromz="6" tox="828" toy="35" toz="6"/>
+</house>
+    <house name="silent village huette iii">
+<tiles fromx="829" fromy="31" fromz="7" tox="835" toy="35" toz="7"/>
+<tiles fromx="835" fromy="31" fromz="6" tox="835" toy="35" toz="6"/>
+</house>
+
+
+    <house name="city house i">
+<tiles fromx="828" fromy="938" fromz="11" tox="835" toy="947" toz="11"/>
+</house>
+    <house name="city house ii">
+<tiles fromx="828" fromy="938" fromz="10" tox="835" toy="947" toz="10"/>
+</house>
+    <house name="city house iii">
+<tiles fromx="828" fromy="955" fromz="11" tox="835" toy="959" toz="11"/>
+</house>
+    <house name="city house iv">
+<tiles fromx="828" fromy="960" fromz="11" tox="835" toy="965" toz="11"/>
+</house>
+    <house name="city house v">
+<tiles fromx="828" fromy="955" fromz="10" tox="835" toy="959" toz="10"/>
+</house>
+    <house name="city house vi">
+<tiles fromx="828" fromy="960" fromz="10" tox="835" toy="965" toz="10"/>
+</house>
+    <house name="city house villa i">
+<tiles fromx="845" fromy="965" fromz="11" tox="855" toy="970" toz="11"/>
+</house>
+    <house name="city house villa ii">
+<tiles fromx="845" fromy="965" fromz="10" tox="855" toy="970" toz="10"/>
+</house>
+    <house name="city house villa iii">
+<tiles fromx="860" fromy="965" fromz="11" tox="866" toy="970" toz="11"/>
+<tiles fromx="860" fromy="965" fromz="10" tox="866" toy="970" toz="10"/>
+</house>
+    <house name="city house villa iv">
+<tiles fromx="871" fromy="965" fromz="11" tox="878" toy="970" toz="11"/>
+<tiles fromx="871" fromy="965" fromz="10" tox="878" toy="970" toz="10"/>
+</house>
+    <house name="city house villa v">
+<tiles fromx="874" fromy="949" fromz="11" tox="881" toy="957" toz="11"/>
+</house>
+    <house name="city house villa vi">
+<tiles fromx="874" fromy="949" fromz="10" tox="881" toy="957" toz="10"/>
+</house>
+    <house name="city house schlucker">
+<tiles fromx="876" fromy="940" fromz="10" tox="881" toy="944" toz="10"/>
+<tiles fromx="876" fromy="940" fromz="11" tox="881" toy="944" toz="11"/>
+</house>
+
+
+    <house name="desert house bonzen i">
+<tiles fromx="907" fromy="913" fromz="10" tox="919" toy="920" toz="10"/>
+<tiles fromx="907" fromy="913" fromz="11" tox="919" toy="920" toz="11"/>
+<tiles fromx="913" fromy="913" fromz="9" tox="918" toy="920" toz="9"/>
+</house>
+
+    <house name="desert house bonzen ii">
+<tiles fromx="907" fromy="901" fromz="10" tox="919" toy="908" toz="10"/>
+<tiles fromx="907" fromy="901" fromz="11" tox="919" toy="907" toz="11"/>
+<tiles fromx="913" fromy="901" fromz="9" tox="918" toy="907" toz="9"/>
+</house>
+
+    <house name="desert house bonzen iii">
+<tiles fromx="906" fromy="851" fromz="10" tox="913" toy="861" toz="10"/>
+<tiles fromx="906" fromy="851" fromz="11" tox="913" toy="861" toz="11"/>
+</house>
+    <house name="desert house bonzen iv">
+<tiles fromx="893" fromy="851" fromz="10" tox="900" toy="861" toz="10"/>
+<tiles fromx="893" fromy="851" fromz="11" tox="900" toy="861" toz="11"/>
+</house>
+    <house name="desert house i">
+<tiles fromx="858" fromy="856" fromz="11" tox="863" toy="862" toz="11"/>
+</house>
+    <house name="desert house ii">
+<tiles fromx="849" fromy="856" fromz="11" tox="854" toy="862" toz="11"/>
+</house>
+    <house name="desert house iii">
+<tiles fromx="840" fromy="856" fromz="11" tox="845" toy="862" toz="11"/>
+</house>
+    <house name="desert house iv">
+<tiles fromx="831" fromy="856" fromz="11" tox="836" toy="862" toz="11"/>
+</house>
+    <house name="desert guildhall">
+<tiles fromx="792" fromy="864" fromz="11" tox="810" toy="876" toz="11"/>
+<tiles fromx="792" fromy="864" fromz="10" tox="810" toy="876" toz="10"/>
+</house>
+    <house name="desert house villa">
+<tiles fromx="770" fromy="881" fromz="12" tox="786" toy="891" toz="12"/>
+</house>
+
+    <house name="mein schloss">
+<tiles fromx="1353" fromy="35" fromz="7" tox="1377" toy="43" toz="5"/>
+<tiles fromx="1357" fromy="44" fromz="7" tox="1373" toy="48" toz="6"/>
+</house>
+
+    <house name="ironica house i">
+<tiles fromx="318" fromy="849" fromz="3" tox="325" toy="856" toz="3"/>
+<tiles fromx="318" fromy="849" fromz="2" tox="325" toy="856" toz="2"/>
+</house>
+    <house name="ironica house ii">
+<tiles fromx="318" fromy="863" fromz="3" tox="325" toy="870" toz="3"/>
+<tiles fromx="318" fromy="863" fromz="2" tox="325" toy="870" toz="2"/>
+</house>
+    <house name="ironica house iii">
+<tiles fromx="318" fromy="877" fromz="3" tox="325" toy="884" toz="3"/>
+<tiles fromx="318" fromy="877" fromz="2" tox="325" toy="884" toz="2"/>
+</house>
+    <house name="ironica house iv">
+<tiles fromx="369" fromy="849" fromz="3" tox="375" toy="856" toz="3"/>
+<tiles fromx="369" fromy="849" fromz="2" tox="375" toy="856" toz="2"/>
+</house>
+    <house name="ironica house v">
+<tiles fromx="369" fromy="863" fromz="3" tox="375" toy="870" toz="3"/>
+<tiles fromx="369" fromy="863" fromz="2" tox="375" toy="870" toz="2"/>
+</house>
+    <house name="ironica house vi">
+<tiles fromx="369" fromy="877" fromz="3" tox="375" toy="884" toz="3"/>
+<tiles fromx="369" fromy="877" fromz="2" tox="375" toy="884" toz="2"/>
+</house>
+    <house name="ironica villa i">
+<tiles fromx="334" fromy="883" fromz="3" tox="346" toy="890" toz="3"/>
+<tiles fromx="334" fromy="883" fromz="2" tox="346" toy="890" toz="2"/>
+</house>
+    <house name="ironica villa ii">
+<tiles fromx="347" fromy="883" fromz="3" tox="359" toy="890" toz="3"/>
+<tiles fromx="347" fromy="883" fromz="2" tox="359" toy="890" toz="2"/>
+</house>
+    <house name="tharona villa i">
+<tiles fromx="284" fromy="153" fromz="7" tox="296" toy="159" toz="7"/>
+</house>
+    <house name="tharona villa ii">
+<tiles fromx="306" fromy="153" fromz="7" tox="317" toy="159" toz="7"/>
+<tiles fromx="306" fromy="153" fromz="6" tox="312" toy="159" toz="6"/>
+</house>
+    <house name="tharona villa iii">
+<tiles fromx="306" fromy="168" fromz="7" tox="317" toy="174" toz="7"/>
+</house>
+    <house name="tharona villa iv">
+<tiles fromx="284" fromy="168" fromz="7" tox="296" toy="174" toz="7"/>
+</house>
+    <house name="tharona house i">
+<tiles fromx="283" fromy="185" fromz="7" tox="288" toy="191" toz="7"/>
+<tiles fromx="283" fromy="185" fromz="6" tox="288" toy="191" toz="6"/>
+</house>
+    <house name="tharona house ii">
+<tiles fromx="322" fromy="189" fromz="7" tox="331" toy="195" toz="7"/>
+<tiles fromx="322" fromy="189" fromz="6" tox="331" toy="195" toz="6"/>
+</house>
+    <house name="tharona house iii">
+<tiles fromx="345" fromy="194" fromz="7" tox="354" toy="200" toz="7"/>
+<tiles fromx="345" fromy="194" fromz="6" tox="354" toy="200" toz="6"/>
+</house>
+    <house name="tharona house iv">
+<tiles fromx="357" fromy="193" fromz="7" tox="369" toy="201" toz="7"/>
+<tiles fromx="361" fromy="193" fromz="6" tox="369" toy="199" toz="6"/>
+<tiles fromx="361" fromy="193" fromz="5" tox="364" toy="196" toz="5"/>
+</house>
+    <house name="tharona flat i">
+<tiles fromx="368" fromy="173" fromz="7" tox="376" toy="180" toz="7"/>
+</house>
+    <house name="tharona flat ii">
+<tiles fromx="368" fromy="181" fromz="7" tox="376" toy="188" toz="7"/>
+</house>
+    <house name="tharona flat iii">
+<tiles fromx="368" fromy="173" fromz="6" tox="376" toy="180" toz="6"/>
+</house>
+    <house name="tharona flat iv">
+<tiles fromx="368" fromy="181" fromz="6" tox="376" toy="188" toz="6"/>
+</house>
+    <house name="tharona central villa i">
+<tiles fromx="334" fromy="151" fromz="7" tox="341" toy="157" toz="7"/>
+<tiles fromx="334" fromy="151" fromz="6" tox="341" toy="157" toz="6"/>
+<tiles fromx="335" fromy="151" fromz="8" tox="342" toy="158" toz="8"/>
+</house>
+    <house name="tharona central villa ii">
+<tiles fromx="342" fromy="151" fromz="7" tox="349" toy="157" toz="7"/>
+<tiles fromx="342" fromy="151" fromz="6" tox="349" toy="157" toz="6"/>
+<tiles fromx="343" fromy="151" fromz="8" tox="349" toy="158" toz="8"/>
+</house>
+    <house name="tharona guildhall">
+<tiles fromx="385" fromy="195" fromz="7" tox="401" toy="207" toz="7"/>
+<tiles fromx="385" fromy="195" fromz="6" tox="401" toy="207" toz="6"/>
+<tiles fromx="385" fromy="195" fromz="5" tox="401" toy="202" toz="5"/>
+</house>
+
+
+    <house name="demoniumhall">
+<tiles fromx="467" fromy="498" fromz="7" tox="483" toy="513" toz="4"/>
+<tiles fromx="467" fromy="498" fromz="3" tox="471" toy="503" toz="3"/>
+
+</house>
+
+
+    <house name="fantom flat i">
+<tiles fromx="467" fromy="521" fromz="7" tox="477" toy="528" toz="7"/>
+
+
+</house>
+
+
+  </houses>

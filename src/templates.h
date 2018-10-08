@@ -28,60 +28,61 @@
 #include "creature.h"
 #include "otsystem.h"
 
-template<class T> class AutoList
-{
+template<class T>
+class AutoList {
 public:
-	AutoList(){}
-	
-	~AutoList(){
-		list.clear();
-	}
-	
-	void addList(T* t){
-		list[t->getID()] = t;
-	}
-	
-	void removeList(unsigned long _id){
-		list.erase(_id);
-	}
-	
-	typedef std::map<unsigned long, T*> list_type;
-	list_type list;
+    AutoList() {}
 
-	typedef typename list_type::iterator listiterator;
+    ~AutoList() {
+        list.clear();
+    }
+
+    void addList(T *t) {
+        list[t->getID()] = t;
+    }
+
+    void removeList(uint32_t _id) {
+        list.erase(_id);
+    }
+
+    typedef std::map<uint32_t, T *> list_type;
+    list_type list;
+
+    typedef typename list_type::iterator listiterator;
 };
 
 class AutoID {
 public:
-	AutoID() {
-		OTSYS_THREAD_LOCK_CLASS lockClass(autoIDLock);
-		count++;
-		if(count >= 0xFFFFFF)
-			count = 1000;
-		
-		while(list.find(count) != list.end()){
-			if(count >= 0xFFFFFF)
-				count = 1000;
-			else
-				count++;
-		}
-		list.insert(count);
-		auto_id = count;
-	}
-	virtual ~AutoID(){
-		list_type::iterator it = list.find(auto_id);
-		if(it != list.end())
-			list.erase(it);
-	}
+    AutoID() {
+        OTSYS_THREAD_LOCK_CLASS lockClass(autoIDLock);
+        count++;
+        if (count >= 0xFFFFFF)
+            count = 1000;
 
-	typedef std::set<unsigned long> list_type;
+        while (list.find(count) != list.end()) {
+            if (count >= 0xFFFFFF)
+                count = 1000;
+            else
+                count++;
+        }
+        list.insert(count);
+        auto_id = count;
+    }
 
-	unsigned long auto_id;
-	static OTSYS_THREAD_LOCKVAR autoIDLock;
-	
+    virtual ~AutoID() {
+        list_type::iterator it = list.find(auto_id);
+        if (it != list.end())
+            list.erase(it);
+    }
+
+    typedef std::set<uint32_t> list_type;
+
+    uint32_t auto_id;
+    static OTSYS_THREAD_LOCKVAR autoIDLock;
+
 protected:
-	static unsigned long count;
-	static list_type list;
+    static uint32_t count;
+    static list_type list;
 
 };
 

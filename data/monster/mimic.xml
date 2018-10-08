@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+          <monster name="mimic" level="20" maglevel="30" experience="20" pushable="0" armor="15" defense="20" canpushitems="1" staticattack="50" changetarget="200">
+          	<health now="50" max="50"/>
+          	<look type="92" head="20" body="30" legs="40" feet="50" corpse="2048"/>
+          	<combat targetdistance="1" runonhealth="0"/>
+          <attacks>
+          	<attack type="melee" maxdamage="15"/>
+          </attacks>
+          
+          <defenses>
+          	<defense immunity="energy"/>
+          	<defense immunity="fire"/>
+          	<!-- <defense immunity="poison"/> -->
+          	<defense immunity="paralyze"/>
+          	<defense immunity="drunk"/>
+          </defenses>
+          
+          <loot>
+           	
+          </loot>
+          </monster>

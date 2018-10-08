@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+         <monster name="Fallen Angel" level="80" maglevel="70" experience="320000" pushable="0" armor="260" defense="260" canpushitems="1" staticattack="45" changetarget="200" speed="975">
+         	<health now="400400" max="400400"/>
+         	<look type="133" head="94" body="114" legs="19" feet="114" corpse="2916"/>
+         	<combat targetdistance="1" runonhealth="0"/>
+               <blood color="199" effect="24" splash="255"/>
+         
+         <attacks>
+         	<attack type="melee" mindamage="210" maxdamage="300" probability="80"/>
+         	<attack type="melee" mindamage="210" maxdamage="300" probability="80"/>
+         	<attack type="melee" mindamage="210" maxdamage="300" probability="80"/>
+        	<attack type="melee" mindamage="210" maxdamage="300" probability="80"/>
+         	<attack type="melee" mindamage="210" maxdamage="300" probability="80"/>
+        	<attack type="melee" mindamage="210" maxdamage="300" probability="80"/>
+         	<attack type="melee" mindamage="210" maxdamage="300" probability="80"/>
+         	<attack type="melee" mindamage="210" maxdamage="300" probability="80"/>
+        	<attack type="melee" mindamage="210" maxdamage="300" probability="80"/>
+         	<attack type="melee" mindamage="210" maxdamage="300" probability="80"/>
+        	<attack type="melee" mindamage="210" maxdamage="300" probability="40"/>
+         
+         	<attack type="melee" mindamage="210" maxdamage="300" probability="40"/>
+         	<attack type="instant" name="exura vita" cycleticks="500" probability="60"/>
+         	<attack type="rune" name="massbomb" cycleticks="6500" probability="75"/>
+         	<attack type="instant" name="Titanium hell" exhaustion="4000" cycleticks="18000" probability="60"/>
+         
+         	<attack type="instant" name="damobi res ivil" exhaustion="1000" cycleticks="7000" probability="55"/>
+         	<attack type="rune" name="mdrain" exhaustion="100" cycleticks="2000" probability="30"/>
+        	<attack type="rune" name="ldrain" exhaustion="100" cycleticks="1000" probability="30"/>
+        	<attack type="rune" name="Drunk" exhaustion="100" cycleticks="2000" probability="30"/>
+        	<attack type="instant" name="exora" cycleticks="2000" probability="60"/>
+         </attacks>
+         
+         <defenses>
+         	<defense immunity="energy"/>
+         	<defense immunity="fire"/>
+         	<!-- <defense immunity="poison"/> -->
+         	<defense immunity="paralyze"/>
+         	<defense immunity="invisible"/>
+         	<defense immunity="drunk"/>
+         </defenses>
+         
+         <voices>
+         	<voice sentence="I will help you! I will kill you!"/>
+        	<voice sentence="damobi res ivil"/>
+         	<voice sentence="evolution hur"/>
+         	<voice sentence="Titan you are the next"/>
+        	<voice sentence="Radok, Shinry, Adrian-g, Shaynar, Mordoc why u dident stoped me when i given u an chance?"/>
+        	<voice sentence="Fool humans"/>
+        	<voice sentence="OH POWER OF DARKNESS MADE ME STRONGER"/>
+         	<voice sentence="My sword destroyed 7 Worlds this is next one"/>
+        
+         	<voice sentence="I got something in oven so i must go fast awey, so die plx fast"/>
+         </voices>
+         
+         <loot>
+          	<item id="2160" countmax="100" chance1="30000" chancemax="0"/>
+          	<item id="2393" chance="30000"/>
+          	<item id="2470" chance="60000"/>
+          	<item id="2424" chance="2000"/>
+          	<item id="2522" chance="33300"/>
+        <item id="1992" chance="4330"/>
+          	<item id="2319" chance="20000"/>
+          	<item id="2462" chance="500"/>
+          	<item id="2472" chance="45700"/>
+          	<item id="2153" chance="1000"/>
+         
+          	<item id="2331" chance="153330">
+          	<inside>
+          	<item id="2160" countmax="100" chance1="200000" chancemax="0"/>
+          	<item id="2160" countmax="100" chance1="100000" chancemax="0"/>
+          	<item id="2160" countmax="100" chance1="100000" chancemax="0"/>
+          	<item id="2144" countmax="10" chance1="100000" chancemax="0"/>
+          	<item id="2178" chance="100000"/>
+          	<item id="2402" chance="50000"/>
+        <item id="2159" countmax="40" chance1="50000" chancemax="0"/>
+          	<item id="2646" chance="20"/>
+        	<item id="2390" chance="200"/>
+          	</inside>
+          	</item>
+         </loot>
+         
+         <summons maxSummons="6">
+          	<summon name="cerberus" chance="600"/>
+          	<summon name="death pirate" chance="600"/>
+          	<summon name="blood ghost" chance="600"/>
+          	<summon name="sea demon" chance="600"/>
+        
+         </summons>
+         
+         </monster>

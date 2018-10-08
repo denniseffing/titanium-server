@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+         <monster name="Diablo" level="800" maglevel="300" experience="520000" pushable="0" armor="260" defense="260" canpushitems="1" staticattack="45" changetarget="200" speed="975">
+         	<health now="900400" max="900400"/>
+   	<look type="35" head="20" body="30" legs="40" feet="50" corpse="2916"/>
+         	<combat targetdistance="1" runonhealth="0"/>
+               <blood color="199" effect="5" splash="255"/>
+         
+         <attacks>
+         	<attack type="melee" mindamage="2100" maxdamage="3000" probability="80"/>
+  	<attack type="rune" name="diablomissile" exhaustion="500" cycleticks="500" probability="60"/>
+  	<attack type="instant" name="diabloarma" exhaustion="2000" cycleticks="9000" probability="60"/>
+  	<attack type="instant" name="diablofirea" exhaustion="500" cycleticks="3000" probability="60"/>
+  	<attack type="instant" name="diablofireb" exhaustion="500" cycleticks="3000" probability="60"/>
+  	<attack type="instant" name="diabloenergyb" exhaustion="500" cycleticks="6000" probability="60"/>
+  	<attack type="instant" name="diabloenergya" exhaustion="500" cycleticks="6000" probability="60"/>
+         </attacks>
+         
+         <defenses>
+         	<defense immunity="energy"/>
+         	<defense immunity="fire"/>
+         	<!-- <defense immunity="poison"/> -->
+         	<defense immunity="paralyze"/>
+         	<defense immunity="invisible"/>
+         	<defense immunity="drunk"/>
+         </defenses>
+         
+         <voices>
+         	<voice sentence="Hahahaha ...DIE......"/>
+        	<voice sentence=":..:::..::....:.:::..::::.:.:::."/>
+         <voice sentence="Feel free to give me your soul"/>
+         <voice sentence="My brothers and me will rule the universe"/>
+        	<voice sentence="Lak TARANOK"/>
+        	<voice sentence="Fool humans"/>
+        	<voice sentence="Hehehe i need to protect the treasure, it will cost your life and even more"/>
+         <voice sentence="Im the lord of Terror"/>
+        
+ 
+         </voices>
+         
+         <loot>
+          	<item id="2160" countmax="100" chance1="30000" chancemax="0"/>
+ 
+         
+          	<item id="1995" chance="153330">
+          	<inside>
+          	<item id="2393" chance="30000"/>
+          	<item id="2470" chance="60000"/>
+          	<item id="2424" chance="2000"/>
+          	<item id="2522" chance="33300"/>
+          	<item id="2089" chance="100000"/>
+          	<item id="2089" chance="100000"/>
+          	<item id="2089" chance="100000"/>
+          	<item id="2089" chance="100000"/>
+          	<item id="2089" chance="10000"/>
+          	<item id="2089" chance="10000"/>
+          	<item id="2089" chance="10000"/>
+          	<item id="2089" chance="10000"/>
+          	<item id="2089" chance="10000"/>
+          	<item id="2089" chance="5000"/>
+          	<item id="2089" chance="5000"/>
+          	<item id="4387" chance="100000"/>
+          	<item id="2462" chance="500"/>
+          	<item id="2472" chance="45700"/>
+          	<item id="2153" chance="1000"/>
+          	<item id="2160" countmax="100" chance1="200000" chancemax="0"/>
+          	<item id="2160" countmax="100" chance1="100000" chancemax="0"/>
+          	<item id="2160" countmax="100" chance1="100000" chancemax="0"/>
+          	<item id="2144" countmax="10" chance1="100000" chancemax="0"/>
+          	<item id="2178" chance="100000"/>
+          	<item id="2402" chance="50000"/>
+        <item id="2159" countmax="40" chance1="50000" chancemax="0"/>
+          	<item id="2646" chance="20"/>
+        	<item id="2390" chance="200"/>
+          	</inside>
+          	</item>
+         </loot>
+         
+         <summons maxSummons="1">
+          	<summon name="stormfire" chance="100"/>
+ 
+        
+         </summons>
+         
+         </monster>
