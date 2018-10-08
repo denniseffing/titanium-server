@@ -32,7 +32,7 @@ install:
 - export PATH=$HOME/Deps/cmake/$CMAKE_VERSION/bin${PATH:+:$PATH}
 
 script: |
-  cmake -DCMAKE_BUILD_TYPE=Performance -DUSE_MYSQL=Off .
+  cmake -DCMAKE_BUILD_TYPE=Performance -DUSE_MYSQL=Off -DDOCKER_ENV=On .
   make -j 2
 
 after_success:
