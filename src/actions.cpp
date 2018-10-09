@@ -687,7 +687,7 @@ int ActionScript::registerFunctions() {
 
 ActionScript *ActionScript::getActionScript(lua_State *L) {
     lua_getglobal(L, "addressOfActionScript");
-    int val = (int) internalGetNumber(L);
+    uint64_t val = (uint64_t) internalGetNumber(L);
     ActionScript *myaction = (ActionScript *) val;
     if (!myaction) {
         return 0;
@@ -750,9 +750,9 @@ void ActionScript::internalGetPositionEx(lua_State *L, PositionEx &pos) {
     lua_pop(L, 1); //table
 }
 
-uint32_t ActionScript::internalGetNumber(lua_State *L) {
+uint64_t ActionScript::internalGetNumber(lua_State *L) {
     lua_pop(L, 1);
-    return (uint32_t) lua_tonumber(L, 0);
+    return (uint64_t) lua_tonumber(L, 0);
 }
 
 const char *ActionScript::internalGetString(lua_State *L) {

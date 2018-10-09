@@ -321,7 +321,7 @@ bool SpellScript::castSpell(Creature *creature, const Position &pos, std::string
 
 Spell *SpellScript::getSpell(lua_State *L) {
 	lua_getglobal(L, "addressOfSpell");
-	int val = (int) lua_tonumber(L, -1);
+	uint64_t val = (uint64_t) lua_tonumber(L, -1);
 	lua_pop(L, 1);
 	Spell *myspell = (Spell *) val;
 
