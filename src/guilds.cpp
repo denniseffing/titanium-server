@@ -101,11 +101,13 @@ bool Guilds::Guild::reloadGuildInfo(Player *player) {
 
 void Guilds::Guild::save(xmlNodePtr guildNode) {
     xmlNodePtr memberNode;
-    char buf[36];
+    const uint16_t bufsize = 36;
+    char buf[bufsize];
 
     for (size_t i = 0; i < members.size(); i++) {
         memberNode = xmlNewNode(NULL, (const xmlChar *) "member");
-        xmlSetProp(memberNode, (const xmlChar *) "status", (const xmlChar *) sprintf(buf, "%d", members[i].status));
+        snprintf(buf, bufsize - 1, "%d", (uint32_t) members[i].status);
+        xmlSetProp(memberNode, (const xmlChar *) "status", (const xmlChar *) buf);
         xmlSetProp(memberNode, (const xmlChar *) "name", (const xmlChar *) members[i].name.c_str());
         xmlSetProp(memberNode, (const xmlChar *) "rank", (const xmlChar *) members[i].rank.c_str());
         xmlSetProp(memberNode, (const xmlChar *) "nick", (const xmlChar *) members[i].nick.c_str());
