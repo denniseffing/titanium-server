@@ -306,7 +306,7 @@ protected:
 
     static void internalGetPositionEx(lua_State *L, PositionEx &pos);
 
-    static uint32_t internalGetNumber(lua_State *L);
+    static uint64_t internalGetNumber(lua_State *L);
 
     static const char *internalGetString(lua_State *L);
 
