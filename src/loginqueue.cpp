@@ -152,7 +152,8 @@ bool LoginQueue::save() {
 
     doc->children = xmlNewDocNode(doc, NULL, (const xmlChar *) "queue", NULL);
     root = doc->children;
-    char buf[64];
+    const uint16_t bufsize = 64;
+    char buf[bufsize];
 
     removeDeadEntries();    // clean before saving
 
@@ -160,17 +161,20 @@ bool LoginQueue::save() {
     for (AutoList<Player>::listiterator iter = Player::listPlayer.list.begin();
          iter != Player::listPlayer.list.end(); ++iter) {
         entryNode = xmlNewNode(NULL, (const xmlChar *) "entry");
-        xmlSetProp(entryNode, (const xmlChar *) "account",
-                   (const xmlChar *) sprintf(buf, "%d", iter->second->getAccount()));
-        xmlSetProp(entryNode, (const xmlChar *) "state", (const xmlChar *) sprintf(buf, "%d", LOGGED));
+        snprintf(buf, bufsize - 1, "%d", iter->second->getAccount());
+        xmlSetProp(entryNode, (const xmlChar *) "account", (const xmlChar *) buf);
+        snprintf(buf, bufsize - 1, "%d", LOGGED);
+        xmlSetProp(entryNode, (const xmlChar *) "state", (const xmlChar *) buf);
         xmlAddChild(root, entryNode);
     }
 
     // then players waiting in queue
     for (LoginTryList::iterator iter = lq.begin(); iter != lq.end(); ++iter) {
         entryNode = xmlNewNode(NULL, (const xmlChar *) "entry");
-        xmlSetProp(entryNode, (const xmlChar *) "account", (const xmlChar *) sprintf(buf, "%d", iter->accountNumber));
-        xmlSetProp(entryNode, (const xmlChar *) "state", (const xmlChar *) sprintf(buf, "%d", iter->state));
+        snprintf(buf, bufsize - 1, "%d", iter->accountNumber);
+        xmlSetProp(entryNode, (const xmlChar *) "account", (const xmlChar *) buf);
+        snprintf(buf, bufsize - 1, "%d", iter->state);
+        xmlSetProp(entryNode, (const xmlChar *) "state", (const xmlChar *) buf);
         xmlAddChild(root, entryNode);
     }
 
