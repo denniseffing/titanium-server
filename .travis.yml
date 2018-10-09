@@ -36,8 +36,5 @@ script: |
   make -j 2
 
 after_success:
-- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-- export REPO=denniseffing/titanium-world
-- export TAG=`if [ -n "$TRAVIS_TAG" ]; then echo $TRAVIS_TAG; else echo "latest" ; fi`
-- docker build -t $REPO:$TAG .
-- docker push $REPO
+- echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
+- ./travis/push_docker_image.sh
