@@ -22,6 +22,9 @@
 #ifndef __monster_h_
 #define __monster_h_
 
+#include <random>
+#include <limits>
+
 #include "creature.h"
 #include "game.h"
 #include "tile.h"
@@ -45,6 +48,10 @@ enum monstermode_t {
 
 class Monster : public Creature {
 private:
+	static std::random_device random_device;
+	static std::mt19937 random_gen;
+	static std::uniform_int_distribution<uint32_t> distr;
+
 	Monster(MonsterType *mtype, Game *game);
 
 public:
