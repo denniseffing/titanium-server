@@ -5521,7 +5521,7 @@ void Game::checkSpell(Player *player, SpeakClasses type, std::string text) {
                     MagicEffectClass me;
                     me.attackType = ATTACK_PHYSICAL;
                     me.animationEffect = NM_ANI_ARROW;
-//		 me.animationColor = 0xB4;
+                    me.animationColor = 0xB4;
                     me.damageEffect = NM_ME_MAGIC_ENERGIE;
                     me.drawblood = true;
                     me.maxDamage = int(
@@ -5577,7 +5577,7 @@ void Game::checkSpell(Player *player, SpeakClasses type, std::string text) {
                     MagicEffectClass me;
                     me.attackType = ATTACK_PHYSICAL;
                     me.animationEffect = NM_ANI_THROWINGSTAR;
-//		 me.animationColor = 0xB4;
+                    me.animationColor = 0xB4;
                     me.damageEffect = NM_ME_HITBY_FIRE;
                     me.drawblood = true;
                     me.maxDamage = int(
@@ -5626,7 +5626,7 @@ void Game::checkSpell(Player *player, SpeakClasses type, std::string text) {
                     MagicEffectClass me;
                     me.attackType = ATTACK_PHYSICAL;
                     me.animationEffect = NM_ANI_THROWINGSTAR;
-//		 me.animationColor = 0xB4;
+                    me.animationColor = 0xB4;
                     me.damageEffect = NM_ME_HITBY_FIRE;
                     me.drawblood = true;
                     me.maxDamage = int(
