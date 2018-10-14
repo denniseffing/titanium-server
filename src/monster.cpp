@@ -21,6 +21,7 @@
 #include <vector>
 #include <string>
 #include <sstream>
+#include <ctime>
 
 #include "monster.h"
 #include "monsters.h"
@@ -33,6 +34,10 @@ extern Game g_game;
 AutoList<Monster>Monster::listMonster;
 
 extern Monsters g_monsters;
+
+std::random_device Monster::random_device;
+std::mt19937 Monster::random_gen = std::mt19937(random_device());
+std::uniform_int_distribution<uint32_t> Monster::distr = std::uniform_int_distribution<uint32_t>(0, CHANCE_MAX);
 
 Monster *Monster::createMonster(const std::string &name, Game *game) {
     uint32_t id = g_monsters.getIdByName(name);
@@ -81,7 +86,7 @@ Monster::Monster(MonsterType *_mtype, Game *game) :
 }
 
 uint32_t Monster::getRandom() {
-    return (uint32_t) ((rand() << 16 | rand()) % CHANCE_MAX);
+    return distr(random_gen);
 }
 
 

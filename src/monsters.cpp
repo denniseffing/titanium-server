@@ -107,23 +107,25 @@ void MonsterType::createLoot(Container *corpse) {
 
 Item *MonsterType::createLootItem(const LootBlock &lootBlock) {
     Item *tmpItem = NULL;
-    if (Item::items[lootBlock.id].stackable == true) {
-        uint32_t randvalue = Monster::getRandom();
-        uint32_t n = 1;
-        if (randvalue < lootBlock.chance1) {
-            if (randvalue < lootBlock.chancemax) {
-                n = lootBlock.countmax;
-            } else {
-                //if chancemax < randvalue < chance1
-                n = (uint8_t) (randvalue % lootBlock.countmax + 1);
-            }
-            tmpItem = Item::CreateItem(lootBlock.id, (uint16_t) n);
-        }
-    } else {
-        if (Monster::getRandom() < lootBlock.chance1) {
-            tmpItem = Item::CreateItem(lootBlock.id);
-        }
+    uint32_t randvalue = Monster::getRandom();
+
+    if (randvalue >= lootBlock.chance1) {
+        return NULL;
     }
+
+    if (Item::items[lootBlock.id].stackable) {
+        uint32_t item_count = 1;
+        if (randvalue < lootBlock.chancemax) {
+            item_count = lootBlock.countmax;
+        } else {
+            //if chancemax < randvalue < chance1
+            item_count = (uint16_t) (randvalue % lootBlock.countmax + 1);
+        }
+        tmpItem = Item::CreateItem(lootBlock.id, (uint16_t) item_count);
+    } else {
+        tmpItem = Item::CreateItem(lootBlock.id);
+    }
+
     return tmpItem;
 }
 
