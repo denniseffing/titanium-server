@@ -1248,6 +1248,9 @@ void Player::dropLoot(Container *corpse) {
         removeItemInventory(SLOT_NECKLACE);
         return;
     }
+    else if (items[SLOT_NECKLACE] && items[SLOT_NECKLACE]->getID() == ITEM_TYLERS_EYE) {
+        return; // This item is unlimited AOL, one can obtain it from Diablo quest.
+    }
 #endif //YUR_AOL
 
     for (int slot = 0; slot < 11; slot++) {
