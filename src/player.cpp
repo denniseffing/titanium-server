@@ -365,7 +365,10 @@ int Player::getWeaponDamage() const {
                         }
                         break;
                     case MAGIC:
-                        damagemax = (level * 2 + maglevel * 3) * 1.25;
+                        // Formula is based on spell wand damage and attack mode (mul) player is in.
+                        damagemax = 
+                                (level * 2 + maglevel * 3) * mul * Item::items[items[slot]->getID()].attack /
+                                20 + Item::items[items[slot]->getID()].attack;
                         break;
                     case AMO:
                     case NONE:
