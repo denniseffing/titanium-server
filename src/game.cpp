@@ -5536,6 +5536,10 @@ void Game::checkSpell(Player *player, SpeakClasses type, std::string text) {
                     creatureThrowRune(player, (*it)->pos, me);
                     player->exhaustedTicks = 1000;
                 }
+                if (player->mana < REQ_MANA)
+                {
+                    break;
+                }
             }
         }
     }
@@ -5592,6 +5596,10 @@ void Game::checkSpell(Player *player, SpeakClasses type, std::string text) {
                     creatureThrowRune(player, (*it)->pos, me);
                     player->exhaustedTicks = 1000;
                 }
+                if (player->mana < REQ_MANA)
+                {
+                    break;
+                }
             }
         }
     } else if (text == "nin jutsu" && player->vocation == VOCATION_PALADIN && (player->maglevel > 24)) {
@@ -5640,6 +5648,10 @@ void Game::checkSpell(Player *player, SpeakClasses type, std::string text) {
                     player->exhaustedTicks = 0;
                     creatureThrowRune(player, (*it)->pos, me);
                     player->exhaustedTicks = 1000;
+                }
+                if (player->mana < REQ_MANA)
+                {
+                    break;
                 }
             }
         }
