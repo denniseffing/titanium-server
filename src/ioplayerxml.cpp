@@ -44,7 +44,7 @@ bool IOPlayerXML::loadPlayer(Player *player, std::string name) {
 
     xmlDocPtr doc;
     xmlMutexLock(xmlmutex);
-    doc = xmlParseFile(filename.c_str());
+    doc = xmlReadFile(filename.c_str(), "UTF-8", XML_PARSE_HUGE);
 
     if (doc) {
         bool isLoaded = true;
