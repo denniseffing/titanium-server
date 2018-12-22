@@ -249,7 +249,7 @@ Monsters::loadMonster(const std::string &file, const std::string &monster_name, 
         nodeValue = (char *) xmlGetProp(root, (const xmlChar *) "experience");
         if (nodeValue) {
 #ifdef YUR_HIGH_LEVELS
-            mType->experience = _atoi64(nodeValue);
+            mType->experience = strtoull(nodeValue, NULL, 10);
 #else
             mType->experience = atoi(nodeValue);
 #endif //YUR_HIGH_LEVELS
