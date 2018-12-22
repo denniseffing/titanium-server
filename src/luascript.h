@@ -34,7 +34,7 @@ extern "C"
 extern "C" struct lua_State;
 
 #ifdef YUR_HIGH_LEVELS
-typedef __int64 exp_t;
+typedef uint64_t exp_t;
 #else
 typedef uint32_t exp_t;
 #endif //YUR_HIGH_LEVELS

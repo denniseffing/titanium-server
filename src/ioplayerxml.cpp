@@ -19,6 +19,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #include <sstream>
+#include <stdlib.h>
 
 #include "ioplayer.h"
 #include "ioplayerxml.h"
@@ -96,7 +97,7 @@ bool IOPlayerXML::loadPlayer(Player *player, std::string name) {
         nodeValue = (char *) xmlGetProp(root, (const xmlChar *) "exp");
         if (nodeValue) {
 #ifdef YUR_HIGH_LEVELS
-            player->experience=_atoi64(nodeValue);
+            player->experience = strtoull(nodeValue, NULL, 10);
 #else
             player->experience = atoi(nodeValue);
 #endif //YUR_HIGH_LEVELS
