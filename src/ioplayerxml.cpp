@@ -687,15 +687,9 @@ bool IOPlayerXML::savePlayer(Player *player) {
     xmlSetProp(root, (const xmlChar *) "lookdir", (const xmlChar *) sb.str().c_str());
     sb.str("");
 
-#ifdef YUR_HIGH_LEVELS
-    char buf[128];
-    sprintf(buf, "%d", player->experience);
-    xmlSetProp(root, (const xmlChar*) "exp", (const xmlChar*) buf);
-#else
     sb << player->experience;
     xmlSetProp(root, (const xmlChar *) "exp", (const xmlChar *) sb.str().c_str());
     sb.str("");
-#endif //YUR_HIGH_LEVELS
 
     sb << (int) player->vocation;
     xmlSetProp(root, (const xmlChar *) "voc", (const xmlChar *) sb.str().c_str());
