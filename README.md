@@ -1,7 +1,9 @@
 # Titanium World  [![Build Status](https://travis-ci.com/denniseffing/titanium-server.svg?token=wyiKY4rhF1c7MzJUGPNV&branch=master)](https://travis-ci.com/denniseffing/titanium-server)
 Titanium world is a private Tibia server.  
-The server is based on an earlier version of [opentibia/server](https://github.com/opentibia/server) and targets Tibia 7.6.
+The server is based on an earlier version of [opentibia/server](https://github.com/opentibia/server) which targets Tibia 7.6.  
+Credits go to the developers of the opentibia project. 
 
+This repo contains changes to compile and run the server on Linux and introduces a small CI pipeline and docker containerization.
 If you are here to report a bug, head over to the issue tracker and create an issue.  
 
 ## Developer guide
