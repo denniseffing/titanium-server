@@ -37,7 +37,8 @@ message(STATUS "Static libraries: " ${USE_STATIC_LIBS})
 #  message(FATAL_ERROR "At least one database driver has to be selected.")
 #endif()
 
-add_compile_definitions(TLM_BUY_SELL;
+add_compile_definitions(
+        TLM_BUY_SELL;
         TLM_SERVER_SAVE;
         TLM_HOUSE_SYSTEM;
         BDB_UTEVO_LUX;
@@ -58,7 +59,6 @@ add_compile_definitions(TLM_BUY_SELL;
         CVS_DAY_CYCLE;
         TJ_MONSTER_BLOOD;
         JD_WANDS;
-        SM_SUMMON_ATTACK;
         __DEBUG_PLAYERS__;
         YUR_CVS_MODS;
         YUR_ICE_RAPIER;
