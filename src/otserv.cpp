@@ -260,14 +260,18 @@ OTSYS_THREAD_RETURN ConnectionHandler(void *dat) {
             // gameworld connection tibia 7.6
         else if (protId == 0x020A) {
             std::cout << "0x020A" << std::endl;
-            std::string s(msg, sizeof(msg));
-            std::cout << "the msg: " << s << std::endl;
             uint8_t clientos = msg.GetByte();
+            std::cout << "clientos: " << clientos << std::endl;
             uint16_t version = msg.GetU16();
+            std::cout << "version: " << version << std::endl;
             uint8_t unknown = msg.GetByte();
+            std::cout << "unknown: " << unknown << std::endl;
             uint32_t accnumber = msg.GetU32();
+            std::cout << "accnumber: " << accnumber << std::endl;
             std::string name = msg.GetString();
+            std::cout << "name: " << name << std::endl;
             std::string password = msg.GetString();
+            std::cout << "password: " << password << std::endl;
 
             if (version != 760) {
                 msg.Reset();
