@@ -199,6 +199,7 @@ OTSYS_THREAD_RETURN ConnectionHandler(void *dat) {
 
         // login server connection
         if (protId == 0x0201) {
+            std::cout << "0x0201" << std::endl;
             msg.SkipBytes(15);
             uint32_t accnumber = msg.GetU32();
             std::string password = msg.GetString();
@@ -258,6 +259,9 @@ OTSYS_THREAD_RETURN ConnectionHandler(void *dat) {
         }
             // gameworld connection tibia 7.6
         else if (protId == 0x020A) {
+            std::cout << "0x020A" << std::endl;
+            std::string s(msg, sizeof(msg));
+            std::cout << "the msg: " << s << std::endl;
             uint8_t clientos = msg.GetByte();
             uint16_t version = msg.GetU16();
             uint8_t unknown = msg.GetByte();
@@ -394,6 +398,7 @@ OTSYS_THREAD_RETURN ConnectionHandler(void *dat) {
             // Since Cip made 02xx as Tibia protocol,
             // Lets make FFxx as "our great info protocol" ;P
         else if (protId == 0xFFFF) {
+            std::cout << "0xFFFF" << std::endl;
             if (msg.GetRaw() == "info") {
                 Status *status = Status::instance();
 
@@ -408,6 +413,7 @@ OTSYS_THREAD_RETURN ConnectionHandler(void *dat) {
             // Another ServerInfo protocol
             // Starting from 01, so the above could be 00 ;)
         else if (protId == 0xFF01) {
+            std::cout << "0xFF01" << std::endl;
             // This one doesn't need to read nothing, so we could save time and bandwidth
             // Can be called thgough a program that understand the NetMsg protocol
             Status *status = Status::instance();
